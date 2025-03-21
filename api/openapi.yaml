@@ -1,0 +1,3406 @@
+openapi: 3.1.0
+info:
+  title: FastAPI
+  version: 0.1.0
+servers:
+- url: https://aws.us-east-1.lamin.ai/api
+paths:
+  /instances:
+    put:
+      operationId: create_instance_instances_put
+      parameters:
+      - explode: true
+        in: query
+        name: name
+        required: true
+        schema:
+          title: Name
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: storage
+        required: false
+        schema:
+          default: create-s3
+          title: Storage
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: schema_str
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: db_server_key
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: db_server_url
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Instance
+      x-accepts:
+      - application/json
+  /instances/{instance_id}:
+    delete:
+      operationId: delete_instance_instances__instance_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: instance_name
+        required: true
+        schema:
+          title: Instance Name
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Delete Instance
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/statistics:
+    get:
+      operationId: get_instance_statistics_instances__instance_id__statistics_get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - description: "In ${module}.${model} format (case-sensitive)"
+        explode: true
+        in: query
+        name: q
+        required: false
+        schema:
+          items:
+            nullable: true
+            type: string
+          nullable: true
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Instance Statistics
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/non_empty_tables:
+    get:
+      operationId: get_non_empty_tables_instances__instance_id__non_empty_tables_get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Non Empty Tables
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/owner/{handle}:
+    patch:
+      operationId: transfer_ownership_instances__instance_id__owner__handle__patch
+      parameters:
+      - explode: false
+        in: path
+        name: handle
+        required: true
+        schema:
+          title: Handle
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Transfer Ownership
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/collaborators/{account_id}:
+    delete:
+      operationId: delete_collaborator_instances__instance_id__collaborators__account_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Delete Collaborator
+      x-accepts:
+      - application/json
+    patch:
+      operationId: update_collaborator_instances__instance_id__collaborators__account_id__patch
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: role
+        required: true
+        schema:
+          enum:
+          - admin
+          - write
+          - read
+          title: Role
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Collaborator
+      x-accepts:
+      - application/json
+    put:
+      operationId: add_collaborator_instances__instance_id__collaborators__account_id__put
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: true
+        schema:
+          format: uuid
+          title: Schema Id
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: role
+        required: false
+        schema:
+          default: read
+          enum:
+          - admin
+          - write
+          - read
+          title: Role
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Add Collaborator
+      x-accepts:
+      - application/json
+  /storages/s3/{bucket_name}/permissions:
+    put:
+      operationId: grant_s3_permissions_storages_s3__bucket_name__permissions_put
+      parameters:
+      - explode: false
+        in: path
+        name: bucket_name
+        required: true
+        schema:
+          title: Bucket Name
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: aws_account_id
+        required: false
+        schema:
+          default: "767398070972"
+          title: Aws Account Id
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: aws_user_name
+        required: false
+        schema:
+          default: lamin-manager
+          title: Aws User Name
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/S3PermissionsRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Grant S3 Permissions
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/schema:
+    get:
+      operationId: get_schema_instances__instance_id__schema_get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Schema
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/schema/{module_name}/{model_name}:
+    get:
+      operationId: get_relations_instances__instance_id__schema__module_name___model_name__get
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Relations
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}:
+    post:
+      operationId: get_records_instances__instance_id__modules__module_name___model_name__post
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          title: Limit
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          title: Offset
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: limit_to_many
+        required: false
+        schema:
+          default: 10
+          title: Limit To Many
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: include_foreign_keys
+        required: false
+        schema:
+          default: false
+          title: Include Foreign Keys
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRecordsRequestBody'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Records
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+    put:
+      operationId: create_record_instances__instance_id__modules__module_name___model_name__put
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Record
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}/group-by:
+    post:
+      operationId: group_by_instances__instance_id__modules__module_name___model_name__group_by_post
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupByRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Group By
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}/fields/{field_path}:
+    post:
+      operationId: get_values_instances__instance_id__modules__module_name___model_name__fields__field_path__post
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: field_path
+        required: true
+        schema:
+          title: Field Path
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          default: 50
+          title: Limit
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: offset
+        required: false
+        schema:
+          default: 0
+          title: Offset
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetValuesRequestBody'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Values
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}/{id_or_uid}:
+    post:
+      operationId: get_record_instances__instance_id__modules__module_name___model_name___id_or_uid__post
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id_or_uid
+        required: true
+        schema:
+          title: Id Or Uid
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: limit_to_many
+        required: false
+        schema:
+          default: 10
+          title: Limit To Many
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: include_foreign_keys
+        required: false
+        schema:
+          default: false
+          title: Include Foreign Keys
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetRecordRequestBody'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Record
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}/{id}/{label_field}/{label_id}:
+    delete:
+      operationId: detach_label_instances__instance_id__modules__module_name___model_name___id___label_field___label_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          enum:
+          - artifact
+          - transform
+          - collection
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          title: Id
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: label_field
+        required: true
+        schema:
+          title: Label Field
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: label_id
+        required: true
+        schema:
+          title: Label Id
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Detach Label
+      x-accepts:
+      - application/json
+    put:
+      operationId: attach_label_instances__instance_id__modules__module_name___model_name___id___label_field___label_id__put
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          enum:
+          - artifact
+          - transform
+          - collection
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          title: Id
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: label_field
+        required: true
+        schema:
+          title: Label Field
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: label_id
+        required: true
+        schema:
+          title: Label Id
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Attach Label
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}/{uid}:
+    delete:
+      operationId: delete_record_instances__instance_id__modules__module_name___model_name___uid__delete
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: uid
+        required: true
+        schema:
+          title: Uid
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Delete Record
+      x-accepts:
+      - application/json
+    patch:
+      operationId: update_record_instances__instance_id__modules__module_name___model_name___uid__patch
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: uid
+        required: true
+        schema:
+          title: Uid
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Record
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}/{id}/counts:
+    get:
+      operationId: get_relation_counts_instances__instance_id__modules__module_name___model_name___id__counts_get
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          title: Id
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Relation Counts
+      x-accepts:
+      - application/json
+  /s3/{path}:
+    delete:
+      operationId: proxy_s3_s3__path__get
+      parameters:
+      - explode: false
+        in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Proxy S3
+      x-accepts:
+      - application/json
+    get:
+      operationId: proxy_s3_s3__path__get
+      parameters:
+      - explode: false
+        in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Proxy S3
+      x-accepts:
+      - application/json
+    head:
+      operationId: proxy_s3_s3__path__get
+      parameters:
+      - explode: false
+        in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Proxy S3
+      x-accepts:
+      - application/json
+    post:
+      operationId: proxy_s3_s3__path__get
+      parameters:
+      - explode: false
+        in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Proxy S3
+      x-accepts:
+      - application/json
+    put:
+      operationId: proxy_s3_s3__path__get
+      parameters:
+      - explode: false
+        in: path
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Proxy S3
+      x-accepts:
+      - application/json
+  /access_v2/instances/{instance_id}/collaborators:
+    delete:
+      description: |-
+        Remove a collaborator from an instance.
+
+        Parameters:
+        - **instance_id**: UUID of the instance (from URL path)
+        - **account_id**: UUID of the account to remove (mutually exclusive with team_id)
+        - **team_id**: UUID of the team to remove (mutually exclusive with account_id)
+
+        Returns:
+        - **200**: Collaborator removed successfully
+        - **400**: Invalid input (e.g., both account_id and team_id provided)
+        - **404**: Collaborator not found
+
+        Requires admin access to the instance
+      operationId: remove_collaborator_access_v2_instances__instance_id__collaborators_delete
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: account_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Remove Collaborator
+      x-accepts:
+      - application/json
+    get:
+      description: |-
+        List all collaborators of an instance.
+
+        Parameters:
+        - **instance_id**: UUID of the instance to list collaborators for (from URL path)
+
+        Returns:
+        - **200**: List of instance collaborators retrieved successfully
+        - **404**: Instance not found
+
+        Requires read access to the instance
+      operationId: list_collaborators_access_v2_instances__instance_id__collaborators_get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Collaborators
+      x-accepts:
+      - application/json
+    patch:
+      description: |-
+        Update a collaborator's permissions on an instance.
+
+        Parameters:
+        - **instance_id**: UUID of the instance (from URL path)
+        - **body**: Request body containing collaborator details
+          - **account_id**: UUID of the account to update (mutually exclusive with team_id)
+          - **team_id**: UUID of the team to update (mutually exclusive with account_id)
+          - **role**: Role of the collaborator
+
+        Returns:
+        - **200**: Collaborator updated successfully
+        - **400**: Invalid input (e.g., both account_id and team_id provided)
+        - **404**: Collaborator not found
+
+        Requires admin access to the instance
+      operationId: update_collaborator_access_v2_instances__instance_id__collaborators_patch
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCollaboratorRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Collaborator
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+    put:
+      description: |-
+        Add a collaborator (account or team) to an instance.
+
+        Parameters:
+        - **instance_id**: UUID of the instance to add the collaborator to (from URL path)
+        - **body**: Request body containing collaborator details
+          - **account_id**: UUID of the account to add (mutually exclusive with team_id)
+          - **team_id**: UUID of the team to add (mutually exclusive with account_id)
+          - **role**: Role of the collaborator
+
+        Returns:
+        - **201**: Collaborator added successfully
+        - **400**: Invalid input (e.g., both account_id and team_id provided)
+        - **409**: Collaborator was already added
+
+        Requires admin access to the instance
+      operationId: add_collaborator_access_v2_instances__instance_id__collaborators_put
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddCollaboratorRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Add Collaborator
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/spaces:
+    put:
+      description: |-
+        Create a new space.
+
+        Parameters:
+        - **body**: Request body containing space details
+          - **name**: Name of the space
+          - **organization_id**: UUID of the organization
+          - **description**: Optional description of the space
+
+        Returns:
+        - **201**: Space created successfully
+      operationId: create_space_access_v2_spaces_put
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSpaceRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Space
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/spaces/{space_id}:
+    delete:
+      description: |-
+        Delete a space and detach it from the instance.
+
+        Parameters:
+        - **space_id**: ID of the space to delete
+
+        Returns:
+        - **200**: Space deleted successfully
+        - **404**: Space not found
+      operationId: delete_space_access_v2_spaces__space_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Delete Space
+      x-accepts:
+      - application/json
+    get:
+      description: |-
+        Get details of a specific space.
+
+        Parameters:
+        - **space_id**: ID of the space to retrieve
+
+        Returns:
+        - **200**: Space details retrieved successfully
+        - **404**: Space not found
+      operationId: get_space_access_v2_spaces__space_id__get
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Space
+      x-accepts:
+      - application/json
+    patch:
+      description: |-
+        Update a space's details.
+
+        Parameters:
+        - **space_id**: ID of the space to update
+        - **body**: Request body containing updated space details
+          - **name**: Optional new name for the space
+          - **description**: Optional new description for the space
+
+        Returns:
+        - **200**: Space updated successfully
+      operationId: update_space_access_v2_spaces__space_id__patch
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSpaceRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Space
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/spaces/{space_id}/record-attachments:
+    put:
+      description: |-
+        Move a record to a specific space.
+
+        Parameters:
+        - **space_id**: ID of the space to move the record to
+        - **body**: Request body containing record details
+          - **module_name**: Module name of the record
+          - **model_name**: Model name of the record
+          - **record_id**: ID of the record to move in the space
+        - **instance_id**: UUID of the instance (from URL path)
+        - **schema_id**: UUID of the schema (from URL path)
+
+        Returns:
+        - **200**: Record moved to the space successfully
+
+        Requires admin access to the instance
+      operationId: move_record_to_space_access_v2_spaces__space_id__record_attachments_put
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: instance_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttachSpaceToRecordRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Move Record To Space
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/spaces/{space_id}/instances/{instance_id}:
+    delete:
+      description: |-
+        Detach a space from a specific instance.
+
+        Parameters:
+        - **space_id**: ID of the space to detach
+        - **instance_id**: UUID of the instance to detach the space from (from URL path)
+
+        Returns:
+        - **200**: Space detached from instance successfully
+
+        Requires admin access to the instance
+      operationId: detach_space_from_instance_access_v2_spaces__space_id__instances__instance_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Detach Space From Instance
+      x-accepts:
+      - application/json
+    put:
+      description: |-
+        Attach a space to a specific instance.
+
+        Parameters:
+        - **space_id**: ID of the space to attach
+        - **instance_id**: UUID of the instance to attach the space to (from URL path)
+
+        Returns:
+        - **200**: Space attached to instance successfully
+
+        Requires admin access to the instance
+      operationId: attach_space_to_instance_access_v2_spaces__space_id__instances__instance_id__put
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Attach Space To Instance
+      x-accepts:
+      - application/json
+  /access_v2/spaces/{space_id}/instances:
+    get:
+      description: |-
+        List all instances that have this space attached.
+
+        Parameters:
+        - **space_id**: ID of the space to check
+
+        Returns:
+        - **200**: List of instances using the space retrieved successfully
+      operationId: list_instances_using_space_access_v2_spaces__space_id__instances_get
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Instances Using Space
+      x-accepts:
+      - application/json
+  /access_v2/spaces/instances/{instance_id}:
+    get:
+      description: |-
+        List all spaces attached to an instance.
+
+        Parameters:
+        - **instance_id**: UUID of the instance to list spaces for (from URL path)
+
+        Returns:
+        - **200**: List of spaces attached to the instance retrieved successfully
+      operationId: list_instance_spaces_access_v2_spaces_instances__instance_id__get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Instance Spaces
+      x-accepts:
+      - application/json
+  /access_v2/spaces/{space_id}/collaborators:
+    delete:
+      description: |-
+        Remove a collaborator (account or team) from a space.
+
+        Parameters:
+        - **space_id**: ID of the space to remove the collaborator from
+        - **account_id**: UUID of the account to remove (mutually exclusive with team_id)
+        - **team_id**: UUID of the team to remove (mutually exclusive with account_id)
+
+        Returns:
+        - **200**: Collaborator removed from space successfully
+        - **400**: Invalid input (e.g., both account_id and team_id provided or neither provided)
+      operationId: remove_space_collaborator_access_v2_spaces__space_id__collaborators_delete
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: account_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: team_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Remove Space Collaborator
+      x-accepts:
+      - application/json
+    get:
+      description: |-
+        List all collaborators of a space.
+
+        Parameters:
+        - **space_id**: ID of the space to list collaborators for
+
+        Returns:
+        - **200**: List of space collaborators retrieved successfully
+      operationId: list_space_collaborators_access_v2_spaces__space_id__collaborators_get
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Space Collaborators
+      x-accepts:
+      - application/json
+    patch:
+      description: |-
+        Update a collaborator's permissions in a space.
+
+        Parameters:
+        - **space_id**: ID of the space to update the collaborator in
+        - **body**: Request body containing collaborator details
+          - **account_id**: UUID of the account to update (mutually exclusive with team_id)
+          - **team_id**: UUID of the team to update (mutually exclusive with account_id)
+          - **role**: Role of the collaborator
+
+        Returns:
+        - **200**: Collaborator updated successfully
+        - **400**: Invalid input (e.g., both account_id and team_id provided)
+        - **404**: Collaborator not found in space
+      operationId: update_space_collaborator_access_v2_spaces__space_id__collaborators_patch
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateSpaceCollaboratorRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Space Collaborator
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+    put:
+      description: |-
+        Add a collaborator (account or team) to a space.
+
+        Parameters:
+        - **space_id**: ID of the space to add the collaborator to
+        - **body**: Request body containing collaborator details
+          - **account_id**: UUID of the account to add (mutually exclusive with team_id)
+          - **team_id**: UUID of the team to add (mutually exclusive with account_id)
+          - **role**: Role of the collaborator
+
+        Returns:
+        - **201**: Collaborator added to space successfully
+        - **400**: Invalid input (e.g., both account_id and team_id provided)
+      operationId: add_space_collaborator_access_v2_spaces__space_id__collaborators_put
+      parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          title: Space Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddSpaceCollaboratorRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Add Space Collaborator
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/spaces/organizations/{organization_id}:
+    get:
+      description: |-
+        List all spaces in an organization.
+
+        Parameters:
+        - **organization_id**: UUID of the organization to list spaces for
+
+        Returns:
+        - **200**: List of spaces retrieved successfully
+      operationId: list_organization_spaces_access_v2_spaces_organizations__organization_id__get
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Organization Spaces
+      x-accepts:
+      - application/json
+  /access_v2/teams:
+    put:
+      description: |-
+        Create a new team.
+
+        Parameters:
+        - **body**: Request body containing team details
+          - **name**: Name of the team
+          - **organization_id**: UUID of the organization
+          - **description**: Optional description of the team
+
+        Returns:
+        - **201**: Team created successfully
+      operationId: create_team_access_v2_teams_put
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTeamRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Team
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/teams/{team_id}:
+    delete:
+      description: |-
+        Delete a team.
+
+        Parameters:
+        - **team_id**: UUID of the team to delete
+
+        Returns:
+        - **200**: Team deleted successfully
+      operationId: delete_team_access_v2_teams__team_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: uuid
+          title: Team Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Delete Team
+      x-accepts:
+      - application/json
+    get:
+      description: |-
+        Get details of a specific team.
+
+        Parameters:
+        - **team_id**: UUID of the team to retrieve
+
+        Returns:
+        - **200**: Team details retrieved successfully
+        - **404**: Team not found
+      operationId: get_team_access_v2_teams__team_id__get
+      parameters:
+      - explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: uuid
+          title: Team Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Team
+      x-accepts:
+      - application/json
+    patch:
+      description: |-
+        Update a team's details.
+
+        Parameters:
+        - **team_id**: UUID of the team to update
+        - **body**: Request body containing updated team details
+          - **name**: Optional new name for the team
+          - **description**: Optional new description for the team
+
+        Returns:
+        - **200**: Team updated successfully
+      operationId: update_team_access_v2_teams__team_id__patch
+      parameters:
+      - explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: uuid
+          title: Team Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTeamRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Team
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/teams/{team_id}/members:
+    get:
+      description: |-
+        List all members of a team.
+
+        Parameters:
+        - **team_id**: UUID of the team to list members for
+
+        Returns:
+        - **200**: List of team members retrieved successfully
+      operationId: list_team_members_access_v2_teams__team_id__members_get
+      parameters:
+      - explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: uuid
+          title: Team Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Team Members
+      x-accepts:
+      - application/json
+  /access_v2/teams/{team_id}/members/{account_id}:
+    delete:
+      description: |-
+        Remove a member from a team.
+
+        Parameters:
+        - **team_id**: UUID of the team to remove the member from
+        - **account_id**: UUID of the account to remove from the team
+
+        Returns:
+        - **200**: Team member removed successfully
+        - **404**: Member not found in team
+      operationId: remove_team_member_access_v2_teams__team_id__members__account_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: uuid
+          title: Team Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Remove Team Member
+      x-accepts:
+      - application/json
+    patch:
+      description: |-
+        Update a team member's details.
+
+        Parameters:
+        - **team_id**: UUID of the team the member belongs to
+        - **account_id**: UUID of the account to update
+        - **body**: Request body containing updated member details
+          - **role**: Role of the member in the team
+
+        Returns:
+        - **200**: Team member updated successfully
+        - **404**: Member not found in team
+      operationId: update_team_member_access_v2_teams__team_id__members__account_id__patch
+      parameters:
+      - explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: uuid
+          title: Team Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTeamMemberRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Team Member
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+    put:
+      description: |-
+        Add a member to a team.
+
+        Parameters:
+        - **team_id**: UUID of the team to add the member to
+        - **account_id**: UUID of the account to add as a member
+        - **body**: Request body containing member details
+          - **role**: Role of the member in the team
+
+        Returns:
+        - **201**: Team member added successfully
+      operationId: add_team_member_access_v2_teams__team_id__members__account_id__put
+      parameters:
+      - explode: false
+        in: path
+        name: team_id
+        required: true
+        schema:
+          format: uuid
+          title: Team Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddTeamMemberRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Add Team Member
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /access_v2/teams/organizations/{organization_id}:
+    get:
+      description: |-
+        List all teams in an organization.
+
+        Parameters:
+        - **organization_id**: UUID of the organization to list teams for
+
+        Returns:
+        - **200**: List of teams retrieved successfully
+      operationId: list_organization_teams_access_v2_teams_organizations__organization_id__get
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Organization Teams
+      x-accepts:
+      - application/json
+  /access_v2/instances/{instance_id}/db_token:
+    get:
+      description: |-
+        Get a database token for the specified instance.
+
+        This token can be used to authenticate with the instance's database.
+
+        Parameters:
+        - **instance_id**: UUID of the instance to get the token for (from URL path)
+
+        Returns:
+        - **200**: Database token retrieved successfully
+          - **token**: The database token
+        - **401**: Unauthorized
+      operationId: get_db_token_access_v2_instances__instance_id__db_token_get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Db Token
+      x-accepts:
+      - application/json
+components:
+  schemas:
+    AddCollaboratorRequestBody:
+      example:
+        account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        role: read
+        team_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        account_id:
+          format: uuid
+          nullable: true
+          type: string
+        team_id:
+          format: uuid
+          nullable: true
+          type: string
+        role:
+          default: read
+          enum:
+          - admin
+          - read
+          - write
+          title: Role
+          type: string
+      title: AddCollaboratorRequestBody
+    AddSpaceCollaboratorRequestBody:
+      example:
+        account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        role: read
+        team_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        account_id:
+          format: uuid
+          nullable: true
+          type: string
+        team_id:
+          format: uuid
+          nullable: true
+          type: string
+        role:
+          default: read
+          enum:
+          - admin
+          - read
+          - write
+          title: Role
+          type: string
+      title: AddSpaceCollaboratorRequestBody
+    AddTeamMemberRequestBody:
+      example:
+        role: member
+      properties:
+        role:
+          default: member
+          enum:
+          - admin
+          - member
+          title: Role
+          type: string
+      title: AddTeamMemberRequestBody
+    AttachSpaceToRecordRequestBody:
+      example:
+        record_id: 0
+        model_name: model_name
+        module_name: module_name
+      properties:
+        module_name:
+          title: Module Name
+          type: string
+        model_name:
+          title: Model Name
+          type: string
+        record_id:
+          title: Record Id
+          type: integer
+      required:
+      - model_name
+      - module_name
+      - record_id
+      title: AttachSpaceToRecordRequestBody
+    CreateSpaceRequestBody:
+      example:
+        organization_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        name: name
+        description: description
+      properties:
+        name:
+          title: Name
+          type: string
+        organization_id:
+          format: uuid
+          title: Organization Id
+          type: string
+        description:
+          nullable: true
+          type: string
+      required:
+      - name
+      - organization_id
+      title: CreateSpaceRequestBody
+    CreateTeamRequestBody:
+      example:
+        organization_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        name: name
+        description: description
+      properties:
+        name:
+          title: Name
+          type: string
+        organization_id:
+          format: uuid
+          title: Organization Id
+          type: string
+        description:
+          nullable: true
+          type: string
+      required:
+      - name
+      - organization_id
+      title: CreateTeamRequestBody
+    Dimension:
+      example:
+        func: count
+        field_name: field_name
+      properties:
+        field_name:
+          title: Field Name
+          type: string
+        func:
+          enum:
+          - count
+          - sum
+          - min
+          - max
+          - mean
+          nullable: true
+          type: string
+      required:
+      - field_name
+      title: Dimension
+    GetRecordRequestBody:
+      example:
+        select:
+        - select
+        - select
+      properties:
+        select:
+          items:
+            type: string
+          nullable: true
+          type: array
+      title: GetRecordRequestBody
+    GetRecordsRequestBody:
+      example:
+        filter: "{}"
+        search: ""
+        select:
+        - select
+        - select
+        order_by:
+        - field: field
+          descending: false
+        - field: field
+          descending: false
+      properties:
+        select:
+          items:
+            type: string
+          nullable: true
+          type: array
+        filter:
+          nullable: true
+          type: object
+        order_by:
+          items:
+            $ref: '#/components/schemas/OrderByColumn'
+          nullable: true
+          type: array
+        search:
+          default: ""
+          title: Search
+          type: string
+      title: GetRecordsRequestBody
+    GetValuesRequestBody:
+      example:
+        filter: "{}"
+        search: ""
+        order_by:
+        - field: field
+          descending: false
+        - field: field
+          descending: false
+      properties:
+        filter:
+          nullable: true
+          type: object
+        order_by:
+          items:
+            $ref: '#/components/schemas/OrderByColumn'
+          nullable: true
+          type: array
+        search:
+          default: ""
+          title: Search
+          type: string
+      title: GetValuesRequestBody
+    GroupByRequestBody:
+      example:
+        filter: "{}"
+        measures:
+        - agg_func: count
+          alias: alias
+          field_name: field_name
+        - agg_func: count
+          alias: alias
+          field_name: field_name
+        dimensions:
+        - func: count
+          field_name: field_name
+        - func: count
+          field_name: field_name
+      properties:
+        dimensions:
+          items:
+            $ref: '#/components/schemas/Dimension'
+          type: array
+        measures:
+          items:
+            $ref: '#/components/schemas/Measure'
+          type: array
+        filter:
+          nullable: true
+          type: object
+      required:
+      - dimensions
+      - measures
+      title: GroupByRequestBody
+    HTTPValidationError:
+      example:
+        detail:
+        - msg: msg
+          loc:
+          - ValidationError_loc_inner
+          - ValidationError_loc_inner
+          type: type
+        - msg: msg
+          loc:
+          - ValidationError_loc_inner
+          - ValidationError_loc_inner
+          type: type
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+      title: HTTPValidationError
+    Measure:
+      example:
+        agg_func: count
+        alias: alias
+        field_name: field_name
+      properties:
+        field_name:
+          title: Field Name
+          type: string
+        agg_func:
+          enum:
+          - count
+          - sum
+          - min
+          - max
+          - mean
+          title: Agg Func
+          type: string
+        alias:
+          nullable: true
+          type: string
+      required:
+      - agg_func
+      - field_name
+      title: Measure
+    OrderByColumn:
+      example:
+        field: field
+        descending: false
+      properties:
+        field:
+          title: Field
+          type: string
+        descending:
+          default: false
+          title: Descending
+          type: boolean
+      required:
+      - field
+      title: OrderByColumn
+    S3PermissionsRequest:
+      example:
+        aws_access_key_id: aws_access_key_id
+        aws_secret_access_key: aws_secret_access_key
+        region: region
+      properties:
+        aws_access_key_id:
+          title: Aws Access Key Id
+          type: string
+        aws_secret_access_key:
+          title: Aws Secret Access Key
+          type: string
+        region:
+          title: Region
+          type: string
+      required:
+      - aws_access_key_id
+      - aws_secret_access_key
+      - region
+      title: S3PermissionsRequest
+    UpdateCollaboratorRequestBody:
+      example:
+        account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        role: admin
+        team_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        account_id:
+          format: uuid
+          nullable: true
+          type: string
+        team_id:
+          format: uuid
+          nullable: true
+          type: string
+        role:
+          enum:
+          - admin
+          - read
+          - write
+          title: Role
+          type: string
+      required:
+      - role
+      title: UpdateCollaboratorRequestBody
+    UpdateSpaceCollaboratorRequestBody:
+      example:
+        account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        role: admin
+        team_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        account_id:
+          format: uuid
+          nullable: true
+          type: string
+        team_id:
+          format: uuid
+          nullable: true
+          type: string
+        role:
+          enum:
+          - admin
+          - write
+          - read
+          nullable: true
+          type: string
+      title: UpdateSpaceCollaboratorRequestBody
+    UpdateSpaceRequestBody:
+      example:
+        name: name
+        description: description
+      properties:
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+      title: UpdateSpaceRequestBody
+    UpdateTeamMemberRequestBody:
+      example:
+        role: admin
+      properties:
+        role:
+          enum:
+          - admin
+          - member
+          title: Role
+          type: string
+      required:
+      - role
+      title: UpdateTeamMemberRequestBody
+    UpdateTeamRequestBody:
+      example:
+        name: name
+        description: description
+      properties:
+        name:
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+      title: UpdateTeamRequestBody
+    ValidationError:
+      example:
+        msg: msg
+        loc:
+        - ValidationError_loc_inner
+        - ValidationError_loc_inner
+        type: type
+      properties:
+        loc:
+          items:
+            $ref: '#/components/schemas/ValidationError_loc_inner'
+          type: array
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    ValidationError_loc_inner:
+      anyOf:
+      - type: string
+      - type: integer
+
