@@ -13,12 +13,16 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
+          cache: maven
+          server-id: central
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
       - name: Publish package
-        run: ./gradlew publish
+        run: mvn clean deploy -P deployment
         env:
           MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}

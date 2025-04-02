@@ -28,7 +28,7 @@ mvn clean install
 To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
 
 ```shell
-mvn clean deploy
+mvn clean deploy -P deployment
 ```
 
 Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.

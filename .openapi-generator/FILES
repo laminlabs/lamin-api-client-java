@@ -1,10 +1,6 @@
 .github/workflows/maven.yml
-.gitignore
-.travis.yml
 README.md
 api/openapi.yaml
-build.gradle
-build.sbt
 docs/AddCollaboratorRequestBody.md
 docs/AddSpaceCollaboratorRequestBody.md
 docs/AddTeamMemberRequestBody.md
@@ -29,13 +25,8 @@ docs/UpdateTeamRequestBody.md
 docs/ValidationError.md
 docs/ValidationErrorLocInner.md
 git_push.sh
-gradle.properties
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
-gradlew
-gradlew.bat
-pom.xml
-settings.gradle
 src/main/AndroidManifest.xml
 src/main/java/com/data_intuitive/lamin_api_client_java/ApiCallback.java
 src/main/java/com/data_intuitive/lamin_api_client_java/ApiClient.java

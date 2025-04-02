@@ -8,7 +8,3 @@ npx @openapitools/openapi-generator-cli generate \
     --config config.yaml \
     --skip-validate-spec \
     --output .
-
-# git diff > patches/publish.patch
-
-git apply --ignore-space-change --ignore-whitespace patches/publish.patch
