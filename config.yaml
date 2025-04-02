@@ -38,16 +38,16 @@ disallowAdditionalPropertiesIfNotPresent: true
 enumUnknownDefaultCase: false
 
 # Description: package for generated models
-modelPackage: com.github.data-intuitive.lamin-api-client-java.model # Default: org.openapitools.client.model
+modelPackage: ai.lamin.lamin-api-client-java.model # Default: org.openapitools.client.model
 
 # Description: package for generated api classes
-apiPackage: com.github.data-intuitive.lamin-api-client-java.api # Default: org.openapitools.client.api
+apiPackage: ai.lamin.lamin-api-client-java.api # Default: org.openapitools.client.api
 
 # Description: root package for generated code
-invokerPackage: com.github.data-intuitive.lamin-api-client-java # Default: org.openapitools.client
+invokerPackage: ai.lamin.lamin-api-client-java # Default: org.openapitools.client
 
 # Description: groupId in generated pom.xml
-groupId: com.github.data-intuitive # Default: org.openapitools
+groupId: ai.lamin # Default: org.openapitools
 
 # Description: artifactId in generated pom.xml. This also becomes part of the generated library's filename
 artifactId: lamin-api-client-java
@@ -71,16 +71,16 @@ scmDeveloperConnection: scm:git:git@github.com:data-intuitive/lamin-api-client-j
 scmUrl: https://github.com/data-intuitive/lamin-api-client-java # Default: https://github.com/openapitools/openapi-generator
 
 # Description: developer name in generated pom.xml
-developerName: Data Intuitive # Default: OpenAPI-Generator Contributors
+developerName: Lamin Labs # Default: OpenAPI-Generator Contributors
 
 # Description: developer email in generated pom.xml
-developerEmail: info@data-intuitive.com # Default: team@openapitools.org
+developerEmail: open-source@lamin.ai # Default: team@openapitools.org
 
 # Description: developer organization in generated pom.xml
-developerOrganization: Data Intuitive BV # Default: OpenAPITools.org
+developerOrganization: Lamin Labs # Default: OpenAPITools.org
 
 # Description: developer organization URL in generated pom.xml
-developerOrganizationUrl: https://www.data-intuitive.com/ # Default: http://openapitools.org
+developerOrganizationUrl: https://lamin.ai/ # Default: http://openapitools.org
 
 # Description: The name of the license
 licenseName: Unlicense

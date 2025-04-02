@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.github.data-intuitive</groupId>
+    <groupId>ai.lamin</groupId>
     <artifactId>lamin-api-client-java</artifactId>
     <packaging>jar</packaging>
     <name>lamin-api-client-java</name>
@@ -24,10 +24,10 @@
 
     <developers>
         <developer>
-            <name>Data Intuitive</name>
-            <email>info@data-intuitive.com</email>
-            <organization>Data Intuitive BV</organization>
-            <organizationUrl>https://www.data-intuitive.com/</organizationUrl>
+            <name>Lamin Labs</name>
+            <email>open-source@lamin.ai</email>
+            <organization>Lamin Labs</organization>
+            <organizationUrl>https://lamin.ai/</organizationUrl>
         </developer>
     </developers>
 

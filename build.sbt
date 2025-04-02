@@ -1,6 +1,6 @@
 lazy val root = (project in file(".")).
   settings(
-    organization := "com.github.data-intuitive",
+    organization := "ai.lamin",
     name := "lamin-api-client-java",
     version := "0.0.1",
     scalaVersion := "2.11.4",

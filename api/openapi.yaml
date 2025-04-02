@@ -3131,7 +3131,8 @@ components:
       title: GetRecordRequestBody
     GetRecordsRequestBody:
       example:
-        filter: "{}"
+        filter:
+          key: ""
         search: ""
         select:
         - select
@@ -3148,8 +3149,8 @@ components:
           nullable: true
           type: array
         filter:
+          additionalProperties: {}
           nullable: true
-          type: object
         order_by:
           items:
             $ref: '#/components/schemas/OrderByColumn'
@@ -3162,7 +3163,8 @@ components:
       title: GetRecordsRequestBody
     GetValuesRequestBody:
       example:
-        filter: "{}"
+        filter:
+          key: ""
         search: ""
         order_by:
         - field: field
@@ -3171,8 +3173,8 @@ components:
           descending: false
       properties:
         filter:
+          additionalProperties: {}
           nullable: true
-          type: object
         order_by:
           items:
             $ref: '#/components/schemas/OrderByColumn'
@@ -3185,7 +3187,8 @@ components:
       title: GetValuesRequestBody
     GroupByRequestBody:
       example:
-        filter: "{}"
+        filter:
+          key: ""
         measures:
         - agg_func: count
           alias: alias
@@ -3208,8 +3211,8 @@ components:
             $ref: '#/components/schemas/Measure'
           type: array
         filter:
+          additionalProperties: {}
           nullable: true
-          type: object
       required:
       - dimensions
       - measures

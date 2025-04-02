@@ -1,3 +1,3 @@
-<manifest package="com.github.data_intuitive.lamin_api_client_java" xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="ai.lamin.lamin_api_client_java" xmlns:android="http://schemas.android.com/apk/res/android">
     <application />
 </manifest>

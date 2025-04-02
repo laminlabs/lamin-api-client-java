@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**dimensions** | [**List&lt;Dimension&gt;**](Dimension.md) |  |  |
 |**measures** | [**List&lt;Measure&gt;**](Measure.md) |  |  |
-|**filter** | **Object** |  |  [optional] |
+|**filter** | **Map&lt;String, Object&gt;** |  |  [optional] |
 
 
 
