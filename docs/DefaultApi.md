@@ -71,11 +71,11 @@ Add a collaborator (account or team) to an instance.  Parameters: - **instance_i
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -136,11 +136,11 @@ Add Collaborator
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -207,11 +207,11 @@ Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -274,11 +274,11 @@ Add a member to a team.  Parameters: - **team_id**: UUID of the team to add the 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -341,11 +341,11 @@ Attach Label
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -418,11 +418,11 @@ Attach a space to a specific instance.  Parameters: - **space_id**: ID of the sp
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -483,11 +483,11 @@ Create Instance
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -554,11 +554,11 @@ Create Record
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -627,11 +627,11 @@ Create a new space.  Parameters: - **body**: Request body containing space detai
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -692,11 +692,11 @@ Create a new team.  Parameters: - **body**: Request body containing team details
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -755,11 +755,11 @@ Delete Collaborator
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -820,11 +820,11 @@ Delete Instance
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -885,11 +885,11 @@ Delete Record
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -958,11 +958,11 @@ Delete a space and detach it from the instance.  Parameters: - **space_id**: ID 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1023,11 +1023,11 @@ Delete a team.  Parameters: - **team_id**: UUID of the team to delete  Returns: 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1086,11 +1086,11 @@ Detach Label
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1163,11 +1163,11 @@ Detach a space from a specific instance.  Parameters: - **space_id**: ID of the 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1230,11 +1230,11 @@ Get a database token for the specified instance.  This token can be used to auth
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1293,11 +1293,11 @@ Get Instance Statistics
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1360,11 +1360,11 @@ Get Non Empty Tables
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1425,11 +1425,11 @@ Get Record
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1502,11 +1502,11 @@ Get Records
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1581,11 +1581,11 @@ Get Relation Counts
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1652,11 +1652,11 @@ Get Relations
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1719,11 +1719,11 @@ Get Schema
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1784,11 +1784,11 @@ Get details of a specific space.  Parameters: - **space_id**: ID of the space to
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1849,11 +1849,11 @@ Get details of a specific team.  Parameters: - **team_id**: UUID of the team to 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1912,11 +1912,11 @@ Get Values
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -1989,11 +1989,11 @@ Grant S3 Permissions
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2058,11 +2058,11 @@ Group By
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2131,11 +2131,11 @@ List all collaborators of an instance.  Parameters: - **instance_id**: UUID of t
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2196,11 +2196,11 @@ List all spaces attached to an instance.  Parameters: - **instance_id**: UUID of
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2261,11 +2261,11 @@ List all instances that have this space attached.  Parameters: - **space_id**: I
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2326,11 +2326,11 @@ List all spaces in an organization.  Parameters: - **organization_id**: UUID of 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2391,11 +2391,11 @@ List all teams in an organization.  Parameters: - **organization_id**: UUID of t
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2456,11 +2456,11 @@ List all collaborators of a space.  Parameters: - **space_id**: ID of the space 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2521,11 +2521,11 @@ List all members of a team.  Parameters: - **team_id**: UUID of the team to list
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2586,11 +2586,11 @@ Move a record to a specific space.  Parameters: - **space_id**: ID of the space 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2655,11 +2655,11 @@ Proxy S3
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2716,11 +2716,11 @@ Proxy S3
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2777,11 +2777,11 @@ Proxy S3
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2838,11 +2838,11 @@ Proxy S3
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2899,11 +2899,11 @@ Proxy S3
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -2962,11 +2962,11 @@ Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of 
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3031,11 +3031,11 @@ Remove a collaborator (account or team) from a space.  Parameters: - **space_id*
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3100,11 +3100,11 @@ Remove a member from a team.  Parameters: - **team_id**: UUID of the team to rem
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3165,11 +3165,11 @@ Transfer Ownership
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3234,11 +3234,11 @@ Update a collaborator&#39;s permissions on an instance.  Parameters: - **instanc
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3299,11 +3299,11 @@ Update Collaborator
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3366,11 +3366,11 @@ Update Record
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3441,11 +3441,11 @@ Update a space&#39;s details.  Parameters: - **space_id**: ID of the space to up
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3508,11 +3508,11 @@ Update a collaborator&#39;s permissions in a space.  Parameters: - **space_id**:
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3575,11 +3575,11 @@ Update a team&#39;s details.  Parameters: - **team_id**: UUID of the team to upd
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {
@@ -3642,11 +3642,11 @@ Update a team member&#39;s details.  Parameters: - **team_id**: UUID of the team
 ### Example
 ```java
 // Import classes:
-import com.data_intuitive.lamin_api_client_java.ApiClient;
-import com.data_intuitive.lamin_api_client_java.ApiException;
-import com.data_intuitive.lamin_api_client_java.Configuration;
-import com.data_intuitive.lamin_api_client_java.models.*;
-import com.data_intuitive.lamin_api_client_java.api.DefaultApi;
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
 
 public class Example {
   public static void main(String[] args) {

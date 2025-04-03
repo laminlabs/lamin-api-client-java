@@ -38,37 +38,37 @@ disallowAdditionalPropertiesIfNotPresent: true
 enumUnknownDefaultCase: false
 
 # Description: package for generated models
-modelPackage: com.data-intuitive.lamin-api-client-java.model # Default: org.openapitools.client.model
+modelPackage: ai.lamin.lamin-api-client.model # Default: org.openapitools.client.model
 
 # Description: package for generated api classes
-apiPackage: com.data-intuitive.lamin-api-client-java.api # Default: org.openapitools.client.api
+apiPackage: ai.lamin.lamin-api-client.api # Default: org.openapitools.client.api
 
 # Description: root package for generated code
-invokerPackage: com.data-intuitive.lamin-api-client-java # Default: org.openapitools.client
+invokerPackage: ai.lamin.lamin-api-client # Default: org.openapitools.client
 
 # Description: groupId in generated pom.xml
-groupId: com.data-intuitive # Default: org.openapitools
+groupId: ai.lamin # Default: org.openapitools
 
 # Description: artifactId in generated pom.xml. This also becomes part of the generated library's filename
-artifactId: lamin-api-client-java
+artifactId: lamin-api-client
 
 # Description: artifact version in generated pom.xml. This also becomes part of the generated library's filename. If not provided, uses the version from the OpenAPI specification file. If that's also not present, uses the default value of the artifactVersion option.
 artifactVersion: 0.0.1
 
 # Description: artifact URL in generated pom.xml
-artifactUrl: https://github.com/data-intuitive/lamin-api-client-java
+artifactUrl: https://github.com/laminlabs/lamin-api-client-java
 
 # Description: artifact description in generated pom.xml
 artifactDescription: Java client for the Lamin API # Default: OpenAPI Java
 
 # Description: SCM connection in generated pom.xml
-scmConnection: scm:git:git@github.com:data-intuitive/lamin-api-client-java.git # Default: scm:git:git@github.com:openapitools/openapi-generator.git
+scmConnection: scm:git:git@github.com:laminlabs/lamin-api-client-java.git # Default: scm:git:git@github.com:openapitools/openapi-generator.git
 
 # Description: SCM developer connection in generated pom.xml
-scmDeveloperConnection: scm:git:git@github.com:data-intuitive/lamin-api-client-java.git # Default: scm:git:git@github.com:openapitools/openapi-generator.git
+scmDeveloperConnection: scm:git:git@github.com:laminlabs/lamin-api-client-java.git # Default: scm:git:git@github.com:openapitools/openapi-generator.git
 
 # Description: SCM URL in generated pom.xml
-scmUrl: https://github.com/data-intuitive/lamin-api-client-java # Default: https://github.com/openapitools/openapi-generator
+scmUrl: https://github.com/laminlabs/lamin-api-client-java # Default: https://github.com/openapitools/openapi-generator
 
 # Description: developer name in generated pom.xml
 developerName: Lamin Labs # Default: OpenAPI-Generator Contributors
