@@ -1,5 +1,8 @@
 # lamin-api-client-java
 
+![Maven Central Version](https://img.shields.io/maven-central/v/ai.lamin/lamin-api-client)
+[![javadoc](https://javadoc.io/badge2/ai.lamin/lamin-api-client/javadoc.svg)](https://javadoc.io/doc/ai.lamin/lamin-api-client) 
+
 Lamin API
 - API version: 0.1.0
   - Build date: 2025-04-03T14:57:42.729190705+02:00[Europe/Brussels]
