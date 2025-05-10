@@ -13,7 +13,6 @@
 
 package ai.lamin.lamin_api_client.model;
 
-import ai.lamin.lamin_api_client.model.Role;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,29 +20,47 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for AddTeamMemberRequestBody
+ * Model tests for RegisterFormRequest
  */
-public class AddTeamMemberRequestBodyTest {
-    private final AddTeamMemberRequestBody model = new AddTeamMemberRequestBody();
+public class RegisterFormRequestTest {
+    private final RegisterFormRequest model = new RegisterFormRequest();
 
     /**
-     * Model tests for AddTeamMemberRequestBody
+     * Model tests for RegisterFormRequest
      */
     @Test
-    public void testAddTeamMemberRequestBody() {
-        // TODO: test AddTeamMemberRequestBody
+    public void testRegisterFormRequest() {
+        // TODO: test RegisterFormRequest
     }
 
     /**
-     * Test the property 'role'
+     * Test the property 'key'
      */
     @Test
-    public void roleTest() {
-        // TODO: test role
+    public void keyTest() {
+        // TODO: test key
+    }
+
+    /**
+     * Test the property 'data'
+     */
+    @Test
+    public void dataTest() {
+        // TODO: test data
+    }
+
+    /**
+     * Test the property 'schemaUid'
+     */
+    @Test
+    public void schemaUidTest() {
+        // TODO: test schemaUid
     }
 
 }

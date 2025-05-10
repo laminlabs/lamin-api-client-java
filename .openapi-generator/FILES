@@ -7,6 +7,7 @@ docs/AddTeamMemberRequestBody.md
 docs/AttachSpaceToRecordRequestBody.md
 docs/CreateSpaceRequestBody.md
 docs/CreateTeamRequestBody.md
+docs/DbUrlRequest.md
 docs/DefaultApi.md
 docs/Dimension.md
 docs/GetRecordRequestBody.md
@@ -16,6 +17,10 @@ docs/GroupByRequestBody.md
 docs/HTTPValidationError.md
 docs/Measure.md
 docs/OrderByColumn.md
+docs/RegisterDbServerBody.md
+docs/RegisterFormRequest.md
+docs/Role.md
+docs/Role1.md
 docs/S3PermissionsRequest.md
 docs/UpdateCollaboratorRequestBody.md
 docs/UpdateSpaceCollaboratorRequestBody.md
@@ -53,6 +58,7 @@ src/main/java/ai/lamin/lamin_api_client/model/AddTeamMemberRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/AttachSpaceToRecordRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateSpaceRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateTeamRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/DbUrlRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/Dimension.java
 src/main/java/ai/lamin/lamin_api_client/model/GetRecordRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/GetRecordsRequestBody.java
@@ -61,6 +67,10 @@ src/main/java/ai/lamin/lamin_api_client/model/GroupByRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/HTTPValidationError.java
 src/main/java/ai/lamin/lamin_api_client/model/Measure.java
 src/main/java/ai/lamin/lamin_api_client/model/OrderByColumn.java
+src/main/java/ai/lamin/lamin_api_client/model/RegisterDbServerBody.java
+src/main/java/ai/lamin/lamin_api_client/model/RegisterFormRequest.java
+src/main/java/ai/lamin/lamin_api_client/model/Role.java
+src/main/java/ai/lamin/lamin_api_client/model/Role1.java
 src/main/java/ai/lamin/lamin_api_client/model/S3PermissionsRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateCollaboratorRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateSpaceCollaboratorRequestBody.java

@@ -46,58 +46,34 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * OrderByColumn
+ * DbUrlRequest
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-10T19:58:41.182141089+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class OrderByColumn {
-  public static final String SERIALIZED_NAME_FIELD = "field";
-  @SerializedName(SERIALIZED_NAME_FIELD)
+public class DbUrlRequest {
+  public static final String SERIALIZED_NAME_DB_URL = "db_url";
+  @SerializedName(SERIALIZED_NAME_DB_URL)
   @javax.annotation.Nonnull
-  private String field;
+  private String dbUrl;
 
-  public static final String SERIALIZED_NAME_DESCENDING = "descending";
-  @SerializedName(SERIALIZED_NAME_DESCENDING)
-  @javax.annotation.Nullable
-  private Boolean descending = false;
-
-  public OrderByColumn() {
+  public DbUrlRequest() {
   }
 
-  public OrderByColumn field(@javax.annotation.Nonnull String field) {
-    this.field = field;
+  public DbUrlRequest dbUrl(@javax.annotation.Nonnull String dbUrl) {
+    this.dbUrl = dbUrl;
     return this;
   }
 
   /**
-   * Get field
-   * @return field
+   * Get dbUrl
+   * @return dbUrl
    */
   @javax.annotation.Nonnull
-  public String getField() {
-    return field;
+  public String getDbUrl() {
+    return dbUrl;
   }
 
-  public void setField(@javax.annotation.Nonnull String field) {
-    this.field = field;
-  }
-
-
-  public OrderByColumn descending(@javax.annotation.Nullable Boolean descending) {
-    this.descending = descending;
-    return this;
-  }
-
-  /**
-   * Get descending
-   * @return descending
-   */
-  @javax.annotation.Nullable
-  public Boolean getDescending() {
-    return descending;
-  }
-
-  public void setDescending(@javax.annotation.Nullable Boolean descending) {
-    this.descending = descending;
+  public void setDbUrl(@javax.annotation.Nonnull String dbUrl) {
+    this.dbUrl = dbUrl;
   }
 
 
@@ -110,22 +86,20 @@ public class OrderByColumn {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderByColumn orderByColumn = (OrderByColumn) o;
-    return Objects.equals(this.field, orderByColumn.field) &&
-        Objects.equals(this.descending, orderByColumn.descending);
+    DbUrlRequest dbUrlRequest = (DbUrlRequest) o;
+    return Objects.equals(this.dbUrl, dbUrlRequest.dbUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(field, descending);
+    return Objects.hash(dbUrl);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderByColumn {\n");
-    sb.append("    field: ").append(toIndentedString(field)).append("\n");
-    sb.append("    descending: ").append(toIndentedString(descending)).append("\n");
+    sb.append("class DbUrlRequest {\n");
+    sb.append("    dbUrl: ").append(toIndentedString(dbUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -148,44 +122,43 @@ public class OrderByColumn {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("field");
-    openapiFields.add("descending");
+    openapiFields.add("db_url");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("field");
+    openapiRequiredFields.add("db_url");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to OrderByColumn
+   * @throws IOException if the JSON Element is invalid with respect to DbUrlRequest
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!OrderByColumn.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OrderByColumn is not found in the empty JSON string", OrderByColumn.openapiRequiredFields.toString()));
+        if (!DbUrlRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in DbUrlRequest is not found in the empty JSON string", DbUrlRequest.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!OrderByColumn.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OrderByColumn` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!DbUrlRequest.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DbUrlRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : OrderByColumn.openapiRequiredFields) {
+      for (String requiredField : DbUrlRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("field").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field").toString()));
+      if (!jsonObj.get("db_url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `db_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("db_url").toString()));
       }
   }
 
@@ -193,22 +166,22 @@ public class OrderByColumn {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OrderByColumn.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OrderByColumn' and its subtypes
+       if (!DbUrlRequest.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'DbUrlRequest' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OrderByColumn> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OrderByColumn.class));
+       final TypeAdapter<DbUrlRequest> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(DbUrlRequest.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<OrderByColumn>() {
+       return (TypeAdapter<T>) new TypeAdapter<DbUrlRequest>() {
            @Override
-           public void write(JsonWriter out, OrderByColumn value) throws IOException {
+           public void write(JsonWriter out, DbUrlRequest value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public OrderByColumn read(JsonReader in) throws IOException {
+           public DbUrlRequest read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -219,18 +192,18 @@ public class OrderByColumn {
   }
 
   /**
-   * Create an instance of OrderByColumn given an JSON string
+   * Create an instance of DbUrlRequest given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of OrderByColumn
-   * @throws IOException if the JSON string is invalid with respect to OrderByColumn
+   * @return An instance of DbUrlRequest
+   * @throws IOException if the JSON string is invalid with respect to DbUrlRequest
    */
-  public static OrderByColumn fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OrderByColumn.class);
+  public static DbUrlRequest fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, DbUrlRequest.class);
   }
 
   /**
-   * Convert an instance of OrderByColumn to an JSON string
+   * Convert an instance of DbUrlRequest to an JSON string
    *
    * @return JSON string
    */

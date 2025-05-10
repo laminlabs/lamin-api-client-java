@@ -42,14 +42,6 @@ paths:
           nullable: true
           type: string
         style: form
-      - explode: true
-        in: query
-        name: db_server_url
-        required: false
-        schema:
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1543,7 +1535,6 @@ paths:
         Returns:
         - **200**: Collaborator removed successfully
         - **400**: Invalid input (e.g., both account_id and team_id provided)
-        - **404**: Collaborator not found
 
         Requires admin access to the instance
       operationId: remove_collaborator_access_v2_instances__instance_id__collaborators_delete
@@ -1607,7 +1598,6 @@ paths:
 
         Returns:
         - **200**: List of instance collaborators retrieved successfully
-        - **404**: Instance not found
 
         Requires read access to the instance
       operationId: list_collaborators_access_v2_instances__instance_id__collaborators_get
@@ -1658,7 +1648,6 @@ paths:
         Returns:
         - **200**: Collaborator updated successfully
         - **400**: Invalid input (e.g., both account_id and team_id provided)
-        - **404**: Collaborator not found
 
         Requires admin access to the instance
       operationId: update_collaborator_access_v2_instances__instance_id__collaborators_patch
@@ -1823,8 +1812,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: header
@@ -1866,8 +1856,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: header
@@ -1911,8 +1902,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: header
@@ -1964,14 +1956,14 @@ paths:
         Requires admin access to the instance
       operationId: move_record_to_space_access_v2_spaces__space_id__record_attachments_put
       parameters:
-      - explode: false
-        in: path
-        name: space_id
+      - explode: true
+        in: query
+        name: instance_db_space_id
         required: true
         schema:
-          title: Space Id
+          title: Instance Db Space Id
           type: integer
-        style: simple
+        style: form
       - explode: true
         in: query
         name: instance_id
@@ -2040,8 +2032,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: path
@@ -2094,8 +2087,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: path
@@ -2146,8 +2140,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: header
@@ -2236,8 +2231,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: true
         in: query
@@ -2296,8 +2292,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: header
@@ -2344,8 +2341,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: header
@@ -2398,8 +2396,9 @@ paths:
         name: space_id
         required: true
         schema:
+          format: uuid
           title: Space Id
-          type: integer
+          type: string
         style: simple
       - explode: false
         in: header
@@ -2977,6 +2976,287 @@ paths:
       summary: Get Db Token
       x-accepts:
       - application/json
+  /instances/{instance_id}/{entity_type}:
+    get:
+      operationId: list_directory_instances__instance_id___entity_type__get
+      parameters:
+      - explode: false
+        in: path
+        name: entity_type
+        required: true
+        schema:
+          enum:
+          - artifact
+          - transform
+          title: Entity Type
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: path
+        required: false
+        schema:
+          default: ""
+          title: Path
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Directory
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/tree:
+    get:
+      operationId: get_tree_instances__instance_id__tree_get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: entity_type
+        required: true
+        schema:
+          enum:
+          - artifact
+          - transform
+          title: Entity Type
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Tree
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/forms:
+    post:
+      description: |-
+        Register a form for a specific instance.
+
+        Parameters:
+        - **body**: Request body containing form details
+          - **key**: Key of the form
+          - **data**: Form data
+          - **schema_uid**: UID of the schema
+
+        Returns:
+        - **201**: Form registered successfully
+      operationId: register_form_instances__instance_id__forms_post
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterFormRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Register Form
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /_debug/ip:
+    get:
+      operationId: get_ip__debug_ip_get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      summary: Get Ip
+      x-accepts:
+      - application/json
+  /_debug/db-access:
+    post:
+      operationId: check_db_access__debug_db_access_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DbUrlRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Check Db Access
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /db/server/register:
+    post:
+      operationId: register_db_server_db_server_register_post
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterDbServerBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Register Db Server
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /db/server/check-access:
+    post:
+      operationId: check_db_server_access_db_server_check_access_post
+      parameters:
+      - explode: true
+        in: query
+        name: name
+        required: true
+        schema:
+          title: Name
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Check Db Server Access
+      x-accepts:
+      - application/json
 components:
   schemas:
     AddCollaboratorRequestBody:
@@ -3027,15 +3307,10 @@ components:
       title: AddSpaceCollaboratorRequestBody
     AddTeamMemberRequestBody:
       example:
-        role: member
+        role: admin
       properties:
         role:
-          default: member
-          enum:
-          - admin
-          - member
-          title: Role
-          type: string
+          $ref: '#/components/schemas/Role'
       title: AddTeamMemberRequestBody
     AttachSpaceToRecordRequestBody:
       example:
@@ -3097,6 +3372,16 @@ components:
       - name
       - organization_id
       title: CreateTeamRequestBody
+    DbUrlRequest:
+      example:
+        db_url: db_url
+      properties:
+        db_url:
+          title: Db Url
+          type: string
+      required:
+      - db_url
+      title: DbUrlRequest
     Dimension:
       example:
         func: count
@@ -3276,6 +3561,47 @@ components:
       required:
       - field
       title: OrderByColumn
+    RegisterDbServerBody:
+      example:
+        name: name
+        api_server_name: api_server_name
+        url: url
+      properties:
+        name:
+          title: Name
+          type: string
+        url:
+          title: Url
+          type: string
+        api_server_name:
+          title: Api Server Name
+          type: string
+      required:
+      - api_server_name
+      - name
+      - url
+      title: RegisterDbServerBody
+    RegisterFormRequest:
+      example:
+        data:
+          key: ""
+        schema_uid: schema_uid
+        key: key
+      properties:
+        key:
+          title: Key
+          type: string
+        data:
+          additionalProperties: {}
+          title: Data
+        schema_uid:
+          title: Schema Uid
+          type: string
+      required:
+      - data
+      - key
+      - schema_uid
+      title: RegisterFormRequest
     S3PermissionsRequest:
       example:
         aws_access_key_id: aws_access_key_id
@@ -3359,11 +3685,7 @@ components:
         role: admin
       properties:
         role:
-          enum:
-          - admin
-          - member
-          title: Role
-          type: string
+          $ref: '#/components/schemas/Role_1'
       required:
       - role
       title: UpdateTeamMemberRequestBody
@@ -3402,6 +3724,31 @@ components:
       - msg
       - type
       title: ValidationError
+    Role:
+      anyOf:
+      - enum:
+        - admin
+        - member
+        type: string
+      - enum:
+        - admin
+        - member
+        - manager
+        type: string
+      default: member
+      title: Role
+    Role_1:
+      anyOf:
+      - enum:
+        - admin
+        - member
+        type: string
+      - enum:
+        - admin
+        - member
+        - manager
+        type: string
+      title: Role
     ValidationError_loc_inner:
       anyOf:
       - type: string

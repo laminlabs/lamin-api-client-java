@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,29 +46,29 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * CreateTeamRequestBody
+ * RegisterDbServerBody
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-10T19:58:41.182141089+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class CreateTeamRequestBody {
+public class RegisterDbServerBody {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @javax.annotation.Nonnull
   private String name;
 
-  public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
-  @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   @javax.annotation.Nonnull
-  private UUID organizationId;
+  private String url;
 
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
-  private String description;
+  public static final String SERIALIZED_NAME_API_SERVER_NAME = "api_server_name";
+  @SerializedName(SERIALIZED_NAME_API_SERVER_NAME)
+  @javax.annotation.Nonnull
+  private String apiServerName;
 
-  public CreateTeamRequestBody() {
+  public RegisterDbServerBody() {
   }
 
-  public CreateTeamRequestBody name(@javax.annotation.Nonnull String name) {
+  public RegisterDbServerBody name(@javax.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -89,41 +87,41 @@ public class CreateTeamRequestBody {
   }
 
 
-  public CreateTeamRequestBody organizationId(@javax.annotation.Nonnull UUID organizationId) {
-    this.organizationId = organizationId;
+  public RegisterDbServerBody url(@javax.annotation.Nonnull String url) {
+    this.url = url;
     return this;
   }
 
   /**
-   * Get organizationId
-   * @return organizationId
+   * Get url
+   * @return url
    */
   @javax.annotation.Nonnull
-  public UUID getOrganizationId() {
-    return organizationId;
+  public String getUrl() {
+    return url;
   }
 
-  public void setOrganizationId(@javax.annotation.Nonnull UUID organizationId) {
-    this.organizationId = organizationId;
+  public void setUrl(@javax.annotation.Nonnull String url) {
+    this.url = url;
   }
 
 
-  public CreateTeamRequestBody description(@javax.annotation.Nullable String description) {
-    this.description = description;
+  public RegisterDbServerBody apiServerName(@javax.annotation.Nonnull String apiServerName) {
+    this.apiServerName = apiServerName;
     return this;
   }
 
   /**
-   * Get description
-   * @return description
+   * Get apiServerName
+   * @return apiServerName
    */
-  @javax.annotation.Nullable
-  public String getDescription() {
-    return description;
+  @javax.annotation.Nonnull
+  public String getApiServerName() {
+    return apiServerName;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
-    this.description = description;
+  public void setApiServerName(@javax.annotation.Nonnull String apiServerName) {
+    this.apiServerName = apiServerName;
   }
 
 
@@ -136,35 +134,24 @@ public class CreateTeamRequestBody {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    CreateTeamRequestBody createTeamRequestBody = (CreateTeamRequestBody) o;
-    return Objects.equals(this.name, createTeamRequestBody.name) &&
-        Objects.equals(this.organizationId, createTeamRequestBody.organizationId) &&
-        Objects.equals(this.description, createTeamRequestBody.description);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    RegisterDbServerBody registerDbServerBody = (RegisterDbServerBody) o;
+    return Objects.equals(this.name, registerDbServerBody.name) &&
+        Objects.equals(this.url, registerDbServerBody.url) &&
+        Objects.equals(this.apiServerName, registerDbServerBody.apiServerName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, organizationId, description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, url, apiServerName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class CreateTeamRequestBody {\n");
+    sb.append("class RegisterDbServerBody {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    url: ").append(toIndentedString(url)).append("\n");
+    sb.append("    apiServerName: ").append(toIndentedString(apiServerName)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,38 +175,39 @@ public class CreateTeamRequestBody {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
-    openapiFields.add("organization_id");
-    openapiFields.add("description");
+    openapiFields.add("url");
+    openapiFields.add("api_server_name");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("organization_id");
+    openapiRequiredFields.add("url");
+    openapiRequiredFields.add("api_server_name");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to CreateTeamRequestBody
+   * @throws IOException if the JSON Element is invalid with respect to RegisterDbServerBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!CreateTeamRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateTeamRequestBody is not found in the empty JSON string", CreateTeamRequestBody.openapiRequiredFields.toString()));
+        if (!RegisterDbServerBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in RegisterDbServerBody is not found in the empty JSON string", RegisterDbServerBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!CreateTeamRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateTeamRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!RegisterDbServerBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `RegisterDbServerBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : CreateTeamRequestBody.openapiRequiredFields) {
+      for (String requiredField : RegisterDbServerBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
@@ -228,11 +216,11 @@ public class CreateTeamRequestBody {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if (!jsonObj.get("organization_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
+      if (!jsonObj.get("url").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("url").toString()));
       }
-      if ((jsonObj.get("description") != null && !jsonObj.get("description").isJsonNull()) && !jsonObj.get("description").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      if (!jsonObj.get("api_server_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `api_server_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_server_name").toString()));
       }
   }
 
@@ -240,22 +228,22 @@ public class CreateTeamRequestBody {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!CreateTeamRequestBody.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'CreateTeamRequestBody' and its subtypes
+       if (!RegisterDbServerBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'RegisterDbServerBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<CreateTeamRequestBody> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(CreateTeamRequestBody.class));
+       final TypeAdapter<RegisterDbServerBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(RegisterDbServerBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<CreateTeamRequestBody>() {
+       return (TypeAdapter<T>) new TypeAdapter<RegisterDbServerBody>() {
            @Override
-           public void write(JsonWriter out, CreateTeamRequestBody value) throws IOException {
+           public void write(JsonWriter out, RegisterDbServerBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public CreateTeamRequestBody read(JsonReader in) throws IOException {
+           public RegisterDbServerBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -266,18 +254,18 @@ public class CreateTeamRequestBody {
   }
 
   /**
-   * Create an instance of CreateTeamRequestBody given an JSON string
+   * Create an instance of RegisterDbServerBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of CreateTeamRequestBody
-   * @throws IOException if the JSON string is invalid with respect to CreateTeamRequestBody
+   * @return An instance of RegisterDbServerBody
+   * @throws IOException if the JSON string is invalid with respect to RegisterDbServerBody
    */
-  public static CreateTeamRequestBody fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, CreateTeamRequestBody.class);
+  public static RegisterDbServerBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, RegisterDbServerBody.class);
   }
 
   /**
-   * Convert an instance of CreateTeamRequestBody to an JSON string
+   * Convert an instance of RegisterDbServerBody to an JSON string
    *
    * @return JSON string
    */
