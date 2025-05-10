@@ -13,7 +13,6 @@
 
 package ai.lamin.lamin_api_client.model;
 
-import ai.lamin.lamin_api_client.model.Role;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -25,25 +24,25 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for AddTeamMemberRequestBody
+ * Model tests for DbUrlRequest
  */
-public class AddTeamMemberRequestBodyTest {
-    private final AddTeamMemberRequestBody model = new AddTeamMemberRequestBody();
+public class DbUrlRequestTest {
+    private final DbUrlRequest model = new DbUrlRequest();
 
     /**
-     * Model tests for AddTeamMemberRequestBody
+     * Model tests for DbUrlRequest
      */
     @Test
-    public void testAddTeamMemberRequestBody() {
-        // TODO: test AddTeamMemberRequestBody
+    public void testDbUrlRequest() {
+        // TODO: test DbUrlRequest
     }
 
     /**
-     * Test the property 'role'
+     * Test the property 'dbUrl'
      */
     @Test
-    public void roleTest() {
-        // TODO: test role
+    public void dbUrlTest() {
+        // TODO: test dbUrl
     }
 
 }

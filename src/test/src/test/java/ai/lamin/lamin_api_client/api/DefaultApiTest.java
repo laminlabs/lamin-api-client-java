@@ -20,11 +20,14 @@ import ai.lamin.lamin_api_client.model.AddTeamMemberRequestBody;
 import ai.lamin.lamin_api_client.model.AttachSpaceToRecordRequestBody;
 import ai.lamin.lamin_api_client.model.CreateSpaceRequestBody;
 import ai.lamin.lamin_api_client.model.CreateTeamRequestBody;
+import ai.lamin.lamin_api_client.model.DbUrlRequest;
 import ai.lamin.lamin_api_client.model.GetRecordRequestBody;
 import ai.lamin.lamin_api_client.model.GetRecordsRequestBody;
 import ai.lamin.lamin_api_client.model.GetValuesRequestBody;
 import ai.lamin.lamin_api_client.model.GroupByRequestBody;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
+import ai.lamin.lamin_api_client.model.RegisterDbServerBody;
+import ai.lamin.lamin_api_client.model.RegisterFormRequest;
 import ai.lamin.lamin_api_client.model.S3PermissionsRequest;
 import java.util.UUID;
 import ai.lamin.lamin_api_client.model.UpdateCollaboratorRequestBody;
@@ -89,7 +92,7 @@ public class DefaultApiTest {
      */
     @Test
     public void addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody = null;
         String authorization = null;
         Object response = api.addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPut(spaceId, addSpaceCollaboratorRequestBody, authorization);
@@ -141,10 +144,35 @@ public class DefaultApiTest {
      */
     @Test
     public void attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         UUID instanceId = null;
         String authorization = null;
         Object response = api.attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPut(spaceId, instanceId, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Check Db Access
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void checkDbAccessDebugDbAccessPostTest() throws ApiException {
+        DbUrlRequest dbUrlRequest = null;
+        Object response = api.checkDbAccessDebugDbAccessPost(dbUrlRequest);
+        // TODO: test validations
+    }
+
+    /**
+     * Check Db Server Access
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void checkDbServerAccessDbServerCheckAccessPostTest() throws ApiException {
+        String name = null;
+        String authorization = null;
+        Object response = api.checkDbServerAccessDbServerCheckAccessPost(name, authorization);
         // TODO: test validations
     }
 
@@ -159,9 +187,8 @@ public class DefaultApiTest {
         String storage = null;
         String schemaStr = null;
         String dbServerKey = null;
-        String dbServerUrl = null;
         String authorization = null;
-        Object response = api.createInstanceInstancesPut(name, storage, schemaStr, dbServerKey, dbServerUrl, authorization);
+        Object response = api.createInstanceInstancesPut(name, storage, schemaStr, dbServerKey, authorization);
         // TODO: test validations
     }
 
@@ -266,7 +293,7 @@ public class DefaultApiTest {
      */
     @Test
     public void deleteSpaceAccessV2SpacesSpaceIdDeleteTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         String authorization = null;
         Object response = api.deleteSpaceAccessV2SpacesSpaceIdDelete(spaceId, authorization);
         // TODO: test validations
@@ -315,7 +342,7 @@ public class DefaultApiTest {
      */
     @Test
     public void detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         UUID instanceId = null;
         String authorization = null;
         Object response = api.detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDelete(spaceId, instanceId, authorization);
@@ -349,6 +376,17 @@ public class DefaultApiTest {
         UUID schemaId = null;
         String authorization = null;
         Object response = api.getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, schemaId, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Get Ip
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getIpDebugIpGetTest() throws ApiException {
+        Object response = api.getIpDebugIpGet();
         // TODO: test validations
     }
 
@@ -461,7 +499,7 @@ public class DefaultApiTest {
      */
     @Test
     public void getSpaceAccessV2SpacesSpaceIdGetTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         String authorization = null;
         Object response = api.getSpaceAccessV2SpacesSpaceIdGet(spaceId, authorization);
         // TODO: test validations
@@ -479,6 +517,21 @@ public class DefaultApiTest {
         UUID teamId = null;
         String authorization = null;
         Object response = api.getTeamAccessV2TeamsTeamIdGet(teamId, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Get Tree
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getTreeInstancesInstanceIdTreeGetTest() throws ApiException {
+        UUID instanceId = null;
+        String entityType = null;
+        UUID schemaId = null;
+        String authorization = null;
+        Object response = api.getTreeInstancesInstanceIdTreeGet(instanceId, entityType, schemaId, authorization);
         // TODO: test validations
     }
 
@@ -538,7 +591,7 @@ public class DefaultApiTest {
     /**
      * List Collaborators
      *
-     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully - **404**: Instance not found  Requires read access to the instance
+     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
      *
      * @throws ApiException if the Api call fails
      */
@@ -547,6 +600,22 @@ public class DefaultApiTest {
         UUID instanceId = null;
         String authorization = null;
         Object response = api.listCollaboratorsAccessV2InstancesInstanceIdCollaboratorsGet(instanceId, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * List Directory
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listDirectoryInstancesInstanceIdEntityTypeGetTest() throws ApiException {
+        String entityType = null;
+        UUID instanceId = null;
+        String path = null;
+        UUID schemaId = null;
+        String authorization = null;
+        Object response = api.listDirectoryInstancesInstanceIdEntityTypeGet(entityType, instanceId, path, schemaId, authorization);
         // TODO: test validations
     }
 
@@ -574,7 +643,7 @@ public class DefaultApiTest {
      */
     @Test
     public void listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         String authorization = null;
         Object response = api.listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGet(spaceId, authorization);
         // TODO: test validations
@@ -619,7 +688,7 @@ public class DefaultApiTest {
      */
     @Test
     public void listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         String authorization = null;
         Object response = api.listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet(spaceId, authorization);
         // TODO: test validations
@@ -649,12 +718,12 @@ public class DefaultApiTest {
      */
     @Test
     public void moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutTest() throws ApiException {
-        Integer spaceId = null;
+        Integer instanceDbSpaceId = null;
         AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody = null;
         UUID instanceId = null;
         UUID schemaId = null;
         String authorization = null;
-        Object response = api.moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(spaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization);
+        Object response = api.moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization);
         // TODO: test validations
     }
 
@@ -719,9 +788,38 @@ public class DefaultApiTest {
     }
 
     /**
+     * Register Db Server
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void registerDbServerDbServerRegisterPostTest() throws ApiException {
+        RegisterDbServerBody registerDbServerBody = null;
+        String authorization = null;
+        Object response = api.registerDbServerDbServerRegisterPost(registerDbServerBody, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Register Form
+     *
+     * Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **201**: Form registered successfully
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void registerFormInstancesInstanceIdFormsPostTest() throws ApiException {
+        UUID instanceId = null;
+        RegisterFormRequest registerFormRequest = null;
+        String authorization = null;
+        Object response = api.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, authorization);
+        // TODO: test validations
+    }
+
+    /**
      * Remove Collaborator
      *
-     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      *
      * @throws ApiException if the Api call fails
      */
@@ -744,7 +842,7 @@ public class DefaultApiTest {
      */
     @Test
     public void removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         UUID accountId = null;
         UUID teamId = null;
         String authorization = null;
@@ -786,7 +884,7 @@ public class DefaultApiTest {
     /**
      * Update Collaborator
      *
-     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      *
      * @throws ApiException if the Api call fails
      */
@@ -841,7 +939,7 @@ public class DefaultApiTest {
      */
     @Test
     public void updateSpaceAccessV2SpacesSpaceIdPatchTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         UpdateSpaceRequestBody updateSpaceRequestBody = null;
         String authorization = null;
         Object response = api.updateSpaceAccessV2SpacesSpaceIdPatch(spaceId, updateSpaceRequestBody, authorization);
@@ -857,7 +955,7 @@ public class DefaultApiTest {
      */
     @Test
     public void updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchTest() throws ApiException {
-        Integer spaceId = null;
+        UUID spaceId = null;
         UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody = null;
         String authorization = null;
         Object response = api.updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatch(spaceId, updateSpaceCollaboratorRequestBody, authorization);

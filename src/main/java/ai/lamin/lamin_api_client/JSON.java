@@ -99,6 +99,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.AttachSpaceToRecordRequestBody.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.CreateSpaceRequestBody.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.CreateTeamRequestBody.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.DbUrlRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.Dimension.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.GetRecordRequestBody.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.GetRecordsRequestBody.CustomTypeAdapterFactory());
@@ -107,6 +108,10 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.HTTPValidationError.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.Measure.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.OrderByColumn.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.RegisterDbServerBody.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.RegisterFormRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.Role.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.Role1.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.S3PermissionsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.UpdateCollaboratorRequestBody.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.UpdateSpaceCollaboratorRequestBody.CustomTypeAdapterFactory());

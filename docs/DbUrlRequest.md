@@ -1,13 +1,13 @@
 
 
-# AddTeamMemberRequestBody
+# DbUrlRequest
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**role** | [**Role**](Role.md) |  |  [optional] |
+|**dbUrl** | **String** |  |  |
 
 
 

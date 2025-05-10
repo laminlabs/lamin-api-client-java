@@ -10,6 +10,8 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 | [**addTeamMemberAccessV2TeamsTeamIdMembersAccountIdPut**](DefaultApi.md#addTeamMemberAccessV2TeamsTeamIdMembersAccountIdPut) | **PUT** /access_v2/teams/{team_id}/members/{account_id} | Add Team Member |
 | [**attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut**](DefaultApi.md#attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name}/{id}/{label_field}/{label_id} | Attach Label |
 | [**attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPut**](DefaultApi.md#attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPut) | **PUT** /access_v2/spaces/{space_id}/instances/{instance_id} | Attach Space To Instance |
+| [**checkDbAccessDebugDbAccessPost**](DefaultApi.md#checkDbAccessDebugDbAccessPost) | **POST** /_debug/db-access | Check Db Access |
+| [**checkDbServerAccessDbServerCheckAccessPost**](DefaultApi.md#checkDbServerAccessDbServerCheckAccessPost) | **POST** /db/server/check-access | Check Db Server Access |
 | [**createInstanceInstancesPut**](DefaultApi.md#createInstanceInstancesPut) | **PUT** /instances | Create Instance |
 | [**createRecordInstancesInstanceIdModulesModuleNameModelNamePut**](DefaultApi.md#createRecordInstancesInstanceIdModulesModuleNameModelNamePut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name} | Create Record |
 | [**createSpaceAccessV2SpacesPut**](DefaultApi.md#createSpaceAccessV2SpacesPut) | **PUT** /access_v2/spaces | Create Space |
@@ -23,6 +25,7 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 | [**detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDelete**](DefaultApi.md#detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDelete) | **DELETE** /access_v2/spaces/{space_id}/instances/{instance_id} | Detach Space From Instance |
 | [**getDbTokenAccessV2InstancesInstanceIdDbTokenGet**](DefaultApi.md#getDbTokenAccessV2InstancesInstanceIdDbTokenGet) | **GET** /access_v2/instances/{instance_id}/db_token | Get Db Token |
 | [**getInstanceStatisticsInstancesInstanceIdStatisticsGet**](DefaultApi.md#getInstanceStatisticsInstancesInstanceIdStatisticsGet) | **GET** /instances/{instance_id}/statistics | Get Instance Statistics |
+| [**getIpDebugIpGet**](DefaultApi.md#getIpDebugIpGet) | **GET** /_debug/ip | Get Ip |
 | [**getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet**](DefaultApi.md#getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet) | **GET** /instances/{instance_id}/non_empty_tables | Get Non Empty Tables |
 | [**getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost**](DefaultApi.md#getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost) | **POST** /instances/{instance_id}/modules/{module_name}/{model_name}/{id_or_uid} | Get Record |
 | [**getRecordsInstancesInstanceIdModulesModuleNameModelNamePost**](DefaultApi.md#getRecordsInstancesInstanceIdModulesModuleNameModelNamePost) | **POST** /instances/{instance_id}/modules/{module_name}/{model_name} | Get Records |
@@ -31,10 +34,12 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 | [**getSchemaInstancesInstanceIdSchemaGet**](DefaultApi.md#getSchemaInstancesInstanceIdSchemaGet) | **GET** /instances/{instance_id}/schema | Get Schema |
 | [**getSpaceAccessV2SpacesSpaceIdGet**](DefaultApi.md#getSpaceAccessV2SpacesSpaceIdGet) | **GET** /access_v2/spaces/{space_id} | Get Space |
 | [**getTeamAccessV2TeamsTeamIdGet**](DefaultApi.md#getTeamAccessV2TeamsTeamIdGet) | **GET** /access_v2/teams/{team_id} | Get Team |
+| [**getTreeInstancesInstanceIdTreeGet**](DefaultApi.md#getTreeInstancesInstanceIdTreeGet) | **GET** /instances/{instance_id}/tree | Get Tree |
 | [**getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost**](DefaultApi.md#getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost) | **POST** /instances/{instance_id}/modules/{module_name}/{model_name}/fields/{field_path} | Get Values |
 | [**grantS3PermissionsStoragesS3BucketNamePermissionsPut**](DefaultApi.md#grantS3PermissionsStoragesS3BucketNamePermissionsPut) | **PUT** /storages/s3/{bucket_name}/permissions | Grant S3 Permissions |
 | [**groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost**](DefaultApi.md#groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost) | **POST** /instances/{instance_id}/modules/{module_name}/{model_name}/group-by | Group By |
 | [**listCollaboratorsAccessV2InstancesInstanceIdCollaboratorsGet**](DefaultApi.md#listCollaboratorsAccessV2InstancesInstanceIdCollaboratorsGet) | **GET** /access_v2/instances/{instance_id}/collaborators | List Collaborators |
+| [**listDirectoryInstancesInstanceIdEntityTypeGet**](DefaultApi.md#listDirectoryInstancesInstanceIdEntityTypeGet) | **GET** /instances/{instance_id}/{entity_type} | List Directory |
 | [**listInstanceSpacesAccessV2SpacesInstancesInstanceIdGet**](DefaultApi.md#listInstanceSpacesAccessV2SpacesInstancesInstanceIdGet) | **GET** /access_v2/spaces/instances/{instance_id} | List Instance Spaces |
 | [**listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGet**](DefaultApi.md#listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGet) | **GET** /access_v2/spaces/{space_id}/instances | List Instances Using Space |
 | [**listOrganizationSpacesAccessV2SpacesOrganizationsOrganizationIdGet**](DefaultApi.md#listOrganizationSpacesAccessV2SpacesOrganizationsOrganizationIdGet) | **GET** /access_v2/spaces/organizations/{organization_id} | List Organization Spaces |
@@ -47,6 +52,8 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 | [**proxyS3S3PathGet_1**](DefaultApi.md#proxyS3S3PathGet_1) | **PUT** /s3/{path} | Proxy S3 |
 | [**proxyS3S3PathGet_2**](DefaultApi.md#proxyS3S3PathGet_2) | **POST** /s3/{path} | Proxy S3 |
 | [**proxyS3S3PathGet_3**](DefaultApi.md#proxyS3S3PathGet_3) | **DELETE** /s3/{path} | Proxy S3 |
+| [**registerDbServerDbServerRegisterPost**](DefaultApi.md#registerDbServerDbServerRegisterPost) | **POST** /db/server/register | Register Db Server |
+| [**registerFormInstancesInstanceIdFormsPost**](DefaultApi.md#registerFormInstancesInstanceIdFormsPost) | **POST** /instances/{instance_id}/forms | Register Form |
 | [**removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete**](DefaultApi.md#removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete) | **DELETE** /access_v2/instances/{instance_id}/collaborators | Remove Collaborator |
 | [**removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDelete**](DefaultApi.md#removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDelete) | **DELETE** /access_v2/spaces/{space_id}/collaborators | Remove Space Collaborator |
 | [**removeTeamMemberAccessV2TeamsTeamIdMembersAccountIdDelete**](DefaultApi.md#removeTeamMemberAccessV2TeamsTeamIdMembersAccountIdDelete) | **DELETE** /access_v2/teams/{team_id}/members/{account_id} | Remove Team Member |
@@ -219,7 +226,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody = new AddSpaceCollaboratorRequestBody(); // AddSpaceCollaboratorRequestBody | 
     String authorization = "authorization_example"; // String | 
     try {
@@ -240,7 +247,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **addSpaceCollaboratorRequestBody** | [**AddSpaceCollaboratorRequestBody**](AddSpaceCollaboratorRequestBody.md)|  | |
 | **authorization** | **String**|  | [optional] |
 
@@ -430,7 +437,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
@@ -451,8 +458,132 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **instanceId** | **UUID**|  | |
+| **authorization** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="checkDbAccessDebugDbAccessPost"></a>
+# **checkDbAccessDebugDbAccessPost**
+> Object checkDbAccessDebugDbAccessPost(dbUrlRequest)
+
+Check Db Access
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    DbUrlRequest dbUrlRequest = new DbUrlRequest(); // DbUrlRequest | 
+    try {
+      Object result = apiInstance.checkDbAccessDebugDbAccessPost(dbUrlRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#checkDbAccessDebugDbAccessPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **dbUrlRequest** | [**DbUrlRequest**](DbUrlRequest.md)|  | |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="checkDbServerAccessDbServerCheckAccessPost"></a>
+# **checkDbServerAccessDbServerCheckAccessPost**
+> Object checkDbServerAccessDbServerCheckAccessPost(name, authorization)
+
+Check Db Server Access
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    String name = "name_example"; // String | 
+    String authorization = "authorization_example"; // String | 
+    try {
+      Object result = apiInstance.checkDbServerAccessDbServerCheckAccessPost(name, authorization);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#checkDbServerAccessDbServerCheckAccessPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **name** | **String**|  | |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -476,7 +607,7 @@ No authorization required
 
 <a id="createInstanceInstancesPut"></a>
 # **createInstanceInstancesPut**
-> Object createInstanceInstancesPut(name, storage, schemaStr, dbServerKey, dbServerUrl, authorization)
+> Object createInstanceInstancesPut(name, storage, schemaStr, dbServerKey, authorization)
 
 Create Instance
 
@@ -499,10 +630,9 @@ public class Example {
     String storage = "create-s3"; // String | 
     String schemaStr = "schemaStr_example"; // String | 
     String dbServerKey = "dbServerKey_example"; // String | 
-    String dbServerUrl = "dbServerUrl_example"; // String | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createInstanceInstancesPut(name, storage, schemaStr, dbServerKey, dbServerUrl, authorization);
+      Object result = apiInstance.createInstanceInstancesPut(name, storage, schemaStr, dbServerKey, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#createInstanceInstancesPut");
@@ -523,7 +653,6 @@ public class Example {
 | **storage** | **String**|  | [optional] [default to create-s3] |
 | **schemaStr** | **String**|  | [optional] |
 | **dbServerKey** | **String**|  | [optional] |
-| **dbServerUrl** | **String**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -970,7 +1099,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
       Object result = apiInstance.deleteSpaceAccessV2SpacesSpaceIdDelete(spaceId, authorization);
@@ -990,7 +1119,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -1175,7 +1304,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
@@ -1196,7 +1325,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **instanceId** | **UUID**|  | |
 | **authorization** | **String**|  | [optional] |
 
@@ -1350,6 +1479,62 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
+
+<a id="getIpDebugIpGet"></a>
+# **getIpDebugIpGet**
+> Object getIpDebugIpGet()
+
+Get Ip
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    try {
+      Object result = apiInstance.getIpDebugIpGet();
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#getIpDebugIpGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
 
 <a id="getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet"></a>
 # **getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet**
@@ -1796,7 +1981,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
       Object result = apiInstance.getSpaceAccessV2SpacesSpaceIdGet(spaceId, authorization);
@@ -1816,7 +2001,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -1882,6 +2067,73 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **teamId** | **UUID**|  | |
+| **authorization** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="getTreeInstancesInstanceIdTreeGet"></a>
+# **getTreeInstancesInstanceIdTreeGet**
+> Object getTreeInstancesInstanceIdTreeGet(instanceId, entityType, schemaId, authorization)
+
+Get Tree
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String entityType = "artifact"; // String | 
+    UUID schemaId = UUID.randomUUID(); // UUID | 
+    String authorization = "authorization_example"; // String | 
+    try {
+      Object result = apiInstance.getTreeInstancesInstanceIdTreeGet(instanceId, entityType, schemaId, authorization);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#getTreeInstancesInstanceIdTreeGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **instanceId** | **UUID**|  | |
+| **entityType** | **String**|  | [enum: artifact, transform] |
+| **schemaId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -2126,7 +2378,7 @@ No authorization required
 
 List Collaborators
 
-List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully - **404**: Instance not found  Requires read access to the instance
+List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
 
 ### Example
 ```java
@@ -2164,6 +2416,75 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
+| **authorization** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="listDirectoryInstancesInstanceIdEntityTypeGet"></a>
+# **listDirectoryInstancesInstanceIdEntityTypeGet**
+> Object listDirectoryInstancesInstanceIdEntityTypeGet(entityType, instanceId, path, schemaId, authorization)
+
+List Directory
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    String entityType = "artifact"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String path = ""; // String | 
+    UUID schemaId = UUID.randomUUID(); // UUID | 
+    String authorization = "authorization_example"; // String | 
+    try {
+      Object result = apiInstance.listDirectoryInstancesInstanceIdEntityTypeGet(entityType, instanceId, path, schemaId, authorization);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#listDirectoryInstancesInstanceIdEntityTypeGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **entityType** | **String**|  | [enum: artifact, transform] |
+| **instanceId** | **UUID**|  | |
+| **path** | **String**|  | [optional] [default to ] |
+| **schemaId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -2273,7 +2594,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
       Object result = apiInstance.listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGet(spaceId, authorization);
@@ -2293,7 +2614,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -2468,7 +2789,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
       Object result = apiInstance.listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet(spaceId, authorization);
@@ -2488,7 +2809,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -2577,7 +2898,7 @@ No authorization required
 
 <a id="moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut"></a>
 # **moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut**
-> Object moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(spaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization)
+> Object moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization)
 
 Move Record To Space
 
@@ -2598,13 +2919,13 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    Integer instanceDbSpaceId = 56; // Integer | 
     AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody = new AttachSpaceToRecordRequestBody(); // AttachSpaceToRecordRequestBody | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     UUID schemaId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(spaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization);
+      Object result = apiInstance.moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut");
@@ -2621,7 +2942,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **instanceDbSpaceId** | **Integer**|  | |
 | **attachSpaceToRecordRequestBody** | [**AttachSpaceToRecordRequestBody**](AttachSpaceToRecordRequestBody.md)|  | |
 | **instanceId** | **UUID**|  | [optional] |
 | **schemaId** | **UUID**|  | [optional] |
@@ -2951,13 +3272,143 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
+<a id="registerDbServerDbServerRegisterPost"></a>
+# **registerDbServerDbServerRegisterPost**
+> Object registerDbServerDbServerRegisterPost(registerDbServerBody, authorization)
+
+Register Db Server
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    RegisterDbServerBody registerDbServerBody = new RegisterDbServerBody(); // RegisterDbServerBody | 
+    String authorization = "authorization_example"; // String | 
+    try {
+      Object result = apiInstance.registerDbServerDbServerRegisterPost(registerDbServerBody, authorization);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#registerDbServerDbServerRegisterPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **registerDbServerBody** | [**RegisterDbServerBody**](RegisterDbServerBody.md)|  | |
+| **authorization** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="registerFormInstancesInstanceIdFormsPost"></a>
+# **registerFormInstancesInstanceIdFormsPost**
+> Object registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, authorization)
+
+Register Form
+
+Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **201**: Form registered successfully
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    UUID instanceId = UUID.randomUUID(); // UUID | 
+    RegisterFormRequest registerFormRequest = new RegisterFormRequest(); // RegisterFormRequest | 
+    String authorization = "authorization_example"; // String | 
+    try {
+      Object result = apiInstance.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, authorization);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#registerFormInstancesInstanceIdFormsPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **instanceId** | **UUID**|  | |
+| **registerFormRequest** | [**RegisterFormRequest**](RegisterFormRequest.md)|  | |
+| **authorization** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
 <a id="removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete"></a>
 # **removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete**
 > Object removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete(instanceId, accountId, teamId, authorization)
 
 Remove Collaborator
 
-Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
 
 ### Example
 ```java
@@ -3043,7 +3494,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
     UUID teamId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
@@ -3065,7 +3516,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **accountId** | **UUID**|  | [optional] |
 | **teamId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
@@ -3229,7 +3680,7 @@ No authorization required
 
 Update Collaborator
 
-Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
 
 ### Example
 ```java
@@ -3453,7 +3904,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     UpdateSpaceRequestBody updateSpaceRequestBody = new UpdateSpaceRequestBody(); // UpdateSpaceRequestBody | 
     String authorization = "authorization_example"; // String | 
     try {
@@ -3474,7 +3925,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **updateSpaceRequestBody** | [**UpdateSpaceRequestBody**](UpdateSpaceRequestBody.md)|  | |
 | **authorization** | **String**|  | [optional] |
 
@@ -3520,7 +3971,7 @@ public class Example {
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    Integer spaceId = 56; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody = new UpdateSpaceCollaboratorRequestBody(); // UpdateSpaceCollaboratorRequestBody | 
     String authorization = "authorization_example"; // String | 
     try {
@@ -3541,7 +3992,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **spaceId** | **Integer**|  | |
+| **spaceId** | **UUID**|  | |
 | **updateSpaceCollaboratorRequestBody** | [**UpdateSpaceCollaboratorRequestBody**](UpdateSpaceCollaboratorRequestBody.md)|  | |
 | **authorization** | **String**|  | [optional] |
 

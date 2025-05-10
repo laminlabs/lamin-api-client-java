@@ -33,11 +33,14 @@ import ai.lamin.lamin_api_client.model.AddTeamMemberRequestBody;
 import ai.lamin.lamin_api_client.model.AttachSpaceToRecordRequestBody;
 import ai.lamin.lamin_api_client.model.CreateSpaceRequestBody;
 import ai.lamin.lamin_api_client.model.CreateTeamRequestBody;
+import ai.lamin.lamin_api_client.model.DbUrlRequest;
 import ai.lamin.lamin_api_client.model.GetRecordRequestBody;
 import ai.lamin.lamin_api_client.model.GetRecordsRequestBody;
 import ai.lamin.lamin_api_client.model.GetValuesRequestBody;
 import ai.lamin.lamin_api_client.model.GroupByRequestBody;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
+import ai.lamin.lamin_api_client.model.RegisterDbServerBody;
+import ai.lamin.lamin_api_client.model.RegisterFormRequest;
 import ai.lamin.lamin_api_client.model.S3PermissionsRequest;
 import java.util.UUID;
 import ai.lamin.lamin_api_client.model.UpdateCollaboratorRequestBody;
@@ -426,7 +429,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutCall(Integer spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutCall(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -478,7 +481,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutValidateBeforeCall(Integer spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutValidateBeforeCall(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPut(Async)");
@@ -509,7 +512,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPut(Integer spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+    public Object addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPut(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutWithHttpInfo(spaceId, addSpaceCollaboratorRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -530,7 +533,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutWithHttpInfo(Integer spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutWithHttpInfo(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization) throws ApiException {
         okhttp3.Call localVarCall = addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutValidateBeforeCall(spaceId, addSpaceCollaboratorRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -553,7 +556,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutAsync(Integer spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutAsync(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPutValidateBeforeCall(spaceId, addSpaceCollaboratorRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -934,7 +937,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutCall(Integer spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -986,7 +989,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(Integer spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPut(Async)");
@@ -1017,7 +1020,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPut(Integer spaceId, UUID instanceId, String authorization) throws ApiException {
+    public Object attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPut(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutWithHttpInfo(spaceId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -1038,7 +1041,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutWithHttpInfo(Integer spaceId, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutWithHttpInfo(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
         okhttp3.Call localVarCall = attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(spaceId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1061,7 +1064,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutAsync(Integer spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutAsync(UUID spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = attachSpaceToInstanceAccessV2SpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(spaceId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1069,12 +1072,139 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
-     * Build call for createInstanceInstancesPut
+     * Build call for checkDbAccessDebugDbAccessPost
+     * @param dbUrlRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkDbAccessDebugDbAccessPostCall(DbUrlRequest dbUrlRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = dbUrlRequest;
+
+        // create path and map variables
+        String localVarPath = "/_debug/db-access";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call checkDbAccessDebugDbAccessPostValidateBeforeCall(DbUrlRequest dbUrlRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'dbUrlRequest' is set
+        if (dbUrlRequest == null) {
+            throw new ApiException("Missing the required parameter 'dbUrlRequest' when calling checkDbAccessDebugDbAccessPost(Async)");
+        }
+
+        return checkDbAccessDebugDbAccessPostCall(dbUrlRequest, _callback);
+
+    }
+
+    /**
+     * Check Db Access
+     * 
+     * @param dbUrlRequest  (required)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object checkDbAccessDebugDbAccessPost(DbUrlRequest dbUrlRequest) throws ApiException {
+        ApiResponse<Object> localVarResp = checkDbAccessDebugDbAccessPostWithHttpInfo(dbUrlRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Check Db Access
+     * 
+     * @param dbUrlRequest  (required)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> checkDbAccessDebugDbAccessPostWithHttpInfo(DbUrlRequest dbUrlRequest) throws ApiException {
+        okhttp3.Call localVarCall = checkDbAccessDebugDbAccessPostValidateBeforeCall(dbUrlRequest, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Check Db Access (asynchronously)
+     * 
+     * @param dbUrlRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkDbAccessDebugDbAccessPostAsync(DbUrlRequest dbUrlRequest, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = checkDbAccessDebugDbAccessPostValidateBeforeCall(dbUrlRequest, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for checkDbServerAccessDbServerCheckAccessPost
      * @param name  (required)
-     * @param storage  (optional, default to create-s3)
-     * @param schemaStr  (optional)
-     * @param dbServerKey  (optional)
-     * @param dbServerUrl  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1087,7 +1217,153 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerKey, String dbServerUrl, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostCall(String name, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/db/server/check-access";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (name != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(String name, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling checkDbServerAccessDbServerCheckAccessPost(Async)");
+        }
+
+        return checkDbServerAccessDbServerCheckAccessPostCall(name, authorization, _callback);
+
+    }
+
+    /**
+     * Check Db Server Access
+     * 
+     * @param name  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object checkDbServerAccessDbServerCheckAccessPost(String name, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(name, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Check Db Server Access
+     * 
+     * @param name  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(String name, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Check Db Server Access (asynchronously)
+     * 
+     * @param name  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostAsync(String name, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createInstanceInstancesPut
+     * @param name  (required)
+     * @param storage  (optional, default to create-s3)
+     * @param schemaStr  (optional)
+     * @param dbServerKey  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerKey, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1128,10 +1404,6 @@ public class DefaultApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("db_server_key", dbServerKey));
         }
 
-        if (dbServerUrl != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("db_server_url", dbServerUrl));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1157,13 +1429,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerKey, String dbServerUrl, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerKey, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling createInstanceInstancesPut(Async)");
         }
 
-        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerKey, dbServerUrl, authorization, _callback);
+        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerKey, authorization, _callback);
 
     }
 
@@ -1174,7 +1446,6 @@ public class DefaultApi {
      * @param storage  (optional, default to create-s3)
      * @param schemaStr  (optional)
      * @param dbServerKey  (optional)
-     * @param dbServerUrl  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1186,8 +1457,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerKey, String dbServerUrl, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerKey, dbServerUrl, authorization);
+    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerKey, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerKey, authorization);
         return localVarResp.getData();
     }
 
@@ -1198,7 +1469,6 @@ public class DefaultApi {
      * @param storage  (optional, default to create-s3)
      * @param schemaStr  (optional)
      * @param dbServerKey  (optional)
-     * @param dbServerUrl  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1210,8 +1480,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerKey, String dbServerUrl, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, dbServerUrl, authorization, null);
+    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerKey, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1223,7 +1493,6 @@ public class DefaultApi {
      * @param storage  (optional, default to create-s3)
      * @param schemaStr  (optional)
      * @param dbServerKey  (optional)
-     * @param dbServerUrl  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1236,9 +1505,9 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerKey, String dbServerUrl, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerKey, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, dbServerUrl, authorization, _callback);
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2197,7 +2466,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSpaceAccessV2SpacesSpaceIdDeleteCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSpaceAccessV2SpacesSpaceIdDeleteCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2248,7 +2517,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSpaceAccessV2SpacesSpaceIdDeleteValidateBeforeCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSpaceAccessV2SpacesSpaceIdDeleteValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling deleteSpaceAccessV2SpacesSpaceIdDelete(Async)");
@@ -2273,7 +2542,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object deleteSpaceAccessV2SpacesSpaceIdDelete(Integer spaceId, String authorization) throws ApiException {
+    public Object deleteSpaceAccessV2SpacesSpaceIdDelete(UUID spaceId, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = deleteSpaceAccessV2SpacesSpaceIdDeleteWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
@@ -2293,7 +2562,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> deleteSpaceAccessV2SpacesSpaceIdDeleteWithHttpInfo(Integer spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> deleteSpaceAccessV2SpacesSpaceIdDeleteWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
         okhttp3.Call localVarCall = deleteSpaceAccessV2SpacesSpaceIdDeleteValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2315,7 +2584,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSpaceAccessV2SpacesSpaceIdDeleteAsync(Integer spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call deleteSpaceAccessV2SpacesSpaceIdDeleteAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteSpaceAccessV2SpacesSpaceIdDeleteValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -2676,7 +2945,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteCall(Integer spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2728,7 +2997,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(Integer spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDelete(Async)");
@@ -2759,7 +3028,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDelete(Integer spaceId, UUID instanceId, String authorization) throws ApiException {
+    public Object detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDelete(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteWithHttpInfo(spaceId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -2780,7 +3049,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteWithHttpInfo(Integer spaceId, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteWithHttpInfo(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
         okhttp3.Call localVarCall = detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(spaceId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2803,7 +3072,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteAsync(Integer spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteAsync(UUID spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detachSpaceFromInstanceAccessV2SpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(spaceId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -3102,6 +3371,123 @@ public class DefaultApi {
     public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetAsync(UUID instanceId, List<String> q, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(instanceId, q, schemaId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getIpDebugIpGet
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getIpDebugIpGetCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/_debug/ip";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getIpDebugIpGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return getIpDebugIpGetCall(_callback);
+
+    }
+
+    /**
+     * Get Ip
+     * 
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object getIpDebugIpGet() throws ApiException {
+        ApiResponse<Object> localVarResp = getIpDebugIpGetWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Ip
+     * 
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> getIpDebugIpGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = getIpDebugIpGetValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Ip (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getIpDebugIpGetAsync(final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getIpDebugIpGetValidateBeforeCall(_callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -4151,7 +4537,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSpaceAccessV2SpacesSpaceIdGetCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSpaceAccessV2SpacesSpaceIdGetCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -4202,7 +4588,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSpaceAccessV2SpacesSpaceIdGetValidateBeforeCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSpaceAccessV2SpacesSpaceIdGetValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling getSpaceAccessV2SpacesSpaceIdGet(Async)");
@@ -4227,7 +4613,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getSpaceAccessV2SpacesSpaceIdGet(Integer spaceId, String authorization) throws ApiException {
+    public Object getSpaceAccessV2SpacesSpaceIdGet(UUID spaceId, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getSpaceAccessV2SpacesSpaceIdGetWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
@@ -4247,7 +4633,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getSpaceAccessV2SpacesSpaceIdGetWithHttpInfo(Integer spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> getSpaceAccessV2SpacesSpaceIdGetWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
         okhttp3.Call localVarCall = getSpaceAccessV2SpacesSpaceIdGetValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -4269,7 +4655,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSpaceAccessV2SpacesSpaceIdGetAsync(Integer spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getSpaceAccessV2SpacesSpaceIdGetAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getSpaceAccessV2SpacesSpaceIdGetValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -4412,6 +4798,167 @@ public class DefaultApi {
     public okhttp3.Call getTeamAccessV2TeamsTeamIdGetAsync(UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTeamAccessV2TeamsTeamIdGetValidateBeforeCall(teamId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getTreeInstancesInstanceIdTreeGet
+     * @param instanceId  (required)
+     * @param entityType  (required)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getTreeInstancesInstanceIdTreeGetCall(UUID instanceId, String entityType, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/tree"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (entityType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("entity_type", entityType));
+        }
+
+        if (schemaId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("schema_id", schemaId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getTreeInstancesInstanceIdTreeGetValidateBeforeCall(UUID instanceId, String entityType, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling getTreeInstancesInstanceIdTreeGet(Async)");
+        }
+
+        // verify the required parameter 'entityType' is set
+        if (entityType == null) {
+            throw new ApiException("Missing the required parameter 'entityType' when calling getTreeInstancesInstanceIdTreeGet(Async)");
+        }
+
+        return getTreeInstancesInstanceIdTreeGetCall(instanceId, entityType, schemaId, authorization, _callback);
+
+    }
+
+    /**
+     * Get Tree
+     * 
+     * @param instanceId  (required)
+     * @param entityType  (required)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object getTreeInstancesInstanceIdTreeGet(UUID instanceId, String entityType, UUID schemaId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getTreeInstancesInstanceIdTreeGetWithHttpInfo(instanceId, entityType, schemaId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Tree
+     * 
+     * @param instanceId  (required)
+     * @param entityType  (required)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> getTreeInstancesInstanceIdTreeGetWithHttpInfo(UUID instanceId, String entityType, UUID schemaId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getTreeInstancesInstanceIdTreeGetValidateBeforeCall(instanceId, entityType, schemaId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Tree (asynchronously)
+     * 
+     * @param instanceId  (required)
+     * @param entityType  (required)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getTreeInstancesInstanceIdTreeGetAsync(UUID instanceId, String entityType, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getTreeInstancesInstanceIdTreeGetValidateBeforeCall(instanceId, entityType, schemaId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -5037,7 +5584,7 @@ public class DefaultApi {
 
     /**
      * List Collaborators
-     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully - **404**: Instance not found  Requires read access to the instance
+     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
      * @param instanceId  (required)
      * @param authorization  (optional)
      * @return Object
@@ -5057,7 +5604,7 @@ public class DefaultApi {
 
     /**
      * List Collaborators
-     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully - **404**: Instance not found  Requires read access to the instance
+     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
      * @param instanceId  (required)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -5078,7 +5625,7 @@ public class DefaultApi {
 
     /**
      * List Collaborators (asynchronously)
-     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully - **404**: Instance not found  Requires read access to the instance
+     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
      * @param instanceId  (required)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -5095,6 +5642,172 @@ public class DefaultApi {
     public okhttp3.Call listCollaboratorsAccessV2InstancesInstanceIdCollaboratorsGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listCollaboratorsAccessV2InstancesInstanceIdCollaboratorsGetValidateBeforeCall(instanceId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listDirectoryInstancesInstanceIdEntityTypeGet
+     * @param entityType  (required)
+     * @param instanceId  (required)
+     * @param path  (optional, default to )
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listDirectoryInstancesInstanceIdEntityTypeGetCall(String entityType, UUID instanceId, String path, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/{entity_type}"
+            .replace("{" + "entity_type" + "}", localVarApiClient.escapeString(entityType.toString()))
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (path != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("path", path));
+        }
+
+        if (schemaId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("schema_id", schemaId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listDirectoryInstancesInstanceIdEntityTypeGetValidateBeforeCall(String entityType, UUID instanceId, String path, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'entityType' is set
+        if (entityType == null) {
+            throw new ApiException("Missing the required parameter 'entityType' when calling listDirectoryInstancesInstanceIdEntityTypeGet(Async)");
+        }
+
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling listDirectoryInstancesInstanceIdEntityTypeGet(Async)");
+        }
+
+        return listDirectoryInstancesInstanceIdEntityTypeGetCall(entityType, instanceId, path, schemaId, authorization, _callback);
+
+    }
+
+    /**
+     * List Directory
+     * 
+     * @param entityType  (required)
+     * @param instanceId  (required)
+     * @param path  (optional, default to )
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object listDirectoryInstancesInstanceIdEntityTypeGet(String entityType, UUID instanceId, String path, UUID schemaId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listDirectoryInstancesInstanceIdEntityTypeGetWithHttpInfo(entityType, instanceId, path, schemaId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Directory
+     * 
+     * @param entityType  (required)
+     * @param instanceId  (required)
+     * @param path  (optional, default to )
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> listDirectoryInstancesInstanceIdEntityTypeGetWithHttpInfo(String entityType, UUID instanceId, String path, UUID schemaId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdEntityTypeGetValidateBeforeCall(entityType, instanceId, path, schemaId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Directory (asynchronously)
+     * 
+     * @param entityType  (required)
+     * @param instanceId  (required)
+     * @param path  (optional, default to )
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listDirectoryInstancesInstanceIdEntityTypeGetAsync(String entityType, UUID instanceId, String path, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdEntityTypeGetValidateBeforeCall(entityType, instanceId, path, schemaId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -5254,7 +5967,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5305,7 +6018,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetValidateBeforeCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGet(Async)");
@@ -5330,7 +6043,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGet(Integer spaceId, String authorization) throws ApiException {
+    public Object listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGet(UUID spaceId, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
@@ -5350,7 +6063,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetWithHttpInfo(Integer spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
         okhttp3.Call localVarCall = listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -5372,7 +6085,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetAsync(Integer spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listInstancesUsingSpaceAccessV2SpacesSpaceIdInstancesGetValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -5674,7 +6387,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5725,7 +6438,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetValidateBeforeCall(Integer spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet(Async)");
@@ -5750,7 +6463,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet(Integer spaceId, String authorization) throws ApiException {
+    public Object listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet(UUID spaceId, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
@@ -5770,7 +6483,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetWithHttpInfo(Integer spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
         okhttp3.Call localVarCall = listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -5792,7 +6505,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetAsync(Integer spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGetValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -5941,7 +6654,7 @@ public class DefaultApi {
     }
     /**
      * Build call for moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut
-     * @param spaceId  (required)
+     * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
      * @param schemaId  (optional)
@@ -5957,7 +6670,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutCall(Integer spaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutCall(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -5974,14 +6687,17 @@ public class DefaultApi {
         Object localVarPostBody = attachSpaceToRecordRequestBody;
 
         // create path and map variables
-        String localVarPath = "/access_v2/spaces/{space_id}/record-attachments"
-            .replace("{" + "space_id" + "}", localVarApiClient.escapeString(spaceId.toString()));
+        String localVarPath = "/access_v2/spaces/{space_id}/record-attachments";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (instanceDbSpaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_db_space_id", instanceDbSpaceId));
+        }
 
         if (instanceId != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
@@ -6017,10 +6733,10 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(Integer spaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'spaceId' is set
-        if (spaceId == null) {
-            throw new ApiException("Missing the required parameter 'spaceId' when calling moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(Async)");
+    private okhttp3.Call moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceDbSpaceId' is set
+        if (instanceDbSpaceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceDbSpaceId' when calling moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(Async)");
         }
 
         // verify the required parameter 'attachSpaceToRecordRequestBody' is set
@@ -6028,14 +6744,14 @@ public class DefaultApi {
             throw new ApiException("Missing the required parameter 'attachSpaceToRecordRequestBody' when calling moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(Async)");
         }
 
-        return moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutCall(spaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization, _callback);
+        return moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutCall(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization, _callback);
 
     }
 
     /**
      * Move Record To Space
      * Move a record to a specific space.  Parameters: - **space_id**: ID of the space to move the record to - **body**: Request body containing record details   - **module_name**: Module name of the record   - **model_name**: Model name of the record   - **record_id**: ID of the record to move in the space - **instance_id**: UUID of the instance (from URL path) - **schema_id**: UUID of the schema (from URL path)  Returns: - **200**: Record moved to the space successfully  Requires admin access to the instance
-     * @param spaceId  (required)
+     * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
      * @param schemaId  (optional)
@@ -6050,15 +6766,15 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(Integer spaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutWithHttpInfo(spaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization);
+    public Object moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutWithHttpInfo(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization);
         return localVarResp.getData();
     }
 
     /**
      * Move Record To Space
      * Move a record to a specific space.  Parameters: - **space_id**: ID of the space to move the record to - **body**: Request body containing record details   - **module_name**: Module name of the record   - **model_name**: Model name of the record   - **record_id**: ID of the record to move in the space - **instance_id**: UUID of the instance (from URL path) - **schema_id**: UUID of the schema (from URL path)  Returns: - **200**: Record moved to the space successfully  Requires admin access to the instance
-     * @param spaceId  (required)
+     * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
      * @param schemaId  (optional)
@@ -6073,8 +6789,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutWithHttpInfo(Integer spaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(spaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization, null);
+    public ApiResponse<Object> moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutWithHttpInfo(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -6082,7 +6798,7 @@ public class DefaultApi {
     /**
      * Move Record To Space (asynchronously)
      * Move a record to a specific space.  Parameters: - **space_id**: ID of the space to move the record to - **body**: Request body containing record details   - **module_name**: Module name of the record   - **model_name**: Model name of the record   - **record_id**: ID of the record to move in the space - **instance_id**: UUID of the instance (from URL path) - **schema_id**: UUID of the schema (from URL path)  Returns: - **200**: Record moved to the space successfully  Requires admin access to the instance
-     * @param spaceId  (required)
+     * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
      * @param schemaId  (optional)
@@ -6098,9 +6814,9 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutAsync(Integer spaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutAsync(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(spaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization, _callback);
+        okhttp3.Call localVarCall = moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, schemaId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -6761,6 +7477,296 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for registerDbServerDbServerRegisterPost
+     * @param registerDbServerBody  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registerDbServerDbServerRegisterPostCall(RegisterDbServerBody registerDbServerBody, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = registerDbServerBody;
+
+        // create path and map variables
+        String localVarPath = "/db/server/register";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call registerDbServerDbServerRegisterPostValidateBeforeCall(RegisterDbServerBody registerDbServerBody, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'registerDbServerBody' is set
+        if (registerDbServerBody == null) {
+            throw new ApiException("Missing the required parameter 'registerDbServerBody' when calling registerDbServerDbServerRegisterPost(Async)");
+        }
+
+        return registerDbServerDbServerRegisterPostCall(registerDbServerBody, authorization, _callback);
+
+    }
+
+    /**
+     * Register Db Server
+     * 
+     * @param registerDbServerBody  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object registerDbServerDbServerRegisterPost(RegisterDbServerBody registerDbServerBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = registerDbServerDbServerRegisterPostWithHttpInfo(registerDbServerBody, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Register Db Server
+     * 
+     * @param registerDbServerBody  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> registerDbServerDbServerRegisterPostWithHttpInfo(RegisterDbServerBody registerDbServerBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Register Db Server (asynchronously)
+     * 
+     * @param registerDbServerBody  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registerDbServerDbServerRegisterPostAsync(RegisterDbServerBody registerDbServerBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for registerFormInstancesInstanceIdFormsPost
+     * @param instanceId  (required)
+     * @param registerFormRequest  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registerFormInstancesInstanceIdFormsPostCall(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = registerFormRequest;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/forms"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call registerFormInstancesInstanceIdFormsPostValidateBeforeCall(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling registerFormInstancesInstanceIdFormsPost(Async)");
+        }
+
+        // verify the required parameter 'registerFormRequest' is set
+        if (registerFormRequest == null) {
+            throw new ApiException("Missing the required parameter 'registerFormRequest' when calling registerFormInstancesInstanceIdFormsPost(Async)");
+        }
+
+        return registerFormInstancesInstanceIdFormsPostCall(instanceId, registerFormRequest, authorization, _callback);
+
+    }
+
+    /**
+     * Register Form
+     * Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **201**: Form registered successfully
+     * @param instanceId  (required)
+     * @param registerFormRequest  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object registerFormInstancesInstanceIdFormsPost(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = registerFormInstancesInstanceIdFormsPostWithHttpInfo(instanceId, registerFormRequest, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Register Form
+     * Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **201**: Form registered successfully
+     * @param instanceId  (required)
+     * @param registerFormRequest  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> registerFormInstancesInstanceIdFormsPostWithHttpInfo(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Register Form (asynchronously)
+     * Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **201**: Form registered successfully
+     * @param instanceId  (required)
+     * @param registerFormRequest  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call registerFormInstancesInstanceIdFormsPostAsync(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete
      * @param instanceId  (required)
      * @param accountId  (optional)
@@ -6848,7 +7854,7 @@ public class DefaultApi {
 
     /**
      * Remove Collaborator
-     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
@@ -6870,7 +7876,7 @@ public class DefaultApi {
 
     /**
      * Remove Collaborator
-     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
@@ -6893,7 +7899,7 @@ public class DefaultApi {
 
     /**
      * Remove Collaborator (asynchronously)
-     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
@@ -6933,7 +7939,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteCall(Integer spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteCall(UUID spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -6992,7 +7998,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(Integer spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(UUID spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDelete(Async)");
@@ -7019,7 +8025,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDelete(Integer spaceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
+    public Object removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDelete(UUID spaceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteWithHttpInfo(spaceId, accountId, teamId, authorization);
         return localVarResp.getData();
     }
@@ -7041,7 +8047,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteWithHttpInfo(Integer spaceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
+    public ApiResponse<Object> removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteWithHttpInfo(UUID spaceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
         okhttp3.Call localVarCall = removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(spaceId, accountId, teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -7065,7 +8071,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteAsync(Integer spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteAsync(UUID spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(spaceId, accountId, teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -7465,7 +8471,7 @@ public class DefaultApi {
 
     /**
      * Update Collaborator
-     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param updateCollaboratorRequestBody  (required)
      * @param authorization  (optional)
@@ -7486,7 +8492,7 @@ public class DefaultApi {
 
     /**
      * Update Collaborator
-     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param updateCollaboratorRequestBody  (required)
      * @param authorization  (optional)
@@ -7508,7 +8514,7 @@ public class DefaultApi {
 
     /**
      * Update Collaborator (asynchronously)
-     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found  Requires admin access to the instance
+     * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param updateCollaboratorRequestBody  (required)
      * @param authorization  (optional)
@@ -7897,7 +8903,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceAccessV2SpacesSpaceIdPatchCall(Integer spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSpaceAccessV2SpacesSpaceIdPatchCall(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -7949,7 +8955,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSpaceAccessV2SpacesSpaceIdPatchValidateBeforeCall(Integer spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSpaceAccessV2SpacesSpaceIdPatchValidateBeforeCall(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling updateSpaceAccessV2SpacesSpaceIdPatch(Async)");
@@ -7980,7 +8986,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateSpaceAccessV2SpacesSpaceIdPatch(Integer spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization) throws ApiException {
+    public Object updateSpaceAccessV2SpacesSpaceIdPatch(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = updateSpaceAccessV2SpacesSpaceIdPatchWithHttpInfo(spaceId, updateSpaceRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -8001,7 +9007,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateSpaceAccessV2SpacesSpaceIdPatchWithHttpInfo(Integer spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> updateSpaceAccessV2SpacesSpaceIdPatchWithHttpInfo(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization) throws ApiException {
         okhttp3.Call localVarCall = updateSpaceAccessV2SpacesSpaceIdPatchValidateBeforeCall(spaceId, updateSpaceRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -8024,7 +9030,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceAccessV2SpacesSpaceIdPatchAsync(Integer spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateSpaceAccessV2SpacesSpaceIdPatchAsync(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSpaceAccessV2SpacesSpaceIdPatchValidateBeforeCall(spaceId, updateSpaceRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -8047,7 +9053,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchCall(Integer spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchCall(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8099,7 +9105,7 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchValidateBeforeCall(Integer spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchValidateBeforeCall(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatch(Async)");
@@ -8130,7 +9136,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatch(Integer spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+    public Object updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatch(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchWithHttpInfo(spaceId, updateSpaceCollaboratorRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -8151,7 +9157,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchWithHttpInfo(Integer spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchWithHttpInfo(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization) throws ApiException {
         okhttp3.Call localVarCall = updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchValidateBeforeCall(spaceId, updateSpaceCollaboratorRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -8174,7 +9180,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchAsync(Integer spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchAsync(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsPatchValidateBeforeCall(spaceId, updateSpaceCollaboratorRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

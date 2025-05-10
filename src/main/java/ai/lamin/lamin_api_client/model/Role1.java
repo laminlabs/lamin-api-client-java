@@ -51,23 +51,22 @@ import com.google.gson.JsonParseException;
 import ai.lamin.lamin_api_client.JSON;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-10T19:58:41.182141089+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class ValidationErrorLocInner extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(ValidationErrorLocInner.class.getName());
+public class Role1 extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(Role1.class.getName());
 
     public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
         @SuppressWarnings("unchecked")
         @Override
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!ValidationErrorLocInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'ValidationErrorLocInner' and its subtypes
+            if (!Role1.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'Role1' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<String> adapterString = gson.getDelegateAdapter(this, TypeToken.get(String.class));
-            final TypeAdapter<Integer> adapterInteger = gson.getDelegateAdapter(this, TypeToken.get(Integer.class));
 
-            return (TypeAdapter<T>) new TypeAdapter<ValidationErrorLocInner>() {
+            return (TypeAdapter<T>) new TypeAdapter<Role1>() {
                 @Override
-                public void write(JsonWriter out, ValidationErrorLocInner value) throws IOException {
+                public void write(JsonWriter out, Role1 value) throws IOException {
                     if (value == null || value.getActualInstance() == null) {
                         elementAdapter.write(out, null);
                         return;
@@ -79,17 +78,11 @@ public class ValidationErrorLocInner extends AbstractOpenApiSchema {
                         elementAdapter.write(out, primitive);
                         return;
                     }
-                    // check if the actual instance is of the type `Integer`
-                    if (value.getActualInstance() instanceof Integer) {
-                        JsonPrimitive primitive = adapterInteger.toJsonTree((Integer)value.getActualInstance()).getAsJsonPrimitive();
-                        elementAdapter.write(out, primitive);
-                        return;
-                    }
-                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: Integer, String");
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: String");
                 }
 
                 @Override
-                public ValidationErrorLocInner read(JsonReader in) throws IOException {
+                public Role1 read(JsonReader in) throws IOException {
                     Object deserialized = null;
                     JsonElement jsonElement = elementAdapter.read(in);
 
@@ -103,7 +96,7 @@ public class ValidationErrorLocInner extends AbstractOpenApiSchema {
                             throw new IllegalArgumentException(String.format("Expected json element to be of type String in the JSON string but got `%s`", jsonElement.toString()));
                         }
                         actualAdapter = adapterString;
-                        ValidationErrorLocInner ret = new ValidationErrorLocInner();
+                        Role1 ret = new Role1();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
@@ -111,23 +104,8 @@ public class ValidationErrorLocInner extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'String'", e);
                     }
-                    // deserialize Integer
-                    try {
-                        // validate the JSON object to see if any exception is thrown
-                        if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-                        }
-                        actualAdapter = adapterInteger;
-                        ValidationErrorLocInner ret = new ValidationErrorLocInner();
-                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
-                        return ret;
-                    } catch (Exception e) {
-                        // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Integer failed with `%s`.", e.getMessage()));
-                        log.log(Level.FINER, "Input data does not match schema 'Integer'", e);
-                    }
 
-                    throw new IOException(String.format("Failed deserialization for ValidationErrorLocInner: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format("Failed deserialization for Role1: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -136,29 +114,28 @@ public class ValidationErrorLocInner extends AbstractOpenApiSchema {
     // store a list of schema names defined in anyOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
-    public ValidationErrorLocInner() {
+    public Role1() {
         super("anyOf", Boolean.FALSE);
     }
 
-    public ValidationErrorLocInner(Object o) {
+    public Role1(Object o) {
         super("anyOf", Boolean.FALSE);
         setActualInstance(o);
     }
 
     static {
         schemas.put("String", String.class);
-        schemas.put("Integer", Integer.class);
     }
 
     @Override
     public Map<String, Class<?>> getSchemas() {
-        return ValidationErrorLocInner.schemas;
+        return Role1.schemas;
     }
 
     /**
      * Set the instance that matches the anyOf child schema, check
      * the instance parameter is valid against the anyOf child schemas:
-     * Integer, String
+     * String
      *
      * It could be an instance of the 'anyOf' schemas.
      */
@@ -169,19 +146,14 @@ public class ValidationErrorLocInner extends AbstractOpenApiSchema {
             return;
         }
 
-        if (instance instanceof Integer) {
-            super.setActualInstance(instance);
-            return;
-        }
-
-        throw new RuntimeException("Invalid instance type. Must be Integer, String");
+        throw new RuntimeException("Invalid instance type. Must be String");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * Integer, String
+     * String
      *
-     * @return The actual instance (Integer, String)
+     * @return The actual instance (String)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -201,21 +173,10 @@ public class ValidationErrorLocInner extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `Integer`. If the actual instance is not `Integer`,
-     * the ClassCastException will be thrown.
-     *
-     * @return The actual instance of `Integer`
-     * @throws ClassCastException if the instance is not `Integer`
-     */
-    public Integer getInteger() throws ClassCastException {
-        return (Integer)super.getActualInstance();
-    }
-
-    /**
      * Validates the JSON Element and throws an exception if issues found
      *
      * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to ValidationErrorLocInner
+     * @throws IOException if the JSON Element is invalid with respect to Role1
      */
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
         // validate anyOf schemas one by one
@@ -230,32 +191,22 @@ public class ValidationErrorLocInner extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        // validate the json string with Integer
-        try {
-            if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
-            }
-            return;
-        } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Integer failed with `%s`.", e.getMessage()));
-            // continue to the next one
-        }
-        throw new IOException(String.format("The JSON string is invalid for ValidationErrorLocInner with anyOf schemas: Integer, String. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+        throw new IOException(String.format("The JSON string is invalid for Role1 with anyOf schemas: String. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
 
     /**
-     * Create an instance of ValidationErrorLocInner given an JSON string
+     * Create an instance of Role1 given an JSON string
      *
      * @param jsonString JSON string
-     * @return An instance of ValidationErrorLocInner
-     * @throws IOException if the JSON string is invalid with respect to ValidationErrorLocInner
+     * @return An instance of Role1
+     * @throws IOException if the JSON string is invalid with respect to Role1
      */
-    public static ValidationErrorLocInner fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, ValidationErrorLocInner.class);
+    public static Role1 fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, Role1.class);
     }
 
     /**
-     * Convert an instance of ValidationErrorLocInner to an JSON string
+     * Convert an instance of Role1 to an JSON string
      *
      * @return JSON string
      */
