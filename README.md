@@ -1,6 +1,9 @@
 # lamin-api-client
 
-FastAPI
+![Maven Central Version](https://img.shields.io/maven-central/v/ai.lamin/lamin-api-client)
+[![javadoc](https://javadoc.io/badge2/ai.lamin/lamin-api-client/javadoc.svg)](https://javadoc.io/doc/ai.lamin/lamin-api-client) 
+
+Lamin API
 - API version: 0.1.0
   - Build date: 2025-05-10T19:58:41.182141089+02:00[Europe/Brussels]
   - Generator version: 7.12.0
