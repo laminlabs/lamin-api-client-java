@@ -31,7 +31,7 @@ mvn clean install
 To deploy it to a remote Maven repository instead, configure the settings of the repository and execute:
 
 ```shell
-mvn clean deploy
+mvn clean deploy -P deployment
 ```
 
 Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) for more information.
@@ -44,7 +44,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.lamin</groupId>
   <artifactId>lamin-api-client</artifactId>
-  <version>0.0.2</version>
+  <version>0.0.2.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -60,7 +60,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "ai.lamin:lamin-api-client:0.0.2"
+     implementation "ai.lamin:lamin-api-client:0.0.2.1"
   }
 ```
 
@@ -74,7 +74,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/lamin-api-client-0.0.2.jar`
+* `target/lamin-api-client-0.0.2.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
