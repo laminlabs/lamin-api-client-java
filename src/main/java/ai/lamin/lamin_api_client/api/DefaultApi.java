@@ -1572,7 +1572,7 @@ public class DefaultApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            "application/octet-stream"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {

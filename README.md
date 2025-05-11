@@ -1,6 +1,6 @@
 # lamin-api-client
 
-![Maven Central Version](https://img.shields.io/maven-central/v/ai.lamin/lamin-api-client)
+[![Maven Central Version](https://img.shields.io/maven-central/v/ai.lamin/lamin-api-client.svg)](https://central.sonatype.com/artifact/ai.lamin/lamin-api-client/overview)
 [![javadoc](https://javadoc.io/badge2/ai.lamin/lamin-api-client/javadoc.svg)](https://javadoc.io/doc/ai.lamin/lamin-api-client) 
 
 Lamin API
