@@ -54,7 +54,7 @@ public class AddTeamMemberRequestBody {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nullable
-  private Role role = member;
+  private Role role;
 
   public AddTeamMemberRequestBody() {
   }
