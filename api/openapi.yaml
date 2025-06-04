@@ -3,7 +3,7 @@ info:
   title: FastAPI
   version: 0.1.0
 servers:
-- url: https://aws.us-east-1.lamin.ai/api
+- url: https://staging.laminhub.com/api
 paths:
   /instances:
     put:
@@ -37,6 +37,14 @@ paths:
       - explode: true
         in: query
         name: db_server_key
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: storage_uid
         required: false
         schema:
           nullable: true
@@ -1179,6 +1187,73 @@ paths:
       summary: Attach Label
       x-accepts:
       - application/json
+  /instances/{instance_id}/modules/{module_name}/{model_name}/bulk:
+    put:
+      operationId: create_records_instances__instance_id__modules__module_name___model_name__bulk_put
+      parameters:
+      - explode: false
+        in: path
+        name: module_name
+        required: true
+        schema:
+          title: Module Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: model_name
+        required: true
+        schema:
+          title: Model Name
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: schema_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema: {}
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Records
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /instances/{instance_id}/modules/{module_name}/{model_name}/{uid}:
     delete:
       operationId: delete_record_instances__instance_id__modules__module_name___model_name___uid__delete
@@ -1391,9 +1466,138 @@ paths:
       summary: Get Relation Counts
       x-accepts:
       - application/json
+  /instances/{instance_id}/artifacts/upload:
+    post:
+      operationId: upload_artifact_instances__instance_id__artifacts_upload_post
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Body_upload_artifact_instances__instance_id__artifacts_upload_post'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Upload Artifact
+      x-content-type: multipart/form-data
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/artifacts/create:
+    post:
+      operationId: create_artifact_instances__instance_id__artifacts_create_post
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateArtifactRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Artifact
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/transforms:
+    post:
+      operationId: create_transform_instances__instance_id__transforms_post
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTransformRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Transform
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /s3/{path}:
     delete:
-      operationId: proxy_s3_s3__path__get
+      operationId: proxy_s3_s3__path__head
       parameters:
       - explode: false
         in: path
@@ -1419,7 +1623,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: proxy_s3_s3__path__get
+      operationId: proxy_s3_s3__path__head
       parameters:
       - explode: false
         in: path
@@ -1445,7 +1649,7 @@ paths:
       x-accepts:
       - application/json
     head:
-      operationId: proxy_s3_s3__path__get
+      operationId: proxy_s3_s3__path__head
       parameters:
       - explode: false
         in: path
@@ -1471,7 +1675,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: proxy_s3_s3__path__get
+      operationId: proxy_s3_s3__path__head
       parameters:
       - explode: false
         in: path
@@ -1497,7 +1701,7 @@ paths:
       x-accepts:
       - application/json
     put:
-      operationId: proxy_s3_s3__path__get
+      operationId: proxy_s3_s3__path__head
       parameters:
       - explode: false
         in: path
@@ -2976,6 +3180,275 @@ paths:
       summary: Get Db Token
       x-accepts:
       - application/json
+  /access_v2/organizations/{organization_id}:
+    get:
+      description: |-
+        Get details of a specific organization.
+
+        Parameters:
+        - **organization_id**: UUID of the organization to retrieve
+
+        Returns:
+        - **200**: Organization details retrieved successfully
+        - **404**: Organization not found
+      operationId: get_organization_access_v2_organizations__organization_id__get
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Organization
+      x-accepts:
+      - application/json
+  /access_v2/organizations/{organization_id}/members:
+    get:
+      description: |-
+        List all members of an organization.
+
+        Parameters:
+        - **organization_id**: UUID of the organization to list members for
+
+        Returns:
+        - **200**: List of organization members retrieved successfully
+      operationId: list_organization_members_access_v2_organizations__organization_id__members_get
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Organization Members
+      x-accepts:
+      - application/json
+  /access_v2/organizations/{organization_id}/members/{account_id}:
+    delete:
+      description: |-
+        Remove a member from an organization.
+
+        Parameters:
+        - **organization_id**: UUID of the organization to remove the member from
+        - **account_id**: UUID of the account to remove from the organization
+
+        Returns:
+        - **200**: Organization member removed successfully
+        - **404**: Member not found in organization
+      operationId: remove_organization_member_access_v2_organizations__organization_id__members__account_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Remove Organization Member
+      x-accepts:
+      - application/json
+    patch:
+      description: |-
+        Update an organization member's details.
+
+        Parameters:
+        - **organization_id**: UUID of the organization the member belongs to
+        - **account_id**: UUID of the account to update
+        - **body**: Request body containing updated member details
+          - **role**: Role of the member in the organization
+
+        Returns:
+        - **200**: Organization member updated successfully
+        - **404**: Member not found in organization
+      operationId: update_organization_member_access_v2_organizations__organization_id__members__account_id__patch
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateOrganizationMemberRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Organization Member
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+    put:
+      description: |-
+        Add a member to an organization.
+
+        Parameters:
+        - **organization_id**: UUID of the organization to add the member to
+        - **account_id**: UUID of the account to add as a member
+        - **body**: Request body containing member details
+          - **role**: Role of the member in the organization
+
+        Returns:
+        - **201**: Organization member added successfully
+      operationId: add_organization_member_access_v2_organizations__organization_id__members__account_id__put
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: account_id
+        required: true
+        schema:
+          format: uuid
+          title: Account Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddOrganizationMemberRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Add Organization Member
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /instances/{instance_id}/{entity_type}:
     get:
       operationId: list_directory_instances__instance_id___entity_type__get
@@ -3188,6 +3661,30 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /_debug/lambda-access:
+    get:
+      operationId: check_lambda_access__debug_lambda_access_get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      summary: Check Lambda Access
+      x-accepts:
+      - application/json
+  /_debug/cache-access:
+    get:
+      operationId: check_cache_access__debug_cache_access_get
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+      summary: Check Cache Access
+      x-accepts:
+      - application/json
   /db/server/register:
     post:
       operationId: register_db_server_db_server_register_post
@@ -3257,6 +3754,33 @@ paths:
       summary: Check Db Server Access
       x-accepts:
       - application/json
+  /account:
+    get:
+      operationId: get_caller_account_account_get
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Caller Account
+      x-accepts:
+      - application/json
 components:
   schemas:
     AddCollaboratorRequestBody:
@@ -3282,6 +3806,19 @@ components:
           title: Role
           type: string
       title: AddCollaboratorRequestBody
+    AddOrganizationMemberRequestBody:
+      example:
+        role: member
+      properties:
+        role:
+          default: member
+          enum:
+          - admin
+          - member
+          - manager
+          title: Role
+          type: string
+      title: AddOrganizationMemberRequestBody
     AddSpaceCollaboratorRequestBody:
       example:
         account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -3332,6 +3869,34 @@ components:
       - module_name
       - record_id
       title: AttachSpaceToRecordRequestBody
+    Body_upload_artifact_instances__instance_id__artifacts_upload_post:
+      properties:
+        file:
+          format: binary
+          title: File
+          type: string
+        kwargs:
+          nullable: true
+          type: string
+      required:
+      - file
+      title: Body_upload_artifact_instances__instance_id__artifacts_upload_post
+    CreateArtifactRequestBody:
+      example:
+        path: path
+        kwargs:
+          key: ""
+      properties:
+        path:
+          title: Path
+          type: string
+        kwargs:
+          additionalProperties: {}
+          default: {}
+          title: Kwargs
+      required:
+      - path
+      title: CreateArtifactRequestBody
     CreateSpaceRequestBody:
       example:
         organization_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -3372,6 +3937,26 @@ components:
       - name
       - organization_id
       title: CreateTeamRequestBody
+    CreateTransformRequestBody:
+      example:
+        type: type
+        source_code: source_code
+        key: key
+      properties:
+        key:
+          title: Key
+          type: string
+        type:
+          title: Type
+          type: string
+        source_code:
+          title: Source Code
+          type: string
+      required:
+      - key
+      - source_code
+      - type
+      title: CreateTransformRequestBody
     DbUrlRequest:
       example:
         db_url: db_url
@@ -3646,6 +4231,20 @@ components:
       required:
       - role
       title: UpdateCollaboratorRequestBody
+    UpdateOrganizationMemberRequestBody:
+      example:
+        role: admin
+      properties:
+        role:
+          enum:
+          - admin
+          - member
+          - manager
+          title: Role
+          type: string
+      required:
+      - role
+      title: UpdateOrganizationMemberRequestBody
     UpdateSpaceCollaboratorRequestBody:
       example:
         account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -3663,8 +4262,8 @@ components:
         role:
           enum:
           - admin
-          - write
           - read
+          - write
           nullable: true
           type: string
       title: UpdateSpaceCollaboratorRequestBody

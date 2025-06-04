@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,20 +46,10 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * AddCollaboratorRequestBody
+ * UpdateOrganizationMemberRequestBody
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-04T12:31:22.348899534+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class AddCollaboratorRequestBody {
-  public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
-  @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
-  @javax.annotation.Nullable
-  private UUID accountId;
-
-  public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
-  @SerializedName(SERIALIZED_NAME_TEAM_ID)
-  @javax.annotation.Nullable
-  private UUID teamId;
-
+public class UpdateOrganizationMemberRequestBody {
   /**
    * Gets or Sets role
    */
@@ -69,9 +57,9 @@ public class AddCollaboratorRequestBody {
   public enum RoleEnum {
     ADMIN("admin"),
     
-    READ("read"),
+    MEMBER("member"),
     
-    WRITE("write");
+    MANAGER("manager");
 
     private String value;
 
@@ -118,51 +106,13 @@ public class AddCollaboratorRequestBody {
 
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
-  @javax.annotation.Nullable
-  private RoleEnum role = RoleEnum.READ;
+  @javax.annotation.Nonnull
+  private RoleEnum role;
 
-  public AddCollaboratorRequestBody() {
+  public UpdateOrganizationMemberRequestBody() {
   }
 
-  public AddCollaboratorRequestBody accountId(@javax.annotation.Nullable UUID accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-  /**
-   * Get accountId
-   * @return accountId
-   */
-  @javax.annotation.Nullable
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(@javax.annotation.Nullable UUID accountId) {
-    this.accountId = accountId;
-  }
-
-
-  public AddCollaboratorRequestBody teamId(@javax.annotation.Nullable UUID teamId) {
-    this.teamId = teamId;
-    return this;
-  }
-
-  /**
-   * Get teamId
-   * @return teamId
-   */
-  @javax.annotation.Nullable
-  public UUID getTeamId() {
-    return teamId;
-  }
-
-  public void setTeamId(@javax.annotation.Nullable UUID teamId) {
-    this.teamId = teamId;
-  }
-
-
-  public AddCollaboratorRequestBody role(@javax.annotation.Nullable RoleEnum role) {
+  public UpdateOrganizationMemberRequestBody role(@javax.annotation.Nonnull RoleEnum role) {
     this.role = role;
     return this;
   }
@@ -171,12 +121,12 @@ public class AddCollaboratorRequestBody {
    * Get role
    * @return role
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public RoleEnum getRole() {
     return role;
   }
 
-  public void setRole(@javax.annotation.Nullable RoleEnum role) {
+  public void setRole(@javax.annotation.Nonnull RoleEnum role) {
     this.role = role;
   }
 
@@ -190,34 +140,19 @@ public class AddCollaboratorRequestBody {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AddCollaboratorRequestBody addCollaboratorRequestBody = (AddCollaboratorRequestBody) o;
-    return Objects.equals(this.accountId, addCollaboratorRequestBody.accountId) &&
-        Objects.equals(this.teamId, addCollaboratorRequestBody.teamId) &&
-        Objects.equals(this.role, addCollaboratorRequestBody.role);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody = (UpdateOrganizationMemberRequestBody) o;
+    return Objects.equals(this.role, updateOrganizationMemberRequestBody.role);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, teamId, role);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(role);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class AddCollaboratorRequestBody {\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("class UpdateOrganizationMemberRequestBody {\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -241,70 +176,68 @@ public class AddCollaboratorRequestBody {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("account_id");
-    openapiFields.add("team_id");
     openapiFields.add("role");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("role");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to AddCollaboratorRequestBody
+   * @throws IOException if the JSON Element is invalid with respect to UpdateOrganizationMemberRequestBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!AddCollaboratorRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in AddCollaboratorRequestBody is not found in the empty JSON string", AddCollaboratorRequestBody.openapiRequiredFields.toString()));
+        if (!UpdateOrganizationMemberRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateOrganizationMemberRequestBody is not found in the empty JSON string", UpdateOrganizationMemberRequestBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!AddCollaboratorRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddCollaboratorRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!UpdateOrganizationMemberRequestBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateOrganizationMemberRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : UpdateOrganizationMemberRequestBody.openapiRequiredFields) {
+        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("account_id") != null && !jsonObj.get("account_id").isJsonNull()) && !jsonObj.get("account_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account_id").toString()));
-      }
-      if ((jsonObj.get("team_id") != null && !jsonObj.get("team_id").isJsonNull()) && !jsonObj.get("team_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `team_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("team_id").toString()));
-      }
-      if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
+      if (!jsonObj.get("role").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
-      // validate the optional field `role`
-      if (jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) {
-        RoleEnum.validateJsonElement(jsonObj.get("role"));
-      }
+      // validate the required field `role`
+      RoleEnum.validateJsonElement(jsonObj.get("role"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!AddCollaboratorRequestBody.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'AddCollaboratorRequestBody' and its subtypes
+       if (!UpdateOrganizationMemberRequestBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UpdateOrganizationMemberRequestBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<AddCollaboratorRequestBody> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(AddCollaboratorRequestBody.class));
+       final TypeAdapter<UpdateOrganizationMemberRequestBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateOrganizationMemberRequestBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<AddCollaboratorRequestBody>() {
+       return (TypeAdapter<T>) new TypeAdapter<UpdateOrganizationMemberRequestBody>() {
            @Override
-           public void write(JsonWriter out, AddCollaboratorRequestBody value) throws IOException {
+           public void write(JsonWriter out, UpdateOrganizationMemberRequestBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public AddCollaboratorRequestBody read(JsonReader in) throws IOException {
+           public UpdateOrganizationMemberRequestBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -315,18 +248,18 @@ public class AddCollaboratorRequestBody {
   }
 
   /**
-   * Create an instance of AddCollaboratorRequestBody given an JSON string
+   * Create an instance of UpdateOrganizationMemberRequestBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of AddCollaboratorRequestBody
-   * @throws IOException if the JSON string is invalid with respect to AddCollaboratorRequestBody
+   * @return An instance of UpdateOrganizationMemberRequestBody
+   * @throws IOException if the JSON string is invalid with respect to UpdateOrganizationMemberRequestBody
    */
-  public static AddCollaboratorRequestBody fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, AddCollaboratorRequestBody.class);
+  public static UpdateOrganizationMemberRequestBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UpdateOrganizationMemberRequestBody.class);
   }
 
   /**
-   * Convert an instance of AddCollaboratorRequestBody to an JSON string
+   * Convert an instance of UpdateOrganizationMemberRequestBody to an JSON string
    *
    * @return JSON string
    */

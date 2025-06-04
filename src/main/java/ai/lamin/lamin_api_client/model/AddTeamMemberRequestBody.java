@@ -49,12 +49,12 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * AddTeamMemberRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-10T19:58:41.182141089+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-04T12:31:22.348899534+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class AddTeamMemberRequestBody {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nullable
-  private Role role;
+  private Role role = member;
 
   public AddTeamMemberRequestBody() {
   }

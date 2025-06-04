@@ -14,16 +14,13 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
-import ai.lamin.lamin_api_client.model.ValidationErrorLocInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,75 +46,48 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * ValidationError
+ * CreateTransformRequestBody
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-04T12:31:22.348899534+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class ValidationError {
-  public static final String SERIALIZED_NAME_LOC = "loc";
-  @SerializedName(SERIALIZED_NAME_LOC)
+public class CreateTransformRequestBody {
+  public static final String SERIALIZED_NAME_KEY = "key";
+  @SerializedName(SERIALIZED_NAME_KEY)
   @javax.annotation.Nonnull
-  private List<ValidationErrorLocInner> loc = new ArrayList<>();
-
-  public static final String SERIALIZED_NAME_MSG = "msg";
-  @SerializedName(SERIALIZED_NAME_MSG)
-  @javax.annotation.Nonnull
-  private String msg;
+  private String key;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
   private String type;
 
-  public ValidationError() {
+  public static final String SERIALIZED_NAME_SOURCE_CODE = "source_code";
+  @SerializedName(SERIALIZED_NAME_SOURCE_CODE)
+  @javax.annotation.Nonnull
+  private String sourceCode;
+
+  public CreateTransformRequestBody() {
   }
 
-  public ValidationError loc(@javax.annotation.Nonnull List<ValidationErrorLocInner> loc) {
-    this.loc = loc;
-    return this;
-  }
-
-  public ValidationError addLocItem(ValidationErrorLocInner locItem) {
-    if (this.loc == null) {
-      this.loc = new ArrayList<>();
-    }
-    this.loc.add(locItem);
+  public CreateTransformRequestBody key(@javax.annotation.Nonnull String key) {
+    this.key = key;
     return this;
   }
 
   /**
-   * Get loc
-   * @return loc
+   * Get key
+   * @return key
    */
   @javax.annotation.Nonnull
-  public List<ValidationErrorLocInner> getLoc() {
-    return loc;
+  public String getKey() {
+    return key;
   }
 
-  public void setLoc(@javax.annotation.Nonnull List<ValidationErrorLocInner> loc) {
-    this.loc = loc;
-  }
-
-
-  public ValidationError msg(@javax.annotation.Nonnull String msg) {
-    this.msg = msg;
-    return this;
-  }
-
-  /**
-   * Get msg
-   * @return msg
-   */
-  @javax.annotation.Nonnull
-  public String getMsg() {
-    return msg;
-  }
-
-  public void setMsg(@javax.annotation.Nonnull String msg) {
-    this.msg = msg;
+  public void setKey(@javax.annotation.Nonnull String key) {
+    this.key = key;
   }
 
 
-  public ValidationError type(@javax.annotation.Nonnull String type) {
+  public CreateTransformRequestBody type(@javax.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
@@ -136,6 +106,25 @@ public class ValidationError {
   }
 
 
+  public CreateTransformRequestBody sourceCode(@javax.annotation.Nonnull String sourceCode) {
+    this.sourceCode = sourceCode;
+    return this;
+  }
+
+  /**
+   * Get sourceCode
+   * @return sourceCode
+   */
+  @javax.annotation.Nonnull
+  public String getSourceCode() {
+    return sourceCode;
+  }
+
+  public void setSourceCode(@javax.annotation.Nonnull String sourceCode) {
+    this.sourceCode = sourceCode;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -145,24 +134,24 @@ public class ValidationError {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ValidationError validationError = (ValidationError) o;
-    return Objects.equals(this.loc, validationError.loc) &&
-        Objects.equals(this.msg, validationError.msg) &&
-        Objects.equals(this.type, validationError.type);
+    CreateTransformRequestBody createTransformRequestBody = (CreateTransformRequestBody) o;
+    return Objects.equals(this.key, createTransformRequestBody.key) &&
+        Objects.equals(this.type, createTransformRequestBody.type) &&
+        Objects.equals(this.sourceCode, createTransformRequestBody.sourceCode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(loc, msg, type);
+    return Objects.hash(key, type, sourceCode);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ValidationError {\n");
-    sb.append("    loc: ").append(toIndentedString(loc)).append("\n");
-    sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
+    sb.append("class CreateTransformRequestBody {\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    sourceCode: ").append(toIndentedString(sourceCode)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -185,60 +174,53 @@ public class ValidationError {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("loc");
-    openapiFields.add("msg");
+    openapiFields.add("key");
     openapiFields.add("type");
+    openapiFields.add("source_code");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("loc");
-    openapiRequiredFields.add("msg");
+    openapiRequiredFields.add("key");
     openapiRequiredFields.add("type");
+    openapiRequiredFields.add("source_code");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to ValidationError
+   * @throws IOException if the JSON Element is invalid with respect to CreateTransformRequestBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!ValidationError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ValidationError is not found in the empty JSON string", ValidationError.openapiRequiredFields.toString()));
+        if (!CreateTransformRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateTransformRequestBody is not found in the empty JSON string", CreateTransformRequestBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!ValidationError.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ValidationError` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!CreateTransformRequestBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateTransformRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : ValidationError.openapiRequiredFields) {
+      for (String requiredField : CreateTransformRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("loc").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `loc` to be an array in the JSON string but got `%s`", jsonObj.get("loc").toString()));
-      }
-
-      JsonArray jsonArrayloc = jsonObj.getAsJsonArray("loc");
-      // validate the required field `loc` (array)
-      for (int i = 0; i < jsonArrayloc.size(); i++) {
-        ValidationErrorLocInner.validateJsonElement(jsonArrayloc.get(i));
-      };
-      if (!jsonObj.get("msg").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `msg` to be a primitive type in the JSON string but got `%s`", jsonObj.get("msg").toString()));
+      if (!jsonObj.get("key").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      if (!jsonObj.get("source_code").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `source_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_code").toString()));
       }
   }
 
@@ -246,22 +228,22 @@ public class ValidationError {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!ValidationError.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'ValidationError' and its subtypes
+       if (!CreateTransformRequestBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateTransformRequestBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<ValidationError> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(ValidationError.class));
+       final TypeAdapter<CreateTransformRequestBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateTransformRequestBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<ValidationError>() {
+       return (TypeAdapter<T>) new TypeAdapter<CreateTransformRequestBody>() {
            @Override
-           public void write(JsonWriter out, ValidationError value) throws IOException {
+           public void write(JsonWriter out, CreateTransformRequestBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public ValidationError read(JsonReader in) throws IOException {
+           public CreateTransformRequestBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -272,18 +254,18 @@ public class ValidationError {
   }
 
   /**
-   * Create an instance of ValidationError given an JSON string
+   * Create an instance of CreateTransformRequestBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of ValidationError
-   * @throws IOException if the JSON string is invalid with respect to ValidationError
+   * @return An instance of CreateTransformRequestBody
+   * @throws IOException if the JSON string is invalid with respect to CreateTransformRequestBody
    */
-  public static ValidationError fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, ValidationError.class);
+  public static CreateTransformRequestBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateTransformRequestBody.class);
   }
 
   /**
-   * Convert an instance of ValidationError to an JSON string
+   * Convert an instance of CreateTransformRequestBody to an JSON string
    *
    * @return JSON string
    */
