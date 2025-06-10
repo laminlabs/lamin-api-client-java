@@ -44,7 +44,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>ai.lamin</groupId>
   <artifactId>lamin-api-client</artifactId>
-  <version>0.0.3-rc1</version>
+  <version>0.0.3-rc2</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -60,7 +60,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "ai.lamin:lamin-api-client:0.0.3-rc1"
+     implementation "ai.lamin:lamin-api-client:0.0.3-rc2"
   }
 ```
 
@@ -74,7 +74,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/lamin-api-client-0.0.3-rc1.jar`
+* `target/lamin-api-client-0.0.3-rc2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -133,8 +133,7 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**checkLambdaAccessDebugLambdaAccessGet**](docs/DefaultApi.md#checkLambdaAccessDebugLambdaAccessGet) | **GET** /_debug/lambda-access | Check Lambda Access
 *DefaultApi* | [**createArtifactInstancesInstanceIdArtifactsCreatePost**](docs/DefaultApi.md#createArtifactInstancesInstanceIdArtifactsCreatePost) | **POST** /instances/{instance_id}/artifacts/create | Create Artifact
 *DefaultApi* | [**createInstanceInstancesPut**](docs/DefaultApi.md#createInstanceInstancesPut) | **PUT** /instances | Create Instance
-*DefaultApi* | [**createRecordInstancesInstanceIdModulesModuleNameModelNamePut**](docs/DefaultApi.md#createRecordInstancesInstanceIdModulesModuleNameModelNamePut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name} | Create Record
-*DefaultApi* | [**createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut**](docs/DefaultApi.md#createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name}/bulk | Create Records
+*DefaultApi* | [**createRecordsInstancesInstanceIdModulesModuleNameModelNamePut**](docs/DefaultApi.md#createRecordsInstancesInstanceIdModulesModuleNameModelNamePut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name} | Create Records
 *DefaultApi* | [**createSpaceAccessV2SpacesPut**](docs/DefaultApi.md#createSpaceAccessV2SpacesPut) | **PUT** /access_v2/spaces | Create Space
 *DefaultApi* | [**createTeamAccessV2TeamsPut**](docs/DefaultApi.md#createTeamAccessV2TeamsPut) | **PUT** /access_v2/teams | Create Team
 *DefaultApi* | [**createTransformInstancesInstanceIdTransformsPost**](docs/DefaultApi.md#createTransformInstancesInstanceIdTransformsPost) | **POST** /instances/{instance_id}/transforms | Create Transform
@@ -172,11 +171,11 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet**](docs/DefaultApi.md#listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet) | **GET** /access_v2/spaces/{space_id}/collaborators | List Space Collaborators
 *DefaultApi* | [**listTeamMembersAccessV2TeamsTeamIdMembersGet**](docs/DefaultApi.md#listTeamMembersAccessV2TeamsTeamIdMembersGet) | **GET** /access_v2/teams/{team_id}/members | List Team Members
 *DefaultApi* | [**moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut**](docs/DefaultApi.md#moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut) | **PUT** /access_v2/spaces/{space_id}/record-attachments | Move Record To Space
-*DefaultApi* | [**proxyS3S3PathHead**](docs/DefaultApi.md#proxyS3S3PathHead) | **GET** /s3/{path} | Proxy S3
-*DefaultApi* | [**proxyS3S3PathHead_0**](docs/DefaultApi.md#proxyS3S3PathHead_0) | **HEAD** /s3/{path} | Proxy S3
-*DefaultApi* | [**proxyS3S3PathHead_1**](docs/DefaultApi.md#proxyS3S3PathHead_1) | **PUT** /s3/{path} | Proxy S3
-*DefaultApi* | [**proxyS3S3PathHead_2**](docs/DefaultApi.md#proxyS3S3PathHead_2) | **POST** /s3/{path} | Proxy S3
-*DefaultApi* | [**proxyS3S3PathHead_3**](docs/DefaultApi.md#proxyS3S3PathHead_3) | **DELETE** /s3/{path} | Proxy S3
+*DefaultApi* | [**proxyS3S3PathDelete**](docs/DefaultApi.md#proxyS3S3PathDelete) | **GET** /s3/{path} | Proxy S3
+*DefaultApi* | [**proxyS3S3PathDelete_0**](docs/DefaultApi.md#proxyS3S3PathDelete_0) | **HEAD** /s3/{path} | Proxy S3
+*DefaultApi* | [**proxyS3S3PathDelete_1**](docs/DefaultApi.md#proxyS3S3PathDelete_1) | **PUT** /s3/{path} | Proxy S3
+*DefaultApi* | [**proxyS3S3PathDelete_2**](docs/DefaultApi.md#proxyS3S3PathDelete_2) | **POST** /s3/{path} | Proxy S3
+*DefaultApi* | [**proxyS3S3PathDelete_3**](docs/DefaultApi.md#proxyS3S3PathDelete_3) | **DELETE** /s3/{path} | Proxy S3
 *DefaultApi* | [**registerDbServerDbServerRegisterPost**](docs/DefaultApi.md#registerDbServerDbServerRegisterPost) | **POST** /db/server/register | Register Db Server
 *DefaultApi* | [**registerFormInstancesInstanceIdFormsPost**](docs/DefaultApi.md#registerFormInstancesInstanceIdFormsPost) | **POST** /instances/{instance_id}/forms | Register Form
 *DefaultApi* | [**removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete**](docs/DefaultApi.md#removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete) | **DELETE** /access_v2/instances/{instance_id}/collaborators | Remove Collaborator
