@@ -2,11 +2,14 @@
 README.md
 api/openapi.yaml
 docs/AddCollaboratorRequestBody.md
+docs/AddOrganizationMemberRequestBody.md
 docs/AddSpaceCollaboratorRequestBody.md
 docs/AddTeamMemberRequestBody.md
 docs/AttachSpaceToRecordRequestBody.md
+docs/CreateArtifactRequestBody.md
 docs/CreateSpaceRequestBody.md
 docs/CreateTeamRequestBody.md
+docs/CreateTransformRequestBody.md
 docs/DbUrlRequest.md
 docs/DefaultApi.md
 docs/Dimension.md
@@ -23,6 +26,7 @@ docs/Role.md
 docs/Role1.md
 docs/S3PermissionsRequest.md
 docs/UpdateCollaboratorRequestBody.md
+docs/UpdateOrganizationMemberRequestBody.md
 docs/UpdateSpaceCollaboratorRequestBody.md
 docs/UpdateSpaceRequestBody.md
 docs/UpdateTeamMemberRequestBody.md
@@ -53,11 +57,14 @@ src/main/java/ai/lamin/lamin_api_client/auth/HttpBasicAuth.java
 src/main/java/ai/lamin/lamin_api_client/auth/HttpBearerAuth.java
 src/main/java/ai/lamin/lamin_api_client/model/AbstractOpenApiSchema.java
 src/main/java/ai/lamin/lamin_api_client/model/AddCollaboratorRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/AddOrganizationMemberRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/AddSpaceCollaboratorRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/AddTeamMemberRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/AttachSpaceToRecordRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/CreateArtifactRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateSpaceRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateTeamRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/CreateTransformRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/DbUrlRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/Dimension.java
 src/main/java/ai/lamin/lamin_api_client/model/GetRecordRequestBody.java
@@ -73,6 +80,7 @@ src/main/java/ai/lamin/lamin_api_client/model/Role.java
 src/main/java/ai/lamin/lamin_api_client/model/Role1.java
 src/main/java/ai/lamin/lamin_api_client/model/S3PermissionsRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateCollaboratorRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/UpdateOrganizationMemberRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateSpaceCollaboratorRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateSpaceRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateTeamMemberRequestBody.java

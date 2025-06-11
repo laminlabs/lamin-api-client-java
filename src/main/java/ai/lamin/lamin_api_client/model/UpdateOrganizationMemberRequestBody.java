@@ -14,7 +14,6 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
-import ai.lamin.lamin_api_client.model.Role1;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -47,19 +46,73 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * UpdateTeamMemberRequestBody
+ * UpdateOrganizationMemberRequestBody
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T10:23:42.127510575+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class UpdateTeamMemberRequestBody {
+public class UpdateOrganizationMemberRequestBody {
+  /**
+   * Gets or Sets role
+   */
+  @JsonAdapter(RoleEnum.Adapter.class)
+  public enum RoleEnum {
+    ADMIN("admin"),
+    
+    MEMBER("member"),
+    
+    MANAGER("manager");
+
+    private String value;
+
+    RoleEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RoleEnum fromValue(String value) {
+      for (RoleEnum b : RoleEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RoleEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RoleEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RoleEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return RoleEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RoleEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nonnull
-  private Role1 role;
+  private RoleEnum role;
 
-  public UpdateTeamMemberRequestBody() {
+  public UpdateOrganizationMemberRequestBody() {
   }
 
-  public UpdateTeamMemberRequestBody role(@javax.annotation.Nonnull Role1 role) {
+  public UpdateOrganizationMemberRequestBody role(@javax.annotation.Nonnull RoleEnum role) {
     this.role = role;
     return this;
   }
@@ -69,11 +122,11 @@ public class UpdateTeamMemberRequestBody {
    * @return role
    */
   @javax.annotation.Nonnull
-  public Role1 getRole() {
+  public RoleEnum getRole() {
     return role;
   }
 
-  public void setRole(@javax.annotation.Nonnull Role1 role) {
+  public void setRole(@javax.annotation.Nonnull RoleEnum role) {
     this.role = role;
   }
 
@@ -87,8 +140,8 @@ public class UpdateTeamMemberRequestBody {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateTeamMemberRequestBody updateTeamMemberRequestBody = (UpdateTeamMemberRequestBody) o;
-    return Objects.equals(this.role, updateTeamMemberRequestBody.role);
+    UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody = (UpdateOrganizationMemberRequestBody) o;
+    return Objects.equals(this.role, updateOrganizationMemberRequestBody.role);
   }
 
   @Override
@@ -99,7 +152,7 @@ public class UpdateTeamMemberRequestBody {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateTeamMemberRequestBody {\n");
+    sb.append("class UpdateOrganizationMemberRequestBody {\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -134,54 +187,57 @@ public class UpdateTeamMemberRequestBody {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UpdateTeamMemberRequestBody
+   * @throws IOException if the JSON Element is invalid with respect to UpdateOrganizationMemberRequestBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateTeamMemberRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateTeamMemberRequestBody is not found in the empty JSON string", UpdateTeamMemberRequestBody.openapiRequiredFields.toString()));
+        if (!UpdateOrganizationMemberRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateOrganizationMemberRequestBody is not found in the empty JSON string", UpdateOrganizationMemberRequestBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateTeamMemberRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateTeamMemberRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!UpdateOrganizationMemberRequestBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateOrganizationMemberRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateTeamMemberRequestBody.openapiRequiredFields) {
+      for (String requiredField : UpdateOrganizationMemberRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("role").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+      }
       // validate the required field `role`
-      Role1.validateJsonElement(jsonObj.get("role"));
+      RoleEnum.validateJsonElement(jsonObj.get("role"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateTeamMemberRequestBody.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateTeamMemberRequestBody' and its subtypes
+       if (!UpdateOrganizationMemberRequestBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'UpdateOrganizationMemberRequestBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateTeamMemberRequestBody> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateTeamMemberRequestBody.class));
+       final TypeAdapter<UpdateOrganizationMemberRequestBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateOrganizationMemberRequestBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateTeamMemberRequestBody>() {
+       return (TypeAdapter<T>) new TypeAdapter<UpdateOrganizationMemberRequestBody>() {
            @Override
-           public void write(JsonWriter out, UpdateTeamMemberRequestBody value) throws IOException {
+           public void write(JsonWriter out, UpdateOrganizationMemberRequestBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateTeamMemberRequestBody read(JsonReader in) throws IOException {
+           public UpdateOrganizationMemberRequestBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -192,18 +248,18 @@ public class UpdateTeamMemberRequestBody {
   }
 
   /**
-   * Create an instance of UpdateTeamMemberRequestBody given an JSON string
+   * Create an instance of UpdateOrganizationMemberRequestBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of UpdateTeamMemberRequestBody
-   * @throws IOException if the JSON string is invalid with respect to UpdateTeamMemberRequestBody
+   * @return An instance of UpdateOrganizationMemberRequestBody
+   * @throws IOException if the JSON string is invalid with respect to UpdateOrganizationMemberRequestBody
    */
-  public static UpdateTeamMemberRequestBody fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateTeamMemberRequestBody.class);
+  public static UpdateOrganizationMemberRequestBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, UpdateOrganizationMemberRequestBody.class);
   }
 
   /**
-   * Convert an instance of UpdateTeamMemberRequestBody to an JSON string
+   * Convert an instance of UpdateOrganizationMemberRequestBody to an JSON string
    *
    * @return JSON string
    */

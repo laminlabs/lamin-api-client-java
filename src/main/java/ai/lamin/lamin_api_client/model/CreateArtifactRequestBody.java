@@ -14,7 +14,6 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
-import ai.lamin.lamin_api_client.model.Role1;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,34 +48,66 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * UpdateTeamMemberRequestBody
+ * CreateArtifactRequestBody
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T10:23:42.127510575+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class UpdateTeamMemberRequestBody {
-  public static final String SERIALIZED_NAME_ROLE = "role";
-  @SerializedName(SERIALIZED_NAME_ROLE)
+public class CreateArtifactRequestBody {
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
   @javax.annotation.Nonnull
-  private Role1 role;
+  private String path;
 
-  public UpdateTeamMemberRequestBody() {
+  public static final String SERIALIZED_NAME_KWARGS = "kwargs";
+  @SerializedName(SERIALIZED_NAME_KWARGS)
+  @javax.annotation.Nullable
+  private Map<String, Object> kwargs = new HashMap<>();
+
+  public CreateArtifactRequestBody() {
   }
 
-  public UpdateTeamMemberRequestBody role(@javax.annotation.Nonnull Role1 role) {
-    this.role = role;
+  public CreateArtifactRequestBody path(@javax.annotation.Nonnull String path) {
+    this.path = path;
     return this;
   }
 
   /**
-   * Get role
-   * @return role
+   * Get path
+   * @return path
    */
   @javax.annotation.Nonnull
-  public Role1 getRole() {
-    return role;
+  public String getPath() {
+    return path;
   }
 
-  public void setRole(@javax.annotation.Nonnull Role1 role) {
-    this.role = role;
+  public void setPath(@javax.annotation.Nonnull String path) {
+    this.path = path;
+  }
+
+
+  public CreateArtifactRequestBody kwargs(@javax.annotation.Nullable Map<String, Object> kwargs) {
+    this.kwargs = kwargs;
+    return this;
+  }
+
+  public CreateArtifactRequestBody putKwargsItem(String key, Object kwargsItem) {
+    if (this.kwargs == null) {
+      this.kwargs = new HashMap<>();
+    }
+    this.kwargs.put(key, kwargsItem);
+    return this;
+  }
+
+  /**
+   * Get kwargs
+   * @return kwargs
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getKwargs() {
+    return kwargs;
+  }
+
+  public void setKwargs(@javax.annotation.Nullable Map<String, Object> kwargs) {
+    this.kwargs = kwargs;
   }
 
 
@@ -87,20 +120,22 @@ public class UpdateTeamMemberRequestBody {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateTeamMemberRequestBody updateTeamMemberRequestBody = (UpdateTeamMemberRequestBody) o;
-    return Objects.equals(this.role, updateTeamMemberRequestBody.role);
+    CreateArtifactRequestBody createArtifactRequestBody = (CreateArtifactRequestBody) o;
+    return Objects.equals(this.path, createArtifactRequestBody.path) &&
+        Objects.equals(this.kwargs, createArtifactRequestBody.kwargs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(role);
+    return Objects.hash(path, kwargs);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateTeamMemberRequestBody {\n");
-    sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("class CreateArtifactRequestBody {\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    kwargs: ").append(toIndentedString(kwargs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -123,65 +158,67 @@ public class UpdateTeamMemberRequestBody {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("role");
+    openapiFields.add("path");
+    openapiFields.add("kwargs");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("role");
+    openapiRequiredFields.add("path");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UpdateTeamMemberRequestBody
+   * @throws IOException if the JSON Element is invalid with respect to CreateArtifactRequestBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateTeamMemberRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateTeamMemberRequestBody is not found in the empty JSON string", UpdateTeamMemberRequestBody.openapiRequiredFields.toString()));
+        if (!CreateArtifactRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateArtifactRequestBody is not found in the empty JSON string", CreateArtifactRequestBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateTeamMemberRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateTeamMemberRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!CreateArtifactRequestBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateArtifactRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateTeamMemberRequestBody.openapiRequiredFields) {
+      for (String requiredField : CreateArtifactRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // validate the required field `role`
-      Role1.validateJsonElement(jsonObj.get("role"));
+      if (!jsonObj.get("path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateTeamMemberRequestBody.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateTeamMemberRequestBody' and its subtypes
+       if (!CreateArtifactRequestBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateArtifactRequestBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateTeamMemberRequestBody> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateTeamMemberRequestBody.class));
+       final TypeAdapter<CreateArtifactRequestBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateArtifactRequestBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateTeamMemberRequestBody>() {
+       return (TypeAdapter<T>) new TypeAdapter<CreateArtifactRequestBody>() {
            @Override
-           public void write(JsonWriter out, UpdateTeamMemberRequestBody value) throws IOException {
+           public void write(JsonWriter out, CreateArtifactRequestBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateTeamMemberRequestBody read(JsonReader in) throws IOException {
+           public CreateArtifactRequestBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -192,18 +229,18 @@ public class UpdateTeamMemberRequestBody {
   }
 
   /**
-   * Create an instance of UpdateTeamMemberRequestBody given an JSON string
+   * Create an instance of CreateArtifactRequestBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of UpdateTeamMemberRequestBody
-   * @throws IOException if the JSON string is invalid with respect to UpdateTeamMemberRequestBody
+   * @return An instance of CreateArtifactRequestBody
+   * @throws IOException if the JSON string is invalid with respect to CreateArtifactRequestBody
    */
-  public static UpdateTeamMemberRequestBody fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateTeamMemberRequestBody.class);
+  public static CreateArtifactRequestBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateArtifactRequestBody.class);
   }
 
   /**
-   * Convert an instance of UpdateTeamMemberRequestBody to an JSON string
+   * Convert an instance of CreateArtifactRequestBody to an JSON string
    *
    * @return JSON string
    */
