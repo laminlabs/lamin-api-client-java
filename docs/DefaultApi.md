@@ -17,8 +17,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 | [**checkLambdaAccessDebugLambdaAccessGet**](DefaultApi.md#checkLambdaAccessDebugLambdaAccessGet) | **GET** /_debug/lambda-access | Check Lambda Access |
 | [**createArtifactInstancesInstanceIdArtifactsCreatePost**](DefaultApi.md#createArtifactInstancesInstanceIdArtifactsCreatePost) | **POST** /instances/{instance_id}/artifacts/create | Create Artifact |
 | [**createInstanceInstancesPut**](DefaultApi.md#createInstanceInstancesPut) | **PUT** /instances | Create Instance |
-| [**createRecordInstancesInstanceIdModulesModuleNameModelNamePut**](DefaultApi.md#createRecordInstancesInstanceIdModulesModuleNameModelNamePut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name} | Create Record |
-| [**createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut**](DefaultApi.md#createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name}/bulk | Create Records |
+| [**createRecordsInstancesInstanceIdModulesModuleNameModelNamePut**](DefaultApi.md#createRecordsInstancesInstanceIdModulesModuleNameModelNamePut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name} | Create Records |
 | [**createSpaceAccessV2SpacesPut**](DefaultApi.md#createSpaceAccessV2SpacesPut) | **PUT** /access_v2/spaces | Create Space |
 | [**createTeamAccessV2TeamsPut**](DefaultApi.md#createTeamAccessV2TeamsPut) | **PUT** /access_v2/teams | Create Team |
 | [**createTransformInstancesInstanceIdTransformsPost**](DefaultApi.md#createTransformInstancesInstanceIdTransformsPost) | **POST** /instances/{instance_id}/transforms | Create Transform |
@@ -56,11 +55,11 @@ All URIs are relative to *https://staging.laminhub.com/api*
 | [**listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet**](DefaultApi.md#listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet) | **GET** /access_v2/spaces/{space_id}/collaborators | List Space Collaborators |
 | [**listTeamMembersAccessV2TeamsTeamIdMembersGet**](DefaultApi.md#listTeamMembersAccessV2TeamsTeamIdMembersGet) | **GET** /access_v2/teams/{team_id}/members | List Team Members |
 | [**moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut**](DefaultApi.md#moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut) | **PUT** /access_v2/spaces/{space_id}/record-attachments | Move Record To Space |
-| [**proxyS3S3PathHead**](DefaultApi.md#proxyS3S3PathHead) | **GET** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathHead_0**](DefaultApi.md#proxyS3S3PathHead_0) | **HEAD** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathHead_1**](DefaultApi.md#proxyS3S3PathHead_1) | **PUT** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathHead_2**](DefaultApi.md#proxyS3S3PathHead_2) | **POST** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathHead_3**](DefaultApi.md#proxyS3S3PathHead_3) | **DELETE** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathPut**](DefaultApi.md#proxyS3S3PathPut) | **GET** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathPut_0**](DefaultApi.md#proxyS3S3PathPut_0) | **HEAD** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathPut_1**](DefaultApi.md#proxyS3S3PathPut_1) | **PUT** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathPut_2**](DefaultApi.md#proxyS3S3PathPut_2) | **POST** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathPut_3**](DefaultApi.md#proxyS3S3PathPut_3) | **DELETE** /s3/{path} | Proxy S3 |
 | [**registerDbServerDbServerRegisterPost**](DefaultApi.md#registerDbServerDbServerRegisterPost) | **POST** /db/server/register | Register Db Server |
 | [**registerFormInstancesInstanceIdFormsPost**](DefaultApi.md#registerFormInstancesInstanceIdFormsPost) | **POST** /instances/{instance_id}/forms | Register Form |
 | [**removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete**](DefaultApi.md#removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete) | **DELETE** /access_v2/instances/{instance_id}/collaborators | Remove Collaborator |
@@ -77,6 +76,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 | [**updateTeamAccessV2TeamsTeamIdPatch**](DefaultApi.md#updateTeamAccessV2TeamsTeamIdPatch) | **PATCH** /access_v2/teams/{team_id} | Update Team |
 | [**updateTeamMemberAccessV2TeamsTeamIdMembersAccountIdPatch**](DefaultApi.md#updateTeamMemberAccessV2TeamsTeamIdMembersAccountIdPatch) | **PATCH** /access_v2/teams/{team_id}/members/{account_id} | Update Team Member |
 | [**uploadArtifactInstancesInstanceIdArtifactsUploadPost**](DefaultApi.md#uploadArtifactInstancesInstanceIdArtifactsUploadPost) | **POST** /instances/{instance_id}/artifacts/upload | Upload Artifact |
+| [**upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut**](DefaultApi.md#upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut) | **PUT** /instances/{instance_id}/modules/{module_name}/{model_name}/upsert | Upsert Records |
 
 
 <a id="addCollaboratorAccessV2InstancesInstanceIdCollaboratorsPut"></a>
@@ -934,80 +934,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="createRecordInstancesInstanceIdModulesModuleNameModelNamePut"></a>
-# **createRecordInstancesInstanceIdModulesModuleNameModelNamePut**
-> Object createRecordInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, schemaId, authorization)
-
-Create Record
-
-### Example
-```java
-// Import classes:
-import ai.lamin.lamin_api_client.ApiClient;
-import ai.lamin.lamin_api_client.ApiException;
-import ai.lamin.lamin_api_client.Configuration;
-import ai.lamin.lamin_api_client.models.*;
-import ai.lamin.lamin_api_client.api.DefaultApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
-
-    DefaultApi apiInstance = new DefaultApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    Object body = null; // Object | 
-    UUID schemaId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
-    try {
-      Object result = apiInstance.createRecordInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, schemaId, authorization);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#createRecordInstancesInstanceIdModulesModuleNameModelNamePut");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **body** | **Object**|  | |
-| **schemaId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
-
-<a id="createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut"></a>
-# **createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut**
-> Object createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut(moduleName, modelName, instanceId, body, schemaId, authorization)
+<a id="createRecordsInstancesInstanceIdModulesModuleNameModelNamePut"></a>
+# **createRecordsInstancesInstanceIdModulesModuleNameModelNamePut**
+> Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, schemaId, authorization)
 
 Create Records
 
@@ -1033,10 +962,10 @@ public class Example {
     UUID schemaId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut(moduleName, modelName, instanceId, body, schemaId, authorization);
+      Object result = apiInstance.createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, schemaId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut");
+      System.err.println("Exception when calling DefaultApi#createRecordsInstancesInstanceIdModulesModuleNameModelNamePut");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3554,9 +3483,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathHead"></a>
-# **proxyS3S3PathHead**
-> Object proxyS3S3PathHead(path)
+<a id="proxyS3S3PathPut"></a>
+# **proxyS3S3PathPut**
+> Object proxyS3S3PathPut(path)
 
 Proxy S3
 
@@ -3577,10 +3506,10 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathHead(path);
+      Object result = apiInstance.proxyS3S3PathPut(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathHead");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3615,9 +3544,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathHead_0"></a>
-# **proxyS3S3PathHead_0**
-> Object proxyS3S3PathHead_0(path)
+<a id="proxyS3S3PathPut_0"></a>
+# **proxyS3S3PathPut_0**
+> Object proxyS3S3PathPut_0(path)
 
 Proxy S3
 
@@ -3638,10 +3567,10 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathHead_0(path);
+      Object result = apiInstance.proxyS3S3PathPut_0(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathHead_0");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_0");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3676,9 +3605,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathHead_1"></a>
-# **proxyS3S3PathHead_1**
-> Object proxyS3S3PathHead_1(path)
+<a id="proxyS3S3PathPut_1"></a>
+# **proxyS3S3PathPut_1**
+> Object proxyS3S3PathPut_1(path)
 
 Proxy S3
 
@@ -3699,10 +3628,10 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathHead_1(path);
+      Object result = apiInstance.proxyS3S3PathPut_1(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathHead_1");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_1");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3737,9 +3666,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathHead_2"></a>
-# **proxyS3S3PathHead_2**
-> Object proxyS3S3PathHead_2(path)
+<a id="proxyS3S3PathPut_2"></a>
+# **proxyS3S3PathPut_2**
+> Object proxyS3S3PathPut_2(path)
 
 Proxy S3
 
@@ -3760,10 +3689,10 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathHead_2(path);
+      Object result = apiInstance.proxyS3S3PathPut_2(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathHead_2");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_2");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3798,9 +3727,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathHead_3"></a>
-# **proxyS3S3PathHead_3**
-> Object proxyS3S3PathHead_3(path)
+<a id="proxyS3S3PathPut_3"></a>
+# **proxyS3S3PathPut_3**
+> Object proxyS3S3PathPut_3(path)
 
 Proxy S3
 
@@ -3821,10 +3750,10 @@ public class Example {
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathHead_3(path);
+      Object result = apiInstance.proxyS3S3PathPut_3(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathHead_3");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_3");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -4933,6 +4862,79 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut"></a>
+# **upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut**
+> Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization)
+
+Upsert Records
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://staging.laminhub.com/api");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    String moduleName = "moduleName_example"; // String | 
+    String modelName = "modelName_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | 
+    Object body = null; // Object | 
+    List<String> conflictColumns = Arrays.asList(); // List<String> | 
+    UUID schemaId = UUID.randomUUID(); // UUID | 
+    String authorization = "authorization_example"; // String | 
+    try {
+      Object result = apiInstance.upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **moduleName** | **String**|  | |
+| **modelName** | **String**|  | |
+| **instanceId** | **UUID**|  | |
+| **body** | **Object**|  | |
+| **conflictColumns** | [**List&lt;String&gt;**](String.md)|  | [optional] |
+| **schemaId** | **UUID**|  | [optional] |
+| **authorization** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details

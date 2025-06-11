@@ -21,6 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * CreateTransformRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-04T12:31:22.348899534+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T10:23:42.127510575+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class CreateTransformRequestBody {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
@@ -64,6 +67,11 @@ public class CreateTransformRequestBody {
   @SerializedName(SERIALIZED_NAME_SOURCE_CODE)
   @javax.annotation.Nonnull
   private String sourceCode;
+
+  public static final String SERIALIZED_NAME_KWARGS = "kwargs";
+  @SerializedName(SERIALIZED_NAME_KWARGS)
+  @javax.annotation.Nullable
+  private Map<String, Object> kwargs;
 
   public CreateTransformRequestBody() {
   }
@@ -125,6 +133,33 @@ public class CreateTransformRequestBody {
   }
 
 
+  public CreateTransformRequestBody kwargs(@javax.annotation.Nullable Map<String, Object> kwargs) {
+    this.kwargs = kwargs;
+    return this;
+  }
+
+  public CreateTransformRequestBody putKwargsItem(String key, Object kwargsItem) {
+    if (this.kwargs == null) {
+      this.kwargs = new HashMap<>();
+    }
+    this.kwargs.put(key, kwargsItem);
+    return this;
+  }
+
+  /**
+   * Get kwargs
+   * @return kwargs
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getKwargs() {
+    return kwargs;
+  }
+
+  public void setKwargs(@javax.annotation.Nullable Map<String, Object> kwargs) {
+    this.kwargs = kwargs;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +172,24 @@ public class CreateTransformRequestBody {
     CreateTransformRequestBody createTransformRequestBody = (CreateTransformRequestBody) o;
     return Objects.equals(this.key, createTransformRequestBody.key) &&
         Objects.equals(this.type, createTransformRequestBody.type) &&
-        Objects.equals(this.sourceCode, createTransformRequestBody.sourceCode);
+        Objects.equals(this.sourceCode, createTransformRequestBody.sourceCode) &&
+        Objects.equals(this.kwargs, createTransformRequestBody.kwargs);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, type, sourceCode);
+    return Objects.hash(key, type, sourceCode, kwargs);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -152,6 +199,7 @@ public class CreateTransformRequestBody {
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    sourceCode: ").append(toIndentedString(sourceCode)).append("\n");
+    sb.append("    kwargs: ").append(toIndentedString(kwargs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,6 +225,7 @@ public class CreateTransformRequestBody {
     openapiFields.add("key");
     openapiFields.add("type");
     openapiFields.add("source_code");
+    openapiFields.add("kwargs");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

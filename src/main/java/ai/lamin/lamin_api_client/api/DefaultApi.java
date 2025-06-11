@@ -2070,7 +2070,7 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
-     * Build call for createRecordInstancesInstanceIdModulesModuleNameModelNamePut
+     * Build call for createRecordsInstancesInstanceIdModulesModuleNameModelNamePut
      * @param moduleName  (required)
      * @param modelName  (required)
      * @param instanceId  (required)
@@ -2088,7 +2088,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordInstancesInstanceIdModulesModuleNameModelNamePutCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2146,206 +2146,28 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRecordInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
-            throw new ApiException("Missing the required parameter 'moduleName' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'moduleName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
         // verify the required parameter 'modelName' is set
         if (modelName == null) {
-            throw new ApiException("Missing the required parameter 'modelName' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'modelName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
-            throw new ApiException("Missing the required parameter 'instanceId' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'instanceId' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
-        return createRecordInstancesInstanceIdModulesModuleNameModelNamePutCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
-
-    }
-
-    /**
-     * Create Record
-     * 
-     * @param moduleName  (required)
-     * @param modelName  (required)
-     * @param instanceId  (required)
-     * @param body  (required)
-     * @param schemaId  (optional)
-     * @param authorization  (optional)
-     * @return Object
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public Object createRecordInstancesInstanceIdModulesModuleNameModelNamePut(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createRecordInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(moduleName, modelName, instanceId, body, schemaId, authorization);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Create Record
-     * 
-     * @param moduleName  (required)
-     * @param modelName  (required)
-     * @param instanceId  (required)
-     * @param body  (required)
-     * @param schemaId  (optional)
-     * @param authorization  (optional)
-     * @return ApiResponse&lt;Object&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Object> createRecordInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createRecordInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, null);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Create Record (asynchronously)
-     * 
-     * @param moduleName  (required)
-     * @param modelName  (required)
-     * @param instanceId  (required)
-     * @param body  (required)
-     * @param schemaId  (optional)
-     * @param authorization  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createRecordInstancesInstanceIdModulesModuleNameModelNamePutAsync(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = createRecordInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
-        Type localVarReturnType = new TypeToken<Object>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut
-     * @param moduleName  (required)
-     * @param modelName  (required)
-     * @param instanceId  (required)
-     * @param body  (required)
-     * @param schemaId  (optional)
-     * @param authorization  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
-        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = body;
-
-        // create path and map variables
-        String localVarPath = "/instances/{instance_id}/modules/{module_name}/{model_name}/bulk"
-            .replace("{" + "module_name" + "}", localVarApiClient.escapeString(moduleName.toString()))
-            .replace("{" + "model_name" + "}", localVarApiClient.escapeString(modelName.toString()))
-            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (schemaId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("schema_id", schemaId));
-        }
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        if (authorization != null) {
-            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
-        }
-
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'moduleName' is set
-        if (moduleName == null) {
-            throw new ApiException("Missing the required parameter 'moduleName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut(Async)");
-        }
-
-        // verify the required parameter 'modelName' is set
-        if (modelName == null) {
-            throw new ApiException("Missing the required parameter 'modelName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut(Async)");
-        }
-
-        // verify the required parameter 'instanceId' is set
-        if (instanceId == null) {
-            throw new ApiException("Missing the required parameter 'instanceId' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut(Async)");
-        }
-
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut(Async)");
-        }
-
-        return createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
+        return createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
 
     }
 
@@ -2368,8 +2190,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPut(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutWithHttpInfo(moduleName, modelName, instanceId, body, schemaId, authorization);
+    public Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(moduleName, modelName, instanceId, body, schemaId, authorization);
         return localVarResp.getData();
     }
 
@@ -2392,8 +2214,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, null);
+    public ApiResponse<Object> createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2418,9 +2240,9 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutAsync(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutAsync(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNameBulkPutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
+        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -8117,7 +7939,7 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
-     * Build call for proxyS3S3PathHead
+     * Build call for proxyS3S3PathPut
      * @param path  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -8130,7 +7952,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHeadCall(String path, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPutCall(String path, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8176,13 +7998,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call proxyS3S3PathHeadValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call proxyS3S3PathPutValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'path' is set
         if (path == null) {
-            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathHead(Async)");
+            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathPut(Async)");
         }
 
-        return proxyS3S3PathHeadCall(path, _callback);
+        return proxyS3S3PathPutCall(path, _callback);
 
     }
 
@@ -8200,8 +8022,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object proxyS3S3PathHead(String path) throws ApiException {
-        ApiResponse<Object> localVarResp = proxyS3S3PathHeadWithHttpInfo(path);
+    public Object proxyS3S3PathPut(String path) throws ApiException {
+        ApiResponse<Object> localVarResp = proxyS3S3PathPutWithHttpInfo(path);
         return localVarResp.getData();
     }
 
@@ -8219,8 +8041,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> proxyS3S3PathHeadWithHttpInfo(String path) throws ApiException {
-        okhttp3.Call localVarCall = proxyS3S3PathHeadValidateBeforeCall(path, null);
+    public ApiResponse<Object> proxyS3S3PathPutWithHttpInfo(String path) throws ApiException {
+        okhttp3.Call localVarCall = proxyS3S3PathPutValidateBeforeCall(path, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -8240,15 +8062,15 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHeadAsync(String path, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPutAsync(String path, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = proxyS3S3PathHeadValidateBeforeCall(path, _callback);
+        okhttp3.Call localVarCall = proxyS3S3PathPutValidateBeforeCall(path, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for proxyS3S3PathHead_0
+     * Build call for proxyS3S3PathPut_0
      * @param path  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -8261,7 +8083,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_0Call(String path, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_0Call(String path, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8307,13 +8129,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call proxyS3S3PathHead_0ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call proxyS3S3PathPut_0ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'path' is set
         if (path == null) {
-            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathHead_0(Async)");
+            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathPut_0(Async)");
         }
 
-        return proxyS3S3PathHead_0Call(path, _callback);
+        return proxyS3S3PathPut_0Call(path, _callback);
 
     }
 
@@ -8331,8 +8153,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object proxyS3S3PathHead_0(String path) throws ApiException {
-        ApiResponse<Object> localVarResp = proxyS3S3PathHead_0WithHttpInfo(path);
+    public Object proxyS3S3PathPut_0(String path) throws ApiException {
+        ApiResponse<Object> localVarResp = proxyS3S3PathPut_0WithHttpInfo(path);
         return localVarResp.getData();
     }
 
@@ -8350,8 +8172,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> proxyS3S3PathHead_0WithHttpInfo(String path) throws ApiException {
-        okhttp3.Call localVarCall = proxyS3S3PathHead_0ValidateBeforeCall(path, null);
+    public ApiResponse<Object> proxyS3S3PathPut_0WithHttpInfo(String path) throws ApiException {
+        okhttp3.Call localVarCall = proxyS3S3PathPut_0ValidateBeforeCall(path, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -8371,15 +8193,15 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_0Async(String path, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_0Async(String path, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = proxyS3S3PathHead_0ValidateBeforeCall(path, _callback);
+        okhttp3.Call localVarCall = proxyS3S3PathPut_0ValidateBeforeCall(path, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for proxyS3S3PathHead_1
+     * Build call for proxyS3S3PathPut_1
      * @param path  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -8392,7 +8214,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_1Call(String path, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_1Call(String path, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8438,13 +8260,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call proxyS3S3PathHead_1ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call proxyS3S3PathPut_1ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'path' is set
         if (path == null) {
-            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathHead_1(Async)");
+            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathPut_1(Async)");
         }
 
-        return proxyS3S3PathHead_1Call(path, _callback);
+        return proxyS3S3PathPut_1Call(path, _callback);
 
     }
 
@@ -8462,8 +8284,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object proxyS3S3PathHead_1(String path) throws ApiException {
-        ApiResponse<Object> localVarResp = proxyS3S3PathHead_1WithHttpInfo(path);
+    public Object proxyS3S3PathPut_1(String path) throws ApiException {
+        ApiResponse<Object> localVarResp = proxyS3S3PathPut_1WithHttpInfo(path);
         return localVarResp.getData();
     }
 
@@ -8481,8 +8303,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> proxyS3S3PathHead_1WithHttpInfo(String path) throws ApiException {
-        okhttp3.Call localVarCall = proxyS3S3PathHead_1ValidateBeforeCall(path, null);
+    public ApiResponse<Object> proxyS3S3PathPut_1WithHttpInfo(String path) throws ApiException {
+        okhttp3.Call localVarCall = proxyS3S3PathPut_1ValidateBeforeCall(path, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -8502,15 +8324,15 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_1Async(String path, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_1Async(String path, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = proxyS3S3PathHead_1ValidateBeforeCall(path, _callback);
+        okhttp3.Call localVarCall = proxyS3S3PathPut_1ValidateBeforeCall(path, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for proxyS3S3PathHead_2
+     * Build call for proxyS3S3PathPut_2
      * @param path  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -8523,7 +8345,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_2Call(String path, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_2Call(String path, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8569,13 +8391,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call proxyS3S3PathHead_2ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call proxyS3S3PathPut_2ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'path' is set
         if (path == null) {
-            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathHead_2(Async)");
+            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathPut_2(Async)");
         }
 
-        return proxyS3S3PathHead_2Call(path, _callback);
+        return proxyS3S3PathPut_2Call(path, _callback);
 
     }
 
@@ -8593,8 +8415,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object proxyS3S3PathHead_2(String path) throws ApiException {
-        ApiResponse<Object> localVarResp = proxyS3S3PathHead_2WithHttpInfo(path);
+    public Object proxyS3S3PathPut_2(String path) throws ApiException {
+        ApiResponse<Object> localVarResp = proxyS3S3PathPut_2WithHttpInfo(path);
         return localVarResp.getData();
     }
 
@@ -8612,8 +8434,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> proxyS3S3PathHead_2WithHttpInfo(String path) throws ApiException {
-        okhttp3.Call localVarCall = proxyS3S3PathHead_2ValidateBeforeCall(path, null);
+    public ApiResponse<Object> proxyS3S3PathPut_2WithHttpInfo(String path) throws ApiException {
+        okhttp3.Call localVarCall = proxyS3S3PathPut_2ValidateBeforeCall(path, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -8633,15 +8455,15 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_2Async(String path, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_2Async(String path, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = proxyS3S3PathHead_2ValidateBeforeCall(path, _callback);
+        okhttp3.Call localVarCall = proxyS3S3PathPut_2ValidateBeforeCall(path, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for proxyS3S3PathHead_3
+     * Build call for proxyS3S3PathPut_3
      * @param path  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -8654,7 +8476,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_3Call(String path, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_3Call(String path, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -8700,13 +8522,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call proxyS3S3PathHead_3ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call proxyS3S3PathPut_3ValidateBeforeCall(String path, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'path' is set
         if (path == null) {
-            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathHead_3(Async)");
+            throw new ApiException("Missing the required parameter 'path' when calling proxyS3S3PathPut_3(Async)");
         }
 
-        return proxyS3S3PathHead_3Call(path, _callback);
+        return proxyS3S3PathPut_3Call(path, _callback);
 
     }
 
@@ -8724,8 +8546,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object proxyS3S3PathHead_3(String path) throws ApiException {
-        ApiResponse<Object> localVarResp = proxyS3S3PathHead_3WithHttpInfo(path);
+    public Object proxyS3S3PathPut_3(String path) throws ApiException {
+        ApiResponse<Object> localVarResp = proxyS3S3PathPut_3WithHttpInfo(path);
         return localVarResp.getData();
     }
 
@@ -8743,8 +8565,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> proxyS3S3PathHead_3WithHttpInfo(String path) throws ApiException {
-        okhttp3.Call localVarCall = proxyS3S3PathHead_3ValidateBeforeCall(path, null);
+    public ApiResponse<Object> proxyS3S3PathPut_3WithHttpInfo(String path) throws ApiException {
+        okhttp3.Call localVarCall = proxyS3S3PathPut_3ValidateBeforeCall(path, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -8764,9 +8586,9 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call proxyS3S3PathHead_3Async(String path, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call proxyS3S3PathPut_3Async(String path, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = proxyS3S3PathHead_3ValidateBeforeCall(path, _callback);
+        okhttp3.Call localVarCall = proxyS3S3PathPut_3ValidateBeforeCall(path, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -11260,6 +11082,192 @@ public class DefaultApi {
     public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostAsync(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, authorization, kwargs, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/modules/{module_name}/{model_name}/upsert"
+            .replace("{" + "module_name" + "}", localVarApiClient.escapeString(moduleName.toString()))
+            .replace("{" + "model_name" + "}", localVarApiClient.escapeString(modelName.toString()))
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (conflictColumns != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "conflict_columns", conflictColumns));
+        }
+
+        if (schemaId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("schema_id", schemaId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'moduleName' is set
+        if (moduleName == null) {
+            throw new ApiException("Missing the required parameter 'moduleName' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        // verify the required parameter 'modelName' is set
+        if (modelName == null) {
+            throw new ApiException("Missing the required parameter 'modelName' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        return upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization, _callback);
+
+    }
+
+    /**
+     * Upsert Records
+     * 
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Upsert Records
+     * 
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Upsert Records (asynchronously)
+     * 
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutAsync(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

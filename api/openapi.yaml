@@ -691,7 +691,7 @@ paths:
       x-accepts:
       - application/json
     put:
-      operationId: create_record_instances__instance_id__modules__module_name___model_name__put
+      operationId: create_records_instances__instance_id__modules__module_name___model_name__put
       parameters:
       - explode: false
         in: path
@@ -752,7 +752,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
           description: Validation Error
-      summary: Create Record
+      summary: Create Records
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1187,9 +1187,9 @@ paths:
       summary: Attach Label
       x-accepts:
       - application/json
-  /instances/{instance_id}/modules/{module_name}/{model_name}/bulk:
+  /instances/{instance_id}/modules/{module_name}/{model_name}/upsert:
     put:
-      operationId: create_records_instances__instance_id__modules__module_name___model_name__bulk_put
+      operationId: upsert_records_instances__instance_id__modules__module_name___model_name__upsert_put
       parameters:
       - explode: false
         in: path
@@ -1216,6 +1216,16 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: conflict_columns
+        required: false
+        schema:
+          items:
+            type: string
+          nullable: true
+          type: array
+        style: form
       - explode: true
         in: query
         name: schema_id
@@ -1250,7 +1260,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/HTTPValidationError'
           description: Validation Error
-      summary: Create Records
+      summary: Upsert Records
       x-content-type: application/json
       x-accepts:
       - application/json
@@ -1597,7 +1607,7 @@ paths:
       - application/json
   /s3/{path}:
     delete:
-      operationId: proxy_s3_s3__path__head
+      operationId: proxy_s3_s3__path__put
       parameters:
       - explode: false
         in: path
@@ -1623,7 +1633,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: proxy_s3_s3__path__head
+      operationId: proxy_s3_s3__path__put
       parameters:
       - explode: false
         in: path
@@ -1649,7 +1659,7 @@ paths:
       x-accepts:
       - application/json
     head:
-      operationId: proxy_s3_s3__path__head
+      operationId: proxy_s3_s3__path__put
       parameters:
       - explode: false
         in: path
@@ -1675,7 +1685,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: proxy_s3_s3__path__head
+      operationId: proxy_s3_s3__path__put
       parameters:
       - explode: false
         in: path
@@ -1701,7 +1711,7 @@ paths:
       x-accepts:
       - application/json
     put:
-      operationId: proxy_s3_s3__path__head
+      operationId: proxy_s3_s3__path__put
       parameters:
       - explode: false
         in: path
@@ -3939,6 +3949,8 @@ components:
       title: CreateTeamRequestBody
     CreateTransformRequestBody:
       example:
+        kwargs:
+          key: ""
         type: type
         source_code: source_code
         key: key
@@ -3952,6 +3964,9 @@ components:
         source_code:
           title: Source Code
           type: string
+        kwargs:
+          additionalProperties: {}
+          nullable: true
       required:
       - key
       - source_code
