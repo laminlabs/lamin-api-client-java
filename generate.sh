@@ -19,3 +19,7 @@ sed -i "$SED_CMD1;$SED_CMD2" README.md
 
 # postfix generated file
 sed -i 's#private Role role = member;#private Role role;#' src/main/java/ai/lamin/lamin_api_client/model/AddTeamMemberRequestBody.java
+
+# update pom.xml with artifact version
+VERSION=$(yq -r '.artifactVersion' config.yaml)
+sed -i "s/^    <version>[^<]*<\/version>$/    <version>$VERSION<\/version>/" pom.xml

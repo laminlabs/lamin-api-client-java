@@ -6,7 +6,7 @@
     <artifactId>lamin-api-client</artifactId>
     <packaging>jar</packaging>
     <name>lamin-api-client</name>
-    <version>0.0.3-rc2</version>
+    <version>0.0.3-rc3</version>
     <url>https://github.com/laminlabs/lamin-api-client-java</url>
     <description>Java client for the Lamin API</description>
     <scm>
