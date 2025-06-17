@@ -28,12 +28,16 @@ import java.io.IOException;
 
 
 import ai.lamin.lamin_api_client.model.AddCollaboratorRequestBody;
+import ai.lamin.lamin_api_client.model.AddOrganizationMemberRequestBody;
 import ai.lamin.lamin_api_client.model.AddSpaceCollaboratorRequestBody;
 import ai.lamin.lamin_api_client.model.AddTeamMemberRequestBody;
 import ai.lamin.lamin_api_client.model.AttachSpaceToRecordRequestBody;
+import ai.lamin.lamin_api_client.model.CreateArtifactRequestBody;
 import ai.lamin.lamin_api_client.model.CreateSpaceRequestBody;
 import ai.lamin.lamin_api_client.model.CreateTeamRequestBody;
+import ai.lamin.lamin_api_client.model.CreateTransformRequestBody;
 import ai.lamin.lamin_api_client.model.DbUrlRequest;
+import java.io.File;
 import ai.lamin.lamin_api_client.model.GetRecordRequestBody;
 import ai.lamin.lamin_api_client.model.GetRecordsRequestBody;
 import ai.lamin.lamin_api_client.model.GetValuesRequestBody;
@@ -44,6 +48,7 @@ import ai.lamin.lamin_api_client.model.RegisterFormRequest;
 import ai.lamin.lamin_api_client.model.S3PermissionsRequest;
 import java.util.UUID;
 import ai.lamin.lamin_api_client.model.UpdateCollaboratorRequestBody;
+import ai.lamin.lamin_api_client.model.UpdateOrganizationMemberRequestBody;
 import ai.lamin.lamin_api_client.model.UpdateSpaceCollaboratorRequestBody;
 import ai.lamin.lamin_api_client.model.UpdateSpaceRequestBody;
 import ai.lamin.lamin_api_client.model.UpdateTeamMemberRequestBody;
@@ -409,6 +414,166 @@ public class DefaultApi {
     public okhttp3.Call addCollaboratorInstancesInstanceIdCollaboratorsAccountIdPutAsync(UUID instanceId, UUID accountId, UUID schemaId, String role, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addCollaboratorInstancesInstanceIdCollaboratorsAccountIdPutValidateBeforeCall(instanceId, accountId, schemaId, role, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPut
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param addOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = addOrganizationMemberRequestBody;
+
+        // create path and map variables
+        String localVarPath = "/access_v2/organizations/{organization_id}/members/{account_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "account_id" + "}", localVarApiClient.escapeString(accountId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPut(Async)");
+        }
+
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPut(Async)");
+        }
+
+        // verify the required parameter 'addOrganizationMemberRequestBody' is set
+        if (addOrganizationMemberRequestBody == null) {
+            throw new ApiException("Missing the required parameter 'addOrganizationMemberRequestBody' when calling addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPut(Async)");
+        }
+
+        return addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutCall(organizationId, accountId, addOrganizationMemberRequestBody, authorization, _callback);
+
+    }
+
+    /**
+     * Add Organization Member
+     * Add a member to an organization.  Parameters: - **organization_id**: UUID of the organization to add the member to - **account_id**: UUID of the account to add as a member - **body**: Request body containing member details   - **role**: Role of the member in the organization  Returns: - **201**: Organization member added successfully
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param addOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPut(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(organizationId, accountId, addOrganizationMemberRequestBody, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Add Organization Member
+     * Add a member to an organization.  Parameters: - **organization_id**: UUID of the organization to add the member to - **account_id**: UUID of the account to add as a member - **body**: Request body containing member details   - **role**: Role of the member in the organization  Returns: - **201**: Organization member added successfully
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param addOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Add Organization Member (asynchronously)
+     * Add a member to an organization.  Parameters: - **organization_id**: UUID of the organization to add the member to - **account_id**: UUID of the account to add as a member - **body**: Request body containing member details   - **role**: Role of the member in the organization  Returns: - **201**: Organization member added successfully
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param addOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutAsync(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = addOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1072,6 +1237,123 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for checkCacheAccessDebugCacheAccessGet
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkCacheAccessDebugCacheAccessGetCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/_debug/cache-access";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call checkCacheAccessDebugCacheAccessGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return checkCacheAccessDebugCacheAccessGetCall(_callback);
+
+    }
+
+    /**
+     * Check Cache Access
+     * 
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object checkCacheAccessDebugCacheAccessGet() throws ApiException {
+        ApiResponse<Object> localVarResp = checkCacheAccessDebugCacheAccessGetWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Check Cache Access
+     * 
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> checkCacheAccessDebugCacheAccessGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = checkCacheAccessDebugCacheAccessGetValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Check Cache Access (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkCacheAccessDebugCacheAccessGetAsync(final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = checkCacheAccessDebugCacheAccessGetValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for checkDbAccessDebugDbAccessPost
      * @param dbUrlRequest  (required)
      * @param _callback Callback for upload/download progress
@@ -1346,11 +1628,126 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
-     * Build call for createInstanceInstancesPut
-     * @param name  (required)
-     * @param storage  (optional, default to create-s3)
-     * @param schemaStr  (optional)
-     * @param dbServerKey  (optional)
+     * Build call for checkLambdaAccessDebugLambdaAccessGet
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkLambdaAccessDebugLambdaAccessGetCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/_debug/lambda-access";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call checkLambdaAccessDebugLambdaAccessGetValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return checkLambdaAccessDebugLambdaAccessGetCall(_callback);
+
+    }
+
+    /**
+     * Check Lambda Access
+     * 
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object checkLambdaAccessDebugLambdaAccessGet() throws ApiException {
+        ApiResponse<Object> localVarResp = checkLambdaAccessDebugLambdaAccessGetWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Check Lambda Access
+     * 
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> checkLambdaAccessDebugLambdaAccessGetWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = checkLambdaAccessDebugLambdaAccessGetValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Check Lambda Access (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkLambdaAccessDebugLambdaAccessGetAsync(final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = checkLambdaAccessDebugLambdaAccessGetValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createArtifactInstancesInstanceIdArtifactsCreatePost
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1363,7 +1760,160 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerKey, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createArtifactRequestBody;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/artifacts/create"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling createArtifactInstancesInstanceIdArtifactsCreatePost(Async)");
+        }
+
+        // verify the required parameter 'createArtifactRequestBody' is set
+        if (createArtifactRequestBody == null) {
+            throw new ApiException("Missing the required parameter 'createArtifactRequestBody' when calling createArtifactInstancesInstanceIdArtifactsCreatePost(Async)");
+        }
+
+        return createArtifactInstancesInstanceIdArtifactsCreatePostCall(instanceId, createArtifactRequestBody, authorization, _callback);
+
+    }
+
+    /**
+     * Create Artifact
+     * 
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object createArtifactInstancesInstanceIdArtifactsCreatePost(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(instanceId, createArtifactRequestBody, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Artifact
+     * 
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Artifact (asynchronously)
+     * 
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostAsync(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createInstanceInstancesPut
+     * @param name  (required)
+     * @param storage  (optional, default to create-s3)
+     * @param schemaStr  (optional)
+     * @param dbServerKey  (optional)
+     * @param storageUid  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerKey, String storageUid, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1404,6 +1954,10 @@ public class DefaultApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("db_server_key", dbServerKey));
         }
 
+        if (storageUid != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("storage_uid", storageUid));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1429,13 +1983,13 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerKey, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerKey, String storageUid, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling createInstanceInstancesPut(Async)");
         }
 
-        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerKey, authorization, _callback);
+        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerKey, storageUid, authorization, _callback);
 
     }
 
@@ -1446,6 +2000,7 @@ public class DefaultApi {
      * @param storage  (optional, default to create-s3)
      * @param schemaStr  (optional)
      * @param dbServerKey  (optional)
+     * @param storageUid  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1457,8 +2012,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerKey, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerKey, authorization);
+    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerKey, String storageUid, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerKey, storageUid, authorization);
         return localVarResp.getData();
     }
 
@@ -1469,6 +2024,7 @@ public class DefaultApi {
      * @param storage  (optional, default to create-s3)
      * @param schemaStr  (optional)
      * @param dbServerKey  (optional)
+     * @param storageUid  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1480,8 +2036,8 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerKey, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, authorization, null);
+    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerKey, String storageUid, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, storageUid, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1493,6 +2049,7 @@ public class DefaultApi {
      * @param storage  (optional, default to create-s3)
      * @param schemaStr  (optional)
      * @param dbServerKey  (optional)
+     * @param storageUid  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1505,15 +2062,15 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerKey, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerKey, String storageUid, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, authorization, _callback);
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerKey, storageUid, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for createRecordInstancesInstanceIdModulesModuleNameModelNamePut
+     * Build call for createRecordsInstancesInstanceIdModulesModuleNameModelNamePut
      * @param moduleName  (required)
      * @param modelName  (required)
      * @param instanceId  (required)
@@ -1531,7 +2088,7 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordInstancesInstanceIdModulesModuleNameModelNamePutCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1589,33 +2146,33 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRecordInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
-            throw new ApiException("Missing the required parameter 'moduleName' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'moduleName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
         // verify the required parameter 'modelName' is set
         if (modelName == null) {
-            throw new ApiException("Missing the required parameter 'modelName' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'modelName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
-            throw new ApiException("Missing the required parameter 'instanceId' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'instanceId' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
         // verify the required parameter 'body' is set
         if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createRecordInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
+            throw new ApiException("Missing the required parameter 'body' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
-        return createRecordInstancesInstanceIdModulesModuleNameModelNamePutCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
+        return createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
 
     }
 
     /**
-     * Create Record
+     * Create Records
      * 
      * @param moduleName  (required)
      * @param modelName  (required)
@@ -1633,13 +2190,13 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createRecordInstancesInstanceIdModulesModuleNameModelNamePut(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createRecordInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(moduleName, modelName, instanceId, body, schemaId, authorization);
+    public Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(moduleName, modelName, instanceId, body, schemaId, authorization);
         return localVarResp.getData();
     }
 
     /**
-     * Create Record
+     * Create Records
      * 
      * @param moduleName  (required)
      * @param modelName  (required)
@@ -1657,14 +2214,14 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createRecordInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createRecordInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, null);
+    public ApiResponse<Object> createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Record (asynchronously)
+     * Create Records (asynchronously)
      * 
      * @param moduleName  (required)
      * @param modelName  (required)
@@ -1683,9 +2240,9 @@ public class DefaultApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordInstancesInstanceIdModulesModuleNameModelNamePutAsync(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutAsync(String moduleName, String modelName, UUID instanceId, Object body, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createRecordInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
+        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, schemaId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1966,6 +2523,156 @@ public class DefaultApi {
     public okhttp3.Call createTeamAccessV2TeamsPutAsync(CreateTeamRequestBody createTeamRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createTeamAccessV2TeamsPutValidateBeforeCall(createTeamRequestBody, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createTransformInstancesInstanceIdTransformsPost
+     * @param instanceId  (required)
+     * @param createTransformRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createTransformRequestBody;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/transforms"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling createTransformInstancesInstanceIdTransformsPost(Async)");
+        }
+
+        // verify the required parameter 'createTransformRequestBody' is set
+        if (createTransformRequestBody == null) {
+            throw new ApiException("Missing the required parameter 'createTransformRequestBody' when calling createTransformInstancesInstanceIdTransformsPost(Async)");
+        }
+
+        return createTransformInstancesInstanceIdTransformsPostCall(instanceId, createTransformRequestBody, authorization, _callback);
+
+    }
+
+    /**
+     * Create Transform
+     * 
+     * @param instanceId  (required)
+     * @param createTransformRequestBody  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object createTransformInstancesInstanceIdTransformsPost(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createTransformInstancesInstanceIdTransformsPostWithHttpInfo(instanceId, createTransformRequestBody, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Transform
+     * 
+     * @param instanceId  (required)
+     * @param createTransformRequestBody  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> createTransformInstancesInstanceIdTransformsPostWithHttpInfo(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Transform (asynchronously)
+     * 
+     * @param instanceId  (required)
+     * @param createTransformRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostAsync(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -3080,6 +3787,136 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for getCallerAccountAccountGet
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCallerAccountAccountGetCall(String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/account";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getCallerAccountAccountGetValidateBeforeCall(String authorization, final ApiCallback _callback) throws ApiException {
+        return getCallerAccountAccountGetCall(authorization, _callback);
+
+    }
+
+    /**
+     * Get Caller Account
+     * 
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object getCallerAccountAccountGet(String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getCallerAccountAccountGetWithHttpInfo(authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Caller Account
+     * 
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> getCallerAccountAccountGetWithHttpInfo(String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Caller Account (asynchronously)
+     * 
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCallerAccountAccountGetAsync(String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getDbTokenAccessV2InstancesInstanceIdDbTokenGet
      * @param instanceId  (required)
      * @param authorization  (optional)
@@ -3636,6 +4473,146 @@ public class DefaultApi {
     public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetAsync(UUID instanceId, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(instanceId, schemaId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getOrganizationAccessV2OrganizationsOrganizationIdGet
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOrganizationAccessV2OrganizationsOrganizationIdGetCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/access_v2/organizations/{organization_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getOrganizationAccessV2OrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationAccessV2OrganizationsOrganizationIdGet(Async)");
+        }
+
+        return getOrganizationAccessV2OrganizationsOrganizationIdGetCall(organizationId, authorization, _callback);
+
+    }
+
+    /**
+     * Get Organization
+     * Get details of a specific organization.  Parameters: - **organization_id**: UUID of the organization to retrieve  Returns: - **200**: Organization details retrieved successfully - **404**: Organization not found
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object getOrganizationAccessV2OrganizationsOrganizationIdGet(UUID organizationId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getOrganizationAccessV2OrganizationsOrganizationIdGetWithHttpInfo(organizationId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Organization
+     * Get details of a specific organization.  Parameters: - **organization_id**: UUID of the organization to retrieve  Returns: - **200**: Organization details retrieved successfully - **404**: Organization not found
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> getOrganizationAccessV2OrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getOrganizationAccessV2OrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Organization (asynchronously)
+     * Get details of a specific organization.  Parameters: - **organization_id**: UUID of the organization to retrieve  Returns: - **200**: Organization details retrieved successfully - **404**: Organization not found
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getOrganizationAccessV2OrganizationsOrganizationIdGetAsync(UUID organizationId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getOrganizationAccessV2OrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -6093,6 +7070,146 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGet
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/access_v2/organizations/{organization_id}/members"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetValidateBeforeCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGet(Async)");
+        }
+
+        return listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetCall(organizationId, authorization, _callback);
+
+    }
+
+    /**
+     * List Organization Members
+     * List all members of an organization.  Parameters: - **organization_id**: UUID of the organization to list members for  Returns: - **200**: List of organization members retrieved successfully
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGet(UUID organizationId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetWithHttpInfo(organizationId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Organization Members
+     * List all members of an organization.  Parameters: - **organization_id**: UUID of the organization to list members for  Returns: - **200**: List of organization members retrieved successfully
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetWithHttpInfo(UUID organizationId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Organization Members (asynchronously)
+     * List all members of an organization.  Parameters: - **organization_id**: UUID of the organization to list members for  Returns: - **200**: List of organization members retrieved successfully
+     * @param organizationId  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetAsync(UUID organizationId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listOrganizationMembersAccessV2OrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listOrganizationSpacesAccessV2SpacesOrganizationsOrganizationIdGet
      * @param organizationId  (required)
      * @param authorization  (optional)
@@ -7923,6 +9040,156 @@ public class DefaultApi {
         return localVarCall;
     }
     /**
+     * Build call for removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDelete
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteCall(UUID organizationId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/access_v2/organizations/{organization_id}/members/{account_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "account_id" + "}", localVarApiClient.escapeString(accountId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(UUID organizationId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDelete(Async)");
+        }
+
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDelete(Async)");
+        }
+
+        return removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteCall(organizationId, accountId, authorization, _callback);
+
+    }
+
+    /**
+     * Remove Organization Member
+     * Remove a member from an organization.  Parameters: - **organization_id**: UUID of the organization to remove the member from - **account_id**: UUID of the account to remove from the organization  Returns: - **200**: Organization member removed successfully - **404**: Member not found in organization
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDelete(UUID organizationId, UUID accountId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(organizationId, accountId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Remove Organization Member
+     * Remove a member from an organization.  Parameters: - **organization_id**: UUID of the organization to remove the member from - **account_id**: UUID of the account to remove from the organization  Returns: - **200**: Organization member removed successfully - **404**: Member not found in organization
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(UUID organizationId, UUID accountId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Remove Organization Member (asynchronously)
+     * Remove a member from an organization.  Parameters: - **organization_id**: UUID of the organization to remove the member from - **account_id**: UUID of the account to remove from the organization  Returns: - **200**: Organization member removed successfully - **404**: Member not found in organization
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteAsync(UUID organizationId, UUID accountId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = removeOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for removeSpaceCollaboratorAccessV2SpacesSpaceIdCollaboratorsDelete
      * @param spaceId  (required)
      * @param accountId  (optional)
@@ -8695,6 +9962,166 @@ public class DefaultApi {
     public okhttp3.Call updateCollaboratorInstancesInstanceIdCollaboratorsAccountIdPatchAsync(UUID instanceId, UUID accountId, String role, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateCollaboratorInstancesInstanceIdCollaboratorsAccountIdPatchValidateBeforeCall(instanceId, accountId, role, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatch
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param updateOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = updateOrganizationMemberRequestBody;
+
+        // create path and map variables
+        String localVarPath = "/access_v2/organizations/{organization_id}/members/{account_id}"
+            .replace("{" + "organization_id" + "}", localVarApiClient.escapeString(organizationId.toString()))
+            .replace("{" + "account_id" + "}", localVarApiClient.escapeString(accountId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'organizationId' is set
+        if (organizationId == null) {
+            throw new ApiException("Missing the required parameter 'organizationId' when calling updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatch(Async)");
+        }
+
+        // verify the required parameter 'accountId' is set
+        if (accountId == null) {
+            throw new ApiException("Missing the required parameter 'accountId' when calling updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatch(Async)");
+        }
+
+        // verify the required parameter 'updateOrganizationMemberRequestBody' is set
+        if (updateOrganizationMemberRequestBody == null) {
+            throw new ApiException("Missing the required parameter 'updateOrganizationMemberRequestBody' when calling updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatch(Async)");
+        }
+
+        return updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchCall(organizationId, accountId, updateOrganizationMemberRequestBody, authorization, _callback);
+
+    }
+
+    /**
+     * Update Organization Member
+     * Update an organization member&#39;s details.  Parameters: - **organization_id**: UUID of the organization the member belongs to - **account_id**: UUID of the account to update - **body**: Request body containing updated member details   - **role**: Role of the member in the organization  Returns: - **200**: Organization member updated successfully - **404**: Member not found in organization
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param updateOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatch(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(organizationId, accountId, updateOrganizationMemberRequestBody, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Update Organization Member
+     * Update an organization member&#39;s details.  Parameters: - **organization_id**: UUID of the organization the member belongs to - **account_id**: UUID of the account to update - **body**: Request body containing updated member details   - **role**: Role of the member in the organization  Returns: - **200**: Organization member updated successfully - **404**: Member not found in organization
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param updateOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Update Organization Member (asynchronously)
+     * Update an organization member&#39;s details.  Parameters: - **organization_id**: UUID of the organization the member belongs to - **account_id**: UUID of the account to update - **body**: Request body containing updated member details   - **role**: Role of the member in the organization  Returns: - **200**: Organization member updated successfully - **404**: Member not found in organization
+     * @param organizationId  (required)
+     * @param accountId  (required)
+     * @param updateOrganizationMemberRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchAsync(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = updateOrganizationMemberAccessV2OrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -9493,6 +10920,354 @@ public class DefaultApi {
     public okhttp3.Call updateTeamMemberAccessV2TeamsTeamIdMembersAccountIdPatchAsync(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateTeamMemberAccessV2TeamsTeamIdMembersAccountIdPatchValidateBeforeCall(teamId, accountId, updateTeamMemberRequestBody, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for uploadArtifactInstancesInstanceIdArtifactsUploadPost
+     * @param instanceId  (required)
+     * @param _file  (required)
+     * @param authorization  (optional)
+     * @param kwargs  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/artifacts/upload"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (_file != null) {
+            localVarFormParams.put("file", _file);
+        }
+
+        if (kwargs != null) {
+            localVarFormParams.put("kwargs", kwargs);
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "multipart/form-data"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling uploadArtifactInstancesInstanceIdArtifactsUploadPost(Async)");
+        }
+
+        // verify the required parameter '_file' is set
+        if (_file == null) {
+            throw new ApiException("Missing the required parameter '_file' when calling uploadArtifactInstancesInstanceIdArtifactsUploadPost(Async)");
+        }
+
+        return uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(instanceId, _file, authorization, kwargs, _callback);
+
+    }
+
+    /**
+     * Upload Artifact
+     * 
+     * @param instanceId  (required)
+     * @param _file  (required)
+     * @param authorization  (optional)
+     * @param kwargs  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object uploadArtifactInstancesInstanceIdArtifactsUploadPost(UUID instanceId, File _file, String authorization, String kwargs) throws ApiException {
+        ApiResponse<Object> localVarResp = uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(instanceId, _file, authorization, kwargs);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Upload Artifact
+     * 
+     * @param instanceId  (required)
+     * @param _file  (required)
+     * @param authorization  (optional)
+     * @param kwargs  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(UUID instanceId, File _file, String authorization, String kwargs) throws ApiException {
+        okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, authorization, kwargs, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Upload Artifact (asynchronously)
+     * 
+     * @param instanceId  (required)
+     * @param _file  (required)
+     * @param authorization  (optional)
+     * @param kwargs  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostAsync(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, authorization, kwargs, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/modules/{module_name}/{model_name}/upsert"
+            .replace("{" + "module_name" + "}", localVarApiClient.escapeString(moduleName.toString()))
+            .replace("{" + "model_name" + "}", localVarApiClient.escapeString(modelName.toString()))
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (conflictColumns != null) {
+            localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "conflict_columns", conflictColumns));
+        }
+
+        if (schemaId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("schema_id", schemaId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'moduleName' is set
+        if (moduleName == null) {
+            throw new ApiException("Missing the required parameter 'moduleName' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        // verify the required parameter 'modelName' is set
+        if (modelName == null) {
+            throw new ApiException("Missing the required parameter 'modelName' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
+        }
+
+        return upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization, _callback);
+
+    }
+
+    /**
+     * Upsert Records
+     * 
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Upsert Records
+     * 
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Upsert Records (asynchronously)
+     * 
+     * @param moduleName  (required)
+     * @param modelName  (required)
+     * @param instanceId  (required)
+     * @param body  (required)
+     * @param conflictColumns  (optional)
+     * @param schemaId  (optional)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutAsync(String moduleName, String modelName, UUID instanceId, Object body, List<String> conflictColumns, UUID schemaId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, body, conflictColumns, schemaId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

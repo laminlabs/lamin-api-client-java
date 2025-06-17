@@ -21,8 +21,6 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.UUID;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,20 +46,10 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * UpdateSpaceCollaboratorRequestBody
+ * AddOrganizationMemberRequestBody
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class UpdateSpaceCollaboratorRequestBody {
-  public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
-  @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
-  @javax.annotation.Nullable
-  private UUID accountId;
-
-  public static final String SERIALIZED_NAME_TEAM_ID = "team_id";
-  @SerializedName(SERIALIZED_NAME_TEAM_ID)
-  @javax.annotation.Nullable
-  private UUID teamId;
-
+public class AddOrganizationMemberRequestBody {
   /**
    * Gets or Sets role
    */
@@ -69,9 +57,9 @@ public class UpdateSpaceCollaboratorRequestBody {
   public enum RoleEnum {
     ADMIN("admin"),
     
-    READ("read"),
+    MEMBER("member"),
     
-    WRITE("write");
+    MANAGER("manager");
 
     private String value;
 
@@ -94,7 +82,7 @@ public class UpdateSpaceCollaboratorRequestBody {
           return b;
         }
       }
-      return null;
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
     public static class Adapter extends TypeAdapter<RoleEnum> {
@@ -119,50 +107,12 @@ public class UpdateSpaceCollaboratorRequestBody {
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nullable
-  private RoleEnum role;
+  private RoleEnum role = RoleEnum.MEMBER;
 
-  public UpdateSpaceCollaboratorRequestBody() {
+  public AddOrganizationMemberRequestBody() {
   }
 
-  public UpdateSpaceCollaboratorRequestBody accountId(@javax.annotation.Nullable UUID accountId) {
-    this.accountId = accountId;
-    return this;
-  }
-
-  /**
-   * Get accountId
-   * @return accountId
-   */
-  @javax.annotation.Nullable
-  public UUID getAccountId() {
-    return accountId;
-  }
-
-  public void setAccountId(@javax.annotation.Nullable UUID accountId) {
-    this.accountId = accountId;
-  }
-
-
-  public UpdateSpaceCollaboratorRequestBody teamId(@javax.annotation.Nullable UUID teamId) {
-    this.teamId = teamId;
-    return this;
-  }
-
-  /**
-   * Get teamId
-   * @return teamId
-   */
-  @javax.annotation.Nullable
-  public UUID getTeamId() {
-    return teamId;
-  }
-
-  public void setTeamId(@javax.annotation.Nullable UUID teamId) {
-    this.teamId = teamId;
-  }
-
-
-  public UpdateSpaceCollaboratorRequestBody role(@javax.annotation.Nullable RoleEnum role) {
+  public AddOrganizationMemberRequestBody role(@javax.annotation.Nullable RoleEnum role) {
     this.role = role;
     return this;
   }
@@ -190,34 +140,19 @@ public class UpdateSpaceCollaboratorRequestBody {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody = (UpdateSpaceCollaboratorRequestBody) o;
-    return Objects.equals(this.accountId, updateSpaceCollaboratorRequestBody.accountId) &&
-        Objects.equals(this.teamId, updateSpaceCollaboratorRequestBody.teamId) &&
-        Objects.equals(this.role, updateSpaceCollaboratorRequestBody.role);
-  }
-
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+    AddOrganizationMemberRequestBody addOrganizationMemberRequestBody = (AddOrganizationMemberRequestBody) o;
+    return Objects.equals(this.role, addOrganizationMemberRequestBody.role);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, teamId, role);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(role);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateSpaceCollaboratorRequestBody {\n");
-    sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
-    sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
+    sb.append("class AddOrganizationMemberRequestBody {\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -241,8 +176,6 @@ public class UpdateSpaceCollaboratorRequestBody {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("account_id");
-    openapiFields.add("team_id");
     openapiFields.add("role");
 
     // a set of required properties/fields (JSON key names)
@@ -253,29 +186,23 @@ public class UpdateSpaceCollaboratorRequestBody {
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to UpdateSpaceCollaboratorRequestBody
+   * @throws IOException if the JSON Element is invalid with respect to AddOrganizationMemberRequestBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!UpdateSpaceCollaboratorRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateSpaceCollaboratorRequestBody is not found in the empty JSON string", UpdateSpaceCollaboratorRequestBody.openapiRequiredFields.toString()));
+        if (!AddOrganizationMemberRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in AddOrganizationMemberRequestBody is not found in the empty JSON string", AddOrganizationMemberRequestBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!UpdateSpaceCollaboratorRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateSpaceCollaboratorRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!AddOrganizationMemberRequestBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddOrganizationMemberRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if ((jsonObj.get("account_id") != null && !jsonObj.get("account_id").isJsonNull()) && !jsonObj.get("account_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `account_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("account_id").toString()));
-      }
-      if ((jsonObj.get("team_id") != null && !jsonObj.get("team_id").isJsonNull()) && !jsonObj.get("team_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `team_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("team_id").toString()));
-      }
       if ((jsonObj.get("role") != null && !jsonObj.get("role").isJsonNull()) && !jsonObj.get("role").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
       }
@@ -289,22 +216,22 @@ public class UpdateSpaceCollaboratorRequestBody {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateSpaceCollaboratorRequestBody.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateSpaceCollaboratorRequestBody' and its subtypes
+       if (!AddOrganizationMemberRequestBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'AddOrganizationMemberRequestBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateSpaceCollaboratorRequestBody> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateSpaceCollaboratorRequestBody.class));
+       final TypeAdapter<AddOrganizationMemberRequestBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(AddOrganizationMemberRequestBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateSpaceCollaboratorRequestBody>() {
+       return (TypeAdapter<T>) new TypeAdapter<AddOrganizationMemberRequestBody>() {
            @Override
-           public void write(JsonWriter out, UpdateSpaceCollaboratorRequestBody value) throws IOException {
+           public void write(JsonWriter out, AddOrganizationMemberRequestBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public UpdateSpaceCollaboratorRequestBody read(JsonReader in) throws IOException {
+           public AddOrganizationMemberRequestBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -315,18 +242,18 @@ public class UpdateSpaceCollaboratorRequestBody {
   }
 
   /**
-   * Create an instance of UpdateSpaceCollaboratorRequestBody given an JSON string
+   * Create an instance of AddOrganizationMemberRequestBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of UpdateSpaceCollaboratorRequestBody
-   * @throws IOException if the JSON string is invalid with respect to UpdateSpaceCollaboratorRequestBody
+   * @return An instance of AddOrganizationMemberRequestBody
+   * @throws IOException if the JSON string is invalid with respect to AddOrganizationMemberRequestBody
    */
-  public static UpdateSpaceCollaboratorRequestBody fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateSpaceCollaboratorRequestBody.class);
+  public static AddOrganizationMemberRequestBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AddOrganizationMemberRequestBody.class);
   }
 
   /**
-   * Convert an instance of UpdateSpaceCollaboratorRequestBody to an JSON string
+   * Convert an instance of AddOrganizationMemberRequestBody to an JSON string
    *
    * @return JSON string
    */

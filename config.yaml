@@ -53,7 +53,7 @@ groupId: ai.lamin # Default: org.openapitools
 artifactId: lamin-api-client
 
 # Description: artifact version in generated pom.xml. This also becomes part of the generated library's filename. If not provided, uses the version from the OpenAPI specification file. If that's also not present, uses the default value of the artifactVersion option.
-artifactVersion: 0.0.2
+artifactVersion: 0.0.3
 
 # Description: artifact URL in generated pom.xml
 artifactUrl: https://github.com/laminlabs/lamin-api-client-java
