@@ -2,8 +2,8 @@
 
 # See https://openapi-generator.tech/docs/installation to install openapi-generator-cli
 
-# INPUT_SPEC="https://aws.us-east-1.lamin.ai/api/openapi.json"
-INPUT_SPEC="https://staging.laminhub.com/api/openapi.json"
+INPUT_SPEC="https://aws.us-east-1.lamin.ai/api/openapi.json"
+# INPUT_SPEC="https://staging.laminhub.com/api/openapi.json"
 
 npx @openapitools/openapi-generator-cli generate \
     --generator-name java \

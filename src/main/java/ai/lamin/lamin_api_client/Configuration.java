@@ -13,9 +13,9 @@
 
 package ai.lamin.lamin_api_client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T10:23:42.127510575+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class Configuration {
-    public static final String VERSION = "0.0.3-rc3";
+    public static final String VERSION = "0.0.3";
 
     private static volatile ApiClient defaultApiClient = new ApiClient();
 

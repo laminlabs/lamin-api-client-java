@@ -3,7 +3,7 @@ info:
   title: FastAPI
   version: 0.1.0
 servers:
-- url: https://staging.laminhub.com/api
+- url: https://aws.us-east-1.lamin.ai/api
 paths:
   /instances:
     put:
@@ -1607,7 +1607,7 @@ paths:
       - application/json
   /s3/{path}:
     delete:
-      operationId: proxy_s3_s3__path__put
+      operationId: proxy_s3_s3__path__get
       parameters:
       - explode: false
         in: path
@@ -1633,7 +1633,7 @@ paths:
       x-accepts:
       - application/json
     get:
-      operationId: proxy_s3_s3__path__put
+      operationId: proxy_s3_s3__path__get
       parameters:
       - explode: false
         in: path
@@ -1659,7 +1659,7 @@ paths:
       x-accepts:
       - application/json
     head:
-      operationId: proxy_s3_s3__path__put
+      operationId: proxy_s3_s3__path__get
       parameters:
       - explode: false
         in: path
@@ -1685,7 +1685,7 @@ paths:
       x-accepts:
       - application/json
     post:
-      operationId: proxy_s3_s3__path__put
+      operationId: proxy_s3_s3__path__get
       parameters:
       - explode: false
         in: path
@@ -1711,7 +1711,7 @@ paths:
       x-accepts:
       - application/json
     put:
-      operationId: proxy_s3_s3__path__put
+      operationId: proxy_s3_s3__path__get
       parameters:
       - explode: false
         in: path

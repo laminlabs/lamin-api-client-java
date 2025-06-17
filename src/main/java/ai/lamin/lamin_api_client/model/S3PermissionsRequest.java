@@ -48,7 +48,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * S3PermissionsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-11T10:23:42.127510575+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class S3PermissionsRequest {
   public static final String SERIALIZED_NAME_AWS_ACCESS_KEY_ID = "aws_access_key_id";
   @SerializedName(SERIALIZED_NAME_AWS_ACCESS_KEY_ID)

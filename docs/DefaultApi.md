@@ -1,6 +1,6 @@
 # DefaultApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -55,11 +55,11 @@ All URIs are relative to *https://staging.laminhub.com/api*
 | [**listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet**](DefaultApi.md#listSpaceCollaboratorsAccessV2SpacesSpaceIdCollaboratorsGet) | **GET** /access_v2/spaces/{space_id}/collaborators | List Space Collaborators |
 | [**listTeamMembersAccessV2TeamsTeamIdMembersGet**](DefaultApi.md#listTeamMembersAccessV2TeamsTeamIdMembersGet) | **GET** /access_v2/teams/{team_id}/members | List Team Members |
 | [**moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut**](DefaultApi.md#moveRecordToSpaceAccessV2SpacesSpaceIdRecordAttachmentsPut) | **PUT** /access_v2/spaces/{space_id}/record-attachments | Move Record To Space |
-| [**proxyS3S3PathPut**](DefaultApi.md#proxyS3S3PathPut) | **GET** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathPut_0**](DefaultApi.md#proxyS3S3PathPut_0) | **HEAD** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathPut_1**](DefaultApi.md#proxyS3S3PathPut_1) | **PUT** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathPut_2**](DefaultApi.md#proxyS3S3PathPut_2) | **POST** /s3/{path} | Proxy S3 |
-| [**proxyS3S3PathPut_3**](DefaultApi.md#proxyS3S3PathPut_3) | **DELETE** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathGet**](DefaultApi.md#proxyS3S3PathGet) | **GET** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathGet_0**](DefaultApi.md#proxyS3S3PathGet_0) | **HEAD** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathGet_1**](DefaultApi.md#proxyS3S3PathGet_1) | **PUT** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathGet_2**](DefaultApi.md#proxyS3S3PathGet_2) | **POST** /s3/{path} | Proxy S3 |
+| [**proxyS3S3PathGet_3**](DefaultApi.md#proxyS3S3PathGet_3) | **DELETE** /s3/{path} | Proxy S3 |
 | [**registerDbServerDbServerRegisterPost**](DefaultApi.md#registerDbServerDbServerRegisterPost) | **POST** /db/server/register | Register Db Server |
 | [**registerFormInstancesInstanceIdFormsPost**](DefaultApi.md#registerFormInstancesInstanceIdFormsPost) | **POST** /instances/{instance_id}/forms | Register Form |
 | [**removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete**](DefaultApi.md#removeCollaboratorAccessV2InstancesInstanceIdCollaboratorsDelete) | **DELETE** /access_v2/instances/{instance_id}/collaborators | Remove Collaborator |
@@ -99,7 +99,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -164,7 +164,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -235,7 +235,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -304,7 +304,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -371,7 +371,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -438,7 +438,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -515,7 +515,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -580,7 +580,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -636,7 +636,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     DbUrlRequest dbUrlRequest = new DbUrlRequest(); // DbUrlRequest | 
@@ -697,7 +697,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String name = "name_example"; // String | 
@@ -760,7 +760,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -816,7 +816,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -881,7 +881,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String name = "name_example"; // String | 
@@ -952,7 +952,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -1025,7 +1025,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     CreateSpaceRequestBody createSpaceRequestBody = new CreateSpaceRequestBody(); // CreateSpaceRequestBody | 
@@ -1090,7 +1090,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     CreateTeamRequestBody createTeamRequestBody = new CreateTeamRequestBody(); // CreateTeamRequestBody | 
@@ -1153,7 +1153,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -1218,7 +1218,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -1283,7 +1283,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -1348,7 +1348,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -1421,7 +1421,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -1486,7 +1486,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -1549,7 +1549,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -1626,7 +1626,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -1691,7 +1691,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String authorization = "authorization_example"; // String | 
@@ -1754,7 +1754,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -1817,7 +1817,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -1884,7 +1884,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     try {
@@ -1940,7 +1940,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -2007,7 +2007,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -2070,7 +2070,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -2147,7 +2147,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -2226,7 +2226,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -2297,7 +2297,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -2364,7 +2364,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -2429,7 +2429,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -2494,7 +2494,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -2557,7 +2557,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -2624,7 +2624,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -2701,7 +2701,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String bucketName = "bucketName_example"; // String | 
@@ -2770,7 +2770,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -2843,7 +2843,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -2906,7 +2906,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String entityType = "artifact"; // String | 
@@ -2977,7 +2977,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -3042,7 +3042,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -3107,7 +3107,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -3172,7 +3172,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -3237,7 +3237,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -3302,7 +3302,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -3367,7 +3367,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -3432,7 +3432,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     Integer instanceDbSpaceId = 56; // Integer | 
@@ -3483,9 +3483,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathPut"></a>
-# **proxyS3S3PathPut**
-> Object proxyS3S3PathPut(path)
+<a id="proxyS3S3PathGet"></a>
+# **proxyS3S3PathGet**
+> Object proxyS3S3PathGet(path)
 
 Proxy S3
 
@@ -3501,15 +3501,15 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathPut(path);
+      Object result = apiInstance.proxyS3S3PathGet(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathGet");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3544,9 +3544,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathPut_0"></a>
-# **proxyS3S3PathPut_0**
-> Object proxyS3S3PathPut_0(path)
+<a id="proxyS3S3PathGet_0"></a>
+# **proxyS3S3PathGet_0**
+> Object proxyS3S3PathGet_0(path)
 
 Proxy S3
 
@@ -3562,15 +3562,15 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathPut_0(path);
+      Object result = apiInstance.proxyS3S3PathGet_0(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_0");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathGet_0");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3605,9 +3605,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathPut_1"></a>
-# **proxyS3S3PathPut_1**
-> Object proxyS3S3PathPut_1(path)
+<a id="proxyS3S3PathGet_1"></a>
+# **proxyS3S3PathGet_1**
+> Object proxyS3S3PathGet_1(path)
 
 Proxy S3
 
@@ -3623,15 +3623,15 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathPut_1(path);
+      Object result = apiInstance.proxyS3S3PathGet_1(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_1");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathGet_1");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3666,9 +3666,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathPut_2"></a>
-# **proxyS3S3PathPut_2**
-> Object proxyS3S3PathPut_2(path)
+<a id="proxyS3S3PathGet_2"></a>
+# **proxyS3S3PathGet_2**
+> Object proxyS3S3PathGet_2(path)
 
 Proxy S3
 
@@ -3684,15 +3684,15 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathPut_2(path);
+      Object result = apiInstance.proxyS3S3PathGet_2(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_2");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathGet_2");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3727,9 +3727,9 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="proxyS3S3PathPut_3"></a>
-# **proxyS3S3PathPut_3**
-> Object proxyS3S3PathPut_3(path)
+<a id="proxyS3S3PathGet_3"></a>
+# **proxyS3S3PathGet_3**
+> Object proxyS3S3PathGet_3(path)
 
 Proxy S3
 
@@ -3745,15 +3745,15 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String path = "path_example"; // String | 
     try {
-      Object result = apiInstance.proxyS3S3PathPut_3(path);
+      Object result = apiInstance.proxyS3S3PathGet_3(path);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DefaultApi#proxyS3S3PathPut_3");
+      System.err.println("Exception when calling DefaultApi#proxyS3S3PathGet_3");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -3806,7 +3806,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     RegisterDbServerBody registerDbServerBody = new RegisterDbServerBody(); // RegisterDbServerBody | 
@@ -3871,7 +3871,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -3938,7 +3938,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -4007,7 +4007,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -4074,7 +4074,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -4143,7 +4143,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -4208,7 +4208,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String handle = "handle_example"; // String | 
@@ -4277,7 +4277,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -4342,7 +4342,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -4411,7 +4411,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -4478,7 +4478,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -4553,7 +4553,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -4620,7 +4620,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
@@ -4687,7 +4687,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -4754,7 +4754,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -4821,7 +4821,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -4888,7 +4888,7 @@ import ai.lamin.lamin_api_client.api.DefaultApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
