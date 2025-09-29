@@ -21,6 +21,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,58 +48,66 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * OrderByColumn
+ * CreateArtifactRequestBody
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class OrderByColumn {
-  public static final String SERIALIZED_NAME_FIELD = "field";
-  @SerializedName(SERIALIZED_NAME_FIELD)
+public class CreateArtifactRequestBody {
+  public static final String SERIALIZED_NAME_PATH = "path";
+  @SerializedName(SERIALIZED_NAME_PATH)
   @javax.annotation.Nonnull
-  private String field;
+  private String path;
 
-  public static final String SERIALIZED_NAME_DESCENDING = "descending";
-  @SerializedName(SERIALIZED_NAME_DESCENDING)
+  public static final String SERIALIZED_NAME_KWARGS = "kwargs";
+  @SerializedName(SERIALIZED_NAME_KWARGS)
   @javax.annotation.Nullable
-  private Boolean descending = false;
+  private Map<String, Object> kwargs = new HashMap<>();
 
-  public OrderByColumn() {
+  public CreateArtifactRequestBody() {
   }
 
-  public OrderByColumn field(@javax.annotation.Nonnull String field) {
-    this.field = field;
+  public CreateArtifactRequestBody path(@javax.annotation.Nonnull String path) {
+    this.path = path;
     return this;
   }
 
   /**
-   * Get field
-   * @return field
+   * Get path
+   * @return path
    */
   @javax.annotation.Nonnull
-  public String getField() {
-    return field;
+  public String getPath() {
+    return path;
   }
 
-  public void setField(@javax.annotation.Nonnull String field) {
-    this.field = field;
+  public void setPath(@javax.annotation.Nonnull String path) {
+    this.path = path;
   }
 
 
-  public OrderByColumn descending(@javax.annotation.Nullable Boolean descending) {
-    this.descending = descending;
+  public CreateArtifactRequestBody kwargs(@javax.annotation.Nullable Map<String, Object> kwargs) {
+    this.kwargs = kwargs;
+    return this;
+  }
+
+  public CreateArtifactRequestBody putKwargsItem(String key, Object kwargsItem) {
+    if (this.kwargs == null) {
+      this.kwargs = new HashMap<>();
+    }
+    this.kwargs.put(key, kwargsItem);
     return this;
   }
 
   /**
-   * Get descending
-   * @return descending
+   * Get kwargs
+   * @return kwargs
    */
   @javax.annotation.Nullable
-  public Boolean getDescending() {
-    return descending;
+  public Map<String, Object> getKwargs() {
+    return kwargs;
   }
 
-  public void setDescending(@javax.annotation.Nullable Boolean descending) {
-    this.descending = descending;
+  public void setKwargs(@javax.annotation.Nullable Map<String, Object> kwargs) {
+    this.kwargs = kwargs;
   }
 
 
@@ -110,22 +120,22 @@ public class OrderByColumn {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OrderByColumn orderByColumn = (OrderByColumn) o;
-    return Objects.equals(this.field, orderByColumn.field) &&
-        Objects.equals(this.descending, orderByColumn.descending);
+    CreateArtifactRequestBody createArtifactRequestBody = (CreateArtifactRequestBody) o;
+    return Objects.equals(this.path, createArtifactRequestBody.path) &&
+        Objects.equals(this.kwargs, createArtifactRequestBody.kwargs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(field, descending);
+    return Objects.hash(path, kwargs);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class OrderByColumn {\n");
-    sb.append("    field: ").append(toIndentedString(field)).append("\n");
-    sb.append("    descending: ").append(toIndentedString(descending)).append("\n");
+    sb.append("class CreateArtifactRequestBody {\n");
+    sb.append("    path: ").append(toIndentedString(path)).append("\n");
+    sb.append("    kwargs: ").append(toIndentedString(kwargs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -148,44 +158,44 @@ public class OrderByColumn {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("field");
-    openapiFields.add("descending");
+    openapiFields.add("path");
+    openapiFields.add("kwargs");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("field");
+    openapiRequiredFields.add("path");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to OrderByColumn
+   * @throws IOException if the JSON Element is invalid with respect to CreateArtifactRequestBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!OrderByColumn.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in OrderByColumn is not found in the empty JSON string", OrderByColumn.openapiRequiredFields.toString()));
+        if (!CreateArtifactRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateArtifactRequestBody is not found in the empty JSON string", CreateArtifactRequestBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!OrderByColumn.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `OrderByColumn` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!CreateArtifactRequestBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateArtifactRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : OrderByColumn.openapiRequiredFields) {
+      for (String requiredField : CreateArtifactRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("field").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field").toString()));
+      if (!jsonObj.get("path").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `path` to be a primitive type in the JSON string but got `%s`", jsonObj.get("path").toString()));
       }
   }
 
@@ -193,22 +203,22 @@ public class OrderByColumn {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!OrderByColumn.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'OrderByColumn' and its subtypes
+       if (!CreateArtifactRequestBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateArtifactRequestBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<OrderByColumn> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(OrderByColumn.class));
+       final TypeAdapter<CreateArtifactRequestBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateArtifactRequestBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<OrderByColumn>() {
+       return (TypeAdapter<T>) new TypeAdapter<CreateArtifactRequestBody>() {
            @Override
-           public void write(JsonWriter out, OrderByColumn value) throws IOException {
+           public void write(JsonWriter out, CreateArtifactRequestBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public OrderByColumn read(JsonReader in) throws IOException {
+           public CreateArtifactRequestBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -219,18 +229,18 @@ public class OrderByColumn {
   }
 
   /**
-   * Create an instance of OrderByColumn given an JSON string
+   * Create an instance of CreateArtifactRequestBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of OrderByColumn
-   * @throws IOException if the JSON string is invalid with respect to OrderByColumn
+   * @return An instance of CreateArtifactRequestBody
+   * @throws IOException if the JSON string is invalid with respect to CreateArtifactRequestBody
    */
-  public static OrderByColumn fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, OrderByColumn.class);
+  public static CreateArtifactRequestBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateArtifactRequestBody.class);
   }
 
   /**
-   * Convert an instance of OrderByColumn to an JSON string
+   * Convert an instance of CreateArtifactRequestBody to an JSON string
    *
    * @return JSON string
    */
