@@ -13,7 +13,7 @@
 
 package ai.lamin.lamin_api_client;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-08T15:17:29.048390180+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class Pair {
     private String name = "";
     private String value = "";

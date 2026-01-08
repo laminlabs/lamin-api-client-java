@@ -54,7 +54,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetValuesRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-08T15:17:29.048390180+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class GetValuesRequestBody {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -70,6 +70,11 @@ public class GetValuesRequestBody {
   @SerializedName(SERIALIZED_NAME_SEARCH)
   @javax.annotation.Nullable
   private String search = "";
+
+  public static final String SERIALIZED_NAME_SEARCH_IN = "search_in";
+  @SerializedName(SERIALIZED_NAME_SEARCH_IN)
+  @javax.annotation.Nullable
+  private List<String> searchIn;
 
   public GetValuesRequestBody() {
   }
@@ -147,6 +152,33 @@ public class GetValuesRequestBody {
   }
 
 
+  public GetValuesRequestBody searchIn(@javax.annotation.Nullable List<String> searchIn) {
+    this.searchIn = searchIn;
+    return this;
+  }
+
+  public GetValuesRequestBody addSearchInItem(String searchInItem) {
+    if (this.searchIn == null) {
+      this.searchIn = new ArrayList<>();
+    }
+    this.searchIn.add(searchInItem);
+    return this;
+  }
+
+  /**
+   * Get searchIn
+   * @return searchIn
+   */
+  @javax.annotation.Nullable
+  public List<String> getSearchIn() {
+    return searchIn;
+  }
+
+  public void setSearchIn(@javax.annotation.Nullable List<String> searchIn) {
+    this.searchIn = searchIn;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -159,7 +191,8 @@ public class GetValuesRequestBody {
     GetValuesRequestBody getValuesRequestBody = (GetValuesRequestBody) o;
     return Objects.equals(this.filter, getValuesRequestBody.filter) &&
         Objects.equals(this.orderBy, getValuesRequestBody.orderBy) &&
-        Objects.equals(this.search, getValuesRequestBody.search);
+        Objects.equals(this.search, getValuesRequestBody.search) &&
+        Objects.equals(this.searchIn, getValuesRequestBody.searchIn);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -168,7 +201,7 @@ public class GetValuesRequestBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(filter, orderBy, search);
+    return Objects.hash(filter, orderBy, search, searchIn);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -185,6 +218,7 @@ public class GetValuesRequestBody {
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    search: ").append(toIndentedString(search)).append("\n");
+    sb.append("    searchIn: ").append(toIndentedString(searchIn)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -210,6 +244,7 @@ public class GetValuesRequestBody {
     openapiFields.add("filter");
     openapiFields.add("order_by");
     openapiFields.add("search");
+    openapiFields.add("search_in");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -252,6 +287,10 @@ public class GetValuesRequestBody {
       }
       if ((jsonObj.get("search") != null && !jsonObj.get("search").isJsonNull()) && !jsonObj.get("search").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `search` to be a primitive type in the JSON string but got `%s`", jsonObj.get("search").toString()));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("search_in") != null && !jsonObj.get("search_in").isJsonNull() && !jsonObj.get("search_in").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `search_in` to be an array in the JSON string but got `%s`", jsonObj.get("search_in").toString()));
       }
   }
 

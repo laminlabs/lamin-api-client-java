@@ -19,30 +19,33 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for DbUrlRequest
+ * Model tests for BatchDeleteBody
  */
-public class DbUrlRequestTest {
-    private final DbUrlRequest model = new DbUrlRequest();
+public class BatchDeleteBodyTest {
+    private final BatchDeleteBody model = new BatchDeleteBody();
 
     /**
-     * Model tests for DbUrlRequest
+     * Model tests for BatchDeleteBody
      */
     @Test
-    public void testDbUrlRequest() {
-        // TODO: test DbUrlRequest
+    public void testBatchDeleteBody() {
+        // TODO: test BatchDeleteBody
     }
 
     /**
-     * Test the property 'dbUrl'
+     * Test the property 'records'
      */
     @Test
-    public void dbUrlTest() {
-        // TODO: test dbUrl
+    public void recordsTest() {
+        // TODO: test records
     }
 
 }

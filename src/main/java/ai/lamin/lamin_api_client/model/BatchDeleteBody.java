@@ -20,7 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,34 +49,42 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * DbUrlRequest
+ * BatchDeleteBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class DbUrlRequest {
-  public static final String SERIALIZED_NAME_DB_URL = "db_url";
-  @SerializedName(SERIALIZED_NAME_DB_URL)
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-08T15:17:29.048390180+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+public class BatchDeleteBody {
+  public static final String SERIALIZED_NAME_RECORDS = "records";
+  @SerializedName(SERIALIZED_NAME_RECORDS)
   @javax.annotation.Nonnull
-  private String dbUrl;
+  private List<Map<String, Object>> records = new ArrayList<>();
 
-  public DbUrlRequest() {
+  public BatchDeleteBody() {
   }
 
-  public DbUrlRequest dbUrl(@javax.annotation.Nonnull String dbUrl) {
-    this.dbUrl = dbUrl;
+  public BatchDeleteBody records(@javax.annotation.Nonnull List<Map<String, Object>> records) {
+    this.records = records;
+    return this;
+  }
+
+  public BatchDeleteBody addRecordsItem(Map<String, Object> recordsItem) {
+    if (this.records == null) {
+      this.records = new ArrayList<>();
+    }
+    this.records.add(recordsItem);
     return this;
   }
 
   /**
-   * Get dbUrl
-   * @return dbUrl
+   * A list of dictionaries, where each dictionary contains the key(s) identifying a record to delete.
+   * @return records
    */
   @javax.annotation.Nonnull
-  public String getDbUrl() {
-    return dbUrl;
+  public List<Map<String, Object>> getRecords() {
+    return records;
   }
 
-  public void setDbUrl(@javax.annotation.Nonnull String dbUrl) {
-    this.dbUrl = dbUrl;
+  public void setRecords(@javax.annotation.Nonnull List<Map<String, Object>> records) {
+    this.records = records;
   }
 
 
@@ -86,20 +97,20 @@ public class DbUrlRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DbUrlRequest dbUrlRequest = (DbUrlRequest) o;
-    return Objects.equals(this.dbUrl, dbUrlRequest.dbUrl);
+    BatchDeleteBody batchDeleteBody = (BatchDeleteBody) o;
+    return Objects.equals(this.records, batchDeleteBody.records);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dbUrl);
+    return Objects.hash(records);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DbUrlRequest {\n");
-    sb.append("    dbUrl: ").append(toIndentedString(dbUrl)).append("\n");
+    sb.append("class BatchDeleteBody {\n");
+    sb.append("    records: ").append(toIndentedString(records)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -122,43 +133,46 @@ public class DbUrlRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("db_url");
+    openapiFields.add("records");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("db_url");
+    openapiRequiredFields.add("records");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DbUrlRequest
+   * @throws IOException if the JSON Element is invalid with respect to BatchDeleteBody
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DbUrlRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DbUrlRequest is not found in the empty JSON string", DbUrlRequest.openapiRequiredFields.toString()));
+        if (!BatchDeleteBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in BatchDeleteBody is not found in the empty JSON string", BatchDeleteBody.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!DbUrlRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DbUrlRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!BatchDeleteBody.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BatchDeleteBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : DbUrlRequest.openapiRequiredFields) {
+      for (String requiredField : BatchDeleteBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("db_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `db_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("db_url").toString()));
+      // ensure the required json array is present
+      if (jsonObj.get("records") == null) {
+        throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
+      } else if (!jsonObj.get("records").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `records` to be an array in the JSON string but got `%s`", jsonObj.get("records").toString()));
       }
   }
 
@@ -166,22 +180,22 @@ public class DbUrlRequest {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DbUrlRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DbUrlRequest' and its subtypes
+       if (!BatchDeleteBody.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'BatchDeleteBody' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DbUrlRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DbUrlRequest.class));
+       final TypeAdapter<BatchDeleteBody> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(BatchDeleteBody.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DbUrlRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<BatchDeleteBody>() {
            @Override
-           public void write(JsonWriter out, DbUrlRequest value) throws IOException {
+           public void write(JsonWriter out, BatchDeleteBody value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public DbUrlRequest read(JsonReader in) throws IOException {
+           public BatchDeleteBody read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -192,18 +206,18 @@ public class DbUrlRequest {
   }
 
   /**
-   * Create an instance of DbUrlRequest given an JSON string
+   * Create an instance of BatchDeleteBody given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DbUrlRequest
-   * @throws IOException if the JSON string is invalid with respect to DbUrlRequest
+   * @return An instance of BatchDeleteBody
+   * @throws IOException if the JSON string is invalid with respect to BatchDeleteBody
    */
-  public static DbUrlRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DbUrlRequest.class);
+  public static BatchDeleteBody fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, BatchDeleteBody.class);
   }
 
   /**
-   * Convert an instance of DbUrlRequest to an JSON string
+   * Convert an instance of BatchDeleteBody to an JSON string
    *
    * @return JSON string
    */

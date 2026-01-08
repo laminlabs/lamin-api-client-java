@@ -21,6 +21,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.UUID;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +49,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * RegisterDbServerBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-08T15:17:29.048390180+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class RegisterDbServerBody {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -64,6 +65,11 @@ public class RegisterDbServerBody {
   @SerializedName(SERIALIZED_NAME_API_SERVER_NAME)
   @javax.annotation.Nonnull
   private String apiServerName;
+
+  public static final String SERIALIZED_NAME_ORGANIZATION_ID = "organization_id";
+  @SerializedName(SERIALIZED_NAME_ORGANIZATION_ID)
+  @javax.annotation.Nonnull
+  private UUID organizationId;
 
   public RegisterDbServerBody() {
   }
@@ -125,6 +131,25 @@ public class RegisterDbServerBody {
   }
 
 
+  public RegisterDbServerBody organizationId(@javax.annotation.Nonnull UUID organizationId) {
+    this.organizationId = organizationId;
+    return this;
+  }
+
+  /**
+   * Get organizationId
+   * @return organizationId
+   */
+  @javax.annotation.Nonnull
+  public UUID getOrganizationId() {
+    return organizationId;
+  }
+
+  public void setOrganizationId(@javax.annotation.Nonnull UUID organizationId) {
+    this.organizationId = organizationId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +162,13 @@ public class RegisterDbServerBody {
     RegisterDbServerBody registerDbServerBody = (RegisterDbServerBody) o;
     return Objects.equals(this.name, registerDbServerBody.name) &&
         Objects.equals(this.url, registerDbServerBody.url) &&
-        Objects.equals(this.apiServerName, registerDbServerBody.apiServerName);
+        Objects.equals(this.apiServerName, registerDbServerBody.apiServerName) &&
+        Objects.equals(this.organizationId, registerDbServerBody.organizationId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, url, apiServerName);
+    return Objects.hash(name, url, apiServerName, organizationId);
   }
 
   @Override
@@ -152,6 +178,7 @@ public class RegisterDbServerBody {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    apiServerName: ").append(toIndentedString(apiServerName)).append("\n");
+    sb.append("    organizationId: ").append(toIndentedString(organizationId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,12 +204,14 @@ public class RegisterDbServerBody {
     openapiFields.add("name");
     openapiFields.add("url");
     openapiFields.add("api_server_name");
+    openapiFields.add("organization_id");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
     openapiRequiredFields.add("url");
     openapiRequiredFields.add("api_server_name");
+    openapiRequiredFields.add("organization_id");
   }
 
   /**
@@ -221,6 +250,9 @@ public class RegisterDbServerBody {
       }
       if (!jsonObj.get("api_server_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `api_server_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_server_name").toString()));
+      }
+      if (!jsonObj.get("organization_id").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `organization_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("organization_id").toString()));
       }
   }
 

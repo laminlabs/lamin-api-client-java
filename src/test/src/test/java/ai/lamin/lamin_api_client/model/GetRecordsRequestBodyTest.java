@@ -75,4 +75,12 @@ public class GetRecordsRequestBodyTest {
         // TODO: test search
     }
 
+    /**
+     * Test the property 'searchIn'
+     */
+    @Test
+    public void searchInTest() {
+        // TODO: test searchIn
+    }
+
 }

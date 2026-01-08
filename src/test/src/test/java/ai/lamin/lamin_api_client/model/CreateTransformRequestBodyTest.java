@@ -20,6 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -46,11 +49,11 @@ public class CreateTransformRequestBodyTest {
     }
 
     /**
-     * Test the property 'type'
+     * Test the property 'kind'
      */
     @Test
-    public void typeTest() {
-        // TODO: test type
+    public void kindTest() {
+        // TODO: test kind
     }
 
     /**
@@ -59,6 +62,14 @@ public class CreateTransformRequestBodyTest {
     @Test
     public void sourceCodeTest() {
         // TODO: test sourceCode
+    }
+
+    /**
+     * Test the property 'kwargs'
+     */
+    @Test
+    public void kwargsTest() {
+        // TODO: test kwargs
     }
 
 }
