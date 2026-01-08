@@ -20,6 +20,13 @@ sed -i "$SED_CMD1;$SED_CMD2" README.md
 # postfix generated file
 sed -i 's#private Role role = member;#private Role role;#' src/main/java/ai/lamin/lamin_api_client/model/AddTeamMemberRequestBody.java
 
+# fix Body.java compilation errors
+BODY_FILE="src/main/java/ai/lamin/lamin_api_client/model/Body.java"
+# fix malformed variable declaration
+sed -i 's#final TypeAdapter<Map<String, Object>> adapterMap<String, Object> = gson.getDelegateAdapter(this, TypeToken.get(Map<String, Object>.class));#final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();\n            final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));#' "$BODY_FILE"
+# fix instanceof with parameterized types (cannot use Map<String, Object> with instanceof)
+sed -i 's#instanceof Map<String, Object>#instanceof Map<?, ?>#g' "$BODY_FILE"
+
 # update pom.xml with artifact version
 VERSION=$(yq -r '.artifactVersion' config.yaml)
 sed -i "s/^    <version>[^<]*<\/version>$/    <version>$VERSION<\/version>/" pom.xml

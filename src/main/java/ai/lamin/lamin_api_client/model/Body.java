@@ -67,7 +67,8 @@ public class Body extends AbstractOpenApiSchema {
 
             final Type typeInstanceListMapStringObject = new TypeToken<List<Map<String, Object>>>(){}.getType();
             final TypeAdapter<List<Map<String, Object>>> adapterListMapStringObject = (TypeAdapter<List<Map<String, Object>>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceListMapStringObject));
-            final TypeAdapter<Map<String, Object>> adapterMap<String, Object> = gson.getDelegateAdapter(this, TypeToken.get(Map<String, Object>.class));
+            final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
+            final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
 
             return (TypeAdapter<T>) new TypeAdapter<Body>() {
                 @Override
@@ -80,14 +81,14 @@ public class Body extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `List<Map<String, Object>>`
                     if (value.getActualInstance() instanceof List<?>) {
                         List<?> list = (List<?>) value.getActualInstance();
-                        if (list.get(0) instanceof Map<String, Object>) {
+                        if (list.get(0) instanceof Map<?, ?>) {
                             JsonArray array = adapterListMapStringObject.toJsonTree((List<Map<String, Object>>)value.getActualInstance()).getAsJsonArray();
                             elementAdapter.write(out, array);
                             return;
                         }
                     }
                     // check if the actual instance is of the type `Map<String, Object>`
-                    if (value.getActualInstance() instanceof Map<String, Object>) {
+                    if (value.getActualInstance() instanceof Map<?, ?>) {
                         JsonPrimitive primitive = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonPrimitive();
                         elementAdapter.write(out, primitive);
                         return;
@@ -181,13 +182,13 @@ public class Body extends AbstractOpenApiSchema {
     public void setActualInstance(Object instance) {
         if (instance instanceof List<?>) {
             List<?> list = (List<?>) instance;
-            if (list.get(0) instanceof Map<String, Object>) {
+            if (list.get(0) instanceof Map<?, ?>) {
                 super.setActualInstance(instance);
                 return;
             }
         }
 
-        if (instance instanceof Map<String, Object>) {
+        if (instance instanceof Map<?, ?>) {
             super.setActualInstance(instance);
             return;
         }
