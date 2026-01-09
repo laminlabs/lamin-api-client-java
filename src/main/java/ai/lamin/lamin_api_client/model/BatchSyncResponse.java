@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * The detailed response model for a batch synchronization operation, including the lists of records that were processed.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-08T15:17:29.048390180+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-09T08:28:28.643201106+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class BatchSyncResponse {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
