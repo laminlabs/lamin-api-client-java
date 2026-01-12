@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * The request body for the batch synchronization endpoint.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-09T08:28:28.643201106+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class BatchSyncLinksBody {
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
