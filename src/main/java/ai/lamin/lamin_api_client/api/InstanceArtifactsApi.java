@@ -91,7 +91,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -143,7 +143,7 @@ public class InstanceArtifactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling createArtifactInstancesInstanceIdArtifactsCreatePost(Async)");
@@ -174,7 +174,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createArtifactInstancesInstanceIdArtifactsCreatePost(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization) throws ApiException {
+    public Object createArtifactInstancesInstanceIdArtifactsCreatePost(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(instanceId, createArtifactRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -195,7 +195,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -218,7 +218,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostAsync(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -242,7 +242,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable String kwargs, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -302,7 +302,7 @@ public class InstanceArtifactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable String kwargs, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling uploadArtifactInstancesInstanceIdArtifactsUploadPost(Async)");
@@ -334,7 +334,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object uploadArtifactInstancesInstanceIdArtifactsUploadPost(UUID instanceId, File _file, String authorization, String kwargs) throws ApiException {
+    public Object uploadArtifactInstancesInstanceIdArtifactsUploadPost(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable String kwargs) throws ApiException {
         ApiResponse<Object> localVarResp = uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(instanceId, _file, authorization, kwargs);
         return localVarResp.getData();
     }
@@ -356,7 +356,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(UUID instanceId, File _file, String authorization, String kwargs) throws ApiException {
+    public ApiResponse<Object> uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable String kwargs) throws ApiException {
         okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, authorization, kwargs, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -380,7 +380,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostAsync(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull File _file, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable String kwargs, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, authorization, kwargs, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

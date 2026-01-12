@@ -90,7 +90,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostCall(String name, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostCall(@javax.annotation.Nonnull String name, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -148,7 +148,7 @@ public class DbServerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(String name, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(@javax.annotation.Nonnull String name, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling checkDbServerAccessDbServerCheckAccessPost(Async)");
@@ -174,7 +174,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object checkDbServerAccessDbServerCheckAccessPost(String name, UUID instanceId, String authorization) throws ApiException {
+    public Object checkDbServerAccessDbServerCheckAccessPost(@javax.annotation.Nonnull String name, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(name, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -195,7 +195,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(String name, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(@javax.annotation.Nonnull String name, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -218,7 +218,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostAsync(String name, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostAsync(@javax.annotation.Nonnull String name, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -241,7 +241,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerDbServerDbServerRegisterPostCall(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call registerDbServerDbServerRegisterPostCall(@javax.annotation.Nonnull RegisterDbServerBody registerDbServerBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -296,7 +296,7 @@ public class DbServerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerDbServerDbServerRegisterPostValidateBeforeCall(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerDbServerDbServerRegisterPostValidateBeforeCall(@javax.annotation.Nonnull RegisterDbServerBody registerDbServerBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'registerDbServerBody' is set
         if (registerDbServerBody == null) {
             throw new ApiException("Missing the required parameter 'registerDbServerBody' when calling registerDbServerDbServerRegisterPost(Async)");
@@ -322,7 +322,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object registerDbServerDbServerRegisterPost(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization) throws ApiException {
+    public Object registerDbServerDbServerRegisterPost(@javax.annotation.Nonnull RegisterDbServerBody registerDbServerBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = registerDbServerDbServerRegisterPostWithHttpInfo(registerDbServerBody, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -343,7 +343,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> registerDbServerDbServerRegisterPostWithHttpInfo(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> registerDbServerDbServerRegisterPostWithHttpInfo(@javax.annotation.Nonnull RegisterDbServerBody registerDbServerBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -366,7 +366,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerDbServerDbServerRegisterPostAsync(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call registerDbServerDbServerRegisterPostAsync(@javax.annotation.Nonnull RegisterDbServerBody registerDbServerBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

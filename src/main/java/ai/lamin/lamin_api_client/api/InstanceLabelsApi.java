@@ -93,7 +93,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,7 +149,7 @@ public class InstanceLabelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(Async)");
@@ -204,7 +204,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
+    public Object attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutWithHttpInfo(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -229,7 +229,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutWithHttpInfo(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -256,7 +256,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutAsync(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -283,7 +283,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -339,7 +339,7 @@ public class InstanceLabelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(Async)");
@@ -394,7 +394,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
+    public Object detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteWithHttpInfo(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -419,7 +419,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteWithHttpInfo(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -446,7 +446,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteAsync(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nonnull String labelField, @javax.annotation.Nonnull Integer labelId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

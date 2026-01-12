@@ -94,7 +94,7 @@ public class InstanceFeaturesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -156,7 +156,7 @@ public class InstanceFeaturesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(Async)");
@@ -196,7 +196,7 @@ public class InstanceFeaturesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
+    public Object queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
         ApiResponse<Object> localVarResp = queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostWithHttpInfo(moduleName, modelName, instanceId, limit, offset, authorization, getRecordsRequestBody);
         return localVarResp.getData();
     }
@@ -221,7 +221,7 @@ public class InstanceFeaturesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostWithHttpInfo(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
+    public ApiResponse<Object> queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
         okhttp3.Call localVarCall = queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, authorization, getRecordsRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -248,7 +248,7 @@ public class InstanceFeaturesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostAsync(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, authorization, getRecordsRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

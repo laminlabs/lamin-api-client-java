@@ -54,7 +54,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Organization
       tags:
@@ -109,7 +109,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Organization Members
       tags:
@@ -175,7 +175,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Remove Organization Member
       tags:
@@ -236,7 +236,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateOrganizationMemberRequestBody'
+              $ref: "#/components/schemas/UpdateOrganizationMemberRequestBody"
         required: true
       responses:
         "200":
@@ -248,7 +248,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Update Organization Member
       tags:
@@ -309,7 +309,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddOrganizationMemberRequestBody'
+              $ref: "#/components/schemas/AddOrganizationMemberRequestBody"
         required: true
       responses:
         "200":
@@ -321,7 +321,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Add Organization Member
       tags:
@@ -360,7 +360,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Caller Account
       tags:
@@ -403,7 +403,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateSpaceRequestBody'
+              $ref: "#/components/schemas/CreateSpaceRequestBody"
         required: true
       responses:
         "200":
@@ -415,7 +415,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Create Space
       tags:
@@ -472,7 +472,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Delete Space
       tags:
@@ -527,7 +527,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Space
       tags:
@@ -578,7 +578,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateSpaceRequestBody'
+              $ref: "#/components/schemas/UpdateSpaceRequestBody"
         required: true
       responses:
         "200":
@@ -590,7 +590,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Update Space
       tags:
@@ -647,7 +647,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AttachSpaceToRecordRequestBody'
+              $ref: "#/components/schemas/AttachSpaceToRecordRequestBody"
         required: true
       responses:
         "200":
@@ -659,7 +659,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Move Record To Space
       tags:
@@ -718,7 +718,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Detach Space From Instance
       tags:
@@ -775,7 +775,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Attach Space To Instance
       tags:
@@ -830,7 +830,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Instances Using Space
       tags:
@@ -876,7 +876,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Instance Spaces
       tags:
@@ -952,7 +952,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Remove Space Collaborator
       tags:
@@ -1006,7 +1006,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Space Collaborators
       tags:
@@ -1060,7 +1060,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateSpaceCollaboratorRequestBody'
+              $ref: "#/components/schemas/UpdateSpaceCollaboratorRequestBody"
         required: true
       responses:
         "200":
@@ -1072,7 +1072,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Update Space Collaborator
       tags:
@@ -1126,7 +1126,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddSpaceCollaboratorRequestBody'
+              $ref: "#/components/schemas/AddSpaceCollaboratorRequestBody"
         required: true
       responses:
         "200":
@@ -1138,7 +1138,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Add Space Collaborator
       tags:
@@ -1194,7 +1194,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Organization Spaces
       tags:
@@ -1237,7 +1237,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateTeamRequestBody'
+              $ref: "#/components/schemas/CreateTeamRequestBody"
         required: true
       responses:
         "200":
@@ -1249,7 +1249,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Create Team
       tags:
@@ -1305,7 +1305,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Delete Team
       tags:
@@ -1360,7 +1360,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Team
       tags:
@@ -1411,7 +1411,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateTeamRequestBody'
+              $ref: "#/components/schemas/UpdateTeamRequestBody"
         required: true
       responses:
         "200":
@@ -1423,7 +1423,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Update Team
       tags:
@@ -1479,7 +1479,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Team Members
       tags:
@@ -1545,7 +1545,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Remove Team Member
       tags:
@@ -1606,7 +1606,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateTeamMemberRequestBody'
+              $ref: "#/components/schemas/UpdateTeamMemberRequestBody"
         required: true
       responses:
         "200":
@@ -1618,7 +1618,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Update Team Member
       tags:
@@ -1679,7 +1679,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddTeamMemberRequestBody'
+              $ref: "#/components/schemas/AddTeamMemberRequestBody"
         required: true
       responses:
         "200":
@@ -1691,7 +1691,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Add Team Member
       tags:
@@ -1747,7 +1747,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Organization Teams
       tags:
@@ -1841,7 +1841,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Create Instance
       tags:
@@ -1888,7 +1888,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Delete Instance
       tags:
@@ -1934,7 +1934,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Transfer Ownership
       tags:
@@ -1972,7 +1972,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Migrate Instance
       tags:
@@ -2022,7 +2022,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Db Token
       tags:
@@ -2060,7 +2060,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Schema
       tags:
@@ -2114,7 +2114,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Relations
       tags:
@@ -2183,7 +2183,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Remove Collaborator
       tags:
@@ -2230,7 +2230,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Collaborators
       tags:
@@ -2276,7 +2276,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateCollaboratorRequestBody'
+              $ref: "#/components/schemas/UpdateCollaboratorRequestBody"
         required: true
       responses:
         "200":
@@ -2288,7 +2288,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Update Collaborator
       tags:
@@ -2336,7 +2336,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AddCollaboratorRequestBody'
+              $ref: "#/components/schemas/AddCollaboratorRequestBody"
         required: true
       responses:
         "200":
@@ -2348,7 +2348,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Add Collaborator
       tags:
@@ -2395,7 +2395,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Global Search
       tags:
@@ -2453,7 +2453,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Directory
       tags:
@@ -2502,7 +2502,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Tree
       tags:
@@ -2550,7 +2550,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GroupByRequestBody'
+              $ref: "#/components/schemas/GroupByRequestBody"
         required: true
       responses:
         "200":
@@ -2562,7 +2562,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Group By
       tags:
@@ -2623,31 +2623,31 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/StatisticsResponse'
+                $ref: "#/components/schemas/StatisticsResponse"
           description: Successful Response
         "400":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetail'
+                $ref: "#/components/schemas/ErrorDetail"
           description: Invalid model name format provided.
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetail'
+                $ref: "#/components/schemas/ErrorDetail"
           description: Read access denied to the instance.
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetail'
+                $ref: "#/components/schemas/ErrorDetail"
           description: Instance or requested model not found.
         "422":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Approximate Table Row Counts and Artifact Size
       tags:
@@ -2695,32 +2695,32 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NonEmptyTablesResponse'
+                $ref: "#/components/schemas/NonEmptyTablesResponse"
           description: Successful Response
         "403":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetail'
+                $ref: "#/components/schemas/ErrorDetail"
           description: Read access denied to the instance.
         "404":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetail'
+                $ref: "#/components/schemas/ErrorDetail"
           description: Instance not accessible.
         "500":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorDetail'
+                $ref: "#/components/schemas/ErrorDetail"
           description: "Internal server error, such as a missing schema or database\
             \ connection failure."
         "422":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: List Non-Empty Data Tables by Module
       tags:
@@ -2782,7 +2782,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Relation Counts
       tags:
@@ -2825,7 +2825,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegisterFormRequest'
+              $ref: "#/components/schemas/RegisterFormRequest"
         required: true
       responses:
         "200":
@@ -2837,7 +2837,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Register Form
       tags:
@@ -2870,7 +2870,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ExecuteFunctionRequestBody'
+              $ref: "#/components/schemas/ExecuteFunctionRequestBody"
         required: true
       responses:
         "200":
@@ -2882,7 +2882,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Execute Function
       tags:
@@ -2915,7 +2915,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateTransformRequestBody'
+              $ref: "#/components/schemas/CreateTransformRequestBody"
         required: true
       responses:
         "200":
@@ -2927,7 +2927,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Create Transform
       tags:
@@ -2960,7 +2960,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/Body_upload_artifact_instances__instance_id__artifacts_upload_post'
+              $ref: "#/components/schemas/Body_upload_artifact_instances__instance_id__artifacts_upload_post"
         required: true
       responses:
         "200":
@@ -2972,7 +2972,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Upload Artifact
       tags:
@@ -3005,7 +3005,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateArtifactRequestBody'
+              $ref: "#/components/schemas/CreateArtifactRequestBody"
         required: true
       responses:
         "200":
@@ -3017,7 +3017,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Create Artifact
       tags:
@@ -3100,7 +3100,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Detach Label
       tags:
@@ -3181,7 +3181,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Attach Label
       tags:
@@ -3249,7 +3249,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetRecordsRequestBody'
+              allOf:
+              - $ref: "#/components/schemas/GetRecordsRequestBody"
+              default:
+                search: ""
       responses:
         "200":
           content:
@@ -3260,7 +3263,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Query Linked Features
       tags:
@@ -3343,7 +3346,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Request'
+              $ref: "#/components/schemas/Request"
         required: true
       responses:
         "200":
@@ -3355,7 +3358,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get and query hierarchical relatives of records
       tags:
@@ -3440,7 +3443,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetRecordsRequestBody'
+              allOf:
+              - $ref: "#/components/schemas/GetRecordsRequestBody"
+              default:
+                search: ""
       responses:
         "200":
           content:
@@ -3451,7 +3457,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Records
       tags:
@@ -3498,7 +3504,8 @@ paths:
       requestBody:
         content:
           application/json:
-            schema: {}
+            schema:
+              title: Body
         required: true
       responses:
         "200":
@@ -3510,7 +3517,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Create Records
       tags:
@@ -3585,7 +3592,10 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetValuesRequestBody'
+              allOf:
+              - $ref: "#/components/schemas/GetValuesRequestBody"
+              default:
+                search: ""
       responses:
         "200":
           content:
@@ -3596,7 +3606,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Values
       tags:
@@ -3663,7 +3673,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Body'
+              $ref: "#/components/schemas/Body"
         required: true
       responses:
         "200":
@@ -3733,7 +3743,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BatchUpdateBody'
+              $ref: "#/components/schemas/BatchUpdateBody"
         required: true
       responses:
         "200":
@@ -3748,7 +3758,8 @@ paths:
                 updated_at: 2023-10-27T12:00:00Z
               schema:
                 items:
-                  additionalProperties: {}
+                  additionalProperties: true
+                  type: object
                 type: array
           description: "Successful update. Returns a list of the full, updated records."
         "422":
@@ -3800,20 +3811,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BatchDeleteBody'
+              $ref: "#/components/schemas/BatchDeleteBody"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BatchDeleteResponse'
+                $ref: "#/components/schemas/BatchDeleteResponse"
           description: Successful Response
         "422":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Batch Delete Records
       tags:
@@ -3862,20 +3873,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BatchSyncLinksBody'
+              $ref: "#/components/schemas/BatchSyncLinksBody"
         required: true
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BatchSyncResponse'
+                $ref: "#/components/schemas/BatchSyncResponse"
           description: Successful Response
         "422":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Synchronize sets of links for multiple scopes in a single call
       tags:
@@ -3916,7 +3927,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ExportRecordsRequestBody'
+              allOf:
+              - $ref: "#/components/schemas/ExportRecordsRequestBody"
+              nullable: true
       responses:
         "200":
           content:
@@ -3927,7 +3940,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Export Records
       tags:
@@ -4002,7 +4015,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GetRecordRequestBody'
+              allOf:
+              - $ref: "#/components/schemas/GetRecordRequestBody"
+              default: {}
       responses:
         "200":
           content:
@@ -4013,7 +4028,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Record
       tags:
@@ -4076,7 +4091,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Delete Record
       tags:
@@ -4130,7 +4145,8 @@ paths:
       requestBody:
         content:
           application/json:
-            schema: {}
+            schema:
+              title: Body
         required: true
       responses:
         "200":
@@ -4142,7 +4158,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Update Record
       tags:
@@ -4201,7 +4217,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/S3PermissionsRequest'
+              $ref: "#/components/schemas/S3PermissionsRequest"
         required: true
       responses:
         "200":
@@ -4213,7 +4229,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Grant S3 Permissions
       tags:
@@ -4246,7 +4262,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RegisterDbServerBody'
+              $ref: "#/components/schemas/RegisterDbServerBody"
         required: true
       responses:
         "200":
@@ -4258,7 +4274,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Register Db Server
       tags:
@@ -4305,7 +4321,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Check Db Server Access
       tags:
@@ -4357,7 +4373,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Invalidate Instance Cache
       tags:
@@ -4394,7 +4410,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Instance Cache
       tags:
@@ -4432,7 +4448,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HTTPValidationError'
+                $ref: "#/components/schemas/HTTPValidationError"
           description: Validation Error
       summary: Get Db Token Backward Compatible
       tags:
@@ -4503,10 +4519,16 @@ components:
       title: AddSpaceCollaboratorRequestBody
     AddTeamMemberRequestBody:
       example:
-        role: admin
+        role: member
       properties:
         role:
-          $ref: '#/components/schemas/Role'
+          default: member
+          enum:
+          - admin
+          - member
+          - manager
+          - guest
+          title: Role
       title: AddTeamMemberRequestBody
     AttachSpaceToRecordRequestBody:
       example:
@@ -4538,7 +4560,8 @@ components:
           description: "A list of dictionaries, where each dictionary contains the\
             \ key(s) identifying a record to delete."
           items:
-            additionalProperties: {}
+            additionalProperties: true
+            type: object
           type: array
       required:
       - records
@@ -4573,7 +4596,7 @@ components:
           description: A list of synchronization instructions to be processed in a
             single batch.
           items:
-            $ref: '#/components/schemas/SyncInstruction'
+            $ref: "#/components/schemas/SyncInstruction"
           type: array
         list_key:
           description: "The name of the column whose values are being synchronized\
@@ -4604,13 +4627,15 @@ components:
         deleted:
           description: A list of the records that were deleted.
           items:
-            additionalProperties: {}
+            additionalProperties: true
+            type: object
           type: array
         inserted:
           description: "A list of the records that were inserted, including server-added\
             \ audit fields."
           items:
-            additionalProperties: {}
+            additionalProperties: true
+            type: object
           type: array
         kept:
           description: The number of records that already existed and were kept.
@@ -4635,7 +4660,8 @@ components:
           description: A list of records to update. Each dictionary must contain the
             key(s) specified in `index_columns` and the fields to be updated.
           items:
-            additionalProperties: {}
+            additionalProperties: true
+            type: object
           type: array
         index_columns:
           description: "A list of column names to use as the identifier for matching\
@@ -4669,9 +4695,10 @@ components:
           title: Path
           type: string
         kwargs:
-          additionalProperties: {}
+          additionalProperties: true
           default: {}
           title: Kwargs
+          type: object
       required:
       - path
       title: CreateArtifactRequestBody
@@ -4733,8 +4760,9 @@ components:
           title: Source Code
           type: string
         kwargs:
-          additionalProperties: {}
+          additionalProperties: true
           nullable: true
+          type: object
       required:
       - key
       - kind
@@ -4784,8 +4812,9 @@ components:
           title: Function Name
           type: string
         function_kwargs:
-          additionalProperties: {}
+          additionalProperties: true
           title: Function Kwargs
+          type: object
       required:
       - function_kwargs
       - function_name
@@ -4797,9 +4826,10 @@ components:
           key: ""
       properties:
         kwargs:
-          additionalProperties: {}
+          additionalProperties: true
           default: {}
           title: Kwargs
+          type: object
       title: ExportRecordsRequestBody
     GetRecordRequestBody:
       example:
@@ -4836,11 +4866,12 @@ components:
           nullable: true
           type: array
         filter:
-          additionalProperties: {}
+          additionalProperties: true
           nullable: true
+          type: object
         order_by:
           items:
-            $ref: '#/components/schemas/OrderByColumn'
+            $ref: "#/components/schemas/OrderByColumn"
           nullable: true
           type: array
         search:
@@ -4868,11 +4899,12 @@ components:
           descending: false
       properties:
         filter:
-          additionalProperties: {}
+          additionalProperties: true
           nullable: true
+          type: object
         order_by:
           items:
-            $ref: '#/components/schemas/OrderByColumn'
+            $ref: "#/components/schemas/OrderByColumn"
           nullable: true
           type: array
         search:
@@ -4904,15 +4936,16 @@ components:
       properties:
         dimensions:
           items:
-            $ref: '#/components/schemas/Dimension'
+            $ref: "#/components/schemas/Dimension"
           type: array
         measures:
           items:
-            $ref: '#/components/schemas/Measure'
+            $ref: "#/components/schemas/Measure"
           type: array
         filter:
-          additionalProperties: {}
+          additionalProperties: true
           nullable: true
+          type: object
       required:
       - dimensions
       - measures
@@ -4933,7 +4966,7 @@ components:
       properties:
         detail:
           items:
-            $ref: '#/components/schemas/ValidationError'
+            $ref: "#/components/schemas/ValidationError"
           type: array
       title: HTTPValidationError
     Measure:
@@ -5030,8 +5063,9 @@ components:
           title: Key
           type: string
         data:
-          additionalProperties: {}
+          additionalProperties: true
           title: Data
+          type: object
         schema_uid:
           title: Schema Uid
           type: string
@@ -5056,13 +5090,7 @@ components:
           descending: false
         - field: field
           descending: false
-        relatives:
-          depth: 6
-          field: id
-          kind: ancestors
-          values:
-          - 0
-          - 0
+        relatives: ""
       properties:
         select:
           items:
@@ -5070,11 +5098,12 @@ components:
           nullable: true
           type: array
         filter:
-          additionalProperties: {}
+          additionalProperties: true
           nullable: true
+          type: object
         order_by:
           items:
-            $ref: '#/components/schemas/OrderByColumn'
+            $ref: "#/components/schemas/OrderByColumn"
           nullable: true
           type: array
         search:
@@ -5087,7 +5116,9 @@ components:
           nullable: true
           type: array
         relatives:
-          $ref: '#/components/schemas/TraversalParams'
+          allOf:
+          - $ref: "#/components/schemas/TraversalParams"
+          description: The parameters defining the relationship traversal.
       required:
       - relatives
       title: Request
@@ -5113,8 +5144,9 @@ components:
           nullable: true
           type: string
         extra_parameters:
-          additionalProperties: {}
+          additionalProperties: true
           nullable: true
+          type: object
       required:
       - aws_access_key_id
       - aws_secret_access_key
@@ -5156,10 +5188,11 @@ components:
           key: ""
       properties:
         scope:
-          additionalProperties: {}
+          additionalProperties: true
           description: "Key-value pairs defining the constant scope for this specific\
             \ synchronization operation (e.g., {'artifact_id': 1, 'feature_id': 10})."
           title: Scope
+          type: object
         desired_ids:
           description: The complete list of desired IDs for the list_key within this
             scope.
@@ -5171,13 +5204,6 @@ components:
       title: SyncInstruction
     TraversalParams:
       description: Parameters that define the hierarchical traversal.
-      example:
-        depth: 6
-        field: id
-        kind: ancestors
-        values:
-        - 0
-        - 0
       properties:
         field:
           default: id
@@ -5189,7 +5215,7 @@ components:
           description: A list of values for the specified 'field' to begin the traversal
             from.
           items:
-            $ref: '#/components/schemas/TraversalParams_values_inner'
+            $ref: "#/components/schemas/TraversalParams_values_inner"
           type: array
         kind:
           description: The direction of traversal
@@ -5283,7 +5309,12 @@ components:
         role: admin
       properties:
         role:
-          $ref: '#/components/schemas/Role_1'
+          enum:
+          - admin
+          - member
+          - manager
+          - guest
+          title: Role
       required:
       - role
       title: UpdateTeamMemberRequestBody
@@ -5309,7 +5340,7 @@ components:
       properties:
         loc:
           items:
-            $ref: '#/components/schemas/ValidationError_loc_inner'
+            $ref: "#/components/schemas/ValidationError_loc_inner"
           type: array
         msg:
           title: Message
@@ -5325,46 +5356,21 @@ components:
     Body:
       anyOf:
       - items:
-          additionalProperties: {}
+          additionalProperties: true
+          type: object
         type: array
-      - additionalProperties: {}
+      - additionalProperties: true
+        type: object
       description: "A single record as a JSON object or a list of records to upsert.\
         \ If a record's values for the `conflict_columns` match an existing record,\
         \ it will be updated. Otherwise, a new record will be inserted. Only the fields\
         \ you provide will be modified on update."
       title: Body
-    Role:
-      anyOf:
-      - enum:
-        - admin
-        - member
-        type: string
-      - enum:
-        - admin
-        - manager
-        - member
-        - guest
-        type: string
-      default: member
-      title: Role
     TraversalParams_values_inner:
       anyOf:
       - type: integer
       - type: string
       - type: boolean
-    Role_1:
-      anyOf:
-      - enum:
-        - admin
-        - member
-        type: string
-      - enum:
-        - admin
-        - manager
-        - member
-        - guest
-        type: string
-      title: Role
     ValidationError_loc_inner:
       anyOf:
       - type: string

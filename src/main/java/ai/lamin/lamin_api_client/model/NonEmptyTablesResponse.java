@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * NonEmptyTablesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:25:24.609068579+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
 public class NonEmptyTablesResponse {
   public static final String SERIALIZED_NAME_NON_EMPTY_TABLES = "non_empty_tables";
   @SerializedName(SERIALIZED_NAME_NON_EMPTY_TABLES)
@@ -132,12 +132,10 @@ public class NonEmptyTablesResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("non_empty_tables");
+    openapiFields = new HashSet<String>(Arrays.asList("non_empty_tables"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("non_empty_tables");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("non_empty_tables"));
   }
 
   /**
@@ -149,7 +147,7 @@ public class NonEmptyTablesResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!NonEmptyTablesResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in NonEmptyTablesResponse is not found in the empty JSON string", NonEmptyTablesResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in NonEmptyTablesResponse is not found in the empty JSON string", NonEmptyTablesResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -157,14 +155,14 @@ public class NonEmptyTablesResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!NonEmptyTablesResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NonEmptyTablesResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `NonEmptyTablesResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : NonEmptyTablesResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();

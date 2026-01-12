@@ -96,7 +96,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetCall(UUID instanceId, List<String> q, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable List<String> q, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -151,7 +151,7 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(UUID instanceId, List<String> q, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable List<String> q, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getInstanceStatisticsInstancesInstanceIdStatisticsGet(Async)");
@@ -180,7 +180,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(UUID instanceId, List<String> q, String authorization) throws ApiException {
+    public StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable List<String> q, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<StatisticsResponse> localVarResp = getInstanceStatisticsInstancesInstanceIdStatisticsGetWithHttpInfo(instanceId, q, authorization);
         return localVarResp.getData();
     }
@@ -204,7 +204,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatisticsResponse> getInstanceStatisticsInstancesInstanceIdStatisticsGetWithHttpInfo(UUID instanceId, List<String> q, String authorization) throws ApiException {
+    public ApiResponse<StatisticsResponse> getInstanceStatisticsInstancesInstanceIdStatisticsGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable List<String> q, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(instanceId, q, authorization, null);
         Type localVarReturnType = new TypeToken<StatisticsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -230,7 +230,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetAsync(UUID instanceId, List<String> q, String authorization, final ApiCallback<StatisticsResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable List<String> q, @javax.annotation.Nullable String authorization, final ApiCallback<StatisticsResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(instanceId, q, authorization, _callback);
         Type localVarReturnType = new TypeToken<StatisticsResponse>(){}.getType();
@@ -255,7 +255,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -306,7 +306,7 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(Async)");
@@ -334,7 +334,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(UUID instanceId, String authorization) throws ApiException {
+    public NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<NonEmptyTablesResponse> localVarResp = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetWithHttpInfo(instanceId, authorization);
         return localVarResp.getData();
     }
@@ -357,7 +357,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NonEmptyTablesResponse> getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<NonEmptyTablesResponse> getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<NonEmptyTablesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -382,7 +382,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetAsync(UUID instanceId, String authorization, final ApiCallback<NonEmptyTablesResponse> _callback) throws ApiException {
+    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<NonEmptyTablesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<NonEmptyTablesResponse>(){}.getType();
@@ -407,7 +407,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetCall(String moduleName, String modelName, Integer id, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -461,7 +461,7 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(String moduleName, String modelName, Integer id, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(Async)");
@@ -504,7 +504,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(String moduleName, String modelName, Integer id, UUID instanceId, String authorization) throws ApiException {
+    public Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetWithHttpInfo(moduleName, modelName, id, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -527,7 +527,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetWithHttpInfo(String moduleName, String modelName, Integer id, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(moduleName, modelName, id, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -552,7 +552,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetAsync(String moduleName, String modelName, Integer id, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull Integer id, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(moduleName, modelName, id, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -577,7 +577,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostCall(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull GroupByRequestBody groupByRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -631,7 +631,7 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull GroupByRequestBody groupByRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(Async)");
@@ -674,7 +674,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization) throws ApiException {
+    public Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull GroupByRequestBody groupByRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostWithHttpInfo(moduleName, modelName, instanceId, groupByRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -697,7 +697,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostWithHttpInfo(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull GroupByRequestBody groupByRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(moduleName, modelName, instanceId, groupByRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -722,7 +722,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostAsync(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull GroupByRequestBody groupByRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(moduleName, modelName, instanceId, groupByRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

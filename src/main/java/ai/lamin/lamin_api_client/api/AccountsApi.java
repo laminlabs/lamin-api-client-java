@@ -88,7 +88,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCallerAccountAccountGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCallerAccountAccountGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +142,7 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCallerAccountAccountGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCallerAccountAccountGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         return getCallerAccountAccountGetCall(instanceId, authorization, _callback);
 
     }
@@ -162,7 +162,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getCallerAccountAccountGet(UUID instanceId, String authorization) throws ApiException {
+    public Object getCallerAccountAccountGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getCallerAccountAccountGetWithHttpInfo(instanceId, authorization);
         return localVarResp.getData();
     }
@@ -182,7 +182,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getCallerAccountAccountGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> getCallerAccountAccountGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -204,7 +204,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCallerAccountAccountGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getCallerAccountAccountGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

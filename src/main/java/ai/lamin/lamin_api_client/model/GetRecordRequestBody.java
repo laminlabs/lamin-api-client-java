@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetRecordRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:25:24.609068579+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
 public class GetRecordRequestBody {
   public static final String SERIALIZED_NAME_SELECT = "select";
   @SerializedName(SERIALIZED_NAME_SELECT)
@@ -143,11 +143,10 @@ public class GetRecordRequestBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("select");
+    openapiFields = new HashSet<String>(Arrays.asList("select"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -159,7 +158,7 @@ public class GetRecordRequestBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GetRecordRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GetRecordRequestBody is not found in the empty JSON string", GetRecordRequestBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GetRecordRequestBody is not found in the empty JSON string", GetRecordRequestBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -167,13 +166,13 @@ public class GetRecordRequestBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GetRecordRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetRecordRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GetRecordRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("select") != null && !jsonObj.get("select").isJsonNull() && !jsonObj.get("select").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `select` to be an array in the JSON string but got `%s`", jsonObj.get("select").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `select` to be an array in the JSON string but got `%s`", jsonObj.get("select").toString()));
       }
   }
 

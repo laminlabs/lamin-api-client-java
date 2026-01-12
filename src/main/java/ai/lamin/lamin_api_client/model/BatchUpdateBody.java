@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * BatchUpdateBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:25:24.609068579+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
 public class BatchUpdateBody {
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @SerializedName(SERIALIZED_NAME_RECORDS)
@@ -166,14 +166,10 @@ public class BatchUpdateBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("records");
-    openapiFields.add("index_columns");
+    openapiFields = new HashSet<String>(Arrays.asList("records", "index_columns"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("records");
-    openapiRequiredFields.add("index_columns");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("records", "index_columns"));
   }
 
   /**
@@ -185,7 +181,7 @@ public class BatchUpdateBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BatchUpdateBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BatchUpdateBody is not found in the empty JSON string", BatchUpdateBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BatchUpdateBody is not found in the empty JSON string", BatchUpdateBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -193,14 +189,14 @@ public class BatchUpdateBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!BatchUpdateBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BatchUpdateBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BatchUpdateBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BatchUpdateBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -208,13 +204,13 @@ public class BatchUpdateBody {
       if (jsonObj.get("records") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("records").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `records` to be an array in the JSON string but got `%s`", jsonObj.get("records").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `records` to be an array in the JSON string but got `%s`", jsonObj.get("records").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("index_columns") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("index_columns").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `index_columns` to be an array in the JSON string but got `%s`", jsonObj.get("index_columns").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `index_columns` to be an array in the JSON string but got `%s`", jsonObj.get("index_columns").toString()));
       }
   }
 

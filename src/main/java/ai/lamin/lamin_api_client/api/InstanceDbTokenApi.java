@@ -88,7 +88,7 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class InstanceDbTokenApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getDbTokenInstancesInstanceIdDbTokenGet(Async)");
@@ -164,7 +164,7 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getDbTokenInstancesInstanceIdDbTokenGet(UUID instanceId, String authorization) throws ApiException {
+    public Object getDbTokenInstancesInstanceIdDbTokenGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getDbTokenInstancesInstanceIdDbTokenGetWithHttpInfo(instanceId, authorization);
         return localVarResp.getData();
     }
@@ -184,7 +184,7 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getDbTokenInstancesInstanceIdDbTokenGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> getDbTokenInstancesInstanceIdDbTokenGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -206,7 +206,7 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

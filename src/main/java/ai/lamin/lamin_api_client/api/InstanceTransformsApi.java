@@ -90,7 +90,7 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateTransformRequestBody createTransformRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +142,7 @@ public class InstanceTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateTransformRequestBody createTransformRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling createTransformInstancesInstanceIdTransformsPost(Async)");
@@ -173,7 +173,7 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createTransformInstancesInstanceIdTransformsPost(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization) throws ApiException {
+    public Object createTransformInstancesInstanceIdTransformsPost(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateTransformRequestBody createTransformRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = createTransformInstancesInstanceIdTransformsPostWithHttpInfo(instanceId, createTransformRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -194,7 +194,7 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createTransformInstancesInstanceIdTransformsPostWithHttpInfo(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> createTransformInstancesInstanceIdTransformsPostWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateTransformRequestBody createTransformRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -217,7 +217,7 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostAsync(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateTransformRequestBody createTransformRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

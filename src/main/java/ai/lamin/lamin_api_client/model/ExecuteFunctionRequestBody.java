@@ -50,7 +50,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * ExecuteFunctionRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:25:24.609068579+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
 public class ExecuteFunctionRequestBody {
   public static final String SERIALIZED_NAME_TRANSFORM_UID = "transform_uid";
   @SerializedName(SERIALIZED_NAME_TRANSFORM_UID)
@@ -183,16 +183,10 @@ public class ExecuteFunctionRequestBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("transform_uid");
-    openapiFields.add("function_name");
-    openapiFields.add("function_kwargs");
+    openapiFields = new HashSet<String>(Arrays.asList("transform_uid", "function_name", "function_kwargs"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("transform_uid");
-    openapiRequiredFields.add("function_name");
-    openapiRequiredFields.add("function_kwargs");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("transform_uid", "function_name", "function_kwargs"));
   }
 
   /**
@@ -204,7 +198,7 @@ public class ExecuteFunctionRequestBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ExecuteFunctionRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ExecuteFunctionRequestBody is not found in the empty JSON string", ExecuteFunctionRequestBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ExecuteFunctionRequestBody is not found in the empty JSON string", ExecuteFunctionRequestBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -212,22 +206,22 @@ public class ExecuteFunctionRequestBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ExecuteFunctionRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ExecuteFunctionRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ExecuteFunctionRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ExecuteFunctionRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("transform_uid").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `transform_uid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transform_uid").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `transform_uid` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transform_uid").toString()));
       }
       if (!jsonObj.get("function_name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `function_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("function_name").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `function_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("function_name").toString()));
       }
   }
 

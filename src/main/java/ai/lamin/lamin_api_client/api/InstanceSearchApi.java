@@ -89,7 +89,7 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetCall(UUID instanceId, String searchTerm, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String searchTerm, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -144,7 +144,7 @@ public class InstanceSearchApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(UUID instanceId, String searchTerm, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String searchTerm, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling globalSearchInstancesInstanceIdSearchGet(Async)");
@@ -175,7 +175,7 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object globalSearchInstancesInstanceIdSearchGet(UUID instanceId, String searchTerm, String authorization) throws ApiException {
+    public Object globalSearchInstancesInstanceIdSearchGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String searchTerm, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = globalSearchInstancesInstanceIdSearchGetWithHttpInfo(instanceId, searchTerm, authorization);
         return localVarResp.getData();
     }
@@ -196,7 +196,7 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> globalSearchInstancesInstanceIdSearchGetWithHttpInfo(UUID instanceId, String searchTerm, String authorization) throws ApiException {
+    public ApiResponse<Object> globalSearchInstancesInstanceIdSearchGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String searchTerm, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(instanceId, searchTerm, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -219,7 +219,7 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetAsync(UUID instanceId, String searchTerm, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String searchTerm, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(instanceId, searchTerm, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

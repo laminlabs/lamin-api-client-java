@@ -90,7 +90,7 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerFormInstancesInstanceIdFormsPostCall(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call registerFormInstancesInstanceIdFormsPostCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull RegisterFormRequest registerFormRequest, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -142,7 +142,7 @@ public class InstanceFormsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerFormInstancesInstanceIdFormsPostValidateBeforeCall(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerFormInstancesInstanceIdFormsPostValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull RegisterFormRequest registerFormRequest, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling registerFormInstancesInstanceIdFormsPost(Async)");
@@ -173,7 +173,7 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object registerFormInstancesInstanceIdFormsPost(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization) throws ApiException {
+    public Object registerFormInstancesInstanceIdFormsPost(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull RegisterFormRequest registerFormRequest, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = registerFormInstancesInstanceIdFormsPostWithHttpInfo(instanceId, registerFormRequest, authorization);
         return localVarResp.getData();
     }
@@ -194,7 +194,7 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> registerFormInstancesInstanceIdFormsPostWithHttpInfo(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization) throws ApiException {
+    public ApiResponse<Object> registerFormInstancesInstanceIdFormsPostWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull RegisterFormRequest registerFormRequest, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -217,7 +217,7 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerFormInstancesInstanceIdFormsPostAsync(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call registerFormInstancesInstanceIdFormsPostAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull RegisterFormRequest registerFormRequest, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

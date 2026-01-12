@@ -50,8 +50,6 @@ docs/OrganizationsApi.md
 docs/RegisterDbServerBody.md
 docs/RegisterFormRequest.md
 docs/Request.md
-docs/Role.md
-docs/Role1.md
 docs/S3PermissionsRequest.md
 docs/SpacesApi.md
 docs/StatisticsResponse.md
@@ -71,6 +69,7 @@ docs/ValidationErrorLocInner.md
 git_push.sh
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
+pom.xml
 src/main/AndroidManifest.xml
 src/main/java/ai/lamin/lamin_api_client/ApiCallback.java
 src/main/java/ai/lamin/lamin_api_client/ApiClient.java
@@ -142,8 +141,6 @@ src/main/java/ai/lamin/lamin_api_client/model/OrderByColumn.java
 src/main/java/ai/lamin/lamin_api_client/model/RegisterDbServerBody.java
 src/main/java/ai/lamin/lamin_api_client/model/RegisterFormRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/Request.java
-src/main/java/ai/lamin/lamin_api_client/model/Role.java
-src/main/java/ai/lamin/lamin_api_client/model/Role1.java
 src/main/java/ai/lamin/lamin_api_client/model/S3PermissionsRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/StatisticsResponse.java
 src/main/java/ai/lamin/lamin_api_client/model/SyncInstruction.java

@@ -55,7 +55,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GroupByRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:25:24.609068579+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
 public class GroupByRequestBody {
   public static final String SERIALIZED_NAME_DIMENSIONS = "dimensions";
   @SerializedName(SERIALIZED_NAME_DIMENSIONS)
@@ -215,15 +215,10 @@ public class GroupByRequestBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dimensions");
-    openapiFields.add("measures");
-    openapiFields.add("filter");
+    openapiFields = new HashSet<String>(Arrays.asList("dimensions", "measures", "filter"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("dimensions");
-    openapiRequiredFields.add("measures");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("dimensions", "measures"));
   }
 
   /**
@@ -235,7 +230,7 @@ public class GroupByRequestBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GroupByRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GroupByRequestBody is not found in the empty JSON string", GroupByRequestBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GroupByRequestBody is not found in the empty JSON string", GroupByRequestBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -243,20 +238,20 @@ public class GroupByRequestBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GroupByRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupByRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GroupByRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : GroupByRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the json data is an array
       if (!jsonObj.get("dimensions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dimensions` to be an array in the JSON string but got `%s`", jsonObj.get("dimensions").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dimensions` to be an array in the JSON string but got `%s`", jsonObj.get("dimensions").toString()));
       }
 
       JsonArray jsonArraydimensions = jsonObj.getAsJsonArray("dimensions");
@@ -266,7 +261,7 @@ public class GroupByRequestBody {
       };
       // ensure the json data is an array
       if (!jsonObj.get("measures").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `measures` to be an array in the JSON string but got `%s`", jsonObj.get("measures").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `measures` to be an array in the JSON string but got `%s`", jsonObj.get("measures").toString()));
       }
 
       JsonArray jsonArraymeasures = jsonObj.getAsJsonArray("measures");

@@ -93,7 +93,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -150,7 +150,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(Async)");
@@ -188,7 +188,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
+    public Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -211,7 +211,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -236,7 +236,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutAsync(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -259,7 +259,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -314,7 +314,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationOrganizationsOrganizationIdGet(Async)");
@@ -340,7 +340,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getOrganizationOrganizationsOrganizationIdGet(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
+    public Object getOrganizationOrganizationsOrganizationIdGet(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getOrganizationOrganizationsOrganizationIdGetWithHttpInfo(organizationId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -361,7 +361,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getOrganizationOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> getOrganizationOrganizationsOrganizationIdGetWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -384,7 +384,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetAsync(UUID organizationId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -407,7 +407,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -462,7 +462,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling listOrganizationMembersOrganizationsOrganizationIdMembersGet(Async)");
@@ -488,7 +488,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
+    public Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = listOrganizationMembersOrganizationsOrganizationIdMembersGetWithHttpInfo(organizationId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -509,7 +509,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listOrganizationMembersOrganizationsOrganizationIdMembersGetWithHttpInfo(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> listOrganizationMembersOrganizationsOrganizationIdMembersGetWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -532,7 +532,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetAsync(UUID organizationId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -556,7 +556,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteCall(UUID organizationId, UUID accountId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -612,7 +612,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(UUID organizationId, UUID accountId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(Async)");
@@ -644,7 +644,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(UUID organizationId, UUID accountId, UUID instanceId, String authorization) throws ApiException {
+    public Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(organizationId, accountId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -666,7 +666,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(UUID organizationId, UUID accountId, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -690,7 +690,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteAsync(UUID organizationId, UUID accountId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -715,7 +715,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -772,7 +772,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(Async)");
@@ -810,7 +810,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
+    public Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -833,7 +833,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -858,7 +858,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchAsync(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

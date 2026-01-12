@@ -88,7 +88,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -139,7 +139,7 @@ public class CacheApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getInstanceCacheCacheInstancesInstanceIdGet(Async)");
@@ -164,7 +164,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getInstanceCacheCacheInstancesInstanceIdGet(UUID instanceId, String authorization) throws ApiException {
+    public Object getInstanceCacheCacheInstancesInstanceIdGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getInstanceCacheCacheInstancesInstanceIdGetWithHttpInfo(instanceId, authorization);
         return localVarResp.getData();
     }
@@ -184,7 +184,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getInstanceCacheCacheInstancesInstanceIdGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> getInstanceCacheCacheInstancesInstanceIdGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -206,7 +206,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -228,7 +228,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -279,7 +279,7 @@ public class CacheApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling invalidateInstanceCacheCacheInstancesInstanceIdDelete(Async)");
@@ -304,7 +304,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object invalidateInstanceCacheCacheInstancesInstanceIdDelete(UUID instanceId, String authorization) throws ApiException {
+    public Object invalidateInstanceCacheCacheInstancesInstanceIdDelete(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = invalidateInstanceCacheCacheInstancesInstanceIdDeleteWithHttpInfo(instanceId, authorization);
         return localVarResp.getData();
     }
@@ -324,7 +324,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> invalidateInstanceCacheCacheInstancesInstanceIdDeleteWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
+    public ApiResponse<Object> invalidateInstanceCacheCacheInstancesInstanceIdDeleteWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -346,7 +346,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

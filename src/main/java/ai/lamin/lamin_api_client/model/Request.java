@@ -55,7 +55,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * Request
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:25:24.609068579+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
 public class Request {
   public static final String SERIALIZED_NAME_RELATIVES = "relatives";
   @SerializedName(SERIALIZED_NAME_RELATIVES)
@@ -301,17 +301,10 @@ public class Request {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("relatives");
-    openapiFields.add("select");
-    openapiFields.add("filter");
-    openapiFields.add("order_by");
-    openapiFields.add("search");
-    openapiFields.add("search_in");
+    openapiFields = new HashSet<String>(Arrays.asList("relatives", "select", "filter", "order_by", "search", "search_in"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("relatives");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("relatives"));
   }
 
   /**
@@ -323,7 +316,7 @@ public class Request {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!Request.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in Request is not found in the empty JSON string", Request.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in Request is not found in the empty JSON string", Request.openapiRequiredFields.toString()));
         }
       }
 
@@ -331,14 +324,14 @@ public class Request {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!Request.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `Request` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `Request` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : Request.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -346,14 +339,14 @@ public class Request {
       TraversalParams.validateJsonElement(jsonObj.get("relatives"));
       // ensure the optional json data is an array if present
       if (jsonObj.get("select") != null && !jsonObj.get("select").isJsonNull() && !jsonObj.get("select").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `select` to be an array in the JSON string but got `%s`", jsonObj.get("select").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `select` to be an array in the JSON string but got `%s`", jsonObj.get("select").toString()));
       }
       if (jsonObj.get("order_by") != null && !jsonObj.get("order_by").isJsonNull()) {
         JsonArray jsonArrayorderBy = jsonObj.getAsJsonArray("order_by");
         if (jsonArrayorderBy != null) {
           // ensure the json data is an array
           if (!jsonObj.get("order_by").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `order_by` to be an array in the JSON string but got `%s`", jsonObj.get("order_by").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `order_by` to be an array in the JSON string but got `%s`", jsonObj.get("order_by").toString()));
           }
 
           // validate the optional field `order_by` (array)
@@ -363,11 +356,11 @@ public class Request {
         }
       }
       if ((jsonObj.get("search") != null && !jsonObj.get("search").isJsonNull()) && !jsonObj.get("search").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `search` to be a primitive type in the JSON string but got `%s`", jsonObj.get("search").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `search` to be a primitive type in the JSON string but got `%s`", jsonObj.get("search").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("search_in") != null && !jsonObj.get("search_in").isJsonNull() && !jsonObj.get("search_in").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `search_in` to be an array in the JSON string but got `%s`", jsonObj.get("search_in").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `search_in` to be an array in the JSON string but got `%s`", jsonObj.get("search_in").toString()));
       }
   }
 
