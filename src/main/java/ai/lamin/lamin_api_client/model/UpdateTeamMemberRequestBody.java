@@ -48,7 +48,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * UpdateTeamMemberRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:25:24.609068579+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:54:54.680196623+01:00[Europe/Brussels]", comments = "Generator version: 7.18.0")
 public class UpdateTeamMemberRequestBody {
   /**
    * Gets or Sets role
