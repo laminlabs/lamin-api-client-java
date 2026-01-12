@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**key** | **String** |  |  |
-|**type** | **String** |  |  |
+|**kind** | **String** |  |  |
 |**sourceCode** | **String** |  |  |
 |**kwargs** | **Map&lt;String, Object&gt;** |  |  [optional] |
 

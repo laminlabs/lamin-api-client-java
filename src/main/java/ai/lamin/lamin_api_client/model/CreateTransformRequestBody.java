@@ -51,17 +51,17 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * CreateTransformRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class CreateTransformRequestBody {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
   @javax.annotation.Nonnull
   private String key;
 
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
+  public static final String SERIALIZED_NAME_KIND = "kind";
+  @SerializedName(SERIALIZED_NAME_KIND)
   @javax.annotation.Nonnull
-  private String type;
+  private String kind;
 
   public static final String SERIALIZED_NAME_SOURCE_CODE = "source_code";
   @SerializedName(SERIALIZED_NAME_SOURCE_CODE)
@@ -95,22 +95,22 @@ public class CreateTransformRequestBody {
   }
 
 
-  public CreateTransformRequestBody type(@javax.annotation.Nonnull String type) {
-    this.type = type;
+  public CreateTransformRequestBody kind(@javax.annotation.Nonnull String kind) {
+    this.kind = kind;
     return this;
   }
 
   /**
-   * Get type
-   * @return type
+   * Get kind
+   * @return kind
    */
   @javax.annotation.Nonnull
-  public String getType() {
-    return type;
+  public String getKind() {
+    return kind;
   }
 
-  public void setType(@javax.annotation.Nonnull String type) {
-    this.type = type;
+  public void setKind(@javax.annotation.Nonnull String kind) {
+    this.kind = kind;
   }
 
 
@@ -171,7 +171,7 @@ public class CreateTransformRequestBody {
     }
     CreateTransformRequestBody createTransformRequestBody = (CreateTransformRequestBody) o;
     return Objects.equals(this.key, createTransformRequestBody.key) &&
-        Objects.equals(this.type, createTransformRequestBody.type) &&
+        Objects.equals(this.kind, createTransformRequestBody.kind) &&
         Objects.equals(this.sourceCode, createTransformRequestBody.sourceCode) &&
         Objects.equals(this.kwargs, createTransformRequestBody.kwargs);
   }
@@ -182,7 +182,7 @@ public class CreateTransformRequestBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, type, sourceCode, kwargs);
+    return Objects.hash(key, kind, sourceCode, kwargs);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -197,7 +197,7 @@ public class CreateTransformRequestBody {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateTransformRequestBody {\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    kind: ").append(toIndentedString(kind)).append("\n");
     sb.append("    sourceCode: ").append(toIndentedString(sourceCode)).append("\n");
     sb.append("    kwargs: ").append(toIndentedString(kwargs)).append("\n");
     sb.append("}");
@@ -223,14 +223,14 @@ public class CreateTransformRequestBody {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("key");
-    openapiFields.add("type");
+    openapiFields.add("kind");
     openapiFields.add("source_code");
     openapiFields.add("kwargs");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("key");
-    openapiRequiredFields.add("type");
+    openapiRequiredFields.add("kind");
     openapiRequiredFields.add("source_code");
   }
 
@@ -265,8 +265,8 @@ public class CreateTransformRequestBody {
       if (!jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));
       }
-      if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      if (!jsonObj.get("kind").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       if (!jsonObj.get("source_code").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `source_code` to be a primitive type in the JSON string but got `%s`", jsonObj.get("source_code").toString()));

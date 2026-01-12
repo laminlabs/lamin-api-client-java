@@ -48,7 +48,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * UpdateOrganizationMemberRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class UpdateOrganizationMemberRequestBody {
   /**
    * Gets or Sets role
@@ -57,9 +57,11 @@ public class UpdateOrganizationMemberRequestBody {
   public enum RoleEnum {
     ADMIN("admin"),
     
+    MANAGER("manager"),
+    
     MEMBER("member"),
     
-    MANAGER("manager");
+    GUEST("guest");
 
     private String value;
 

@@ -21,6 +21,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * S3PermissionsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class S3PermissionsRequest {
   public static final String SERIALIZED_NAME_AWS_ACCESS_KEY_ID = "aws_access_key_id";
   @SerializedName(SERIALIZED_NAME_AWS_ACCESS_KEY_ID)
@@ -64,6 +67,16 @@ public class S3PermissionsRequest {
   @SerializedName(SERIALIZED_NAME_REGION)
   @javax.annotation.Nonnull
   private String region;
+
+  public static final String SERIALIZED_NAME_AWS_SESSION_TOKEN = "aws_session_token";
+  @SerializedName(SERIALIZED_NAME_AWS_SESSION_TOKEN)
+  @javax.annotation.Nullable
+  private String awsSessionToken;
+
+  public static final String SERIALIZED_NAME_EXTRA_PARAMETERS = "extra_parameters";
+  @SerializedName(SERIALIZED_NAME_EXTRA_PARAMETERS)
+  @javax.annotation.Nullable
+  private Map<String, Object> extraParameters;
 
   public S3PermissionsRequest() {
   }
@@ -125,6 +138,52 @@ public class S3PermissionsRequest {
   }
 
 
+  public S3PermissionsRequest awsSessionToken(@javax.annotation.Nullable String awsSessionToken) {
+    this.awsSessionToken = awsSessionToken;
+    return this;
+  }
+
+  /**
+   * Get awsSessionToken
+   * @return awsSessionToken
+   */
+  @javax.annotation.Nullable
+  public String getAwsSessionToken() {
+    return awsSessionToken;
+  }
+
+  public void setAwsSessionToken(@javax.annotation.Nullable String awsSessionToken) {
+    this.awsSessionToken = awsSessionToken;
+  }
+
+
+  public S3PermissionsRequest extraParameters(@javax.annotation.Nullable Map<String, Object> extraParameters) {
+    this.extraParameters = extraParameters;
+    return this;
+  }
+
+  public S3PermissionsRequest putExtraParametersItem(String key, Object extraParametersItem) {
+    if (this.extraParameters == null) {
+      this.extraParameters = new HashMap<>();
+    }
+    this.extraParameters.put(key, extraParametersItem);
+    return this;
+  }
+
+  /**
+   * Get extraParameters
+   * @return extraParameters
+   */
+  @javax.annotation.Nullable
+  public Map<String, Object> getExtraParameters() {
+    return extraParameters;
+  }
+
+  public void setExtraParameters(@javax.annotation.Nullable Map<String, Object> extraParameters) {
+    this.extraParameters = extraParameters;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -137,12 +196,25 @@ public class S3PermissionsRequest {
     S3PermissionsRequest s3PermissionsRequest = (S3PermissionsRequest) o;
     return Objects.equals(this.awsAccessKeyId, s3PermissionsRequest.awsAccessKeyId) &&
         Objects.equals(this.awsSecretAccessKey, s3PermissionsRequest.awsSecretAccessKey) &&
-        Objects.equals(this.region, s3PermissionsRequest.region);
+        Objects.equals(this.region, s3PermissionsRequest.region) &&
+        Objects.equals(this.awsSessionToken, s3PermissionsRequest.awsSessionToken) &&
+        Objects.equals(this.extraParameters, s3PermissionsRequest.extraParameters);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(awsAccessKeyId, awsSecretAccessKey, region);
+    return Objects.hash(awsAccessKeyId, awsSecretAccessKey, region, awsSessionToken, extraParameters);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -152,6 +224,8 @@ public class S3PermissionsRequest {
     sb.append("    awsAccessKeyId: ").append(toIndentedString(awsAccessKeyId)).append("\n");
     sb.append("    awsSecretAccessKey: ").append(toIndentedString(awsSecretAccessKey)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
+    sb.append("    awsSessionToken: ").append(toIndentedString(awsSessionToken)).append("\n");
+    sb.append("    extraParameters: ").append(toIndentedString(extraParameters)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -177,6 +251,8 @@ public class S3PermissionsRequest {
     openapiFields.add("aws_access_key_id");
     openapiFields.add("aws_secret_access_key");
     openapiFields.add("region");
+    openapiFields.add("aws_session_token");
+    openapiFields.add("extra_parameters");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -221,6 +297,9 @@ public class S3PermissionsRequest {
       }
       if (!jsonObj.get("region").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+      }
+      if ((jsonObj.get("aws_session_token") != null && !jsonObj.get("aws_session_token").isJsonNull()) && !jsonObj.get("aws_session_token").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `aws_session_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_session_token").toString()));
       }
   }
 

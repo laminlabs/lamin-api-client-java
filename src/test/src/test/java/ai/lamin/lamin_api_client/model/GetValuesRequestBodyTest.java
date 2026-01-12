@@ -67,4 +67,12 @@ public class GetValuesRequestBodyTest {
         // TODO: test search
     }
 
+    /**
+     * Test the property 'searchIn'
+     */
+    @Test
+    public void searchInTest() {
+        // TODO: test searchIn
+    }
+
 }

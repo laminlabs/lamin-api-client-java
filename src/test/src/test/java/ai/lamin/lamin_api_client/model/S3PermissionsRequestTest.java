@@ -20,6 +20,9 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -59,6 +62,22 @@ public class S3PermissionsRequestTest {
     @Test
     public void regionTest() {
         // TODO: test region
+    }
+
+    /**
+     * Test the property 'awsSessionToken'
+     */
+    @Test
+    public void awsSessionTokenTest() {
+        // TODO: test awsSessionToken
+    }
+
+    /**
+     * Test the property 'extraParameters'
+     */
+    @Test
+    public void extraParametersTest() {
+        // TODO: test extraParameters
     }
 
 }

@@ -10,6 +10,7 @@
 |**name** | **String** |  |  |
 |**url** | **String** |  |  |
 |**apiServerName** | **String** |  |  |
+|**organizationId** | **UUID** |  |  |
 
 
 

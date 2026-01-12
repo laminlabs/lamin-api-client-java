@@ -46,34 +46,34 @@ import java.util.Set;
 import ai.lamin.lamin_api_client.JSON;
 
 /**
- * DbUrlRequest
+ * BatchDeleteResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-06-17T13:08:14.011869776+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class DbUrlRequest {
-  public static final String SERIALIZED_NAME_DB_URL = "db_url";
-  @SerializedName(SERIALIZED_NAME_DB_URL)
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+public class BatchDeleteResponse {
+  public static final String SERIALIZED_NAME_DELETED_COUNT = "deleted_count";
+  @SerializedName(SERIALIZED_NAME_DELETED_COUNT)
   @javax.annotation.Nonnull
-  private String dbUrl;
+  private Integer deletedCount;
 
-  public DbUrlRequest() {
+  public BatchDeleteResponse() {
   }
 
-  public DbUrlRequest dbUrl(@javax.annotation.Nonnull String dbUrl) {
-    this.dbUrl = dbUrl;
+  public BatchDeleteResponse deletedCount(@javax.annotation.Nonnull Integer deletedCount) {
+    this.deletedCount = deletedCount;
     return this;
   }
 
   /**
-   * Get dbUrl
-   * @return dbUrl
+   * Get deletedCount
+   * @return deletedCount
    */
   @javax.annotation.Nonnull
-  public String getDbUrl() {
-    return dbUrl;
+  public Integer getDeletedCount() {
+    return deletedCount;
   }
 
-  public void setDbUrl(@javax.annotation.Nonnull String dbUrl) {
-    this.dbUrl = dbUrl;
+  public void setDeletedCount(@javax.annotation.Nonnull Integer deletedCount) {
+    this.deletedCount = deletedCount;
   }
 
 
@@ -86,20 +86,20 @@ public class DbUrlRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DbUrlRequest dbUrlRequest = (DbUrlRequest) o;
-    return Objects.equals(this.dbUrl, dbUrlRequest.dbUrl);
+    BatchDeleteResponse batchDeleteResponse = (BatchDeleteResponse) o;
+    return Objects.equals(this.deletedCount, batchDeleteResponse.deletedCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dbUrl);
+    return Objects.hash(deletedCount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class DbUrlRequest {\n");
-    sb.append("    dbUrl: ").append(toIndentedString(dbUrl)).append("\n");
+    sb.append("class BatchDeleteResponse {\n");
+    sb.append("    deletedCount: ").append(toIndentedString(deletedCount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -122,66 +122,63 @@ public class DbUrlRequest {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("db_url");
+    openapiFields.add("deleted_count");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("db_url");
+    openapiRequiredFields.add("deleted_count");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to DbUrlRequest
+   * @throws IOException if the JSON Element is invalid with respect to BatchDeleteResponse
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!DbUrlRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in DbUrlRequest is not found in the empty JSON string", DbUrlRequest.openapiRequiredFields.toString()));
+        if (!BatchDeleteResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in BatchDeleteResponse is not found in the empty JSON string", BatchDeleteResponse.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!DbUrlRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `DbUrlRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+        if (!BatchDeleteResponse.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BatchDeleteResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : DbUrlRequest.openapiRequiredFields) {
+      for (String requiredField : BatchDeleteResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("db_url").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `db_url` to be a primitive type in the JSON string but got `%s`", jsonObj.get("db_url").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!DbUrlRequest.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'DbUrlRequest' and its subtypes
+       if (!BatchDeleteResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'BatchDeleteResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<DbUrlRequest> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(DbUrlRequest.class));
+       final TypeAdapter<BatchDeleteResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(BatchDeleteResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<DbUrlRequest>() {
+       return (TypeAdapter<T>) new TypeAdapter<BatchDeleteResponse>() {
            @Override
-           public void write(JsonWriter out, DbUrlRequest value) throws IOException {
+           public void write(JsonWriter out, BatchDeleteResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public DbUrlRequest read(JsonReader in) throws IOException {
+           public BatchDeleteResponse read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -192,18 +189,18 @@ public class DbUrlRequest {
   }
 
   /**
-   * Create an instance of DbUrlRequest given an JSON string
+   * Create an instance of BatchDeleteResponse given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of DbUrlRequest
-   * @throws IOException if the JSON string is invalid with respect to DbUrlRequest
+   * @return An instance of BatchDeleteResponse
+   * @throws IOException if the JSON string is invalid with respect to BatchDeleteResponse
    */
-  public static DbUrlRequest fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, DbUrlRequest.class);
+  public static BatchDeleteResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, BatchDeleteResponse.class);
   }
 
   /**
-   * Convert an instance of DbUrlRequest to an JSON string
+   * Convert an instance of BatchDeleteResponse to an JSON string
    *
    * @return JSON string
    */
