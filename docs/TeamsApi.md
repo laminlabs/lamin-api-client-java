@@ -17,7 +17,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="addTeamMemberTeamsTeamIdMembersAccountIdPut"></a>
 # **addTeamMemberTeamsTeamIdMembersAccountIdPut**
-> Object addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, instanceId, authorization)
+> Object addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, authorization)
 
 Add Team Member
 
@@ -41,10 +41,9 @@ public class Example {
     UUID teamId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
     AddTeamMemberRequestBody addTeamMemberRequestBody = new AddTeamMemberRequestBody(); // AddTeamMemberRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, instanceId, authorization);
+      Object result = apiInstance.addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#addTeamMemberTeamsTeamIdMembersAccountIdPut");
@@ -64,7 +63,6 @@ public class Example {
 | **teamId** | **UUID**|  | |
 | **accountId** | **UUID**|  | |
 | **addTeamMemberRequestBody** | [**AddTeamMemberRequestBody**](AddTeamMemberRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -88,7 +86,7 @@ No authorization required
 
 <a id="createTeamTeamsPut"></a>
 # **createTeamTeamsPut**
-> Object createTeamTeamsPut(createTeamRequestBody, instanceId, authorization)
+> Object createTeamTeamsPut(createTeamRequestBody, authorization)
 
 Create Team
 
@@ -110,10 +108,9 @@ public class Example {
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     CreateTeamRequestBody createTeamRequestBody = new CreateTeamRequestBody(); // CreateTeamRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createTeamTeamsPut(createTeamRequestBody, instanceId, authorization);
+      Object result = apiInstance.createTeamTeamsPut(createTeamRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#createTeamTeamsPut");
@@ -131,7 +128,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **createTeamRequestBody** | [**CreateTeamRequestBody**](CreateTeamRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -155,7 +151,7 @@ No authorization required
 
 <a id="deleteTeamTeamsTeamIdDelete"></a>
 # **deleteTeamTeamsTeamIdDelete**
-> Object deleteTeamTeamsTeamIdDelete(teamId, instanceId, authorization)
+> Object deleteTeamTeamsTeamIdDelete(teamId, authorization)
 
 Delete Team
 
@@ -177,10 +173,9 @@ public class Example {
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.deleteTeamTeamsTeamIdDelete(teamId, instanceId, authorization);
+      Object result = apiInstance.deleteTeamTeamsTeamIdDelete(teamId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#deleteTeamTeamsTeamIdDelete");
@@ -198,7 +193,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **teamId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -222,7 +216,7 @@ No authorization required
 
 <a id="getTeamTeamsTeamIdGet"></a>
 # **getTeamTeamsTeamIdGet**
-> Object getTeamTeamsTeamIdGet(teamId, instanceId, authorization)
+> Object getTeamTeamsTeamIdGet(teamId, authorization)
 
 Get Team
 
@@ -244,10 +238,9 @@ public class Example {
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getTeamTeamsTeamIdGet(teamId, instanceId, authorization);
+      Object result = apiInstance.getTeamTeamsTeamIdGet(teamId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#getTeamTeamsTeamIdGet");
@@ -265,7 +258,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **teamId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -289,7 +281,7 @@ No authorization required
 
 <a id="listOrganizationTeamsTeamsOrganizationsOrganizationIdGet"></a>
 # **listOrganizationTeamsTeamsOrganizationsOrganizationIdGet**
-> Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, instanceId, authorization)
+> Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, authorization)
 
 List Organization Teams
 
@@ -311,10 +303,9 @@ public class Example {
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, instanceId, authorization);
+      Object result = apiInstance.listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#listOrganizationTeamsTeamsOrganizationsOrganizationIdGet");
@@ -332,7 +323,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -356,7 +346,7 @@ No authorization required
 
 <a id="listTeamMembersTeamsTeamIdMembersGet"></a>
 # **listTeamMembersTeamsTeamIdMembersGet**
-> Object listTeamMembersTeamsTeamIdMembersGet(teamId, instanceId, authorization)
+> Object listTeamMembersTeamsTeamIdMembersGet(teamId, authorization)
 
 List Team Members
 
@@ -378,10 +368,9 @@ public class Example {
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.listTeamMembersTeamsTeamIdMembersGet(teamId, instanceId, authorization);
+      Object result = apiInstance.listTeamMembersTeamsTeamIdMembersGet(teamId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#listTeamMembersTeamsTeamIdMembersGet");
@@ -399,7 +388,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **teamId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -423,7 +411,7 @@ No authorization required
 
 <a id="removeTeamMemberTeamsTeamIdMembersAccountIdDelete"></a>
 # **removeTeamMemberTeamsTeamIdMembersAccountIdDelete**
-> Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, instanceId, authorization)
+> Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, authorization)
 
 Remove Team Member
 
@@ -446,10 +434,9 @@ public class Example {
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, instanceId, authorization);
+      Object result = apiInstance.removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#removeTeamMemberTeamsTeamIdMembersAccountIdDelete");
@@ -468,7 +455,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **teamId** | **UUID**|  | |
 | **accountId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -492,7 +478,7 @@ No authorization required
 
 <a id="updateTeamMemberTeamsTeamIdMembersAccountIdPatch"></a>
 # **updateTeamMemberTeamsTeamIdMembersAccountIdPatch**
-> Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, instanceId, authorization)
+> Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, authorization)
 
 Update Team Member
 
@@ -516,10 +502,9 @@ public class Example {
     UUID teamId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
     UpdateTeamMemberRequestBody updateTeamMemberRequestBody = new UpdateTeamMemberRequestBody(); // UpdateTeamMemberRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, instanceId, authorization);
+      Object result = apiInstance.updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#updateTeamMemberTeamsTeamIdMembersAccountIdPatch");
@@ -539,7 +524,6 @@ public class Example {
 | **teamId** | **UUID**|  | |
 | **accountId** | **UUID**|  | |
 | **updateTeamMemberRequestBody** | [**UpdateTeamMemberRequestBody**](UpdateTeamMemberRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -563,7 +547,7 @@ No authorization required
 
 <a id="updateTeamTeamsTeamIdPatch"></a>
 # **updateTeamTeamsTeamIdPatch**
-> Object updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, instanceId, authorization)
+> Object updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, authorization)
 
 Update Team
 
@@ -586,10 +570,9 @@ public class Example {
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
     UpdateTeamRequestBody updateTeamRequestBody = new UpdateTeamRequestBody(); // UpdateTeamRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, instanceId, authorization);
+      Object result = apiInstance.updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#updateTeamTeamsTeamIdPatch");
@@ -608,7 +591,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **teamId** | **UUID**|  | |
 | **updateTeamRequestBody** | [**UpdateTeamRequestBody**](UpdateTeamRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

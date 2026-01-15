@@ -233,7 +233,6 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @param _callback Callback for upload/download progress
@@ -247,7 +246,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, UUID instanceId, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -296,10 +295,6 @@ public class InstancesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("account_id", accountId));
         }
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -326,13 +321,13 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, UUID instanceId, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling createInstanceInstancesPut(Async)");
         }
 
-        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerName, storageUid, accountId, instanceId, authorization, requestBody, _callback);
+        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody, _callback);
 
     }
 
@@ -345,7 +340,6 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @return Object
@@ -358,8 +352,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, UUID instanceId, String authorization, Map<String, Object> requestBody) throws ApiException {
-        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerName, storageUid, accountId, instanceId, authorization, requestBody);
+    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody) throws ApiException {
+        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody);
         return localVarResp.getData();
     }
 
@@ -372,7 +366,6 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -385,8 +378,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, UUID instanceId, String authorization, Map<String, Object> requestBody) throws ApiException {
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, instanceId, authorization, requestBody, null);
+    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody) throws ApiException {
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -400,7 +393,6 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -414,9 +406,9 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, UUID instanceId, String authorization, Map<String, Object> requestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, instanceId, authorization, requestBody, _callback);
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

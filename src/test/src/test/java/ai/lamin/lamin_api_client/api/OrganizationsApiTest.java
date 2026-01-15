@@ -46,9 +46,8 @@ public class OrganizationsApiTest {
         UUID organizationId = null;
         UUID accountId = null;
         AddOrganizationMemberRequestBody addOrganizationMemberRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization);
+        Object response = api.addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, authorization);
         // TODO: test validations
     }
 
@@ -62,9 +61,8 @@ public class OrganizationsApiTest {
     @Test
     public void getOrganizationOrganizationsOrganizationIdGetTest() throws ApiException {
         UUID organizationId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.getOrganizationOrganizationsOrganizationIdGet(organizationId, instanceId, authorization);
+        Object response = api.getOrganizationOrganizationsOrganizationIdGet(organizationId, authorization);
         // TODO: test validations
     }
 
@@ -78,9 +76,8 @@ public class OrganizationsApiTest {
     @Test
     public void listOrganizationMembersOrganizationsOrganizationIdMembersGetTest() throws ApiException {
         UUID organizationId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, instanceId, authorization);
+        Object response = api.listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, authorization);
         // TODO: test validations
     }
 
@@ -95,9 +92,8 @@ public class OrganizationsApiTest {
     public void removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteTest() throws ApiException {
         UUID organizationId = null;
         UUID accountId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, instanceId, authorization);
+        Object response = api.removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, authorization);
         // TODO: test validations
     }
 
@@ -113,9 +109,8 @@ public class OrganizationsApiTest {
         UUID organizationId = null;
         UUID accountId = null;
         UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization);
+        Object response = api.updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, authorization);
         // TODO: test validations
     }
 

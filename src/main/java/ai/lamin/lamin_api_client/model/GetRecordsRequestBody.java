@@ -54,7 +54,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetRecordsRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T12:58:35.937124602+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class GetRecordsRequestBody {
   public static final String SERIALIZED_NAME_SELECT = "select";
   @SerializedName(SERIALIZED_NAME_SELECT)

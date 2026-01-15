@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="grantS3PermissionsStoragesS3BucketNamePermissionsPut"></a>
 # **grantS3PermissionsStoragesS3BucketNamePermissionsPut**
-> Object grantS3PermissionsStoragesS3BucketNamePermissionsPut(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, instanceId, authorization)
+> Object grantS3PermissionsStoragesS3BucketNamePermissionsPut(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization)
 
 Grant S3 Permissions
 
@@ -32,10 +32,9 @@ public class Example {
     S3PermissionsRequest s3PermissionsRequest = new S3PermissionsRequest(); // S3PermissionsRequest | 
     String awsAccountId = "767398070972"; // String | 
     String awsUserName = "lamin-manager"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.grantS3PermissionsStoragesS3BucketNamePermissionsPut(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, instanceId, authorization);
+      Object result = apiInstance.grantS3PermissionsStoragesS3BucketNamePermissionsPut(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling StoragesApi#grantS3PermissionsStoragesS3BucketNamePermissionsPut");
@@ -56,7 +55,6 @@ public class Example {
 | **s3PermissionsRequest** | [**S3PermissionsRequest**](S3PermissionsRequest.md)|  | |
 | **awsAccountId** | **String**|  | [optional] [default to 767398070972] |
 | **awsUserName** | **String**|  | [optional] [default to lamin-manager] |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

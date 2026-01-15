@@ -55,7 +55,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GroupByRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-15T12:58:35.937124602+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class GroupByRequestBody {
   public static final String SERIALIZED_NAME_DIMENSIONS = "dimensions";
   @SerializedName(SERIALIZED_NAME_DIMENSIONS)

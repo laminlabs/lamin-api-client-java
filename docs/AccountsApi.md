@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="getCallerAccountAccountGet"></a>
 # **getCallerAccountAccountGet**
-> Object getCallerAccountAccountGet(instanceId, authorization)
+> Object getCallerAccountAccountGet(authorization)
 
 Get Caller Account
 
@@ -28,10 +28,9 @@ public class Example {
     defaultClient.setBasePath("https://staging.laminhub.com/api");
 
     AccountsApi apiInstance = new AccountsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getCallerAccountAccountGet(instanceId, authorization);
+      Object result = apiInstance.getCallerAccountAccountGet(authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AccountsApi#getCallerAccountAccountGet");
@@ -48,7 +47,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

@@ -82,7 +82,6 @@ public class SpacesApi {
      * Build call for addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut
      * @param spaceId  (required)
      * @param addSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -95,7 +94,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutCall(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutCall(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -120,10 +119,6 @@ public class SpacesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -151,7 +146,7 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutValidateBeforeCall(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutValidateBeforeCall(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(Async)");
@@ -162,7 +157,7 @@ public class SpacesApi {
             throw new ApiException("Missing the required parameter 'addSpaceCollaboratorRequestBody' when calling addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(Async)");
         }
 
-        return addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutCall(spaceId, addSpaceCollaboratorRequestBody, instanceId, authorization, _callback);
+        return addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutCall(spaceId, addSpaceCollaboratorRequestBody, authorization, _callback);
 
     }
 
@@ -171,7 +166,6 @@ public class SpacesApi {
      * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
      * @param spaceId  (required)
      * @param addSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -183,8 +177,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutWithHttpInfo(spaceId, addSpaceCollaboratorRequestBody, instanceId, authorization);
+    public Object addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutWithHttpInfo(spaceId, addSpaceCollaboratorRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -193,7 +187,6 @@ public class SpacesApi {
      * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
      * @param spaceId  (required)
      * @param addSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -205,8 +198,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutWithHttpInfo(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutValidateBeforeCall(spaceId, addSpaceCollaboratorRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutWithHttpInfo(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutValidateBeforeCall(spaceId, addSpaceCollaboratorRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -216,7 +209,6 @@ public class SpacesApi {
      * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
      * @param spaceId  (required)
      * @param addSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -229,9 +221,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutAsync(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutAsync(UUID spaceId, AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutValidateBeforeCall(spaceId, addSpaceCollaboratorRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutValidateBeforeCall(spaceId, addSpaceCollaboratorRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -389,7 +381,6 @@ public class SpacesApi {
     /**
      * Build call for createSpaceSpacesPut
      * @param createSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -402,7 +393,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSpaceSpacesPutCall(CreateSpaceRequestBody createSpaceRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createSpaceSpacesPutCall(CreateSpaceRequestBody createSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -426,10 +417,6 @@ public class SpacesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -457,13 +444,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createSpaceSpacesPutValidateBeforeCall(CreateSpaceRequestBody createSpaceRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createSpaceSpacesPutValidateBeforeCall(CreateSpaceRequestBody createSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'createSpaceRequestBody' is set
         if (createSpaceRequestBody == null) {
             throw new ApiException("Missing the required parameter 'createSpaceRequestBody' when calling createSpaceSpacesPut(Async)");
         }
 
-        return createSpaceSpacesPutCall(createSpaceRequestBody, instanceId, authorization, _callback);
+        return createSpaceSpacesPutCall(createSpaceRequestBody, authorization, _callback);
 
     }
 
@@ -471,7 +458,6 @@ public class SpacesApi {
      * Create Space
      * Create a new space.  Parameters: - **body**: Request body containing space details   - **name**: Name of the space   - **organization_id**: UUID of the organization   - **description**: Optional description of the space  Returns: - **201**: Space created successfully
      * @param createSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -483,8 +469,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createSpaceSpacesPut(CreateSpaceRequestBody createSpaceRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createSpaceSpacesPutWithHttpInfo(createSpaceRequestBody, instanceId, authorization);
+    public Object createSpaceSpacesPut(CreateSpaceRequestBody createSpaceRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createSpaceSpacesPutWithHttpInfo(createSpaceRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -492,7 +478,6 @@ public class SpacesApi {
      * Create Space
      * Create a new space.  Parameters: - **body**: Request body containing space details   - **name**: Name of the space   - **organization_id**: UUID of the organization   - **description**: Optional description of the space  Returns: - **201**: Space created successfully
      * @param createSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -504,8 +489,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createSpaceSpacesPutWithHttpInfo(CreateSpaceRequestBody createSpaceRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createSpaceSpacesPutValidateBeforeCall(createSpaceRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> createSpaceSpacesPutWithHttpInfo(CreateSpaceRequestBody createSpaceRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createSpaceSpacesPutValidateBeforeCall(createSpaceRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -514,7 +499,6 @@ public class SpacesApi {
      * Create Space (asynchronously)
      * Create a new space.  Parameters: - **body**: Request body containing space details   - **name**: Name of the space   - **organization_id**: UUID of the organization   - **description**: Optional description of the space  Returns: - **201**: Space created successfully
      * @param createSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -527,9 +511,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createSpaceSpacesPutAsync(CreateSpaceRequestBody createSpaceRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createSpaceSpacesPutAsync(CreateSpaceRequestBody createSpaceRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createSpaceSpacesPutValidateBeforeCall(createSpaceRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = createSpaceSpacesPutValidateBeforeCall(createSpaceRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -537,7 +521,6 @@ public class SpacesApi {
     /**
      * Build call for deleteSpaceSpacesSpaceIdDelete
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -550,7 +533,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSpaceSpacesSpaceIdDeleteCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteSpaceSpacesSpaceIdDeleteCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -575,10 +558,6 @@ public class SpacesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -605,13 +584,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteSpaceSpacesSpaceIdDeleteValidateBeforeCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteSpaceSpacesSpaceIdDeleteValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling deleteSpaceSpacesSpaceIdDelete(Async)");
         }
 
-        return deleteSpaceSpacesSpaceIdDeleteCall(spaceId, instanceId, authorization, _callback);
+        return deleteSpaceSpacesSpaceIdDeleteCall(spaceId, authorization, _callback);
 
     }
 
@@ -619,7 +598,6 @@ public class SpacesApi {
      * Delete Space
      * Delete a space and detach it from the instance.  Parameters: - **space_id**: ID of the space to delete  Returns: - **200**: Space deleted successfully - **404**: Space not found
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -631,8 +609,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object deleteSpaceSpacesSpaceIdDelete(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = deleteSpaceSpacesSpaceIdDeleteWithHttpInfo(spaceId, instanceId, authorization);
+    public Object deleteSpaceSpacesSpaceIdDelete(UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteSpaceSpacesSpaceIdDeleteWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -640,7 +618,6 @@ public class SpacesApi {
      * Delete Space
      * Delete a space and detach it from the instance.  Parameters: - **space_id**: ID of the space to delete  Returns: - **200**: Space deleted successfully - **404**: Space not found
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -652,8 +629,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> deleteSpaceSpacesSpaceIdDeleteWithHttpInfo(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = deleteSpaceSpacesSpaceIdDeleteValidateBeforeCall(spaceId, instanceId, authorization, null);
+    public ApiResponse<Object> deleteSpaceSpacesSpaceIdDeleteWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = deleteSpaceSpacesSpaceIdDeleteValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -662,7 +639,6 @@ public class SpacesApi {
      * Delete Space (asynchronously)
      * Delete a space and detach it from the instance.  Parameters: - **space_id**: ID of the space to delete  Returns: - **200**: Space deleted successfully - **404**: Space not found
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -675,9 +651,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteSpaceSpacesSpaceIdDeleteAsync(UUID spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call deleteSpaceSpacesSpaceIdDeleteAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteSpaceSpacesSpaceIdDeleteValidateBeforeCall(spaceId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = deleteSpaceSpacesSpaceIdDeleteValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -835,7 +811,6 @@ public class SpacesApi {
     /**
      * Build call for getSpaceSpacesSpaceIdGet
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -848,7 +823,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSpaceSpacesSpaceIdGetCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSpaceSpacesSpaceIdGetCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -873,10 +848,6 @@ public class SpacesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -903,13 +874,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSpaceSpacesSpaceIdGetValidateBeforeCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSpaceSpacesSpaceIdGetValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling getSpaceSpacesSpaceIdGet(Async)");
         }
 
-        return getSpaceSpacesSpaceIdGetCall(spaceId, instanceId, authorization, _callback);
+        return getSpaceSpacesSpaceIdGetCall(spaceId, authorization, _callback);
 
     }
 
@@ -917,7 +888,6 @@ public class SpacesApi {
      * Get Space
      * Get details of a specific space.  Parameters: - **space_id**: ID of the space to retrieve  Returns: - **200**: Space details retrieved successfully - **404**: Space not found
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -929,8 +899,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getSpaceSpacesSpaceIdGet(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getSpaceSpacesSpaceIdGetWithHttpInfo(spaceId, instanceId, authorization);
+    public Object getSpaceSpacesSpaceIdGet(UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getSpaceSpacesSpaceIdGetWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -938,7 +908,6 @@ public class SpacesApi {
      * Get Space
      * Get details of a specific space.  Parameters: - **space_id**: ID of the space to retrieve  Returns: - **200**: Space details retrieved successfully - **404**: Space not found
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -950,8 +919,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getSpaceSpacesSpaceIdGetWithHttpInfo(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getSpaceSpacesSpaceIdGetValidateBeforeCall(spaceId, instanceId, authorization, null);
+    public ApiResponse<Object> getSpaceSpacesSpaceIdGetWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getSpaceSpacesSpaceIdGetValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -960,7 +929,6 @@ public class SpacesApi {
      * Get Space (asynchronously)
      * Get details of a specific space.  Parameters: - **space_id**: ID of the space to retrieve  Returns: - **200**: Space details retrieved successfully - **404**: Space not found
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -973,9 +941,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSpaceSpacesSpaceIdGetAsync(UUID spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getSpaceSpacesSpaceIdGetAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSpaceSpacesSpaceIdGetValidateBeforeCall(spaceId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getSpaceSpacesSpaceIdGetValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1123,7 +1091,6 @@ public class SpacesApi {
     /**
      * Build call for listInstancesUsingSpaceSpacesSpaceIdInstancesGet
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1136,7 +1103,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstancesUsingSpaceSpacesSpaceIdInstancesGetCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listInstancesUsingSpaceSpacesSpaceIdInstancesGetCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1162,10 +1129,6 @@ public class SpacesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1191,13 +1154,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listInstancesUsingSpaceSpacesSpaceIdInstancesGetValidateBeforeCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listInstancesUsingSpaceSpacesSpaceIdInstancesGetValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling listInstancesUsingSpaceSpacesSpaceIdInstancesGet(Async)");
         }
 
-        return listInstancesUsingSpaceSpacesSpaceIdInstancesGetCall(spaceId, instanceId, authorization, _callback);
+        return listInstancesUsingSpaceSpacesSpaceIdInstancesGetCall(spaceId, authorization, _callback);
 
     }
 
@@ -1205,7 +1168,6 @@ public class SpacesApi {
      * List Instances Using Space
      * List all instances that have this space attached.  Parameters: - **space_id**: ID of the space to check  Returns: - **200**: List of instances using the space retrieved successfully
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1217,8 +1179,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listInstancesUsingSpaceSpacesSpaceIdInstancesGet(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listInstancesUsingSpaceSpacesSpaceIdInstancesGetWithHttpInfo(spaceId, instanceId, authorization);
+    public Object listInstancesUsingSpaceSpacesSpaceIdInstancesGet(UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listInstancesUsingSpaceSpacesSpaceIdInstancesGetWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -1226,7 +1188,6 @@ public class SpacesApi {
      * List Instances Using Space
      * List all instances that have this space attached.  Parameters: - **space_id**: ID of the space to check  Returns: - **200**: List of instances using the space retrieved successfully
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1238,8 +1199,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listInstancesUsingSpaceSpacesSpaceIdInstancesGetWithHttpInfo(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listInstancesUsingSpaceSpacesSpaceIdInstancesGetValidateBeforeCall(spaceId, instanceId, authorization, null);
+    public ApiResponse<Object> listInstancesUsingSpaceSpacesSpaceIdInstancesGetWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listInstancesUsingSpaceSpacesSpaceIdInstancesGetValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1248,7 +1209,6 @@ public class SpacesApi {
      * List Instances Using Space (asynchronously)
      * List all instances that have this space attached.  Parameters: - **space_id**: ID of the space to check  Returns: - **200**: List of instances using the space retrieved successfully
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1261,9 +1221,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstancesUsingSpaceSpacesSpaceIdInstancesGetAsync(UUID spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listInstancesUsingSpaceSpacesSpaceIdInstancesGetAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listInstancesUsingSpaceSpacesSpaceIdInstancesGetValidateBeforeCall(spaceId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = listInstancesUsingSpaceSpacesSpaceIdInstancesGetValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1271,7 +1231,6 @@ public class SpacesApi {
     /**
      * Build call for listOrganizationSpacesSpacesOrganizationsOrganizationIdGet
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1284,7 +1243,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationSpacesSpacesOrganizationsOrganizationIdGetCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOrganizationSpacesSpacesOrganizationsOrganizationIdGetCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1310,10 +1269,6 @@ public class SpacesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1339,13 +1294,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOrganizationSpacesSpacesOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOrganizationSpacesSpacesOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(Async)");
         }
 
-        return listOrganizationSpacesSpacesOrganizationsOrganizationIdGetCall(organizationId, instanceId, authorization, _callback);
+        return listOrganizationSpacesSpacesOrganizationsOrganizationIdGetCall(organizationId, authorization, _callback);
 
     }
 
@@ -1353,7 +1308,6 @@ public class SpacesApi {
      * List Organization Spaces
      * List all spaces in an organization.  Parameters: - **organization_id**: UUID of the organization to list spaces for  Returns: - **200**: List of spaces retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1365,8 +1319,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listOrganizationSpacesSpacesOrganizationsOrganizationIdGetWithHttpInfo(organizationId, instanceId, authorization);
+    public Object listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(UUID organizationId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listOrganizationSpacesSpacesOrganizationsOrganizationIdGetWithHttpInfo(organizationId, authorization);
         return localVarResp.getData();
     }
 
@@ -1374,7 +1328,6 @@ public class SpacesApi {
      * List Organization Spaces
      * List all spaces in an organization.  Parameters: - **organization_id**: UUID of the organization to list spaces for  Returns: - **200**: List of spaces retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1386,8 +1339,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listOrganizationSpacesSpacesOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listOrganizationSpacesSpacesOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, null);
+    public ApiResponse<Object> listOrganizationSpacesSpacesOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listOrganizationSpacesSpacesOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1396,7 +1349,6 @@ public class SpacesApi {
      * List Organization Spaces (asynchronously)
      * List all spaces in an organization.  Parameters: - **organization_id**: UUID of the organization to list spaces for  Returns: - **200**: List of spaces retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1409,9 +1361,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationSpacesSpacesOrganizationsOrganizationIdGetAsync(UUID organizationId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listOrganizationSpacesSpacesOrganizationsOrganizationIdGetAsync(UUID organizationId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listOrganizationSpacesSpacesOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = listOrganizationSpacesSpacesOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1419,7 +1371,6 @@ public class SpacesApi {
     /**
      * Build call for listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1432,7 +1383,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1458,10 +1409,6 @@ public class SpacesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1487,13 +1434,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetValidateBeforeCall(UUID spaceId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetValidateBeforeCall(UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(Async)");
         }
 
-        return listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetCall(spaceId, instanceId, authorization, _callback);
+        return listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetCall(spaceId, authorization, _callback);
 
     }
 
@@ -1501,7 +1448,6 @@ public class SpacesApi {
      * List Space Collaborators
      * List all collaborators of a space.  Parameters: - **space_id**: ID of the space to list collaborators for  Returns: - **200**: List of space collaborators retrieved successfully
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1513,8 +1459,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetWithHttpInfo(spaceId, instanceId, authorization);
+    public Object listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetWithHttpInfo(spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -1522,7 +1468,6 @@ public class SpacesApi {
      * List Space Collaborators
      * List all collaborators of a space.  Parameters: - **space_id**: ID of the space to list collaborators for  Returns: - **200**: List of space collaborators retrieved successfully
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1534,8 +1479,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetWithHttpInfo(UUID spaceId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetValidateBeforeCall(spaceId, instanceId, authorization, null);
+    public ApiResponse<Object> listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetWithHttpInfo(UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetValidateBeforeCall(spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1544,7 +1489,6 @@ public class SpacesApi {
      * List Space Collaborators (asynchronously)
      * List all collaborators of a space.  Parameters: - **space_id**: ID of the space to list collaborators for  Returns: - **200**: List of space collaborators retrieved successfully
      * @param spaceId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1557,9 +1501,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetAsync(UUID spaceId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetAsync(UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetValidateBeforeCall(spaceId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetValidateBeforeCall(spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1730,7 +1674,6 @@ public class SpacesApi {
      * @param spaceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1743,7 +1686,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteCall(UUID spaceId, UUID accountId, UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteCall(UUID spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1777,10 +1720,6 @@ public class SpacesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("team_id", teamId));
         }
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1806,13 +1745,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(UUID spaceId, UUID accountId, UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(UUID spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(Async)");
         }
 
-        return removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteCall(spaceId, accountId, teamId, instanceId, authorization, _callback);
+        return removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteCall(spaceId, accountId, teamId, authorization, _callback);
 
     }
 
@@ -1822,7 +1761,6 @@ public class SpacesApi {
      * @param spaceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1834,8 +1772,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(UUID spaceId, UUID accountId, UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteWithHttpInfo(spaceId, accountId, teamId, instanceId, authorization);
+    public Object removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(UUID spaceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteWithHttpInfo(spaceId, accountId, teamId, authorization);
         return localVarResp.getData();
     }
 
@@ -1845,7 +1783,6 @@ public class SpacesApi {
      * @param spaceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1857,8 +1794,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteWithHttpInfo(UUID spaceId, UUID accountId, UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(spaceId, accountId, teamId, instanceId, authorization, null);
+    public ApiResponse<Object> removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteWithHttpInfo(UUID spaceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(spaceId, accountId, teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1869,7 +1806,6 @@ public class SpacesApi {
      * @param spaceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1882,9 +1818,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteAsync(UUID spaceId, UUID accountId, UUID teamId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteAsync(UUID spaceId, UUID accountId, UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(spaceId, accountId, teamId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDeleteValidateBeforeCall(spaceId, accountId, teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1893,7 +1829,6 @@ public class SpacesApi {
      * Build call for updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch
      * @param spaceId  (required)
      * @param updateSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1906,7 +1841,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchCall(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchCall(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1932,10 +1867,6 @@ public class SpacesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1962,7 +1893,7 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchValidateBeforeCall(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchValidateBeforeCall(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(Async)");
@@ -1973,7 +1904,7 @@ public class SpacesApi {
             throw new ApiException("Missing the required parameter 'updateSpaceCollaboratorRequestBody' when calling updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(Async)");
         }
 
-        return updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchCall(spaceId, updateSpaceCollaboratorRequestBody, instanceId, authorization, _callback);
+        return updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchCall(spaceId, updateSpaceCollaboratorRequestBody, authorization, _callback);
 
     }
 
@@ -1982,7 +1913,6 @@ public class SpacesApi {
      * Update a collaborator&#39;s permissions in a space.  Parameters: - **space_id**: ID of the space to update the collaborator in - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found in space
      * @param spaceId  (required)
      * @param updateSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1994,8 +1924,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchWithHttpInfo(spaceId, updateSpaceCollaboratorRequestBody, instanceId, authorization);
+    public Object updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchWithHttpInfo(spaceId, updateSpaceCollaboratorRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -2004,7 +1934,6 @@ public class SpacesApi {
      * Update a collaborator&#39;s permissions in a space.  Parameters: - **space_id**: ID of the space to update the collaborator in - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found in space
      * @param spaceId  (required)
      * @param updateSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2016,8 +1945,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchWithHttpInfo(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchValidateBeforeCall(spaceId, updateSpaceCollaboratorRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchWithHttpInfo(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchValidateBeforeCall(spaceId, updateSpaceCollaboratorRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2027,7 +1956,6 @@ public class SpacesApi {
      * Update a collaborator&#39;s permissions in a space.  Parameters: - **space_id**: ID of the space to update the collaborator in - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **404**: Collaborator not found in space
      * @param spaceId  (required)
      * @param updateSpaceCollaboratorRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2040,9 +1968,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchAsync(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchAsync(UUID spaceId, UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchValidateBeforeCall(spaceId, updateSpaceCollaboratorRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchValidateBeforeCall(spaceId, updateSpaceCollaboratorRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2051,7 +1979,6 @@ public class SpacesApi {
      * Build call for updateSpaceSpacesSpaceIdPatch
      * @param spaceId  (required)
      * @param updateSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2064,7 +1991,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceSpacesSpaceIdPatchCall(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateSpaceSpacesSpaceIdPatchCall(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2090,10 +2017,6 @@ public class SpacesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2120,7 +2043,7 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateSpaceSpacesSpaceIdPatchValidateBeforeCall(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateSpaceSpacesSpaceIdPatchValidateBeforeCall(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling updateSpaceSpacesSpaceIdPatch(Async)");
@@ -2131,7 +2054,7 @@ public class SpacesApi {
             throw new ApiException("Missing the required parameter 'updateSpaceRequestBody' when calling updateSpaceSpacesSpaceIdPatch(Async)");
         }
 
-        return updateSpaceSpacesSpaceIdPatchCall(spaceId, updateSpaceRequestBody, instanceId, authorization, _callback);
+        return updateSpaceSpacesSpaceIdPatchCall(spaceId, updateSpaceRequestBody, authorization, _callback);
 
     }
 
@@ -2140,7 +2063,6 @@ public class SpacesApi {
      * Update a space&#39;s details.  Parameters: - **space_id**: ID of the space to update - **body**: Request body containing updated space details   - **name**: Optional new name for the space   - **description**: Optional new description for the space  Returns: - **200**: Space updated successfully
      * @param spaceId  (required)
      * @param updateSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2152,8 +2074,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateSpaceSpacesSpaceIdPatch(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = updateSpaceSpacesSpaceIdPatchWithHttpInfo(spaceId, updateSpaceRequestBody, instanceId, authorization);
+    public Object updateSpaceSpacesSpaceIdPatch(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateSpaceSpacesSpaceIdPatchWithHttpInfo(spaceId, updateSpaceRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -2162,7 +2084,6 @@ public class SpacesApi {
      * Update a space&#39;s details.  Parameters: - **space_id**: ID of the space to update - **body**: Request body containing updated space details   - **name**: Optional new name for the space   - **description**: Optional new description for the space  Returns: - **200**: Space updated successfully
      * @param spaceId  (required)
      * @param updateSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2174,8 +2095,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateSpaceSpacesSpaceIdPatchWithHttpInfo(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = updateSpaceSpacesSpaceIdPatchValidateBeforeCall(spaceId, updateSpaceRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> updateSpaceSpacesSpaceIdPatchWithHttpInfo(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateSpaceSpacesSpaceIdPatchValidateBeforeCall(spaceId, updateSpaceRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2185,7 +2106,6 @@ public class SpacesApi {
      * Update a space&#39;s details.  Parameters: - **space_id**: ID of the space to update - **body**: Request body containing updated space details   - **name**: Optional new name for the space   - **description**: Optional new description for the space  Returns: - **200**: Space updated successfully
      * @param spaceId  (required)
      * @param updateSpaceRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2198,9 +2118,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateSpaceSpacesSpaceIdPatchAsync(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateSpaceSpacesSpaceIdPatchAsync(UUID spaceId, UpdateSpaceRequestBody updateSpaceRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateSpaceSpacesSpaceIdPatchValidateBeforeCall(spaceId, updateSpaceRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = updateSpaceSpacesSpaceIdPatchValidateBeforeCall(spaceId, updateSpaceRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

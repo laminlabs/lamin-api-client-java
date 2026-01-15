@@ -16,7 +16,6 @@ package ai.lamin.lamin_api_client.api;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import ai.lamin.lamin_api_client.model.RegisterDbServerBody;
-import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -41,9 +40,8 @@ public class DbServerApiTest {
     @Test
     public void checkDbServerAccessDbServerCheckAccessPostTest() throws ApiException {
         String name = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.checkDbServerAccessDbServerCheckAccessPost(name, instanceId, authorization);
+        Object response = api.checkDbServerAccessDbServerCheckAccessPost(name, authorization);
         // TODO: test validations
     }
 
@@ -55,9 +53,8 @@ public class DbServerApiTest {
     @Test
     public void registerDbServerDbServerRegisterPostTest() throws ApiException {
         RegisterDbServerBody registerDbServerBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.registerDbServerDbServerRegisterPost(registerDbServerBody, instanceId, authorization);
+        Object response = api.registerDbServerDbServerRegisterPost(registerDbServerBody, authorization);
         // TODO: test validations
     }
 

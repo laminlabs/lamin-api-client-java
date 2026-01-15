@@ -22,7 +22,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut"></a>
 # **addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut**
-> Object addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(spaceId, addSpaceCollaboratorRequestBody, instanceId, authorization)
+> Object addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(spaceId, addSpaceCollaboratorRequestBody, authorization)
 
 Add Space Collaborator
 
@@ -45,10 +45,9 @@ public class Example {
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
     AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody = new AddSpaceCollaboratorRequestBody(); // AddSpaceCollaboratorRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(spaceId, addSpaceCollaboratorRequestBody, instanceId, authorization);
+      Object result = apiInstance.addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(spaceId, addSpaceCollaboratorRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut");
@@ -67,7 +66,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **spaceId** | **UUID**|  | |
 | **addSpaceCollaboratorRequestBody** | [**AddSpaceCollaboratorRequestBody**](AddSpaceCollaboratorRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -158,7 +156,7 @@ No authorization required
 
 <a id="createSpaceSpacesPut"></a>
 # **createSpaceSpacesPut**
-> Object createSpaceSpacesPut(createSpaceRequestBody, instanceId, authorization)
+> Object createSpaceSpacesPut(createSpaceRequestBody, authorization)
 
 Create Space
 
@@ -180,10 +178,9 @@ public class Example {
 
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     CreateSpaceRequestBody createSpaceRequestBody = new CreateSpaceRequestBody(); // CreateSpaceRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createSpaceSpacesPut(createSpaceRequestBody, instanceId, authorization);
+      Object result = apiInstance.createSpaceSpacesPut(createSpaceRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#createSpaceSpacesPut");
@@ -201,7 +198,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **createSpaceRequestBody** | [**CreateSpaceRequestBody**](CreateSpaceRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -225,7 +221,7 @@ No authorization required
 
 <a id="deleteSpaceSpacesSpaceIdDelete"></a>
 # **deleteSpaceSpacesSpaceIdDelete**
-> Object deleteSpaceSpacesSpaceIdDelete(spaceId, instanceId, authorization)
+> Object deleteSpaceSpacesSpaceIdDelete(spaceId, authorization)
 
 Delete Space
 
@@ -247,10 +243,9 @@ public class Example {
 
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.deleteSpaceSpacesSpaceIdDelete(spaceId, instanceId, authorization);
+      Object result = apiInstance.deleteSpaceSpacesSpaceIdDelete(spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#deleteSpaceSpacesSpaceIdDelete");
@@ -268,7 +263,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **spaceId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -359,7 +353,7 @@ No authorization required
 
 <a id="getSpaceSpacesSpaceIdGet"></a>
 # **getSpaceSpacesSpaceIdGet**
-> Object getSpaceSpacesSpaceIdGet(spaceId, instanceId, authorization)
+> Object getSpaceSpacesSpaceIdGet(spaceId, authorization)
 
 Get Space
 
@@ -381,10 +375,9 @@ public class Example {
 
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getSpaceSpacesSpaceIdGet(spaceId, instanceId, authorization);
+      Object result = apiInstance.getSpaceSpacesSpaceIdGet(spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#getSpaceSpacesSpaceIdGet");
@@ -402,7 +395,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **spaceId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -491,7 +483,7 @@ No authorization required
 
 <a id="listInstancesUsingSpaceSpacesSpaceIdInstancesGet"></a>
 # **listInstancesUsingSpaceSpacesSpaceIdInstancesGet**
-> Object listInstancesUsingSpaceSpacesSpaceIdInstancesGet(spaceId, instanceId, authorization)
+> Object listInstancesUsingSpaceSpacesSpaceIdInstancesGet(spaceId, authorization)
 
 List Instances Using Space
 
@@ -513,10 +505,9 @@ public class Example {
 
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.listInstancesUsingSpaceSpacesSpaceIdInstancesGet(spaceId, instanceId, authorization);
+      Object result = apiInstance.listInstancesUsingSpaceSpacesSpaceIdInstancesGet(spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#listInstancesUsingSpaceSpacesSpaceIdInstancesGet");
@@ -534,7 +525,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **spaceId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -558,7 +548,7 @@ No authorization required
 
 <a id="listOrganizationSpacesSpacesOrganizationsOrganizationIdGet"></a>
 # **listOrganizationSpacesSpacesOrganizationsOrganizationIdGet**
-> Object listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(organizationId, instanceId, authorization)
+> Object listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(organizationId, authorization)
 
 List Organization Spaces
 
@@ -580,10 +570,9 @@ public class Example {
 
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(organizationId, instanceId, authorization);
+      Object result = apiInstance.listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(organizationId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#listOrganizationSpacesSpacesOrganizationsOrganizationIdGet");
@@ -601,7 +590,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -625,7 +613,7 @@ No authorization required
 
 <a id="listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet"></a>
 # **listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet**
-> Object listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(spaceId, instanceId, authorization)
+> Object listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(spaceId, authorization)
 
 List Space Collaborators
 
@@ -647,10 +635,9 @@ public class Example {
 
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(spaceId, instanceId, authorization);
+      Object result = apiInstance.listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet");
@@ -668,7 +655,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **spaceId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -761,7 +747,7 @@ No authorization required
 
 <a id="removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete"></a>
 # **removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete**
-> Object removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(spaceId, accountId, teamId, instanceId, authorization)
+> Object removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(spaceId, accountId, teamId, authorization)
 
 Remove Space Collaborator
 
@@ -785,10 +771,9 @@ public class Example {
     UUID spaceId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
     UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(spaceId, accountId, teamId, instanceId, authorization);
+      Object result = apiInstance.removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(spaceId, accountId, teamId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete");
@@ -808,7 +793,6 @@ public class Example {
 | **spaceId** | **UUID**|  | |
 | **accountId** | **UUID**|  | [optional] |
 | **teamId** | **UUID**|  | [optional] |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -832,7 +816,7 @@ No authorization required
 
 <a id="updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch"></a>
 # **updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch**
-> Object updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(spaceId, updateSpaceCollaboratorRequestBody, instanceId, authorization)
+> Object updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(spaceId, updateSpaceCollaboratorRequestBody, authorization)
 
 Update Space Collaborator
 
@@ -855,10 +839,9 @@ public class Example {
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
     UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody = new UpdateSpaceCollaboratorRequestBody(); // UpdateSpaceCollaboratorRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(spaceId, updateSpaceCollaboratorRequestBody, instanceId, authorization);
+      Object result = apiInstance.updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(spaceId, updateSpaceCollaboratorRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch");
@@ -877,7 +860,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **spaceId** | **UUID**|  | |
 | **updateSpaceCollaboratorRequestBody** | [**UpdateSpaceCollaboratorRequestBody**](UpdateSpaceCollaboratorRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -901,7 +883,7 @@ No authorization required
 
 <a id="updateSpaceSpacesSpaceIdPatch"></a>
 # **updateSpaceSpacesSpaceIdPatch**
-> Object updateSpaceSpacesSpaceIdPatch(spaceId, updateSpaceRequestBody, instanceId, authorization)
+> Object updateSpaceSpacesSpaceIdPatch(spaceId, updateSpaceRequestBody, authorization)
 
 Update Space
 
@@ -924,10 +906,9 @@ public class Example {
     SpacesApi apiInstance = new SpacesApi(defaultClient);
     UUID spaceId = UUID.randomUUID(); // UUID | 
     UpdateSpaceRequestBody updateSpaceRequestBody = new UpdateSpaceRequestBody(); // UpdateSpaceRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateSpaceSpacesSpaceIdPatch(spaceId, updateSpaceRequestBody, instanceId, authorization);
+      Object result = apiInstance.updateSpaceSpacesSpaceIdPatch(spaceId, updateSpaceRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SpacesApi#updateSpaceSpacesSpaceIdPatch");
@@ -946,7 +927,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **spaceId** | **UUID**|  | |
 | **updateSpaceRequestBody** | [**UpdateSpaceRequestBody**](UpdateSpaceRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

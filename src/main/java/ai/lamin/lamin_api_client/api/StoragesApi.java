@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import ai.lamin.lamin_api_client.model.S3PermissionsRequest;
-import java.util.UUID;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -80,7 +79,6 @@ public class StoragesApi {
      * @param s3PermissionsRequest  (required)
      * @param awsAccountId  (optional, default to 767398070972)
      * @param awsUserName  (optional, default to lamin-manager)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -93,7 +91,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutCall(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutCall(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -127,10 +125,6 @@ public class StoragesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("aws_user_name", awsUserName));
         }
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -157,7 +151,7 @@ public class StoragesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'bucketName' is set
         if (bucketName == null) {
             throw new ApiException("Missing the required parameter 'bucketName' when calling grantS3PermissionsStoragesS3BucketNamePermissionsPut(Async)");
@@ -168,7 +162,7 @@ public class StoragesApi {
             throw new ApiException("Missing the required parameter 's3PermissionsRequest' when calling grantS3PermissionsStoragesS3BucketNamePermissionsPut(Async)");
         }
 
-        return grantS3PermissionsStoragesS3BucketNamePermissionsPutCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, instanceId, authorization, _callback);
+        return grantS3PermissionsStoragesS3BucketNamePermissionsPutCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization, _callback);
 
     }
 
@@ -179,7 +173,6 @@ public class StoragesApi {
      * @param s3PermissionsRequest  (required)
      * @param awsAccountId  (optional, default to 767398070972)
      * @param awsUserName  (optional, default to lamin-manager)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -191,8 +184,8 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object grantS3PermissionsStoragesS3BucketNamePermissionsPut(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = grantS3PermissionsStoragesS3BucketNamePermissionsPutWithHttpInfo(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, instanceId, authorization);
+    public Object grantS3PermissionsStoragesS3BucketNamePermissionsPut(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = grantS3PermissionsStoragesS3BucketNamePermissionsPutWithHttpInfo(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization);
         return localVarResp.getData();
     }
 
@@ -203,7 +196,6 @@ public class StoragesApi {
      * @param s3PermissionsRequest  (required)
      * @param awsAccountId  (optional, default to 767398070972)
      * @param awsUserName  (optional, default to lamin-manager)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -215,8 +207,8 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> grantS3PermissionsStoragesS3BucketNamePermissionsPutWithHttpInfo(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, instanceId, authorization, null);
+    public ApiResponse<Object> grantS3PermissionsStoragesS3BucketNamePermissionsPutWithHttpInfo(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -228,7 +220,6 @@ public class StoragesApi {
      * @param s3PermissionsRequest  (required)
      * @param awsAccountId  (optional, default to 767398070972)
      * @param awsUserName  (optional, default to lamin-manager)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -241,9 +232,9 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutAsync(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutAsync(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

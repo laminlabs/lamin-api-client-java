@@ -13,7 +13,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut"></a>
 # **addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut**
-> Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization)
+> Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, authorization)
 
 Add Organization Member
 
@@ -37,10 +37,9 @@ public class Example {
     UUID organizationId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
     AddOrganizationMemberRequestBody addOrganizationMemberRequestBody = new AddOrganizationMemberRequestBody(); // AddOrganizationMemberRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization);
+      Object result = apiInstance.addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut");
@@ -60,7 +59,6 @@ public class Example {
 | **organizationId** | **UUID**|  | |
 | **accountId** | **UUID**|  | |
 | **addOrganizationMemberRequestBody** | [**AddOrganizationMemberRequestBody**](AddOrganizationMemberRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -84,7 +82,7 @@ No authorization required
 
 <a id="getOrganizationOrganizationsOrganizationIdGet"></a>
 # **getOrganizationOrganizationsOrganizationIdGet**
-> Object getOrganizationOrganizationsOrganizationIdGet(organizationId, instanceId, authorization)
+> Object getOrganizationOrganizationsOrganizationIdGet(organizationId, authorization)
 
 Get Organization
 
@@ -106,10 +104,9 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getOrganizationOrganizationsOrganizationIdGet(organizationId, instanceId, authorization);
+      Object result = apiInstance.getOrganizationOrganizationsOrganizationIdGet(organizationId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#getOrganizationOrganizationsOrganizationIdGet");
@@ -127,7 +124,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -151,7 +147,7 @@ No authorization required
 
 <a id="listOrganizationMembersOrganizationsOrganizationIdMembersGet"></a>
 # **listOrganizationMembersOrganizationsOrganizationIdMembersGet**
-> Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, instanceId, authorization)
+> Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, authorization)
 
 List Organization Members
 
@@ -173,10 +169,9 @@ public class Example {
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, instanceId, authorization);
+      Object result = apiInstance.listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#listOrganizationMembersOrganizationsOrganizationIdMembersGet");
@@ -194,7 +189,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -218,7 +212,7 @@ No authorization required
 
 <a id="removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete"></a>
 # **removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete**
-> Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, instanceId, authorization)
+> Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, authorization)
 
 Remove Organization Member
 
@@ -241,10 +235,9 @@ public class Example {
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, instanceId, authorization);
+      Object result = apiInstance.removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete");
@@ -263,7 +256,6 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **organizationId** | **UUID**|  | |
 | **accountId** | **UUID**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -287,7 +279,7 @@ No authorization required
 
 <a id="updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch"></a>
 # **updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch**
-> Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization)
+> Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, authorization)
 
 Update Organization Member
 
@@ -311,10 +303,9 @@ public class Example {
     UUID organizationId = UUID.randomUUID(); // UUID | 
     UUID accountId = UUID.randomUUID(); // UUID | 
     UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody = new UpdateOrganizationMemberRequestBody(); // UpdateOrganizationMemberRequestBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization);
+      Object result = apiInstance.updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch");
@@ -334,7 +325,6 @@ public class Example {
 | **organizationId** | **UUID**|  | |
 | **accountId** | **UUID**|  | |
 | **updateOrganizationMemberRequestBody** | [**UpdateOrganizationMemberRequestBody**](UpdateOrganizationMemberRequestBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

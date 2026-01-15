@@ -15,7 +15,6 @@ package ai.lamin.lamin_api_client.api;
 
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
-import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -39,9 +38,8 @@ public class AccountsApiTest {
      */
     @Test
     public void getCallerAccountAccountGetTest() throws ApiException {
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.getCallerAccountAccountGet(instanceId, authorization);
+        Object response = api.getCallerAccountAccountGet(authorization);
         // TODO: test validations
     }
 
