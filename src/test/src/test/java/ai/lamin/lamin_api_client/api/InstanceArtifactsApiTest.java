@@ -49,6 +49,20 @@ public class InstanceArtifactsApiTest {
     }
 
     /**
+     * Get Artifact By Path
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getArtifactByPathInstancesInstanceIdArtifactsByPathGetTest() throws ApiException {
+        UUID instanceId = null;
+        String path = null;
+        String authorization = null;
+        Object response = api.getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, authorization);
+        // TODO: test validations
+    }
+
+    /**
      * Upload Artifact
      *
      * @throws ApiException if the Api call fails

@@ -27,15 +27,6 @@ paths:
           title: Organization Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -82,15 +73,6 @@ paths:
           title: Organization Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -148,15 +130,6 @@ paths:
           title: Account Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -215,15 +188,6 @@ paths:
           title: Account Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -288,15 +252,6 @@ paths:
           title: Account Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -333,15 +288,6 @@ paths:
     get:
       operationId: get_caller_account_account_get
       parameters:
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -382,15 +328,6 @@ paths:
         - **201**: Space created successfully
       operationId: create_space_spaces_put
       parameters:
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -445,15 +382,6 @@ paths:
           title: Space Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -500,15 +428,6 @@ paths:
           title: Space Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -557,15 +476,6 @@ paths:
           title: Space Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -803,15 +713,6 @@ paths:
           title: Space Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -925,15 +826,6 @@ paths:
           nullable: true
           type: string
         style: form
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -979,15 +871,6 @@ paths:
           title: Space Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1039,15 +922,6 @@ paths:
           title: Space Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1105,15 +979,6 @@ paths:
           title: Space Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1167,15 +1032,6 @@ paths:
           title: Organization Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1216,15 +1072,6 @@ paths:
         - **201**: Team created successfully
       operationId: create_team_teams_put
       parameters:
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1278,15 +1125,6 @@ paths:
           title: Team Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1333,15 +1171,6 @@ paths:
           title: Team Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1390,15 +1219,6 @@ paths:
           title: Team Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1452,15 +1272,6 @@ paths:
           title: Team Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1518,15 +1329,6 @@ paths:
           title: Account Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1585,15 +1387,6 @@ paths:
           title: Account Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1658,15 +1451,6 @@ paths:
           title: Account Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1720,15 +1504,6 @@ paths:
           title: Organization Id
           type: string
         style: simple
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1802,15 +1577,6 @@ paths:
       - explode: true
         in: query
         name: account_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: instance_id
         required: false
         schema:
           format: uuid
@@ -3025,6 +2791,52 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /instances/{instance_id}/artifacts/by-path:
+    get:
+      operationId: get_artifact_by_path_instances__instance_id__artifacts_by_path_get
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: path
+        required: true
+        schema:
+          title: Path
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Artifact By Path
+      tags:
+      - Instance Artifacts
+      x-accepts:
+      - application/json
   /instances/{instance_id}/modules/{module_name}/{model_name}/{id}/{label_field}/{label_id}:
     delete:
       operationId: detach_label_instances__instance_id__modules__module_name___model_name___id___label_field___label_id__delete
@@ -4180,15 +3992,6 @@ paths:
           title: Aws User Name
           type: string
         style: form
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -4225,15 +4028,6 @@ paths:
     post:
       operationId: register_db_server_db_server_register_post
       parameters:
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
-          type: string
-        style: form
       - explode: false
         in: header
         name: Authorization
@@ -4276,15 +4070,6 @@ paths:
         required: true
         schema:
           title: Name
-          type: string
-        style: form
-      - explode: true
-        in: query
-        name: instance_id
-        required: false
-        schema:
-          format: uuid
-          nullable: true
           type: string
         style: form
       - explode: false

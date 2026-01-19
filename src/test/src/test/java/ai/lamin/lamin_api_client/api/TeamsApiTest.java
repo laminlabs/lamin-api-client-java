@@ -48,9 +48,8 @@ public class TeamsApiTest {
         UUID teamId = null;
         UUID accountId = null;
         AddTeamMemberRequestBody addTeamMemberRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, instanceId, authorization);
+        Object response = api.addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, authorization);
         // TODO: test validations
     }
 
@@ -64,9 +63,8 @@ public class TeamsApiTest {
     @Test
     public void createTeamTeamsPutTest() throws ApiException {
         CreateTeamRequestBody createTeamRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.createTeamTeamsPut(createTeamRequestBody, instanceId, authorization);
+        Object response = api.createTeamTeamsPut(createTeamRequestBody, authorization);
         // TODO: test validations
     }
 
@@ -80,9 +78,8 @@ public class TeamsApiTest {
     @Test
     public void deleteTeamTeamsTeamIdDeleteTest() throws ApiException {
         UUID teamId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.deleteTeamTeamsTeamIdDelete(teamId, instanceId, authorization);
+        Object response = api.deleteTeamTeamsTeamIdDelete(teamId, authorization);
         // TODO: test validations
     }
 
@@ -96,9 +93,8 @@ public class TeamsApiTest {
     @Test
     public void getTeamTeamsTeamIdGetTest() throws ApiException {
         UUID teamId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.getTeamTeamsTeamIdGet(teamId, instanceId, authorization);
+        Object response = api.getTeamTeamsTeamIdGet(teamId, authorization);
         // TODO: test validations
     }
 
@@ -112,9 +108,8 @@ public class TeamsApiTest {
     @Test
     public void listOrganizationTeamsTeamsOrganizationsOrganizationIdGetTest() throws ApiException {
         UUID organizationId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, instanceId, authorization);
+        Object response = api.listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, authorization);
         // TODO: test validations
     }
 
@@ -128,9 +123,8 @@ public class TeamsApiTest {
     @Test
     public void listTeamMembersTeamsTeamIdMembersGetTest() throws ApiException {
         UUID teamId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.listTeamMembersTeamsTeamIdMembersGet(teamId, instanceId, authorization);
+        Object response = api.listTeamMembersTeamsTeamIdMembersGet(teamId, authorization);
         // TODO: test validations
     }
 
@@ -145,9 +139,8 @@ public class TeamsApiTest {
     public void removeTeamMemberTeamsTeamIdMembersAccountIdDeleteTest() throws ApiException {
         UUID teamId = null;
         UUID accountId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, instanceId, authorization);
+        Object response = api.removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, authorization);
         // TODO: test validations
     }
 
@@ -163,9 +156,8 @@ public class TeamsApiTest {
         UUID teamId = null;
         UUID accountId = null;
         UpdateTeamMemberRequestBody updateTeamMemberRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, instanceId, authorization);
+        Object response = api.updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, authorization);
         // TODO: test validations
     }
 
@@ -180,9 +172,8 @@ public class TeamsApiTest {
     public void updateTeamTeamsTeamIdPatchTest() throws ApiException {
         UUID teamId = null;
         UpdateTeamRequestBody updateTeamRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, instanceId, authorization);
+        Object response = api.updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, authorization);
         // TODO: test validations
     }
 

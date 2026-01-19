@@ -80,7 +80,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param addOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -93,7 +92,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -119,10 +118,6 @@ public class OrganizationsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -150,7 +145,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(Async)");
@@ -166,7 +161,7 @@ public class OrganizationsApi {
             throw new ApiException("Missing the required parameter 'addOrganizationMemberRequestBody' when calling addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(Async)");
         }
 
-        return addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutCall(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization, _callback);
+        return addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutCall(organizationId, accountId, addOrganizationMemberRequestBody, authorization, _callback);
 
     }
 
@@ -176,7 +171,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param addOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -188,8 +182,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization);
+    public Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(organizationId, accountId, addOrganizationMemberRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -199,7 +193,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param addOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -211,8 +204,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutWithHttpInfo(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -223,7 +216,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param addOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -236,9 +228,9 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutAsync(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutAsync(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -246,7 +238,6 @@ public class OrganizationsApi {
     /**
      * Build call for getOrganizationOrganizationsOrganizationIdGet
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -259,7 +250,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -285,10 +276,6 @@ public class OrganizationsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -314,13 +301,13 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling getOrganizationOrganizationsOrganizationIdGet(Async)");
         }
 
-        return getOrganizationOrganizationsOrganizationIdGetCall(organizationId, instanceId, authorization, _callback);
+        return getOrganizationOrganizationsOrganizationIdGetCall(organizationId, authorization, _callback);
 
     }
 
@@ -328,7 +315,6 @@ public class OrganizationsApi {
      * Get Organization
      * Get details of a specific organization.  Parameters: - **organization_id**: UUID of the organization to retrieve  Returns: - **200**: Organization details retrieved successfully - **404**: Organization not found
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -340,8 +326,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getOrganizationOrganizationsOrganizationIdGet(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getOrganizationOrganizationsOrganizationIdGetWithHttpInfo(organizationId, instanceId, authorization);
+    public Object getOrganizationOrganizationsOrganizationIdGet(UUID organizationId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getOrganizationOrganizationsOrganizationIdGetWithHttpInfo(organizationId, authorization);
         return localVarResp.getData();
     }
 
@@ -349,7 +335,6 @@ public class OrganizationsApi {
      * Get Organization
      * Get details of a specific organization.  Parameters: - **organization_id**: UUID of the organization to retrieve  Returns: - **200**: Organization details retrieved successfully - **404**: Organization not found
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -361,8 +346,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getOrganizationOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, null);
+    public ApiResponse<Object> getOrganizationOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -371,7 +356,6 @@ public class OrganizationsApi {
      * Get Organization (asynchronously)
      * Get details of a specific organization.  Parameters: - **organization_id**: UUID of the organization to retrieve  Returns: - **200**: Organization details retrieved successfully - **404**: Organization not found
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -384,9 +368,9 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetAsync(UUID organizationId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getOrganizationOrganizationsOrganizationIdGetAsync(UUID organizationId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getOrganizationOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -394,7 +378,6 @@ public class OrganizationsApi {
     /**
      * Build call for listOrganizationMembersOrganizationsOrganizationIdMembersGet
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -407,7 +390,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -433,10 +416,6 @@ public class OrganizationsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -462,13 +441,13 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling listOrganizationMembersOrganizationsOrganizationIdMembersGet(Async)");
         }
 
-        return listOrganizationMembersOrganizationsOrganizationIdMembersGetCall(organizationId, instanceId, authorization, _callback);
+        return listOrganizationMembersOrganizationsOrganizationIdMembersGetCall(organizationId, authorization, _callback);
 
     }
 
@@ -476,7 +455,6 @@ public class OrganizationsApi {
      * List Organization Members
      * List all members of an organization.  Parameters: - **organization_id**: UUID of the organization to list members for  Returns: - **200**: List of organization members retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -488,8 +466,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listOrganizationMembersOrganizationsOrganizationIdMembersGetWithHttpInfo(organizationId, instanceId, authorization);
+    public Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(UUID organizationId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listOrganizationMembersOrganizationsOrganizationIdMembersGetWithHttpInfo(organizationId, authorization);
         return localVarResp.getData();
     }
 
@@ -497,7 +475,6 @@ public class OrganizationsApi {
      * List Organization Members
      * List all members of an organization.  Parameters: - **organization_id**: UUID of the organization to list members for  Returns: - **200**: List of organization members retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -509,8 +486,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listOrganizationMembersOrganizationsOrganizationIdMembersGetWithHttpInfo(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, instanceId, authorization, null);
+    public ApiResponse<Object> listOrganizationMembersOrganizationsOrganizationIdMembersGetWithHttpInfo(UUID organizationId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -519,7 +496,6 @@ public class OrganizationsApi {
      * List Organization Members (asynchronously)
      * List all members of an organization.  Parameters: - **organization_id**: UUID of the organization to list members for  Returns: - **200**: List of organization members retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -532,9 +508,9 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetAsync(UUID organizationId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listOrganizationMembersOrganizationsOrganizationIdMembersGetAsync(UUID organizationId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = listOrganizationMembersOrganizationsOrganizationIdMembersGetValidateBeforeCall(organizationId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -543,7 +519,6 @@ public class OrganizationsApi {
      * Build call for removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete
      * @param organizationId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -556,7 +531,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteCall(UUID organizationId, UUID accountId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteCall(UUID organizationId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -582,10 +557,6 @@ public class OrganizationsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -612,7 +583,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(UUID organizationId, UUID accountId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(UUID organizationId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(Async)");
@@ -623,7 +594,7 @@ public class OrganizationsApi {
             throw new ApiException("Missing the required parameter 'accountId' when calling removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(Async)");
         }
 
-        return removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteCall(organizationId, accountId, instanceId, authorization, _callback);
+        return removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteCall(organizationId, accountId, authorization, _callback);
 
     }
 
@@ -632,7 +603,6 @@ public class OrganizationsApi {
      * Remove a member from an organization.  Parameters: - **organization_id**: UUID of the organization to remove the member from - **account_id**: UUID of the account to remove from the organization  Returns: - **200**: Organization member removed successfully - **404**: Member not found in organization
      * @param organizationId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -644,8 +614,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(UUID organizationId, UUID accountId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(organizationId, accountId, instanceId, authorization);
+    public Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(UUID organizationId, UUID accountId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(organizationId, accountId, authorization);
         return localVarResp.getData();
     }
 
@@ -654,7 +624,6 @@ public class OrganizationsApi {
      * Remove a member from an organization.  Parameters: - **organization_id**: UUID of the organization to remove the member from - **account_id**: UUID of the account to remove from the organization  Returns: - **200**: Organization member removed successfully - **404**: Member not found in organization
      * @param organizationId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -666,8 +635,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(UUID organizationId, UUID accountId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, instanceId, authorization, null);
+    public ApiResponse<Object> removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteWithHttpInfo(UUID organizationId, UUID accountId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -677,7 +646,6 @@ public class OrganizationsApi {
      * Remove a member from an organization.  Parameters: - **organization_id**: UUID of the organization to remove the member from - **account_id**: UUID of the account to remove from the organization  Returns: - **200**: Organization member removed successfully - **404**: Member not found in organization
      * @param organizationId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -690,9 +658,9 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteAsync(UUID organizationId, UUID accountId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteAsync(UUID organizationId, UUID accountId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDeleteValidateBeforeCall(organizationId, accountId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -702,7 +670,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param updateOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -715,7 +682,7 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -741,10 +708,6 @@ public class OrganizationsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -772,7 +735,7 @@ public class OrganizationsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(Async)");
@@ -788,7 +751,7 @@ public class OrganizationsApi {
             throw new ApiException("Missing the required parameter 'updateOrganizationMemberRequestBody' when calling updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(Async)");
         }
 
-        return updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchCall(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization, _callback);
+        return updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchCall(organizationId, accountId, updateOrganizationMemberRequestBody, authorization, _callback);
 
     }
 
@@ -798,7 +761,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param updateOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -810,8 +772,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization);
+    public Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(organizationId, accountId, updateOrganizationMemberRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -821,7 +783,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param updateOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -833,8 +794,8 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchWithHttpInfo(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -845,7 +806,6 @@ public class OrganizationsApi {
      * @param organizationId  (required)
      * @param accountId  (required)
      * @param updateOrganizationMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -858,9 +818,9 @@ public class OrganizationsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchAsync(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchAsync(UUID organizationId, UUID accountId, UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatchValidateBeforeCall(organizationId, accountId, updateOrganizationMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

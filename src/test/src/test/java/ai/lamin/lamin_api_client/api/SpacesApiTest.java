@@ -48,9 +48,8 @@ public class SpacesApiTest {
     public void addSpaceCollaboratorSpacesSpaceIdCollaboratorsPutTest() throws ApiException {
         UUID spaceId = null;
         AddSpaceCollaboratorRequestBody addSpaceCollaboratorRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(spaceId, addSpaceCollaboratorRequestBody, instanceId, authorization);
+        Object response = api.addSpaceCollaboratorSpacesSpaceIdCollaboratorsPut(spaceId, addSpaceCollaboratorRequestBody, authorization);
         // TODO: test validations
     }
 
@@ -80,9 +79,8 @@ public class SpacesApiTest {
     @Test
     public void createSpaceSpacesPutTest() throws ApiException {
         CreateSpaceRequestBody createSpaceRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.createSpaceSpacesPut(createSpaceRequestBody, instanceId, authorization);
+        Object response = api.createSpaceSpacesPut(createSpaceRequestBody, authorization);
         // TODO: test validations
     }
 
@@ -96,9 +94,8 @@ public class SpacesApiTest {
     @Test
     public void deleteSpaceSpacesSpaceIdDeleteTest() throws ApiException {
         UUID spaceId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.deleteSpaceSpacesSpaceIdDelete(spaceId, instanceId, authorization);
+        Object response = api.deleteSpaceSpacesSpaceIdDelete(spaceId, authorization);
         // TODO: test validations
     }
 
@@ -128,9 +125,8 @@ public class SpacesApiTest {
     @Test
     public void getSpaceSpacesSpaceIdGetTest() throws ApiException {
         UUID spaceId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.getSpaceSpacesSpaceIdGet(spaceId, instanceId, authorization);
+        Object response = api.getSpaceSpacesSpaceIdGet(spaceId, authorization);
         // TODO: test validations
     }
 
@@ -159,9 +155,8 @@ public class SpacesApiTest {
     @Test
     public void listInstancesUsingSpaceSpacesSpaceIdInstancesGetTest() throws ApiException {
         UUID spaceId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.listInstancesUsingSpaceSpacesSpaceIdInstancesGet(spaceId, instanceId, authorization);
+        Object response = api.listInstancesUsingSpaceSpacesSpaceIdInstancesGet(spaceId, authorization);
         // TODO: test validations
     }
 
@@ -175,9 +170,8 @@ public class SpacesApiTest {
     @Test
     public void listOrganizationSpacesSpacesOrganizationsOrganizationIdGetTest() throws ApiException {
         UUID organizationId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(organizationId, instanceId, authorization);
+        Object response = api.listOrganizationSpacesSpacesOrganizationsOrganizationIdGet(organizationId, authorization);
         // TODO: test validations
     }
 
@@ -191,9 +185,8 @@ public class SpacesApiTest {
     @Test
     public void listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGetTest() throws ApiException {
         UUID spaceId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(spaceId, instanceId, authorization);
+        Object response = api.listSpaceCollaboratorsSpacesSpaceIdCollaboratorsGet(spaceId, authorization);
         // TODO: test validations
     }
 
@@ -226,9 +219,8 @@ public class SpacesApiTest {
         UUID spaceId = null;
         UUID accountId = null;
         UUID teamId = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(spaceId, accountId, teamId, instanceId, authorization);
+        Object response = api.removeSpaceCollaboratorSpacesSpaceIdCollaboratorsDelete(spaceId, accountId, teamId, authorization);
         // TODO: test validations
     }
 
@@ -243,9 +235,8 @@ public class SpacesApiTest {
     public void updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatchTest() throws ApiException {
         UUID spaceId = null;
         UpdateSpaceCollaboratorRequestBody updateSpaceCollaboratorRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(spaceId, updateSpaceCollaboratorRequestBody, instanceId, authorization);
+        Object response = api.updateSpaceCollaboratorSpacesSpaceIdCollaboratorsPatch(spaceId, updateSpaceCollaboratorRequestBody, authorization);
         // TODO: test validations
     }
 
@@ -260,9 +251,8 @@ public class SpacesApiTest {
     public void updateSpaceSpacesSpaceIdPatchTest() throws ApiException {
         UUID spaceId = null;
         UpdateSpaceRequestBody updateSpaceRequestBody = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.updateSpaceSpacesSpaceIdPatch(spaceId, updateSpaceRequestBody, instanceId, authorization);
+        Object response = api.updateSpaceSpacesSpaceIdPatch(spaceId, updateSpaceRequestBody, authorization);
         // TODO: test validations
     }
 

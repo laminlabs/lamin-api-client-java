@@ -63,10 +63,9 @@ public class InstancesApiTest {
         String dbServerName = null;
         String storageUid = null;
         UUID accountId = null;
-        UUID instanceId = null;
         String authorization = null;
         Map<String, Object> requestBody = null;
-        Object response = api.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, instanceId, authorization, requestBody);
+        Object response = api.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody);
         // TODO: test validations
     }
 

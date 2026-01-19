@@ -83,7 +83,7 @@ No authorization required
 
 <a id="createInstanceInstancesPut"></a>
 # **createInstanceInstancesPut**
-> Object createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, instanceId, authorization, requestBody)
+> Object createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody)
 
 Create Instance
 
@@ -108,11 +108,10 @@ public class Example {
     String dbServerName = "dbServerName_example"; // String | 
     String storageUid = "storageUid_example"; // String | 
     UUID accountId = UUID.randomUUID(); // UUID | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     Map<String, Object> requestBody = null; // Map<String, Object> | 
     try {
-      Object result = apiInstance.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, instanceId, authorization, requestBody);
+      Object result = apiInstance.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#createInstanceInstancesPut");
@@ -135,7 +134,6 @@ public class Example {
 | **dbServerName** | **String**|  | [optional] |
 | **storageUid** | **String**|  | [optional] |
 | **accountId** | **UUID**|  | [optional] |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 | **requestBody** | [**Map&lt;String, Object&gt;**](Object.md)|  | [optional] |
 

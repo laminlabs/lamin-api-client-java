@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * BatchDeleteBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class BatchDeleteBody {
   public static final String SERIALIZED_NAME_RECORDS = "records";
   @SerializedName(SERIALIZED_NAME_RECORDS)

@@ -5,6 +5,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createArtifactInstancesInstanceIdArtifactsCreatePost**](InstanceArtifactsApi.md#createArtifactInstancesInstanceIdArtifactsCreatePost) | **POST** /instances/{instance_id}/artifacts/create | Create Artifact |
+| [**getArtifactByPathInstancesInstanceIdArtifactsByPathGet**](InstanceArtifactsApi.md#getArtifactByPathInstancesInstanceIdArtifactsByPathGet) | **GET** /instances/{instance_id}/artifacts/by-path | Get Artifact By Path |
 | [**uploadArtifactInstancesInstanceIdArtifactsUploadPost**](InstanceArtifactsApi.md#uploadArtifactInstancesInstanceIdArtifactsUploadPost) | **POST** /instances/{instance_id}/artifacts/upload | Upload Artifact |
 
 
@@ -65,6 +66,71 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="getArtifactByPathInstancesInstanceIdArtifactsByPathGet"></a>
+# **getArtifactByPathInstancesInstanceIdArtifactsByPathGet**
+> Object getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, authorization)
+
+Get Artifact By Path
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://staging.laminhub.com/api");
+
+    InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
+    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String path = "path_example"; // String | 
+    String authorization = "authorization_example"; // String | 
+    try {
+      Object result = apiInstance.getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, authorization);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstanceArtifactsApi#getArtifactByPathInstancesInstanceIdArtifactsByPathGet");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **instanceId** | **UUID**|  | |
+| **path** | **String**|  | |
+| **authorization** | **String**|  | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

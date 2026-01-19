@@ -10,7 +10,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="checkDbServerAccessDbServerCheckAccessPost"></a>
 # **checkDbServerAccessDbServerCheckAccessPost**
-> Object checkDbServerAccessDbServerCheckAccessPost(name, instanceId, authorization)
+> Object checkDbServerAccessDbServerCheckAccessPost(name, authorization)
 
 Check Db Server Access
 
@@ -30,10 +30,9 @@ public class Example {
 
     DbServerApi apiInstance = new DbServerApi(defaultClient);
     String name = "name_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.checkDbServerAccessDbServerCheckAccessPost(name, instanceId, authorization);
+      Object result = apiInstance.checkDbServerAccessDbServerCheckAccessPost(name, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DbServerApi#checkDbServerAccessDbServerCheckAccessPost");
@@ -51,7 +50,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **name** | **String**|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -75,7 +73,7 @@ No authorization required
 
 <a id="registerDbServerDbServerRegisterPost"></a>
 # **registerDbServerDbServerRegisterPost**
-> Object registerDbServerDbServerRegisterPost(registerDbServerBody, instanceId, authorization)
+> Object registerDbServerDbServerRegisterPost(registerDbServerBody, authorization)
 
 Register Db Server
 
@@ -95,10 +93,9 @@ public class Example {
 
     DbServerApi apiInstance = new DbServerApi(defaultClient);
     RegisterDbServerBody registerDbServerBody = new RegisterDbServerBody(); // RegisterDbServerBody | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.registerDbServerDbServerRegisterPost(registerDbServerBody, instanceId, authorization);
+      Object result = apiInstance.registerDbServerDbServerRegisterPost(registerDbServerBody, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DbServerApi#registerDbServerDbServerRegisterPost");
@@ -116,7 +113,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **registerDbServerBody** | [**RegisterDbServerBody**](RegisterDbServerBody.md)|  | |
-| **instanceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import ai.lamin.lamin_api_client.model.RegisterDbServerBody;
-import java.util.UUID;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -77,7 +76,6 @@ public class DbServerApi {
     /**
      * Build call for checkDbServerAccessDbServerCheckAccessPost
      * @param name  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +88,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostCall(String name, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostCall(String name, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -119,10 +117,6 @@ public class DbServerApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("name", name));
         }
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -148,13 +142,13 @@ public class DbServerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(String name, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(String name, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling checkDbServerAccessDbServerCheckAccessPost(Async)");
         }
 
-        return checkDbServerAccessDbServerCheckAccessPostCall(name, instanceId, authorization, _callback);
+        return checkDbServerAccessDbServerCheckAccessPostCall(name, authorization, _callback);
 
     }
 
@@ -162,7 +156,6 @@ public class DbServerApi {
      * Check Db Server Access
      * 
      * @param name  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -174,8 +167,8 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object checkDbServerAccessDbServerCheckAccessPost(String name, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(name, instanceId, authorization);
+    public Object checkDbServerAccessDbServerCheckAccessPost(String name, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(name, authorization);
         return localVarResp.getData();
     }
 
@@ -183,7 +176,6 @@ public class DbServerApi {
      * Check Db Server Access
      * 
      * @param name  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -195,8 +187,8 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(String name, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, instanceId, authorization, null);
+    public ApiResponse<Object> checkDbServerAccessDbServerCheckAccessPostWithHttpInfo(String name, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,7 +197,6 @@ public class DbServerApi {
      * Check Db Server Access (asynchronously)
      * 
      * @param name  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -218,9 +209,9 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostAsync(String name, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call checkDbServerAccessDbServerCheckAccessPostAsync(String name, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = checkDbServerAccessDbServerCheckAccessPostValidateBeforeCall(name, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -228,7 +219,6 @@ public class DbServerApi {
     /**
      * Build call for registerDbServerDbServerRegisterPost
      * @param registerDbServerBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -241,7 +231,7 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerDbServerDbServerRegisterPostCall(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call registerDbServerDbServerRegisterPostCall(RegisterDbServerBody registerDbServerBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -266,10 +256,6 @@ public class DbServerApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -296,13 +282,13 @@ public class DbServerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerDbServerDbServerRegisterPostValidateBeforeCall(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerDbServerDbServerRegisterPostValidateBeforeCall(RegisterDbServerBody registerDbServerBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'registerDbServerBody' is set
         if (registerDbServerBody == null) {
             throw new ApiException("Missing the required parameter 'registerDbServerBody' when calling registerDbServerDbServerRegisterPost(Async)");
         }
 
-        return registerDbServerDbServerRegisterPostCall(registerDbServerBody, instanceId, authorization, _callback);
+        return registerDbServerDbServerRegisterPostCall(registerDbServerBody, authorization, _callback);
 
     }
 
@@ -310,7 +296,6 @@ public class DbServerApi {
      * Register Db Server
      * 
      * @param registerDbServerBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -322,8 +307,8 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object registerDbServerDbServerRegisterPost(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = registerDbServerDbServerRegisterPostWithHttpInfo(registerDbServerBody, instanceId, authorization);
+    public Object registerDbServerDbServerRegisterPost(RegisterDbServerBody registerDbServerBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = registerDbServerDbServerRegisterPostWithHttpInfo(registerDbServerBody, authorization);
         return localVarResp.getData();
     }
 
@@ -331,7 +316,6 @@ public class DbServerApi {
      * Register Db Server
      * 
      * @param registerDbServerBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -343,8 +327,8 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> registerDbServerDbServerRegisterPostWithHttpInfo(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, instanceId, authorization, null);
+    public ApiResponse<Object> registerDbServerDbServerRegisterPostWithHttpInfo(RegisterDbServerBody registerDbServerBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -353,7 +337,6 @@ public class DbServerApi {
      * Register Db Server (asynchronously)
      * 
      * @param registerDbServerBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -366,9 +349,9 @@ public class DbServerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerDbServerDbServerRegisterPostAsync(RegisterDbServerBody registerDbServerBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call registerDbServerDbServerRegisterPostAsync(RegisterDbServerBody registerDbServerBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = registerDbServerDbServerRegisterPostValidateBeforeCall(registerDbServerBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

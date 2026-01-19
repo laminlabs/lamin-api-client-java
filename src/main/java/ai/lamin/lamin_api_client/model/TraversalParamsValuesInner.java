@@ -50,7 +50,7 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-12T11:16:27.287169544+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(TraversalParamsValuesInner.class.getName());
 

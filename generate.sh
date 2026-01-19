@@ -5,6 +5,8 @@
 # INPUT_SPEC="https://aws.us-east-1.lamin.ai/api/openapi.json"
 INPUT_SPEC="https://staging.laminhub.com/api/openapi.json"
 
+rm -r ./src
+
 npx @openapitools/openapi-generator-cli generate \
     --generator-name java \
     --config config.yaml \

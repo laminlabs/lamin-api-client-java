@@ -16,7 +16,6 @@ package ai.lamin.lamin_api_client.api;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import ai.lamin.lamin_api_client.model.S3PermissionsRequest;
-import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -44,9 +43,8 @@ public class StoragesApiTest {
         S3PermissionsRequest s3PermissionsRequest = null;
         String awsAccountId = null;
         String awsUserName = null;
-        UUID instanceId = null;
         String authorization = null;
-        Object response = api.grantS3PermissionsStoragesS3BucketNamePermissionsPut(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, instanceId, authorization);
+        Object response = api.grantS3PermissionsStoragesS3BucketNamePermissionsPut(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization);
         // TODO: test validations
     }
 

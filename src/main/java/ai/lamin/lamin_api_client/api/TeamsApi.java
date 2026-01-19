@@ -82,7 +82,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param addTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -95,7 +94,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutCall(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutCall(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -122,10 +121,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -152,7 +147,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling addTeamMemberTeamsTeamIdMembersAccountIdPut(Async)");
@@ -168,7 +163,7 @@ public class TeamsApi {
             throw new ApiException("Missing the required parameter 'addTeamMemberRequestBody' when calling addTeamMemberTeamsTeamIdMembersAccountIdPut(Async)");
         }
 
-        return addTeamMemberTeamsTeamIdMembersAccountIdPutCall(teamId, accountId, addTeamMemberRequestBody, instanceId, authorization, _callback);
+        return addTeamMemberTeamsTeamIdMembersAccountIdPutCall(teamId, accountId, addTeamMemberRequestBody, authorization, _callback);
 
     }
 
@@ -178,7 +173,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param addTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -190,8 +184,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object addTeamMemberTeamsTeamIdMembersAccountIdPut(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = addTeamMemberTeamsTeamIdMembersAccountIdPutWithHttpInfo(teamId, accountId, addTeamMemberRequestBody, instanceId, authorization);
+    public Object addTeamMemberTeamsTeamIdMembersAccountIdPut(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = addTeamMemberTeamsTeamIdMembersAccountIdPutWithHttpInfo(teamId, accountId, addTeamMemberRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -201,7 +195,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param addTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -213,8 +206,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> addTeamMemberTeamsTeamIdMembersAccountIdPutWithHttpInfo(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(teamId, accountId, addTeamMemberRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> addTeamMemberTeamsTeamIdMembersAccountIdPutWithHttpInfo(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(teamId, accountId, addTeamMemberRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -225,7 +218,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param addTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -238,9 +230,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutAsync(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutAsync(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(teamId, accountId, addTeamMemberRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(teamId, accountId, addTeamMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -248,7 +240,6 @@ public class TeamsApi {
     /**
      * Build call for createTeamTeamsPut
      * @param createTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -261,7 +252,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTeamTeamsPutCall(CreateTeamRequestBody createTeamRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTeamTeamsPutCall(CreateTeamRequestBody createTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -286,10 +277,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -316,13 +303,13 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTeamTeamsPutValidateBeforeCall(CreateTeamRequestBody createTeamRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTeamTeamsPutValidateBeforeCall(CreateTeamRequestBody createTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'createTeamRequestBody' is set
         if (createTeamRequestBody == null) {
             throw new ApiException("Missing the required parameter 'createTeamRequestBody' when calling createTeamTeamsPut(Async)");
         }
 
-        return createTeamTeamsPutCall(createTeamRequestBody, instanceId, authorization, _callback);
+        return createTeamTeamsPutCall(createTeamRequestBody, authorization, _callback);
 
     }
 
@@ -330,7 +317,6 @@ public class TeamsApi {
      * Create Team
      * Create a new team.  Parameters: - **body**: Request body containing team details   - **name**: Name of the team   - **organization_id**: UUID of the organization   - **description**: Optional description of the team  Returns: - **201**: Team created successfully
      * @param createTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -342,8 +328,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createTeamTeamsPut(CreateTeamRequestBody createTeamRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createTeamTeamsPutWithHttpInfo(createTeamRequestBody, instanceId, authorization);
+    public Object createTeamTeamsPut(CreateTeamRequestBody createTeamRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createTeamTeamsPutWithHttpInfo(createTeamRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -351,7 +337,6 @@ public class TeamsApi {
      * Create Team
      * Create a new team.  Parameters: - **body**: Request body containing team details   - **name**: Name of the team   - **organization_id**: UUID of the organization   - **description**: Optional description of the team  Returns: - **201**: Team created successfully
      * @param createTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -363,8 +348,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createTeamTeamsPutWithHttpInfo(CreateTeamRequestBody createTeamRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createTeamTeamsPutValidateBeforeCall(createTeamRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> createTeamTeamsPutWithHttpInfo(CreateTeamRequestBody createTeamRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createTeamTeamsPutValidateBeforeCall(createTeamRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -373,7 +358,6 @@ public class TeamsApi {
      * Create Team (asynchronously)
      * Create a new team.  Parameters: - **body**: Request body containing team details   - **name**: Name of the team   - **organization_id**: UUID of the organization   - **description**: Optional description of the team  Returns: - **201**: Team created successfully
      * @param createTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -386,9 +370,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTeamTeamsPutAsync(CreateTeamRequestBody createTeamRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createTeamTeamsPutAsync(CreateTeamRequestBody createTeamRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createTeamTeamsPutValidateBeforeCall(createTeamRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = createTeamTeamsPutValidateBeforeCall(createTeamRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -396,7 +380,6 @@ public class TeamsApi {
     /**
      * Build call for deleteTeamTeamsTeamIdDelete
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -409,7 +392,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamTeamsTeamIdDeleteCall(UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTeamTeamsTeamIdDeleteCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -434,10 +417,6 @@ public class TeamsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -464,13 +443,13 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTeamTeamsTeamIdDeleteValidateBeforeCall(UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTeamTeamsTeamIdDeleteValidateBeforeCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling deleteTeamTeamsTeamIdDelete(Async)");
         }
 
-        return deleteTeamTeamsTeamIdDeleteCall(teamId, instanceId, authorization, _callback);
+        return deleteTeamTeamsTeamIdDeleteCall(teamId, authorization, _callback);
 
     }
 
@@ -478,7 +457,6 @@ public class TeamsApi {
      * Delete Team
      * Delete a team.  Parameters: - **team_id**: UUID of the team to delete  Returns: - **200**: Team deleted successfully
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -490,8 +468,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object deleteTeamTeamsTeamIdDelete(UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = deleteTeamTeamsTeamIdDeleteWithHttpInfo(teamId, instanceId, authorization);
+    public Object deleteTeamTeamsTeamIdDelete(UUID teamId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteTeamTeamsTeamIdDeleteWithHttpInfo(teamId, authorization);
         return localVarResp.getData();
     }
 
@@ -499,7 +477,6 @@ public class TeamsApi {
      * Delete Team
      * Delete a team.  Parameters: - **team_id**: UUID of the team to delete  Returns: - **200**: Team deleted successfully
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -511,8 +488,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> deleteTeamTeamsTeamIdDeleteWithHttpInfo(UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = deleteTeamTeamsTeamIdDeleteValidateBeforeCall(teamId, instanceId, authorization, null);
+    public ApiResponse<Object> deleteTeamTeamsTeamIdDeleteWithHttpInfo(UUID teamId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = deleteTeamTeamsTeamIdDeleteValidateBeforeCall(teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -521,7 +498,6 @@ public class TeamsApi {
      * Delete Team (asynchronously)
      * Delete a team.  Parameters: - **team_id**: UUID of the team to delete  Returns: - **200**: Team deleted successfully
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -534,9 +510,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamTeamsTeamIdDeleteAsync(UUID teamId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call deleteTeamTeamsTeamIdDeleteAsync(UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteTeamTeamsTeamIdDeleteValidateBeforeCall(teamId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = deleteTeamTeamsTeamIdDeleteValidateBeforeCall(teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -544,7 +520,6 @@ public class TeamsApi {
     /**
      * Build call for getTeamTeamsTeamIdGet
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -557,7 +532,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamTeamsTeamIdGetCall(UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamTeamsTeamIdGetCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -583,10 +558,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -612,13 +583,13 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamTeamsTeamIdGetValidateBeforeCall(UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamTeamsTeamIdGetValidateBeforeCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling getTeamTeamsTeamIdGet(Async)");
         }
 
-        return getTeamTeamsTeamIdGetCall(teamId, instanceId, authorization, _callback);
+        return getTeamTeamsTeamIdGetCall(teamId, authorization, _callback);
 
     }
 
@@ -626,7 +597,6 @@ public class TeamsApi {
      * Get Team
      * Get details of a specific team.  Parameters: - **team_id**: UUID of the team to retrieve  Returns: - **200**: Team details retrieved successfully - **404**: Team not found
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -638,8 +608,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getTeamTeamsTeamIdGet(UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getTeamTeamsTeamIdGetWithHttpInfo(teamId, instanceId, authorization);
+    public Object getTeamTeamsTeamIdGet(UUID teamId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getTeamTeamsTeamIdGetWithHttpInfo(teamId, authorization);
         return localVarResp.getData();
     }
 
@@ -647,7 +617,6 @@ public class TeamsApi {
      * Get Team
      * Get details of a specific team.  Parameters: - **team_id**: UUID of the team to retrieve  Returns: - **200**: Team details retrieved successfully - **404**: Team not found
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -659,8 +628,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getTeamTeamsTeamIdGetWithHttpInfo(UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getTeamTeamsTeamIdGetValidateBeforeCall(teamId, instanceId, authorization, null);
+    public ApiResponse<Object> getTeamTeamsTeamIdGetWithHttpInfo(UUID teamId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getTeamTeamsTeamIdGetValidateBeforeCall(teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -669,7 +638,6 @@ public class TeamsApi {
      * Get Team (asynchronously)
      * Get details of a specific team.  Parameters: - **team_id**: UUID of the team to retrieve  Returns: - **200**: Team details retrieved successfully - **404**: Team not found
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -682,9 +650,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamTeamsTeamIdGetAsync(UUID teamId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getTeamTeamsTeamIdGetAsync(UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTeamTeamsTeamIdGetValidateBeforeCall(teamId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getTeamTeamsTeamIdGetValidateBeforeCall(teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -692,7 +660,6 @@ public class TeamsApi {
     /**
      * Build call for listOrganizationTeamsTeamsOrganizationsOrganizationIdGet
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -705,7 +672,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -731,10 +698,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -760,13 +723,13 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(Async)");
         }
 
-        return listOrganizationTeamsTeamsOrganizationsOrganizationIdGetCall(organizationId, instanceId, authorization, _callback);
+        return listOrganizationTeamsTeamsOrganizationsOrganizationIdGetCall(organizationId, authorization, _callback);
 
     }
 
@@ -774,7 +737,6 @@ public class TeamsApi {
      * List Organization Teams
      * List all teams in an organization.  Parameters: - **organization_id**: UUID of the organization to list teams for  Returns: - **200**: List of teams retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -786,8 +748,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetWithHttpInfo(organizationId, instanceId, authorization);
+    public Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(UUID organizationId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetWithHttpInfo(organizationId, authorization);
         return localVarResp.getData();
     }
 
@@ -795,7 +757,6 @@ public class TeamsApi {
      * List Organization Teams
      * List all teams in an organization.  Parameters: - **organization_id**: UUID of the organization to list teams for  Returns: - **200**: List of teams retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -807,8 +768,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listOrganizationTeamsTeamsOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, null);
+    public ApiResponse<Object> listOrganizationTeamsTeamsOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -817,7 +778,6 @@ public class TeamsApi {
      * List Organization Teams (asynchronously)
      * List all teams in an organization.  Parameters: - **organization_id**: UUID of the organization to list teams for  Returns: - **200**: List of teams retrieved successfully
      * @param organizationId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -830,9 +790,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetAsync(UUID organizationId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetAsync(UUID organizationId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -840,7 +800,6 @@ public class TeamsApi {
     /**
      * Build call for listTeamMembersTeamsTeamIdMembersGet
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -853,7 +812,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetCall(UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -879,10 +838,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -908,13 +863,13 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(UUID teamId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling listTeamMembersTeamsTeamIdMembersGet(Async)");
         }
 
-        return listTeamMembersTeamsTeamIdMembersGetCall(teamId, instanceId, authorization, _callback);
+        return listTeamMembersTeamsTeamIdMembersGetCall(teamId, authorization, _callback);
 
     }
 
@@ -922,7 +877,6 @@ public class TeamsApi {
      * List Team Members
      * List all members of a team.  Parameters: - **team_id**: UUID of the team to list members for  Returns: - **200**: List of team members retrieved successfully
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -934,8 +888,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listTeamMembersTeamsTeamIdMembersGet(UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listTeamMembersTeamsTeamIdMembersGetWithHttpInfo(teamId, instanceId, authorization);
+    public Object listTeamMembersTeamsTeamIdMembersGet(UUID teamId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listTeamMembersTeamsTeamIdMembersGetWithHttpInfo(teamId, authorization);
         return localVarResp.getData();
     }
 
@@ -943,7 +897,6 @@ public class TeamsApi {
      * List Team Members
      * List all members of a team.  Parameters: - **team_id**: UUID of the team to list members for  Returns: - **200**: List of team members retrieved successfully
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -955,8 +908,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listTeamMembersTeamsTeamIdMembersGetWithHttpInfo(UUID teamId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(teamId, instanceId, authorization, null);
+    public ApiResponse<Object> listTeamMembersTeamsTeamIdMembersGetWithHttpInfo(UUID teamId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -965,7 +918,6 @@ public class TeamsApi {
      * List Team Members (asynchronously)
      * List all members of a team.  Parameters: - **team_id**: UUID of the team to list members for  Returns: - **200**: List of team members retrieved successfully
      * @param teamId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -978,9 +930,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetAsync(UUID teamId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetAsync(UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(teamId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -989,7 +941,6 @@ public class TeamsApi {
      * Build call for removeTeamMemberTeamsTeamIdMembersAccountIdDelete
      * @param teamId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1002,7 +953,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteCall(UUID teamId, UUID accountId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteCall(UUID teamId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1029,10 +980,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1058,7 +1005,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(UUID teamId, UUID accountId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(UUID teamId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling removeTeamMemberTeamsTeamIdMembersAccountIdDelete(Async)");
@@ -1069,7 +1016,7 @@ public class TeamsApi {
             throw new ApiException("Missing the required parameter 'accountId' when calling removeTeamMemberTeamsTeamIdMembersAccountIdDelete(Async)");
         }
 
-        return removeTeamMemberTeamsTeamIdMembersAccountIdDeleteCall(teamId, accountId, instanceId, authorization, _callback);
+        return removeTeamMemberTeamsTeamIdMembersAccountIdDeleteCall(teamId, accountId, authorization, _callback);
 
     }
 
@@ -1078,7 +1025,6 @@ public class TeamsApi {
      * Remove a member from a team.  Parameters: - **team_id**: UUID of the team to remove the member from - **account_id**: UUID of the account to remove from the team  Returns: - **200**: Team member removed successfully - **404**: Member not found in team
      * @param teamId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1090,8 +1036,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(UUID teamId, UUID accountId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteWithHttpInfo(teamId, accountId, instanceId, authorization);
+    public Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(UUID teamId, UUID accountId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteWithHttpInfo(teamId, accountId, authorization);
         return localVarResp.getData();
     }
 
@@ -1100,7 +1046,6 @@ public class TeamsApi {
      * Remove a member from a team.  Parameters: - **team_id**: UUID of the team to remove the member from - **account_id**: UUID of the account to remove from the team  Returns: - **200**: Team member removed successfully - **404**: Member not found in team
      * @param teamId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1112,8 +1057,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> removeTeamMemberTeamsTeamIdMembersAccountIdDeleteWithHttpInfo(UUID teamId, UUID accountId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(teamId, accountId, instanceId, authorization, null);
+    public ApiResponse<Object> removeTeamMemberTeamsTeamIdMembersAccountIdDeleteWithHttpInfo(UUID teamId, UUID accountId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(teamId, accountId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1123,7 +1068,6 @@ public class TeamsApi {
      * Remove a member from a team.  Parameters: - **team_id**: UUID of the team to remove the member from - **account_id**: UUID of the account to remove from the team  Returns: - **200**: Team member removed successfully - **404**: Member not found in team
      * @param teamId  (required)
      * @param accountId  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1136,9 +1080,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteAsync(UUID teamId, UUID accountId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteAsync(UUID teamId, UUID accountId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(teamId, accountId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(teamId, accountId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1148,7 +1092,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param updateTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1161,7 +1104,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchCall(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchCall(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1188,10 +1131,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1218,7 +1157,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling updateTeamMemberTeamsTeamIdMembersAccountIdPatch(Async)");
@@ -1234,7 +1173,7 @@ public class TeamsApi {
             throw new ApiException("Missing the required parameter 'updateTeamMemberRequestBody' when calling updateTeamMemberTeamsTeamIdMembersAccountIdPatch(Async)");
         }
 
-        return updateTeamMemberTeamsTeamIdMembersAccountIdPatchCall(teamId, accountId, updateTeamMemberRequestBody, instanceId, authorization, _callback);
+        return updateTeamMemberTeamsTeamIdMembersAccountIdPatchCall(teamId, accountId, updateTeamMemberRequestBody, authorization, _callback);
 
     }
 
@@ -1244,7 +1183,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param updateTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1256,8 +1194,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = updateTeamMemberTeamsTeamIdMembersAccountIdPatchWithHttpInfo(teamId, accountId, updateTeamMemberRequestBody, instanceId, authorization);
+    public Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateTeamMemberTeamsTeamIdMembersAccountIdPatchWithHttpInfo(teamId, accountId, updateTeamMemberRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -1267,7 +1205,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param updateTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1279,8 +1216,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateTeamMemberTeamsTeamIdMembersAccountIdPatchWithHttpInfo(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(teamId, accountId, updateTeamMemberRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> updateTeamMemberTeamsTeamIdMembersAccountIdPatchWithHttpInfo(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(teamId, accountId, updateTeamMemberRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1291,7 +1228,6 @@ public class TeamsApi {
      * @param teamId  (required)
      * @param accountId  (required)
      * @param updateTeamMemberRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1304,9 +1240,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchAsync(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchAsync(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(teamId, accountId, updateTeamMemberRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(teamId, accountId, updateTeamMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1315,7 +1251,6 @@ public class TeamsApi {
      * Build call for updateTeamTeamsTeamIdPatch
      * @param teamId  (required)
      * @param updateTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1328,7 +1263,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamTeamsTeamIdPatchCall(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTeamTeamsTeamIdPatchCall(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1354,10 +1289,6 @@ public class TeamsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
-
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1384,7 +1315,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTeamTeamsTeamIdPatchValidateBeforeCall(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTeamTeamsTeamIdPatchValidateBeforeCall(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling updateTeamTeamsTeamIdPatch(Async)");
@@ -1395,7 +1326,7 @@ public class TeamsApi {
             throw new ApiException("Missing the required parameter 'updateTeamRequestBody' when calling updateTeamTeamsTeamIdPatch(Async)");
         }
 
-        return updateTeamTeamsTeamIdPatchCall(teamId, updateTeamRequestBody, instanceId, authorization, _callback);
+        return updateTeamTeamsTeamIdPatchCall(teamId, updateTeamRequestBody, authorization, _callback);
 
     }
 
@@ -1404,7 +1335,6 @@ public class TeamsApi {
      * Update a team&#39;s details.  Parameters: - **team_id**: UUID of the team to update - **body**: Request body containing updated team details   - **name**: Optional new name for the team   - **description**: Optional new description for the team  Returns: - **200**: Team updated successfully
      * @param teamId  (required)
      * @param updateTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1416,8 +1346,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateTeamTeamsTeamIdPatch(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = updateTeamTeamsTeamIdPatchWithHttpInfo(teamId, updateTeamRequestBody, instanceId, authorization);
+    public Object updateTeamTeamsTeamIdPatch(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateTeamTeamsTeamIdPatchWithHttpInfo(teamId, updateTeamRequestBody, authorization);
         return localVarResp.getData();
     }
 
@@ -1426,7 +1356,6 @@ public class TeamsApi {
      * Update a team&#39;s details.  Parameters: - **team_id**: UUID of the team to update - **body**: Request body containing updated team details   - **name**: Optional new name for the team   - **description**: Optional new description for the team  Returns: - **200**: Team updated successfully
      * @param teamId  (required)
      * @param updateTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1438,8 +1367,8 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateTeamTeamsTeamIdPatchWithHttpInfo(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = updateTeamTeamsTeamIdPatchValidateBeforeCall(teamId, updateTeamRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> updateTeamTeamsTeamIdPatchWithHttpInfo(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateTeamTeamsTeamIdPatchValidateBeforeCall(teamId, updateTeamRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1449,7 +1378,6 @@ public class TeamsApi {
      * Update a team&#39;s details.  Parameters: - **team_id**: UUID of the team to update - **body**: Request body containing updated team details   - **name**: Optional new name for the team   - **description**: Optional new description for the team  Returns: - **200**: Team updated successfully
      * @param teamId  (required)
      * @param updateTeamRequestBody  (required)
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1462,9 +1390,9 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamTeamsTeamIdPatchAsync(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateTeamTeamsTeamIdPatchAsync(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateTeamTeamsTeamIdPatchValidateBeforeCall(teamId, updateTeamRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = updateTeamTeamsTeamIdPatchValidateBeforeCall(teamId, updateTeamRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

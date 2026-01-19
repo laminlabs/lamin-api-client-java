@@ -28,7 +28,6 @@ import java.io.IOException;
 
 
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
-import java.util.UUID;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -75,7 +74,6 @@ public class AccountsApi {
 
     /**
      * Build call for getCallerAccountAccountGet
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -88,7 +86,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCallerAccountAccountGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCallerAccountAccountGetCall(String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -112,10 +110,6 @@ public class AccountsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        if (instanceId != null) {
-            localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_id", instanceId));
-        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -142,15 +136,14 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCallerAccountAccountGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
-        return getCallerAccountAccountGetCall(instanceId, authorization, _callback);
+    private okhttp3.Call getCallerAccountAccountGetValidateBeforeCall(String authorization, final ApiCallback _callback) throws ApiException {
+        return getCallerAccountAccountGetCall(authorization, _callback);
 
     }
 
     /**
      * Get Caller Account
      * 
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -162,15 +155,14 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getCallerAccountAccountGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getCallerAccountAccountGetWithHttpInfo(instanceId, authorization);
+    public Object getCallerAccountAccountGet(String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getCallerAccountAccountGetWithHttpInfo(authorization);
         return localVarResp.getData();
     }
 
     /**
      * Get Caller Account
      * 
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -182,8 +174,8 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getCallerAccountAccountGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> getCallerAccountAccountGetWithHttpInfo(String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -191,7 +183,6 @@ public class AccountsApi {
     /**
      * Get Caller Account (asynchronously)
      * 
-     * @param instanceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -204,9 +195,9 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCallerAccountAccountGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getCallerAccountAccountGetAsync(String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
