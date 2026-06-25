@@ -13,6 +13,7 @@
 
 package ai.lamin.lamin_api_client.model;
 
+import ai.lamin.lamin_api_client.model.ORGANIZATION;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

@@ -15,6 +15,7 @@ package ai.lamin.lamin_api_client.model;
 
 import ai.lamin.lamin_api_client.model.Dimension;
 import ai.lamin.lamin_api_client.model.Measure;
+import ai.lamin.lamin_api_client.model.QueryScope;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -66,6 +67,14 @@ public class GroupByRequestBodyTest {
     @Test
     public void filterTest() {
         // TODO: test filter
+    }
+
+    /**
+     * Test the property 'scope'
+     */
+    @Test
+    public void scopeTest() {
+        // TODO: test scope
     }
 
 }

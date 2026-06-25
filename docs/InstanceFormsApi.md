@@ -1,6 +1,6 @@
 # InstanceFormsApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="registerFormInstancesInstanceIdFormsPost"></a>
 # **registerFormInstancesInstanceIdFormsPost**
-> Object registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, authorization)
+> Object registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, spaceId, authorization)
 
 Register Form
 
@@ -27,14 +27,15 @@ import ai.lamin.lamin_api_client.api.InstanceFormsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceFormsApi apiInstance = new InstanceFormsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
     RegisterFormRequest registerFormRequest = new RegisterFormRequest(); // RegisterFormRequest | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, authorization);
+      Object result = apiInstance.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFormsApi#registerFormInstancesInstanceIdFormsPost");
@@ -53,6 +54,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
 | **registerFormRequest** | [**RegisterFormRequest**](RegisterFormRequest.md)|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

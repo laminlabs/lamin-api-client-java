@@ -1,6 +1,6 @@
 # InstanceRecordsApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -20,7 +20,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost"></a>
 # **batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost**
-> BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, authorization)
+> BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization)
 
 Batch Delete Records
 
@@ -36,16 +36,17 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     BatchDeleteBody batchDeleteBody = new BatchDeleteBody(); // BatchDeleteBody | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      BatchDeleteResponse result = apiInstance.batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, authorization);
+      BatchDeleteResponse result = apiInstance.batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost");
@@ -66,6 +67,7 @@ public class Example {
 | **modelName** | **String**|  | |
 | **instanceId** | **UUID**|  | |
 | **batchDeleteBody** | [**BatchDeleteBody**](BatchDeleteBody.md)|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -89,7 +91,7 @@ No authorization required
 
 <a id="batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut"></a>
 # **batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut**
-> BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, authorization)
+> BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization)
 
 Synchronize sets of links for multiple scopes in a single call
 
@@ -105,16 +107,17 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     BatchSyncLinksBody batchSyncLinksBody = new BatchSyncLinksBody(); // BatchSyncLinksBody | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      BatchSyncResponse result = apiInstance.batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, authorization);
+      BatchSyncResponse result = apiInstance.batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut");
@@ -135,6 +138,7 @@ public class Example {
 | **modelName** | **String**|  | |
 | **instanceId** | **UUID**|  | |
 | **batchSyncLinksBody** | [**BatchSyncLinksBody**](BatchSyncLinksBody.md)|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -158,7 +162,7 @@ No authorization required
 
 <a id="batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch"></a>
 # **batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch**
-> List&lt;Map&lt;String, Object&gt;&gt; batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, authorization)
+> List&lt;Map&lt;String, Object&gt;&gt; batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization)
 
 Update one or more records in a batch
 
@@ -176,16 +180,17 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     BatchUpdateBody batchUpdateBody = new BatchUpdateBody(); // BatchUpdateBody | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      List<Map<String, Object>> result = apiInstance.batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, authorization);
+      List<Map<String, Object>> result = apiInstance.batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch");
@@ -206,6 +211,7 @@ public class Example {
 | **modelName** | **String**|  | |
 | **instanceId** | **UUID**|  | |
 | **batchUpdateBody** | [**BatchUpdateBody**](BatchUpdateBody.md)|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -229,7 +235,7 @@ No authorization required
 
 <a id="createRecordsInstancesInstanceIdModulesModuleNameModelNamePut"></a>
 # **createRecordsInstancesInstanceIdModulesModuleNameModelNamePut**
-> Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, authorization)
+> Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, spaceId, authorization)
 
 Create Records
 
@@ -245,16 +251,17 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     Object body = null; // Object | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, authorization);
+      Object result = apiInstance.createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#createRecordsInstancesInstanceIdModulesModuleNameModelNamePut");
@@ -275,6 +282,7 @@ public class Example {
 | **modelName** | **String**|  | |
 | **instanceId** | **UUID**|  | |
 | **body** | **Object**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -298,7 +306,7 @@ No authorization required
 
 <a id="deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete"></a>
 # **deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete**
-> Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, authorization)
+> Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, spaceId, authorization)
 
 Delete Record
 
@@ -314,16 +322,17 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     String uid = "uid_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, authorization);
+      Object result = apiInstance.deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete");
@@ -344,6 +353,7 @@ public class Example {
 | **modelName** | **String**|  | |
 | **uid** | **String**|  | |
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -367,7 +377,7 @@ No authorization required
 
 <a id="exportRecordsInstancesInstanceIdRecordsUidExportPost"></a>
 # **exportRecordsInstancesInstanceIdRecordsUidExportPost**
-> Object exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, authorization, exportRecordsRequestBody)
+> Object exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, spaceId, authorization, exportRecordsRequestBody)
 
 Export Records
 
@@ -383,15 +393,16 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String uid = "uid_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     ExportRecordsRequestBody exportRecordsRequestBody = new ExportRecordsRequestBody(); // ExportRecordsRequestBody | 
     try {
-      Object result = apiInstance.exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, authorization, exportRecordsRequestBody);
+      Object result = apiInstance.exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, spaceId, authorization, exportRecordsRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#exportRecordsInstancesInstanceIdRecordsUidExportPost");
@@ -410,6 +421,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **uid** | **String**|  | |
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 | **exportRecordsRequestBody** | [**ExportRecordsRequestBody**](ExportRecordsRequestBody.md)|  | [optional] |
 
@@ -434,7 +446,7 @@ No authorization required
 
 <a id="getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost"></a>
 # **getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost**
-> Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, authorization, getRecordRequestBody)
+> Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody)
 
 Get Record
 
@@ -450,7 +462,7 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -459,10 +471,11 @@ public class Example {
     UUID instanceId = UUID.randomUUID(); // UUID | 
     Integer limitToMany = 10; // Integer | 
     Boolean includeForeignKeys = false; // Boolean | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     GetRecordRequestBody getRecordRequestBody = new GetRecordRequestBody(); // GetRecordRequestBody | 
     try {
-      Object result = apiInstance.getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, authorization, getRecordRequestBody);
+      Object result = apiInstance.getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost");
@@ -485,6 +498,7 @@ public class Example {
 | **instanceId** | **UUID**|  | |
 | **limitToMany** | **Integer**|  | [optional] [default to 10] |
 | **includeForeignKeys** | **Boolean**|  | [optional] [default to false] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 | **getRecordRequestBody** | [**GetRecordRequestBody**](GetRecordRequestBody.md)|  | [optional] |
 
@@ -509,7 +523,7 @@ No authorization required
 
 <a id="getRecordsInstancesInstanceIdModulesModuleNameModelNamePost"></a>
 # **getRecordsInstancesInstanceIdModulesModuleNameModelNamePost**
-> Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, authorization, getRecordsRequestBody)
+> Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody)
 
 Get Records
 
@@ -525,7 +539,7 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -535,10 +549,11 @@ public class Example {
     Integer offset = 0; // Integer | 
     Integer limitToMany = 10; // Integer | 
     Boolean includeForeignKeys = false; // Boolean | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     GetRecordsRequestBody getRecordsRequestBody = new GetRecordsRequestBody(); // GetRecordsRequestBody | 
     try {
-      Object result = apiInstance.getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, authorization, getRecordsRequestBody);
+      Object result = apiInstance.getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getRecordsInstancesInstanceIdModulesModuleNameModelNamePost");
@@ -562,6 +577,7 @@ public class Example {
 | **offset** | **Integer**|  | [optional] [default to 0] |
 | **limitToMany** | **Integer**|  | [optional] [default to 10] |
 | **includeForeignKeys** | **Boolean**|  | [optional] [default to false] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 | **getRecordsRequestBody** | [**GetRecordsRequestBody**](GetRecordsRequestBody.md)|  | [optional] |
 
@@ -586,7 +602,7 @@ No authorization required
 
 <a id="getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost"></a>
 # **getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost**
-> Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, authorization)
+> Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization)
 
 Get and query hierarchical relatives of records
 
@@ -604,7 +620,7 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -613,9 +629,10 @@ public class Example {
     Request request = new Request(); // Request | 
     Integer limit = 100; // Integer | The maximum number of relative records to return.
     Integer offset = 0; // Integer | The offset for paginating through the results.
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, authorization);
+      Object result = apiInstance.getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost");
@@ -638,6 +655,7 @@ public class Example {
 | **request** | [**Request**](Request.md)|  | |
 | **limit** | **Integer**| The maximum number of relative records to return. | [optional] [default to 100] |
 | **offset** | **Integer**| The offset for paginating through the results. | [optional] [default to 0] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -661,7 +679,7 @@ No authorization required
 
 <a id="getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost"></a>
 # **getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost**
-> Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, authorization, getValuesRequestBody)
+> Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody)
 
 Get Values
 
@@ -677,7 +695,7 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -686,10 +704,11 @@ public class Example {
     UUID instanceId = UUID.randomUUID(); // UUID | 
     Integer limit = 50; // Integer | 
     Integer offset = 0; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     GetValuesRequestBody getValuesRequestBody = new GetValuesRequestBody(); // GetValuesRequestBody | 
     try {
-      Object result = apiInstance.getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, authorization, getValuesRequestBody);
+      Object result = apiInstance.getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost");
@@ -712,6 +731,7 @@ public class Example {
 | **instanceId** | **UUID**|  | |
 | **limit** | **Integer**|  | [optional] [default to 50] |
 | **offset** | **Integer**|  | [optional] [default to 0] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 | **getValuesRequestBody** | [**GetValuesRequestBody**](GetValuesRequestBody.md)|  | [optional] |
 
@@ -736,7 +756,7 @@ No authorization required
 
 <a id="updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch"></a>
 # **updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch**
-> Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, authorization)
+> Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, spaceId, authorization)
 
 Update Record
 
@@ -752,7 +772,7 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -760,9 +780,10 @@ public class Example {
     String uid = "uid_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     Object body = null; // Object | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, authorization);
+      Object result = apiInstance.updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch");
@@ -784,6 +805,7 @@ public class Example {
 | **uid** | **String**|  | |
 | **instanceId** | **UUID**|  | |
 | **body** | **Object**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -807,7 +829,7 @@ No authorization required
 
 <a id="upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut"></a>
 # **upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut**
-> Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, authorization)
+> Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization)
 
 Upsert one or more records
 
@@ -825,7 +847,7 @@ import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -833,9 +855,10 @@ public class Example {
     UUID instanceId = UUID.randomUUID(); // UUID | 
     List<String> conflictColumns = Arrays.asList(); // List<String> | A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database.
     Body body = new Body(); // Body | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, authorization);
+      Object result = apiInstance.upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut");
@@ -857,6 +880,7 @@ public class Example {
 | **instanceId** | **UUID**|  | |
 | **conflictColumns** | [**List&lt;String&gt;**](String.md)| A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database. | |
 | **body** | [**Body**](Body.md)|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

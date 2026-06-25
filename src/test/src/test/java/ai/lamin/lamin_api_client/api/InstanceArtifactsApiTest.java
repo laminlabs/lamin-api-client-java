@@ -15,7 +15,6 @@ package ai.lamin.lamin_api_client.api;
 
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.model.CreateArtifactRequestBody;
-import java.io.File;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
@@ -43,8 +42,26 @@ public class InstanceArtifactsApiTest {
     public void createArtifactInstancesInstanceIdArtifactsCreatePostTest() throws ApiException {
         UUID instanceId = null;
         CreateArtifactRequestBody createArtifactRequestBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.createArtifactInstancesInstanceIdArtifactsCreatePost(instanceId, createArtifactRequestBody, authorization);
+        Object response = api.createArtifactInstancesInstanceIdArtifactsCreatePost(instanceId, createArtifactRequestBody, spaceId, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Create Artifact Sql
+     *
+     * Register an Artifact for an existing storage path via direct SQL.  Unlike &#x60;&#x60;/create&#x60;&#x60; (which invokes a lambda running lamindb), this resolves the path&#39;s S3 metadata and inserts the artifact row straight into the instance DB.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostTest() throws ApiException {
+        UUID instanceId = null;
+        CreateArtifactRequestBody createArtifactRequestBody = null;
+        UUID spaceId = null;
+        String authorization = null;
+        Object response = api.createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost(instanceId, createArtifactRequestBody, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -57,8 +74,9 @@ public class InstanceArtifactsApiTest {
     public void getArtifactByPathInstancesInstanceIdArtifactsByPathGetTest() throws ApiException {
         UUID instanceId = null;
         String path = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, authorization);
+        Object response = api.getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -70,10 +88,11 @@ public class InstanceArtifactsApiTest {
     @Test
     public void uploadArtifactInstancesInstanceIdArtifactsUploadPostTest() throws ApiException {
         UUID instanceId = null;
-        File _file = null;
+        String _file = null;
+        UUID spaceId = null;
         String authorization = null;
         String kwargs = null;
-        Object response = api.uploadArtifactInstancesInstanceIdArtifactsUploadPost(instanceId, _file, authorization, kwargs);
+        Object response = api.uploadArtifactInstancesInstanceIdArtifactsUploadPost(instanceId, _file, spaceId, authorization, kwargs);
         // TODO: test validations
     }
 

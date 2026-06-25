@@ -6,6 +6,7 @@ docs/AddCollaboratorRequestBody.md
 docs/AddOrganizationMemberRequestBody.md
 docs/AddSpaceCollaboratorRequestBody.md
 docs/AddTeamMemberRequestBody.md
+docs/ApiKeyExchangeRequest.md
 docs/AttachSpaceToRecordRequestBody.md
 docs/BackwardCompatibleEndpointsApi.md
 docs/BatchDeleteBody.md
@@ -14,8 +15,13 @@ docs/BatchSyncLinksBody.md
 docs/BatchSyncResponse.md
 docs/BatchUpdateBody.md
 docs/Body.md
+docs/BranchesApi.md
 docs/CacheApi.md
+docs/CloudAccessRequest.md
 docs/CreateArtifactRequestBody.md
+docs/CreateOrganizationRequestBody.md
+docs/CreateServiceAccountApiKeyRequestBody.md
+docs/CreateServiceAccountRequestBody.md
 docs/CreateSpaceRequestBody.md
 docs/CreateTeamRequestBody.md
 docs/CreateTransformRequestBody.md
@@ -44,15 +50,19 @@ docs/InstanceStatisticsApi.md
 docs/InstanceTransformsApi.md
 docs/InstancesApi.md
 docs/Measure.md
+docs/MergeBranchRequestBody.md
 docs/NonEmptyTablesResponse.md
+docs/ORGANIZATION.md
 docs/OrderByColumn.md
 docs/OrganizationsApi.md
+docs/QueryScope.md
 docs/RegisterDbServerBody.md
 docs/RegisterFormRequest.md
 docs/Request.md
 docs/Role.md
 docs/Role1.md
 docs/S3PermissionsRequest.md
+docs/ServiceAccountsApi.md
 docs/SpacesApi.md
 docs/StatisticsResponse.md
 docs/StoragesApi.md
@@ -62,6 +72,7 @@ docs/TraversalParams.md
 docs/TraversalParamsValuesInner.md
 docs/UpdateCollaboratorRequestBody.md
 docs/UpdateOrganizationMemberRequestBody.md
+docs/UpdateServiceAccountRequestBody.md
 docs/UpdateSpaceCollaboratorRequestBody.md
 docs/UpdateSpaceRequestBody.md
 docs/UpdateTeamMemberRequestBody.md
@@ -87,6 +98,7 @@ src/main/java/ai/lamin/lamin_api_client/ServerVariable.java
 src/main/java/ai/lamin/lamin_api_client/StringUtil.java
 src/main/java/ai/lamin/lamin_api_client/api/AccountsApi.java
 src/main/java/ai/lamin/lamin_api_client/api/BackwardCompatibleEndpointsApi.java
+src/main/java/ai/lamin/lamin_api_client/api/BranchesApi.java
 src/main/java/ai/lamin/lamin_api_client/api/CacheApi.java
 src/main/java/ai/lamin/lamin_api_client/api/DbServerApi.java
 src/main/java/ai/lamin/lamin_api_client/api/HealthChecksApi.java
@@ -104,6 +116,7 @@ src/main/java/ai/lamin/lamin_api_client/api/InstanceStatisticsApi.java
 src/main/java/ai/lamin/lamin_api_client/api/InstanceTransformsApi.java
 src/main/java/ai/lamin/lamin_api_client/api/InstancesApi.java
 src/main/java/ai/lamin/lamin_api_client/api/OrganizationsApi.java
+src/main/java/ai/lamin/lamin_api_client/api/ServiceAccountsApi.java
 src/main/java/ai/lamin/lamin_api_client/api/SpacesApi.java
 src/main/java/ai/lamin/lamin_api_client/api/StoragesApi.java
 src/main/java/ai/lamin/lamin_api_client/api/TeamsApi.java
@@ -116,6 +129,7 @@ src/main/java/ai/lamin/lamin_api_client/model/AddCollaboratorRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/AddOrganizationMemberRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/AddSpaceCollaboratorRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/AddTeamMemberRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/ApiKeyExchangeRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/AttachSpaceToRecordRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/BatchDeleteBody.java
 src/main/java/ai/lamin/lamin_api_client/model/BatchDeleteResponse.java
@@ -123,7 +137,11 @@ src/main/java/ai/lamin/lamin_api_client/model/BatchSyncLinksBody.java
 src/main/java/ai/lamin/lamin_api_client/model/BatchSyncResponse.java
 src/main/java/ai/lamin/lamin_api_client/model/BatchUpdateBody.java
 src/main/java/ai/lamin/lamin_api_client/model/Body.java
+src/main/java/ai/lamin/lamin_api_client/model/CloudAccessRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateArtifactRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/CreateOrganizationRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/CreateServiceAccountApiKeyRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/CreateServiceAccountRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateSpaceRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateTeamRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/CreateTransformRequestBody.java
@@ -137,8 +155,11 @@ src/main/java/ai/lamin/lamin_api_client/model/GetValuesRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/GroupByRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/HTTPValidationError.java
 src/main/java/ai/lamin/lamin_api_client/model/Measure.java
+src/main/java/ai/lamin/lamin_api_client/model/MergeBranchRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/NonEmptyTablesResponse.java
+src/main/java/ai/lamin/lamin_api_client/model/ORGANIZATION.java
 src/main/java/ai/lamin/lamin_api_client/model/OrderByColumn.java
+src/main/java/ai/lamin/lamin_api_client/model/QueryScope.java
 src/main/java/ai/lamin/lamin_api_client/model/RegisterDbServerBody.java
 src/main/java/ai/lamin/lamin_api_client/model/RegisterFormRequest.java
 src/main/java/ai/lamin/lamin_api_client/model/Request.java
@@ -151,6 +172,7 @@ src/main/java/ai/lamin/lamin_api_client/model/TraversalParams.java
 src/main/java/ai/lamin/lamin_api_client/model/TraversalParamsValuesInner.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateCollaboratorRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateOrganizationMemberRequestBody.java
+src/main/java/ai/lamin/lamin_api_client/model/UpdateServiceAccountRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateSpaceCollaboratorRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateSpaceRequestBody.java
 src/main/java/ai/lamin/lamin_api_client/model/UpdateTeamMemberRequestBody.java
@@ -159,6 +181,7 @@ src/main/java/ai/lamin/lamin_api_client/model/ValidationError.java
 src/main/java/ai/lamin/lamin_api_client/model/ValidationErrorLocInner.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/AccountsApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/BackwardCompatibleEndpointsApiTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/api/BranchesApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/CacheApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/DbServerApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/HealthChecksApiTest.java
@@ -176,6 +199,7 @@ src/test/src/test/java/ai/lamin/lamin_api_client/api/InstanceStatisticsApiTest.j
 src/test/src/test/java/ai/lamin/lamin_api_client/api/InstanceTransformsApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/InstancesApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/OrganizationsApiTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/api/ServiceAccountsApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/SpacesApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/StoragesApiTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/api/TeamsApiTest.java
@@ -183,6 +207,7 @@ src/test/src/test/java/ai/lamin/lamin_api_client/model/AddCollaboratorRequestBod
 src/test/src/test/java/ai/lamin/lamin_api_client/model/AddOrganizationMemberRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/AddSpaceCollaboratorRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/AddTeamMemberRequestBodyTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/ApiKeyExchangeRequestTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/AttachSpaceToRecordRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/BatchDeleteBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/BatchDeleteResponseTest.java
@@ -190,7 +215,11 @@ src/test/src/test/java/ai/lamin/lamin_api_client/model/BatchSyncLinksBodyTest.ja
 src/test/src/test/java/ai/lamin/lamin_api_client/model/BatchSyncResponseTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/BatchUpdateBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/BodyTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/CloudAccessRequestTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/CreateArtifactRequestBodyTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/CreateOrganizationRequestBodyTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/CreateServiceAccountApiKeyRequestBodyTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/CreateServiceAccountRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/CreateSpaceRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/CreateTeamRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/CreateTransformRequestBodyTest.java
@@ -204,8 +233,11 @@ src/test/src/test/java/ai/lamin/lamin_api_client/model/GetValuesRequestBodyTest.
 src/test/src/test/java/ai/lamin/lamin_api_client/model/GroupByRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/HTTPValidationErrorTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/MeasureTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/MergeBranchRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/NonEmptyTablesResponseTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/ORGANIZATIONTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/OrderByColumnTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/QueryScopeTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/RegisterDbServerBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/RegisterFormRequestTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/RequestTest.java
@@ -218,6 +250,7 @@ src/test/src/test/java/ai/lamin/lamin_api_client/model/TraversalParamsTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/TraversalParamsValuesInnerTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/UpdateCollaboratorRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/UpdateOrganizationMemberRequestBodyTest.java
+src/test/src/test/java/ai/lamin/lamin_api_client/model/UpdateServiceAccountRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/UpdateSpaceCollaboratorRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/UpdateSpaceRequestBodyTest.java
 src/test/src/test/java/ai/lamin/lamin_api_client/model/UpdateTeamMemberRequestBodyTest.java

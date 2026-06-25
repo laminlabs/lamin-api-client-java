@@ -3,8 +3,44 @@ info:
   title: FastAPI
   version: 0.1.0
 servers:
-- url: https://staging.laminhub.com/api
+- url: /api
 paths:
+  /organizations:
+    put:
+      operationId: create_organization_organizations_put
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateOrganizationRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Organization
+      tags:
+      - Organizations
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /organizations/{organization_id}:
     get:
       description: |-
@@ -313,6 +349,487 @@ paths:
       - Accounts
       x-accepts:
       - application/json
+  /account/jwt:
+    post:
+      operationId: get_central_jwt_account_jwt_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiKeyExchangeRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Central Jwt
+      tags:
+      - Accounts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /service-accounts:
+    put:
+      description: |-
+        Create a service account under an organization.
+
+        Parameters:
+        - **body**: Request body containing service account details
+          - **handle**: Unique handle for the service account
+          - **organization_id**: UUID of the owning organization (caller must be admin/manager)
+          - **name**: Optional display name
+
+        Returns:
+        - **201**: Service account created successfully
+      operationId: create_service_account_service_accounts_put
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateServiceAccountRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Service Account
+      tags:
+      - Service Accounts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /service-accounts/organizations/{organization_id}:
+    get:
+      description: |-
+        List all service accounts for an organization.
+
+        Parameters:
+        - **organization_id**: UUID of the organization
+
+        Returns:
+        - **200**: List of service accounts retrieved successfully
+      operationId: list_service_accounts_by_organization_service_accounts_organizations__organization_id__get
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Service Accounts By Organization
+      tags:
+      - Service Accounts
+      x-accepts:
+      - application/json
+  /service-accounts/{organization_id}/{handle}:
+    delete:
+      description: |-
+        Delete a service account.
+
+        Parameters:
+        - **organization_id**: UUID of the owning organization
+        - **handle**: Handle of the service account
+
+        Returns:
+        - **200**: Service account deleted successfully
+        - **404**: Service account not found
+      operationId: delete_service_account_service_accounts__organization_id___handle__delete
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: handle
+        required: true
+        schema:
+          title: Handle
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Delete Service Account
+      tags:
+      - Service Accounts
+      x-accepts:
+      - application/json
+    get:
+      description: |-
+        Get details of a specific service account by organization and handle.
+
+        Parameters:
+        - **organization_id**: UUID of the owning organization
+        - **handle**: Handle of the service account
+
+        Returns:
+        - **200**: Service account details retrieved successfully
+        - **404**: Service account not found
+      operationId: get_service_account_service_accounts__organization_id___handle__get
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: handle
+        required: true
+        schema:
+          title: Handle
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Service Account
+      tags:
+      - Service Accounts
+      x-accepts:
+      - application/json
+    patch:
+      description: |-
+        Update a service account's details.
+
+        Parameters:
+        - **organization_id**: UUID of the owning organization
+        - **handle**: Handle of the service account
+        - **body**: Request body containing updated details
+          - **name**: Optional new display name
+
+        Returns:
+        - **200**: Service account updated successfully
+        - **404**: Service account not found
+      operationId: update_service_account_service_accounts__organization_id___handle__patch
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: handle
+        required: true
+        schema:
+          title: Handle
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateServiceAccountRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Update Service Account
+      tags:
+      - Service Accounts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /service-accounts/{organization_id}/{handle}/api-keys:
+    get:
+      description: |-
+        List API key metadata for a service account.
+
+        Parameters:
+        - **organization_id**: UUID of the owning organization
+        - **handle**: Handle of the service account
+
+        Returns:
+        - **200**: API key list retrieved successfully
+      operationId: list_service_account_api_keys_service_accounts__organization_id___handle__api_keys_get
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: handle
+        required: true
+        schema:
+          title: Handle
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: List Service Account Api Keys
+      tags:
+      - Service Accounts
+      x-accepts:
+      - application/json
+    post:
+      description: |-
+        Create an API key for a service account.
+
+        The plaintext key is returned once only — store it immediately.
+
+        Parameters:
+        - **organization_id**: UUID of the owning organization
+        - **handle**: Handle of the service account
+        - **body**: Request body
+          - **expires_at**: Expiry datetime for the API key
+          - **description**: Optional description
+
+        Returns:
+        - **201**: API key created successfully
+      operationId: create_service_account_api_key_service_accounts__organization_id___handle__api_keys_post
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: handle
+        required: true
+        schema:
+          title: Handle
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateServiceAccountApiKeyRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Service Account Api Key
+      tags:
+      - Service Accounts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /service-accounts/{organization_id}/{handle}/api-keys/{api_key_id}:
+    delete:
+      description: |-
+        Revoke an API key for a service account.
+
+        Parameters:
+        - **organization_id**: UUID of the owning organization
+        - **handle**: Handle of the service account
+        - **api_key_id**: ID of the API key to revoke
+
+        Returns:
+        - **200**: API key revoked successfully
+        - **404**: API key not found
+      operationId: delete_service_account_api_key_service_accounts__organization_id___handle__api_keys__api_key_id__delete
+      parameters:
+      - explode: false
+        in: path
+        name: organization_id
+        required: true
+        schema:
+          format: uuid
+          title: Organization Id
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: handle
+        required: true
+        schema:
+          title: Handle
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: api_key_id
+        required: true
+        schema:
+          title: Api Key Id
+          type: integer
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Delete Service Account Api Key
+      tags:
+      - Service Accounts
+      x-accepts:
+      - application/json
   /spaces:
     put:
       description: |-
@@ -528,6 +1045,15 @@ paths:
         Requires admin access to the instance
       operationId: move_record_to_space_spaces__space_id__record_attachments_put
       parameters:
+      - explode: false
+        in: path
+        name: space_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
       - explode: true
         in: query
         name: instance_db_space_id
@@ -598,7 +1124,7 @@ paths:
         required: true
         schema:
           format: uuid
-          title: Space Id
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -655,7 +1181,7 @@ paths:
         required: true
         schema:
           format: uuid
-          title: Space Id
+          nullable: true
           type: string
         style: simple
       - explode: false
@@ -759,6 +1285,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -964,6 +1499,9 @@ paths:
           - **account_id**: UUID of the account to add (mutually exclusive with team_id)
           - **team_id**: UUID of the team to add (mutually exclusive with account_id)
           - **role**: Role of the collaborator
+          - **add_guest_if_missing**: If true for an account collaborator,
+            add the account to the space organization as a guest first when it is
+            not already an organization member
 
         Returns:
         - **201**: Collaborator added to space successfully
@@ -1055,6 +1593,60 @@ paths:
       summary: List Organization Spaces
       tags:
       - Spaces
+      x-accepts:
+      - application/json
+  /instances/{instance_id}/branches/merge:
+    post:
+      operationId: merge_branch_instances__instance_id__branches_merge_post
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MergeBranchRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Merge Branch
+      tags:
+      - Branches
+      x-content-type: application/json
       x-accepts:
       - application/json
   /teams:
@@ -1583,6 +2175,15 @@ paths:
           nullable: true
           type: string
         style: form
+      - explode: true
+        in: query
+        name: public
+        required: false
+        schema:
+          default: false
+          title: Public
+          type: boolean
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1636,6 +2237,15 @@ paths:
           title: Instance Name
           type: string
         style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1682,6 +2292,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1720,6 +2339,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1741,6 +2369,51 @@ paths:
                 $ref: '#/components/schemas/HTTPValidationError'
           description: Validation Error
       summary: Migrate Instance
+      tags:
+      - Instances
+      x-accepts:
+      - application/json
+  /instances/{owner}/{name}/settings:
+    get:
+      operationId: get_instance_settings_instances__owner___name__settings_get
+      parameters:
+      - explode: false
+        in: path
+        name: owner
+        required: true
+        schema:
+          title: Owner
+          type: string
+        style: simple
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          title: Name
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Instance Settings
       tags:
       - Instances
       x-accepts:
@@ -1770,6 +2443,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1808,6 +2490,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1862,6 +2553,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1931,6 +2631,15 @@ paths:
           nullable: true
           type: string
         style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -1978,6 +2687,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2030,6 +2748,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2072,6 +2799,9 @@ paths:
           - **account_id**: UUID of the account to add (mutually exclusive with team_id)
           - **team_id**: UUID of the team to add (mutually exclusive with account_id)
           - **role**: Role of the collaborator
+          - **add_guest_if_missing**: If true for an account collaborator,
+            add the account to the instance organization as a guest first when it is
+            not already an organization member
 
         Returns:
         - **201**: Collaborator added successfully
@@ -2090,6 +2820,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2141,6 +2880,15 @@ paths:
         required: true
         schema:
           title: Search Term
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2201,6 +2949,15 @@ paths:
           title: Path
           type: string
         style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2248,6 +3005,15 @@ paths:
           - artifacts
           - transforms
           title: Entity Type
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2304,6 +3070,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2363,18 +3138,27 @@ paths:
         style: simple
       - description: "A list of models in \"${module}.${model}\" format (case-sensitive).\
           \ If omitted, statistics for all primary tables are returned."
-        example:
-        - core.ULabel
         explode: true
         in: query
         name: q
         required: false
         schema:
+          description: "A list of models in \"${module}.${model}\" format (case-sensitive).\
+            \ If omitted, statistics for all primary tables are returned."
           items:
             nullable: true
             type: string
-          nullable: true
           type: array
+          nullable: true
+        style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
         style: form
       - explode: false
         in: header
@@ -2448,6 +3232,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2530,6 +3323,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2579,6 +3381,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2624,6 +3435,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2669,6 +3489,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2714,6 +3543,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2759,6 +3597,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2791,6 +3638,65 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /instances/{instance_id}/artifacts/create-sql:
+    post:
+      description: |-
+        Register an Artifact for an existing storage path via direct SQL.
+
+        Unlike ``/create`` (which invokes a lambda running lamindb), this resolves the
+        path's S3 metadata and inserts the artifact row straight into the instance DB.
+      operationId: create_artifact_sql_instances__instance_id__artifacts_create_sql_post
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateArtifactRequestBody'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Create Artifact Sql
+      tags:
+      - Instance Artifacts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /instances/{instance_id}/artifacts/by-path:
     get:
       operationId: get_artifact_by_path_instances__instance_id__artifacts_by_path_get
@@ -2810,6 +3716,15 @@ paths:
         required: true
         schema:
           title: Path
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
           type: string
         style: form
       - explode: false
@@ -2894,6 +3809,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -2975,6 +3899,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3048,6 +3981,15 @@ paths:
           default: 0
           title: Offset
           type: integer
+        style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
         style: form
       - explode: false
         in: header
@@ -3128,6 +4070,7 @@ paths:
         schema:
           default: 100
           description: The maximum number of relative records to return.
+          maximum: 200
           title: Limit
           type: integer
         style: form
@@ -3142,6 +4085,15 @@ paths:
           minimum: 0
           title: Offset
           type: integer
+        style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
         style: form
       - explode: false
         in: header
@@ -3240,6 +4192,15 @@ paths:
           title: Include Foreign Keys
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3299,6 +4260,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3385,6 +4355,15 @@ paths:
           title: Offset
           type: integer
         style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3463,6 +4442,15 @@ paths:
             type: string
           type: array
         style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3533,6 +4521,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3600,6 +4597,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3662,6 +4668,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3716,6 +4731,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3802,6 +4826,15 @@ paths:
           title: Include Foreign Keys
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3870,6 +4903,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -3931,6 +4973,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -4022,6 +5073,79 @@ paths:
       tags:
       - Storages
       x-content-type: application/json
+      x-accepts:
+      - application/json
+  /storages/credentials:
+    post:
+      operationId: get_cloud_access_storages_credentials_post
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CloudAccessRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get Cloud Access
+      tags:
+      - Storages
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /storages/s3/{full_path}:
+    get:
+      operationId: get_s3_file_storages_s3__full_path__get
+      parameters:
+      - explode: false
+        in: path
+        name: full_path
+        required: true
+        schema:
+          title: Full Path
+          type: string
+        style: simple
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+          description: Validation Error
+      summary: Get S3 File
+      tags:
+      - Storages
       x-accepts:
       - application/json
   /db/server/register:
@@ -4124,6 +5248,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -4161,6 +5294,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -4199,6 +5341,15 @@ paths:
           nullable: true
           type: string
         style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
       - explode: false
         in: header
         name: Authorization
@@ -4228,6 +5379,7 @@ components:
   schemas:
     AddCollaboratorRequestBody:
       example:
+        add_guest_if_missing: false
         account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         role: read
         team_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -4248,23 +5400,21 @@ components:
           - write
           title: Role
           type: string
+        add_guest_if_missing:
+          default: false
+          title: Add Guest If Missing
+          type: boolean
       title: AddCollaboratorRequestBody
     AddOrganizationMemberRequestBody:
       example:
-        role: member
+        role: admin
       properties:
         role:
-          default: member
-          enum:
-          - admin
-          - manager
-          - member
-          - guest
-          title: Role
-          type: string
+          $ref: '#/components/schemas/ORGANIZATION'
       title: AddOrganizationMemberRequestBody
     AddSpaceCollaboratorRequestBody:
       example:
+        add_guest_if_missing: false
         account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
         role: read
         team_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -4285,6 +5435,10 @@ components:
           - write
           title: Role
           type: string
+        add_guest_if_missing:
+          default: false
+          title: Add Guest If Missing
+          type: boolean
       title: AddSpaceCollaboratorRequestBody
     AddTeamMemberRequestBody:
       example:
@@ -4293,6 +5447,16 @@ components:
         role:
           $ref: '#/components/schemas/Role'
       title: AddTeamMemberRequestBody
+    ApiKeyExchangeRequest:
+      example:
+        api_key: api_key
+      properties:
+        api_key:
+          title: Api Key
+          type: string
+      required:
+      - api_key
+      title: ApiKeyExchangeRequest
     AttachSpaceToRecordRequestBody:
       example:
         record_id: 0
@@ -4435,7 +5599,6 @@ components:
     Body_upload_artifact_instances__instance_id__artifacts_upload_post:
       properties:
         file:
-          format: binary
           title: File
           type: string
         kwargs:
@@ -4444,6 +5607,27 @@ components:
       required:
       - file
       title: Body_upload_artifact_instances__instance_id__artifacts_upload_post
+    CloudAccessRequest:
+      example:
+        duration_seconds: 4287
+        path: path
+        role_arn: role_arn
+      properties:
+        role_arn:
+          title: Role Arn
+          type: string
+        path:
+          title: Path
+          type: string
+        duration_seconds:
+          maximum: 43200.0
+          minimum: 900.0
+          nullable: true
+          type: integer
+      required:
+      - path
+      - role_arn
+      title: CloudAccessRequest
     CreateArtifactRequestBody:
       example:
         path: path
@@ -4460,6 +5644,49 @@ components:
       required:
       - path
       title: CreateArtifactRequestBody
+    CreateOrganizationRequestBody:
+      example:
+        handle: handle
+      properties:
+        handle:
+          title: Handle
+          type: string
+      required:
+      - handle
+      title: CreateOrganizationRequestBody
+    CreateServiceAccountApiKeyRequestBody:
+      example:
+        expires_at: 2000-01-23T04:56:07.000+00:00
+        description: description
+      properties:
+        expires_at:
+          format: date-time
+          nullable: true
+          type: string
+        description:
+          nullable: true
+          type: string
+      title: CreateServiceAccountApiKeyRequestBody
+    CreateServiceAccountRequestBody:
+      example:
+        organization_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+        name: name
+        handle: handle
+      properties:
+        handle:
+          title: Handle
+          type: string
+        organization_id:
+          format: uuid
+          title: Organization Id
+          type: string
+        name:
+          nullable: true
+          type: string
+      required:
+      - handle
+      - organization_id
+      title: CreateServiceAccountRequestBody
     CreateSpaceRequestBody:
       example:
         organization_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -4591,12 +5818,21 @@ components:
         select:
         - select
         - select
+        scope:
+          space_ids:
+          - 6
+          - 6
+          branch_ids:
+          - 0
+          - 0
       properties:
         select:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/QueryScope'
       title: GetRecordRequestBody
     GetRecordsRequestBody:
       example:
@@ -4609,6 +5845,13 @@ components:
         select:
         - select
         - select
+        scope:
+          space_ids:
+          - 6
+          - 6
+          branch_ids:
+          - 0
+          - 0
         order_by:
         - field: field
           descending: false
@@ -4618,16 +5861,16 @@ components:
         select:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
         filter:
           additionalProperties: {}
           nullable: true
         order_by:
           items:
             $ref: '#/components/schemas/OrderByColumn'
-          nullable: true
           type: array
+          nullable: true
         search:
           default: ""
           title: Search
@@ -4635,8 +5878,10 @@ components:
         search_in:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/QueryScope'
       title: GetRecordsRequestBody
     GetValuesRequestBody:
       example:
@@ -4646,6 +5891,13 @@ components:
         - search_in
         - search_in
         search: ""
+        scope:
+          space_ids:
+          - 6
+          - 6
+          branch_ids:
+          - 0
+          - 0
         order_by:
         - field: field
           descending: false
@@ -4658,8 +5910,8 @@ components:
         order_by:
           items:
             $ref: '#/components/schemas/OrderByColumn'
-          nullable: true
           type: array
+          nullable: true
         search:
           default: ""
           title: Search
@@ -4667,8 +5919,10 @@ components:
         search_in:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/QueryScope'
       title: GetValuesRequestBody
     GroupByRequestBody:
       example:
@@ -4681,6 +5935,13 @@ components:
         - agg_func: count
           alias: alias
           field_name: field_name
+        scope:
+          space_ids:
+          - 6
+          - 6
+          branch_ids:
+          - 0
+          - 0
         dimensions:
         - func: count
           field_name: field_name
@@ -4698,6 +5959,8 @@ components:
         filter:
           additionalProperties: {}
           nullable: true
+        scope:
+          $ref: '#/components/schemas/QueryScope'
       required:
       - dimensions
       - measures
@@ -4709,11 +5972,15 @@ components:
           loc:
           - ValidationError_loc_inner
           - ValidationError_loc_inner
+          input: ""
+          ctx: "{}"
           type: type
         - msg: msg
           loc:
           - ValidationError_loc_inner
           - ValidationError_loc_inner
+          input: ""
+          ctx: "{}"
           type: type
       properties:
         detail:
@@ -4746,6 +6013,21 @@ components:
       - agg_func
       - field_name
       title: Measure
+    MergeBranchRequestBody:
+      example:
+        target_branch_name: target_branch_name
+        source_branch_name: source_branch_name
+      properties:
+        target_branch_name:
+          title: Target Branch Name
+          type: string
+        source_branch_name:
+          title: Source Branch Name
+          type: string
+      required:
+      - source_branch_name
+      - target_branch_name
+      title: MergeBranchRequestBody
     NonEmptyTablesResponse:
       example:
         non_empty_tables:
@@ -4763,6 +6045,13 @@ components:
       required:
       - non_empty_tables
       title: NonEmptyTablesResponse
+    ORGANIZATION:
+      enum:
+      - admin
+      - manager
+      - member
+      - guest
+      type: string
     OrderByColumn:
       example:
         field: field
@@ -4778,6 +6067,25 @@ components:
       required:
       - field
       title: OrderByColumn
+    QueryScope:
+      additionalProperties: {}
+      example:
+        space_ids:
+        - 6
+        - 6
+        branch_ids:
+        - 0
+        - 0
+      properties:
+        branch_ids:
+          items: {}
+          title: Branch Ids
+          nullable: true
+        space_ids:
+          items: {}
+          title: Space Ids
+          nullable: true
+      title: QueryScope
     RegisterDbServerBody:
       example:
         organization_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -4836,6 +6144,13 @@ components:
         select:
         - select
         - select
+        scope:
+          space_ids:
+          - 6
+          - 6
+          branch_ids:
+          - 0
+          - 0
         order_by:
         - field: field
           descending: false
@@ -4852,16 +6167,16 @@ components:
         select:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
         filter:
           additionalProperties: {}
           nullable: true
         order_by:
           items:
             $ref: '#/components/schemas/OrderByColumn'
-          nullable: true
           type: array
+          nullable: true
         search:
           default: ""
           title: Search
@@ -4869,8 +6184,10 @@ components:
         search_in:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
+        scope:
+          $ref: '#/components/schemas/QueryScope'
         relatives:
           $ref: '#/components/schemas/TraversalParams'
       required:
@@ -5019,16 +6336,18 @@ components:
         role: admin
       properties:
         role:
-          enum:
-          - admin
-          - manager
-          - member
-          - guest
-          title: Role
-          type: string
+          $ref: '#/components/schemas/ORGANIZATION'
       required:
       - role
       title: UpdateOrganizationMemberRequestBody
+    UpdateServiceAccountRequestBody:
+      example:
+        name: name
+      properties:
+        name:
+          nullable: true
+          type: string
+      title: UpdateServiceAccountRequestBody
     UpdateSpaceCollaboratorRequestBody:
       example:
         account_id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
@@ -5090,6 +6409,8 @@ components:
         loc:
         - ValidationError_loc_inner
         - ValidationError_loc_inner
+        input: ""
+        ctx: "{}"
         type: type
       properties:
         loc:
@@ -5102,6 +6423,10 @@ components:
         type:
           title: Error Type
           type: string
+        input: {}
+        ctx:
+          title: Context
+          type: object
       required:
       - loc
       - msg
@@ -5124,12 +6449,7 @@ components:
         - admin
         - member
         type: string
-      - enum:
-        - admin
-        - manager
-        - member
-        - guest
-        type: string
+      - $ref: '#/components/schemas/ORGANIZATION'
       default: member
       title: Role
     TraversalParams_values_inner:
@@ -5143,12 +6463,7 @@ components:
         - admin
         - member
         type: string
-      - enum:
-        - admin
-        - manager
-        - member
-        - guest
-        type: string
+      - $ref: '#/components/schemas/ORGANIZATION'
       title: Role
     ValidationError_loc_inner:
       anyOf:

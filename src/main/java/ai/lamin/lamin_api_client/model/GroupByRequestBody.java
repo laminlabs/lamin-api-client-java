@@ -16,6 +16,7 @@ package ai.lamin.lamin_api_client.model;
 import java.util.Objects;
 import ai.lamin.lamin_api_client.model.Dimension;
 import ai.lamin.lamin_api_client.model.Measure;
+import ai.lamin.lamin_api_client.model.QueryScope;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -55,7 +56,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GroupByRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class GroupByRequestBody {
   public static final String SERIALIZED_NAME_DIMENSIONS = "dimensions";
   @SerializedName(SERIALIZED_NAME_DIMENSIONS)
@@ -71,6 +72,11 @@ public class GroupByRequestBody {
   @SerializedName(SERIALIZED_NAME_FILTER)
   @javax.annotation.Nullable
   private Map<String, Object> filter;
+
+  public static final String SERIALIZED_NAME_SCOPE = "scope";
+  @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nullable
+  private QueryScope scope;
 
   public GroupByRequestBody() {
   }
@@ -156,6 +162,25 @@ public class GroupByRequestBody {
   }
 
 
+  public GroupByRequestBody scope(@javax.annotation.Nullable QueryScope scope) {
+    this.scope = scope;
+    return this;
+  }
+
+  /**
+   * Get scope
+   * @return scope
+   */
+  @javax.annotation.Nullable
+  public QueryScope getScope() {
+    return scope;
+  }
+
+  public void setScope(@javax.annotation.Nullable QueryScope scope) {
+    this.scope = scope;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -168,7 +193,8 @@ public class GroupByRequestBody {
     GroupByRequestBody groupByRequestBody = (GroupByRequestBody) o;
     return Objects.equals(this.dimensions, groupByRequestBody.dimensions) &&
         Objects.equals(this.measures, groupByRequestBody.measures) &&
-        Objects.equals(this.filter, groupByRequestBody.filter);
+        Objects.equals(this.filter, groupByRequestBody.filter) &&
+        Objects.equals(this.scope, groupByRequestBody.scope);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -177,7 +203,7 @@ public class GroupByRequestBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dimensions, measures, filter);
+    return Objects.hash(dimensions, measures, filter, scope);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -194,6 +220,7 @@ public class GroupByRequestBody {
     sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
     sb.append("    measures: ").append(toIndentedString(measures)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -219,6 +246,7 @@ public class GroupByRequestBody {
     openapiFields.add("dimensions");
     openapiFields.add("measures");
     openapiFields.add("filter");
+    openapiFields.add("scope");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

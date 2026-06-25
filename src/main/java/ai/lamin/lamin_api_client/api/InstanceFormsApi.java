@@ -78,6 +78,7 @@ public class InstanceFormsApi {
      * Build call for registerFormInstancesInstanceIdFormsPost
      * @param instanceId  (required)
      * @param registerFormRequest  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +91,7 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerFormInstancesInstanceIdFormsPostCall(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call registerFormInstancesInstanceIdFormsPostCall(UUID instanceId, RegisterFormRequest registerFormRequest, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -115,6 +116,10 @@ public class InstanceFormsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -142,7 +147,7 @@ public class InstanceFormsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call registerFormInstancesInstanceIdFormsPostValidateBeforeCall(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call registerFormInstancesInstanceIdFormsPostValidateBeforeCall(UUID instanceId, RegisterFormRequest registerFormRequest, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling registerFormInstancesInstanceIdFormsPost(Async)");
@@ -153,7 +158,7 @@ public class InstanceFormsApi {
             throw new ApiException("Missing the required parameter 'registerFormRequest' when calling registerFormInstancesInstanceIdFormsPost(Async)");
         }
 
-        return registerFormInstancesInstanceIdFormsPostCall(instanceId, registerFormRequest, authorization, _callback);
+        return registerFormInstancesInstanceIdFormsPostCall(instanceId, registerFormRequest, spaceId, authorization, _callback);
 
     }
 
@@ -162,6 +167,7 @@ public class InstanceFormsApi {
      * Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **200**: Form registered successfully
      * @param instanceId  (required)
      * @param registerFormRequest  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -173,8 +179,8 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object registerFormInstancesInstanceIdFormsPost(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = registerFormInstancesInstanceIdFormsPostWithHttpInfo(instanceId, registerFormRequest, authorization);
+    public Object registerFormInstancesInstanceIdFormsPost(UUID instanceId, RegisterFormRequest registerFormRequest, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = registerFormInstancesInstanceIdFormsPostWithHttpInfo(instanceId, registerFormRequest, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -183,6 +189,7 @@ public class InstanceFormsApi {
      * Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **200**: Form registered successfully
      * @param instanceId  (required)
      * @param registerFormRequest  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -194,8 +201,8 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> registerFormInstancesInstanceIdFormsPostWithHttpInfo(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, authorization, null);
+    public ApiResponse<Object> registerFormInstancesInstanceIdFormsPostWithHttpInfo(UUID instanceId, RegisterFormRequest registerFormRequest, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,6 +212,7 @@ public class InstanceFormsApi {
      * Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **200**: Form registered successfully
      * @param instanceId  (required)
      * @param registerFormRequest  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -217,9 +225,9 @@ public class InstanceFormsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call registerFormInstancesInstanceIdFormsPostAsync(UUID instanceId, RegisterFormRequest registerFormRequest, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call registerFormInstancesInstanceIdFormsPostAsync(UUID instanceId, RegisterFormRequest registerFormRequest, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, authorization, _callback);
+        okhttp3.Call localVarCall = registerFormInstancesInstanceIdFormsPostValidateBeforeCall(instanceId, registerFormRequest, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

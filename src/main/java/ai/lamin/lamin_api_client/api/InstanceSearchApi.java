@@ -77,6 +77,7 @@ public class InstanceSearchApi {
      * Build call for globalSearchInstancesInstanceIdSearchGet
      * @param instanceId  (required)
      * @param searchTerm  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -89,7 +90,7 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetCall(UUID instanceId, String searchTerm, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetCall(UUID instanceId, String searchTerm, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -119,6 +120,10 @@ public class InstanceSearchApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("search_term", searchTerm));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -144,7 +149,7 @@ public class InstanceSearchApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(UUID instanceId, String searchTerm, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(UUID instanceId, String searchTerm, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling globalSearchInstancesInstanceIdSearchGet(Async)");
@@ -155,7 +160,7 @@ public class InstanceSearchApi {
             throw new ApiException("Missing the required parameter 'searchTerm' when calling globalSearchInstancesInstanceIdSearchGet(Async)");
         }
 
-        return globalSearchInstancesInstanceIdSearchGetCall(instanceId, searchTerm, authorization, _callback);
+        return globalSearchInstancesInstanceIdSearchGetCall(instanceId, searchTerm, spaceId, authorization, _callback);
 
     }
 
@@ -164,6 +169,7 @@ public class InstanceSearchApi {
      * 
      * @param instanceId  (required)
      * @param searchTerm  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -175,8 +181,8 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object globalSearchInstancesInstanceIdSearchGet(UUID instanceId, String searchTerm, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = globalSearchInstancesInstanceIdSearchGetWithHttpInfo(instanceId, searchTerm, authorization);
+    public Object globalSearchInstancesInstanceIdSearchGet(UUID instanceId, String searchTerm, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = globalSearchInstancesInstanceIdSearchGetWithHttpInfo(instanceId, searchTerm, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -185,6 +191,7 @@ public class InstanceSearchApi {
      * 
      * @param instanceId  (required)
      * @param searchTerm  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -196,8 +203,8 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> globalSearchInstancesInstanceIdSearchGetWithHttpInfo(UUID instanceId, String searchTerm, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(instanceId, searchTerm, authorization, null);
+    public ApiResponse<Object> globalSearchInstancesInstanceIdSearchGetWithHttpInfo(UUID instanceId, String searchTerm, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(instanceId, searchTerm, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -207,6 +214,7 @@ public class InstanceSearchApi {
      * 
      * @param instanceId  (required)
      * @param searchTerm  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -219,9 +227,9 @@ public class InstanceSearchApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetAsync(UUID instanceId, String searchTerm, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call globalSearchInstancesInstanceIdSearchGetAsync(UUID instanceId, String searchTerm, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(instanceId, searchTerm, authorization, _callback);
+        okhttp3.Call localVarCall = globalSearchInstancesInstanceIdSearchGetValidateBeforeCall(instanceId, searchTerm, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

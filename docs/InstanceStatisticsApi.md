@@ -1,6 +1,6 @@
 # InstanceStatisticsApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -12,7 +12,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="getInstanceStatisticsInstancesInstanceIdStatisticsGet"></a>
 # **getInstanceStatisticsInstancesInstanceIdStatisticsGet**
-> StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, authorization)
+> StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, spaceId, authorization)
 
 Get Approximate Table Row Counts and Artifact Size
 
@@ -30,14 +30,15 @@ import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
     List<String> q = Arrays.asList(); // List<String> | A list of models in \"${module}.${model}\" format (case-sensitive). If omitted, statistics for all primary tables are returned.
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      StatisticsResponse result = apiInstance.getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, authorization);
+      StatisticsResponse result = apiInstance.getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#getInstanceStatisticsInstancesInstanceIdStatisticsGet");
@@ -56,6 +57,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
 | **q** | [**List&lt;String&gt;**](String.md)| A list of models in \&quot;${module}.${model}\&quot; format (case-sensitive). If omitted, statistics for all primary tables are returned. | [optional] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -82,7 +84,7 @@ No authorization required
 
 <a id="getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet"></a>
 # **getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet**
-> NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, authorization)
+> NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, spaceId, authorization)
 
 List Non-Empty Data Tables by Module
 
@@ -100,13 +102,14 @@ import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      NonEmptyTablesResponse result = apiInstance.getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, authorization);
+      NonEmptyTablesResponse result = apiInstance.getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet");
@@ -124,6 +127,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -150,7 +154,7 @@ No authorization required
 
 <a id="getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet"></a>
 # **getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet**
-> Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, authorization)
+> Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, spaceId, authorization)
 
 Get Relation Counts
 
@@ -166,16 +170,17 @@ import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     Integer id = 56; // Integer | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, authorization);
+      Object result = apiInstance.getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet");
@@ -196,6 +201,7 @@ public class Example {
 | **modelName** | **String**|  | |
 | **id** | **Integer**|  | |
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -219,7 +225,7 @@ No authorization required
 
 <a id="groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost"></a>
 # **groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost**
-> Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, authorization)
+> Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization)
 
 Group By
 
@@ -235,16 +241,17 @@ import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     GroupByRequestBody groupByRequestBody = new GroupByRequestBody(); // GroupByRequestBody | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, authorization);
+      Object result = apiInstance.groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost");
@@ -265,6 +272,7 @@ public class Example {
 | **modelName** | **String**|  | |
 | **instanceId** | **UUID**|  | |
 | **groupByRequestBody** | [**GroupByRequestBody**](GroupByRequestBody.md)|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

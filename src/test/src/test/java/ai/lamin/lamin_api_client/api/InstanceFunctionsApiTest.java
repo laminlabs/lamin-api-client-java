@@ -42,8 +42,9 @@ public class InstanceFunctionsApiTest {
     public void executeFunctionInstancesInstanceIdFunctionExecutePostTest() throws ApiException {
         UUID instanceId = null;
         ExecuteFunctionRequestBody executeFunctionRequestBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, authorization);
+        Object response = api.executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, spaceId, authorization);
         // TODO: test validations
     }
 

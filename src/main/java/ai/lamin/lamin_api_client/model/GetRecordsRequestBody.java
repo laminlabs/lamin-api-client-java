@@ -15,6 +15,7 @@ package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
 import ai.lamin.lamin_api_client.model.OrderByColumn;
+import ai.lamin.lamin_api_client.model.QueryScope;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -54,12 +55,12 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetRecordsRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class GetRecordsRequestBody {
   public static final String SERIALIZED_NAME_SELECT = "select";
   @SerializedName(SERIALIZED_NAME_SELECT)
   @javax.annotation.Nullable
-  private List<String> select;
+  private List<String> select = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -69,7 +70,7 @@ public class GetRecordsRequestBody {
   public static final String SERIALIZED_NAME_ORDER_BY = "order_by";
   @SerializedName(SERIALIZED_NAME_ORDER_BY)
   @javax.annotation.Nullable
-  private List<OrderByColumn> orderBy;
+  private List<OrderByColumn> orderBy = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEARCH = "search";
   @SerializedName(SERIALIZED_NAME_SEARCH)
@@ -79,7 +80,12 @@ public class GetRecordsRequestBody {
   public static final String SERIALIZED_NAME_SEARCH_IN = "search_in";
   @SerializedName(SERIALIZED_NAME_SEARCH_IN)
   @javax.annotation.Nullable
-  private List<String> searchIn;
+  private List<String> searchIn = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SCOPE = "scope";
+  @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nullable
+  private QueryScope scope;
 
   public GetRecordsRequestBody() {
   }
@@ -211,6 +217,25 @@ public class GetRecordsRequestBody {
   }
 
 
+  public GetRecordsRequestBody scope(@javax.annotation.Nullable QueryScope scope) {
+    this.scope = scope;
+    return this;
+  }
+
+  /**
+   * Get scope
+   * @return scope
+   */
+  @javax.annotation.Nullable
+  public QueryScope getScope() {
+    return scope;
+  }
+
+  public void setScope(@javax.annotation.Nullable QueryScope scope) {
+    this.scope = scope;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -225,7 +250,8 @@ public class GetRecordsRequestBody {
         Objects.equals(this.filter, getRecordsRequestBody.filter) &&
         Objects.equals(this.orderBy, getRecordsRequestBody.orderBy) &&
         Objects.equals(this.search, getRecordsRequestBody.search) &&
-        Objects.equals(this.searchIn, getRecordsRequestBody.searchIn);
+        Objects.equals(this.searchIn, getRecordsRequestBody.searchIn) &&
+        Objects.equals(this.scope, getRecordsRequestBody.scope);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -234,7 +260,7 @@ public class GetRecordsRequestBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(select, filter, orderBy, search, searchIn);
+    return Objects.hash(select, filter, orderBy, search, searchIn, scope);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -253,6 +279,7 @@ public class GetRecordsRequestBody {
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    search: ").append(toIndentedString(search)).append("\n");
     sb.append("    searchIn: ").append(toIndentedString(searchIn)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -280,6 +307,7 @@ public class GetRecordsRequestBody {
     openapiFields.add("order_by");
     openapiFields.add("search");
     openapiFields.add("search_in");
+    openapiFields.add("scope");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

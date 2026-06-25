@@ -42,8 +42,9 @@ public class InstanceSchemaApiTest {
         String moduleName = null;
         String modelName = null;
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, authorization);
+        Object response = api.getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -55,8 +56,9 @@ public class InstanceSchemaApiTest {
     @Test
     public void getSchemaInstancesInstanceIdSchemaGetTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getSchemaInstancesInstanceIdSchemaGet(instanceId, authorization);
+        Object response = api.getSchemaInstancesInstanceIdSchemaGet(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 

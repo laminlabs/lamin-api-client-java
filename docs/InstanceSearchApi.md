@@ -1,6 +1,6 @@
 # InstanceSearchApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="globalSearchInstancesInstanceIdSearchGet"></a>
 # **globalSearchInstancesInstanceIdSearchGet**
-> Object globalSearchInstancesInstanceIdSearchGet(instanceId, searchTerm, authorization)
+> Object globalSearchInstancesInstanceIdSearchGet(instanceId, searchTerm, spaceId, authorization)
 
 Global Search
 
@@ -25,14 +25,15 @@ import ai.lamin.lamin_api_client.api.InstanceSearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceSearchApi apiInstance = new InstanceSearchApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
     String searchTerm = "searchTerm_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.globalSearchInstancesInstanceIdSearchGet(instanceId, searchTerm, authorization);
+      Object result = apiInstance.globalSearchInstancesInstanceIdSearchGet(instanceId, searchTerm, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceSearchApi#globalSearchInstancesInstanceIdSearchGet");
@@ -51,6 +52,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
 | **searchTerm** | **String**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import ai.lamin.lamin_api_client.model.ApiKeyExchangeRequest;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 
 import java.lang.reflect.Type;
@@ -198,6 +199,137 @@ public class AccountsApi {
     public okhttp3.Call getCallerAccountAccountGetAsync(String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getCentralJwtAccountJwtPost
+     * @param apiKeyExchangeRequest  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCentralJwtAccountJwtPostCall(ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = apiKeyExchangeRequest;
+
+        // create path and map variables
+        String localVarPath = "/account/jwt";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getCentralJwtAccountJwtPostValidateBeforeCall(ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'apiKeyExchangeRequest' is set
+        if (apiKeyExchangeRequest == null) {
+            throw new ApiException("Missing the required parameter 'apiKeyExchangeRequest' when calling getCentralJwtAccountJwtPost(Async)");
+        }
+
+        return getCentralJwtAccountJwtPostCall(apiKeyExchangeRequest, _callback);
+
+    }
+
+    /**
+     * Get Central Jwt
+     * 
+     * @param apiKeyExchangeRequest  (required)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object getCentralJwtAccountJwtPost(ApiKeyExchangeRequest apiKeyExchangeRequest) throws ApiException {
+        ApiResponse<Object> localVarResp = getCentralJwtAccountJwtPostWithHttpInfo(apiKeyExchangeRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Central Jwt
+     * 
+     * @param apiKeyExchangeRequest  (required)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> getCentralJwtAccountJwtPostWithHttpInfo(ApiKeyExchangeRequest apiKeyExchangeRequest) throws ApiException {
+        okhttp3.Call localVarCall = getCentralJwtAccountJwtPostValidateBeforeCall(apiKeyExchangeRequest, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Central Jwt (asynchronously)
+     * 
+     * @param apiKeyExchangeRequest  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCentralJwtAccountJwtPostAsync(ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getCentralJwtAccountJwtPostValidateBeforeCall(apiKeyExchangeRequest, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

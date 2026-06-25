@@ -1,6 +1,6 @@
 # DbServerApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -26,7 +26,7 @@ import ai.lamin.lamin_api_client.api.DbServerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     DbServerApi apiInstance = new DbServerApi(defaultClient);
     String name = "name_example"; // String | 
@@ -89,7 +89,7 @@ import ai.lamin.lamin_api_client.api.DbServerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     DbServerApi apiInstance = new DbServerApi(defaultClient);
     RegisterDbServerBody registerDbServerBody = new RegisterDbServerBody(); // RegisterDbServerBody | 

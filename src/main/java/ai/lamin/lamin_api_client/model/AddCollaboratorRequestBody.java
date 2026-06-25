@@ -50,7 +50,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * AddCollaboratorRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class AddCollaboratorRequestBody {
   public static final String SERIALIZED_NAME_ACCOUNT_ID = "account_id";
   @SerializedName(SERIALIZED_NAME_ACCOUNT_ID)
@@ -121,6 +121,11 @@ public class AddCollaboratorRequestBody {
   @javax.annotation.Nullable
   private RoleEnum role = RoleEnum.READ;
 
+  public static final String SERIALIZED_NAME_ADD_GUEST_IF_MISSING = "add_guest_if_missing";
+  @SerializedName(SERIALIZED_NAME_ADD_GUEST_IF_MISSING)
+  @javax.annotation.Nullable
+  private Boolean addGuestIfMissing = false;
+
   public AddCollaboratorRequestBody() {
   }
 
@@ -181,6 +186,25 @@ public class AddCollaboratorRequestBody {
   }
 
 
+  public AddCollaboratorRequestBody addGuestIfMissing(@javax.annotation.Nullable Boolean addGuestIfMissing) {
+    this.addGuestIfMissing = addGuestIfMissing;
+    return this;
+  }
+
+  /**
+   * Get addGuestIfMissing
+   * @return addGuestIfMissing
+   */
+  @javax.annotation.Nullable
+  public Boolean getAddGuestIfMissing() {
+    return addGuestIfMissing;
+  }
+
+  public void setAddGuestIfMissing(@javax.annotation.Nullable Boolean addGuestIfMissing) {
+    this.addGuestIfMissing = addGuestIfMissing;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -193,7 +217,8 @@ public class AddCollaboratorRequestBody {
     AddCollaboratorRequestBody addCollaboratorRequestBody = (AddCollaboratorRequestBody) o;
     return Objects.equals(this.accountId, addCollaboratorRequestBody.accountId) &&
         Objects.equals(this.teamId, addCollaboratorRequestBody.teamId) &&
-        Objects.equals(this.role, addCollaboratorRequestBody.role);
+        Objects.equals(this.role, addCollaboratorRequestBody.role) &&
+        Objects.equals(this.addGuestIfMissing, addCollaboratorRequestBody.addGuestIfMissing);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -202,7 +227,7 @@ public class AddCollaboratorRequestBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(accountId, teamId, role);
+    return Objects.hash(accountId, teamId, role, addGuestIfMissing);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -219,6 +244,7 @@ public class AddCollaboratorRequestBody {
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    teamId: ").append(toIndentedString(teamId)).append("\n");
     sb.append("    role: ").append(toIndentedString(role)).append("\n");
+    sb.append("    addGuestIfMissing: ").append(toIndentedString(addGuestIfMissing)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -244,6 +270,7 @@ public class AddCollaboratorRequestBody {
     openapiFields.add("account_id");
     openapiFields.add("team_id");
     openapiFields.add("role");
+    openapiFields.add("add_guest_if_missing");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

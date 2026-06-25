@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import ai.lamin.lamin_api_client.model.AddOrganizationMemberRequestBody;
+import ai.lamin.lamin_api_client.model.CreateOrganizationRequestBody;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import java.util.UUID;
 import ai.lamin.lamin_api_client.model.UpdateOrganizationMemberRequestBody;
@@ -231,6 +232,146 @@ public class OrganizationsApi {
     public okhttp3.Call addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutAsync(UUID organizationId, UUID accountId, AddOrganizationMemberRequestBody addOrganizationMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPutValidateBeforeCall(organizationId, accountId, addOrganizationMemberRequestBody, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for createOrganizationOrganizationsPut
+     * @param createOrganizationRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createOrganizationOrganizationsPutCall(CreateOrganizationRequestBody createOrganizationRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createOrganizationRequestBody;
+
+        // create path and map variables
+        String localVarPath = "/organizations";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createOrganizationOrganizationsPutValidateBeforeCall(CreateOrganizationRequestBody createOrganizationRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'createOrganizationRequestBody' is set
+        if (createOrganizationRequestBody == null) {
+            throw new ApiException("Missing the required parameter 'createOrganizationRequestBody' when calling createOrganizationOrganizationsPut(Async)");
+        }
+
+        return createOrganizationOrganizationsPutCall(createOrganizationRequestBody, authorization, _callback);
+
+    }
+
+    /**
+     * Create Organization
+     * 
+     * @param createOrganizationRequestBody  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object createOrganizationOrganizationsPut(CreateOrganizationRequestBody createOrganizationRequestBody, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createOrganizationOrganizationsPutWithHttpInfo(createOrganizationRequestBody, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Organization
+     * 
+     * @param createOrganizationRequestBody  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> createOrganizationOrganizationsPutWithHttpInfo(CreateOrganizationRequestBody createOrganizationRequestBody, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createOrganizationOrganizationsPutValidateBeforeCall(createOrganizationRequestBody, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Organization (asynchronously)
+     * 
+     * @param createOrganizationRequestBody  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createOrganizationOrganizationsPutAsync(CreateOrganizationRequestBody createOrganizationRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createOrganizationOrganizationsPutValidateBeforeCall(createOrganizationRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

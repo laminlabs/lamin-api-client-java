@@ -54,8 +54,9 @@ public class InstanceRecordsApiTest {
         String modelName = null;
         UUID instanceId = null;
         BatchDeleteBody batchDeleteBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        BatchDeleteResponse response = api.batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, authorization);
+        BatchDeleteResponse response = api.batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -70,8 +71,9 @@ public class InstanceRecordsApiTest {
         String modelName = null;
         UUID instanceId = null;
         BatchSyncLinksBody batchSyncLinksBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        BatchSyncResponse response = api.batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, authorization);
+        BatchSyncResponse response = api.batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -88,8 +90,9 @@ public class InstanceRecordsApiTest {
         String modelName = null;
         UUID instanceId = null;
         BatchUpdateBody batchUpdateBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        List<Map<String, Object>> response = api.batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, authorization);
+        List<Map<String, Object>> response = api.batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -104,8 +107,9 @@ public class InstanceRecordsApiTest {
         String modelName = null;
         UUID instanceId = null;
         Object body = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, authorization);
+        Object response = api.createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -120,8 +124,9 @@ public class InstanceRecordsApiTest {
         String modelName = null;
         String uid = null;
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, authorization);
+        Object response = api.deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -134,9 +139,10 @@ public class InstanceRecordsApiTest {
     public void exportRecordsInstancesInstanceIdRecordsUidExportPostTest() throws ApiException {
         String uid = null;
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
         ExportRecordsRequestBody exportRecordsRequestBody = null;
-        Object response = api.exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, authorization, exportRecordsRequestBody);
+        Object response = api.exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, spaceId, authorization, exportRecordsRequestBody);
         // TODO: test validations
     }
 
@@ -153,9 +159,10 @@ public class InstanceRecordsApiTest {
         UUID instanceId = null;
         Integer limitToMany = null;
         Boolean includeForeignKeys = null;
+        UUID spaceId = null;
         String authorization = null;
         GetRecordRequestBody getRecordRequestBody = null;
-        Object response = api.getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, authorization, getRecordRequestBody);
+        Object response = api.getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody);
         // TODO: test validations
     }
 
@@ -173,9 +180,10 @@ public class InstanceRecordsApiTest {
         Integer offset = null;
         Integer limitToMany = null;
         Boolean includeForeignKeys = null;
+        UUID spaceId = null;
         String authorization = null;
         GetRecordsRequestBody getRecordsRequestBody = null;
-        Object response = api.getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, authorization, getRecordsRequestBody);
+        Object response = api.getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody);
         // TODO: test validations
     }
 
@@ -194,8 +202,9 @@ public class InstanceRecordsApiTest {
         Request request = null;
         Integer limit = null;
         Integer offset = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, authorization);
+        Object response = api.getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -212,9 +221,10 @@ public class InstanceRecordsApiTest {
         UUID instanceId = null;
         Integer limit = null;
         Integer offset = null;
+        UUID spaceId = null;
         String authorization = null;
         GetValuesRequestBody getValuesRequestBody = null;
-        Object response = api.getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, authorization, getValuesRequestBody);
+        Object response = api.getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody);
         // TODO: test validations
     }
 
@@ -230,8 +240,9 @@ public class InstanceRecordsApiTest {
         String uid = null;
         UUID instanceId = null;
         Object body = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, authorization);
+        Object response = api.updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -249,8 +260,9 @@ public class InstanceRecordsApiTest {
         UUID instanceId = null;
         List<String> conflictColumns = null;
         Body body = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, authorization);
+        Object response = api.upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization);
         // TODO: test validations
     }
 

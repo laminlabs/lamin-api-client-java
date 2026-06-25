@@ -1,6 +1,6 @@
 # InstanceFileExplorerApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -10,7 +10,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="getTreeInstancesInstanceIdFilesTreeGet"></a>
 # **getTreeInstancesInstanceIdFilesTreeGet**
-> Object getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, authorization)
+> Object getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, spaceId, authorization)
 
 Get Tree
 
@@ -26,14 +26,15 @@ import ai.lamin.lamin_api_client.api.InstanceFileExplorerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceFileExplorerApi apiInstance = new InstanceFileExplorerApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
     String entityType = "artifacts"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, authorization);
+      Object result = apiInstance.getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFileExplorerApi#getTreeInstancesInstanceIdFilesTreeGet");
@@ -52,6 +53,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
 | **entityType** | **String**|  | [enum: artifacts, transforms] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -75,7 +77,7 @@ No authorization required
 
 <a id="listDirectoryInstancesInstanceIdFilesEntityTypeGet"></a>
 # **listDirectoryInstancesInstanceIdFilesEntityTypeGet**
-> Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, authorization)
+> Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, spaceId, authorization)
 
 List Directory
 
@@ -91,15 +93,16 @@ import ai.lamin.lamin_api_client.api.InstanceFileExplorerApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceFileExplorerApi apiInstance = new InstanceFileExplorerApi(defaultClient);
     String entityType = "artifacts"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
     String path = ""; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, authorization);
+      Object result = apiInstance.listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFileExplorerApi#listDirectoryInstancesInstanceIdFilesEntityTypeGet");
@@ -119,6 +122,7 @@ public class Example {
 | **entityType** | **String**|  | [enum: artifacts, transforms] |
 | **instanceId** | **UUID**|  | |
 | **path** | **String**|  | [optional] [default to ] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

@@ -47,9 +47,10 @@ public class InstanceFeaturesApiTest {
         UUID instanceId = null;
         Integer limit = null;
         Integer offset = null;
+        UUID spaceId = null;
         String authorization = null;
         GetRecordsRequestBody getRecordsRequestBody = null;
-        Object response = api.queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, authorization, getRecordsRequestBody);
+        Object response = api.queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, spaceId, authorization, getRecordsRequestBody);
         // TODO: test validations
     }
 

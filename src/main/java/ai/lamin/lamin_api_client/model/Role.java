@@ -14,6 +14,7 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
+import ai.lamin.lamin_api_client.model.ORGANIZATION;
 
 
 
@@ -50,7 +51,7 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class Role extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Role.class.getName());
 
@@ -63,6 +64,7 @@ public class Role extends AbstractOpenApiSchema {
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<String> adapterString = gson.getDelegateAdapter(this, TypeToken.get(String.class));
+            final TypeAdapter<ORGANIZATION> adapterORGANIZATION = gson.getDelegateAdapter(this, TypeToken.get(ORGANIZATION.class));
 
             return (TypeAdapter<T>) new TypeAdapter<Role>() {
                 @Override
@@ -78,7 +80,13 @@ public class Role extends AbstractOpenApiSchema {
                         elementAdapter.write(out, primitive);
                         return;
                     }
-                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: String");
+                    // check if the actual instance is of the type `ORGANIZATION`
+                    if (value.getActualInstance() instanceof ORGANIZATION) {
+                        JsonElement element = adapterORGANIZATION.toJsonTree((ORGANIZATION)value.getActualInstance());
+                        elementAdapter.write(out, element);
+                        return;
+                    }
+                    throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: ORGANIZATION, String");
                 }
 
                 @Override
@@ -104,6 +112,19 @@ public class Role extends AbstractOpenApiSchema {
                         errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'String'", e);
                     }
+                    // deserialize ORGANIZATION
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ORGANIZATION.validateJsonElement(jsonElement);
+                        actualAdapter = adapterORGANIZATION;
+                        Role ret = new Role();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
+                        return ret;
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ORGANIZATION failed with `%s`.", e.getMessage()));
+                        log.log(Level.FINER, "Input data does not match schema 'ORGANIZATION'", e);
+                    }
 
                     throw new IOException(String.format("Failed deserialization for Role: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
                 }
@@ -125,6 +146,7 @@ public class Role extends AbstractOpenApiSchema {
 
     static {
         schemas.put("String", String.class);
+        schemas.put("ORGANIZATION", ORGANIZATION.class);
     }
 
     @Override
@@ -135,7 +157,7 @@ public class Role extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the anyOf child schema, check
      * the instance parameter is valid against the anyOf child schemas:
-     * String
+     * ORGANIZATION, String
      *
      * It could be an instance of the 'anyOf' schemas.
      */
@@ -146,14 +168,19 @@ public class Role extends AbstractOpenApiSchema {
             return;
         }
 
-        throw new RuntimeException("Invalid instance type. Must be String");
+        if (instance instanceof ORGANIZATION) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be ORGANIZATION, String");
     }
 
     /**
      * Get the actual instance, which can be the following:
-     * String
+     * ORGANIZATION, String
      *
-     * @return The actual instance (String)
+     * @return The actual instance (ORGANIZATION, String)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -170,6 +197,17 @@ public class Role extends AbstractOpenApiSchema {
      */
     public String getString() throws ClassCastException {
         return (String)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ORGANIZATION`. If the actual instance is not `ORGANIZATION`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ORGANIZATION`
+     * @throws ClassCastException if the instance is not `ORGANIZATION`
+     */
+    public ORGANIZATION getORGANIZATION() throws ClassCastException {
+        return (ORGANIZATION)super.getActualInstance();
     }
 
     /**
@@ -191,7 +229,15 @@ public class Role extends AbstractOpenApiSchema {
             errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        throw new IOException(String.format("The JSON string is invalid for Role with anyOf schemas: String. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+        // validate the json string with ORGANIZATION
+        try {
+            ORGANIZATION.validateJsonElement(jsonElement);
+            return;
+        } catch (Exception e) {
+            errorMessages.add(String.format("Deserialization for ORGANIZATION failed with `%s`.", e.getMessage()));
+            // continue to the next one
+        }
+        throw new IOException(String.format("The JSON string is invalid for Role with anyOf schemas: ORGANIZATION, String. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
 
     /**

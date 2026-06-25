@@ -1,6 +1,6 @@
 # InstanceFunctionsApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="executeFunctionInstancesInstanceIdFunctionExecutePost"></a>
 # **executeFunctionInstancesInstanceIdFunctionExecutePost**
-> Object executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, authorization)
+> Object executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, spaceId, authorization)
 
 Execute Function
 
@@ -25,14 +25,15 @@ import ai.lamin.lamin_api_client.api.InstanceFunctionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceFunctionsApi apiInstance = new InstanceFunctionsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
     ExecuteFunctionRequestBody executeFunctionRequestBody = new ExecuteFunctionRequestBody(); // ExecuteFunctionRequestBody | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, authorization);
+      Object result = apiInstance.executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFunctionsApi#executeFunctionInstancesInstanceIdFunctionExecutePost");
@@ -51,6 +52,7 @@ public class Example {
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
 | **executeFunctionRequestBody** | [**ExecuteFunctionRequestBody**](ExecuteFunctionRequestBody.md)|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

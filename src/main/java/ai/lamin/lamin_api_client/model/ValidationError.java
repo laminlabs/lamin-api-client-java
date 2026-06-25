@@ -24,6 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * ValidationError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class ValidationError {
   public static final String SERIALIZED_NAME_LOC = "loc";
   @SerializedName(SERIALIZED_NAME_LOC)
@@ -67,6 +68,16 @@ public class ValidationError {
   @SerializedName(SERIALIZED_NAME_TYPE)
   @javax.annotation.Nonnull
   private String type;
+
+  public static final String SERIALIZED_NAME_INPUT = "input";
+  @SerializedName(SERIALIZED_NAME_INPUT)
+  @javax.annotation.Nullable
+  private Object input = null;
+
+  public static final String SERIALIZED_NAME_CTX = "ctx";
+  @SerializedName(SERIALIZED_NAME_CTX)
+  @javax.annotation.Nullable
+  private Object ctx;
 
   public ValidationError() {
   }
@@ -136,6 +147,44 @@ public class ValidationError {
   }
 
 
+  public ValidationError input(@javax.annotation.Nullable Object input) {
+    this.input = input;
+    return this;
+  }
+
+  /**
+   * Get input
+   * @return input
+   */
+  @javax.annotation.Nullable
+  public Object getInput() {
+    return input;
+  }
+
+  public void setInput(@javax.annotation.Nullable Object input) {
+    this.input = input;
+  }
+
+
+  public ValidationError ctx(@javax.annotation.Nullable Object ctx) {
+    this.ctx = ctx;
+    return this;
+  }
+
+  /**
+   * Get ctx
+   * @return ctx
+   */
+  @javax.annotation.Nullable
+  public Object getCtx() {
+    return ctx;
+  }
+
+  public void setCtx(@javax.annotation.Nullable Object ctx) {
+    this.ctx = ctx;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -148,12 +197,25 @@ public class ValidationError {
     ValidationError validationError = (ValidationError) o;
     return Objects.equals(this.loc, validationError.loc) &&
         Objects.equals(this.msg, validationError.msg) &&
-        Objects.equals(this.type, validationError.type);
+        Objects.equals(this.type, validationError.type) &&
+        Objects.equals(this.input, validationError.input) &&
+        Objects.equals(this.ctx, validationError.ctx);
+  }
+
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(loc, msg, type);
+    return Objects.hash(loc, msg, type, input, ctx);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -163,6 +225,8 @@ public class ValidationError {
     sb.append("    loc: ").append(toIndentedString(loc)).append("\n");
     sb.append("    msg: ").append(toIndentedString(msg)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    input: ").append(toIndentedString(input)).append("\n");
+    sb.append("    ctx: ").append(toIndentedString(ctx)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -188,6 +252,8 @@ public class ValidationError {
     openapiFields.add("loc");
     openapiFields.add("msg");
     openapiFields.add("type");
+    openapiFields.add("input");
+    openapiFields.add("ctx");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

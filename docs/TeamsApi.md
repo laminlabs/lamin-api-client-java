@@ -1,6 +1,6 @@
 # TeamsApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -35,7 +35,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -104,7 +104,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     CreateTeamRequestBody createTeamRequestBody = new CreateTeamRequestBody(); // CreateTeamRequestBody | 
@@ -169,7 +169,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -234,7 +234,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -299,7 +299,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -364,7 +364,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -429,7 +429,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -496,7 +496,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 
@@ -565,7 +565,7 @@ import ai.lamin.lamin_api_client.api.TeamsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     UUID teamId = UUID.randomUUID(); // UUID | 

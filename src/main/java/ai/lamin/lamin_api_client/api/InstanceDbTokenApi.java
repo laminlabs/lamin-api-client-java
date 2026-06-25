@@ -76,6 +76,7 @@ public class InstanceDbTokenApi {
     /**
      * Build call for getDbTokenInstancesInstanceIdDbTokenGet
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -88,7 +89,7 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -113,6 +114,10 @@ public class InstanceDbTokenApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -139,13 +144,13 @@ public class InstanceDbTokenApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getDbTokenInstancesInstanceIdDbTokenGet(Async)");
         }
 
-        return getDbTokenInstancesInstanceIdDbTokenGetCall(instanceId, authorization, _callback);
+        return getDbTokenInstancesInstanceIdDbTokenGetCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -153,6 +158,7 @@ public class InstanceDbTokenApi {
      * Get Db Token
      * Get a database token for the specified instance.  This token can be used to authenticate with the instance&#39;s database.  Parameters: - **instance_id**: UUID of the instance to get the token for (from URL path)  Returns: - **200**: Database token retrieved successfully   - **token**: The database token - **401**: Unauthorized
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -164,8 +170,8 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getDbTokenInstancesInstanceIdDbTokenGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getDbTokenInstancesInstanceIdDbTokenGetWithHttpInfo(instanceId, authorization);
+    public Object getDbTokenInstancesInstanceIdDbTokenGet(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getDbTokenInstancesInstanceIdDbTokenGetWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -173,6 +179,7 @@ public class InstanceDbTokenApi {
      * Get Db Token
      * Get a database token for the specified instance.  This token can be used to authenticate with the instance&#39;s database.  Parameters: - **instance_id**: UUID of the instance to get the token for (from URL path)  Returns: - **200**: Database token retrieved successfully   - **token**: The database token - **401**: Unauthorized
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -184,8 +191,8 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getDbTokenInstancesInstanceIdDbTokenGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> getDbTokenInstancesInstanceIdDbTokenGetWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -194,6 +201,7 @@ public class InstanceDbTokenApi {
      * Get Db Token (asynchronously)
      * Get a database token for the specified instance.  This token can be used to authenticate with the instance&#39;s database.  Parameters: - **instance_id**: UUID of the instance to get the token for (from URL path)  Returns: - **200**: Database token retrieved successfully   - **token**: The database token - **401**: Unauthorized
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -206,9 +214,9 @@ public class InstanceDbTokenApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getDbTokenInstancesInstanceIdDbTokenGetAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getDbTokenInstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

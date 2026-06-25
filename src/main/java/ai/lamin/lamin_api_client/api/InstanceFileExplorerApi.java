@@ -77,6 +77,7 @@ public class InstanceFileExplorerApi {
      * Build call for getTreeInstancesInstanceIdFilesTreeGet
      * @param instanceId  (required)
      * @param entityType  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -89,7 +90,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetCall(UUID instanceId, String entityType, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetCall(UUID instanceId, String entityType, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -119,6 +120,10 @@ public class InstanceFileExplorerApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("entity_type", entityType));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -144,7 +149,7 @@ public class InstanceFileExplorerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(UUID instanceId, String entityType, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(UUID instanceId, String entityType, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getTreeInstancesInstanceIdFilesTreeGet(Async)");
@@ -155,7 +160,7 @@ public class InstanceFileExplorerApi {
             throw new ApiException("Missing the required parameter 'entityType' when calling getTreeInstancesInstanceIdFilesTreeGet(Async)");
         }
 
-        return getTreeInstancesInstanceIdFilesTreeGetCall(instanceId, entityType, authorization, _callback);
+        return getTreeInstancesInstanceIdFilesTreeGetCall(instanceId, entityType, spaceId, authorization, _callback);
 
     }
 
@@ -164,6 +169,7 @@ public class InstanceFileExplorerApi {
      * 
      * @param instanceId  (required)
      * @param entityType  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -175,8 +181,8 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getTreeInstancesInstanceIdFilesTreeGet(UUID instanceId, String entityType, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getTreeInstancesInstanceIdFilesTreeGetWithHttpInfo(instanceId, entityType, authorization);
+    public Object getTreeInstancesInstanceIdFilesTreeGet(UUID instanceId, String entityType, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getTreeInstancesInstanceIdFilesTreeGetWithHttpInfo(instanceId, entityType, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -185,6 +191,7 @@ public class InstanceFileExplorerApi {
      * 
      * @param instanceId  (required)
      * @param entityType  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -196,8 +203,8 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getTreeInstancesInstanceIdFilesTreeGetWithHttpInfo(UUID instanceId, String entityType, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(instanceId, entityType, authorization, null);
+    public ApiResponse<Object> getTreeInstancesInstanceIdFilesTreeGetWithHttpInfo(UUID instanceId, String entityType, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(instanceId, entityType, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -207,6 +214,7 @@ public class InstanceFileExplorerApi {
      * 
      * @param instanceId  (required)
      * @param entityType  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -219,9 +227,9 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetAsync(UUID instanceId, String entityType, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetAsync(UUID instanceId, String entityType, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(instanceId, entityType, authorization, _callback);
+        okhttp3.Call localVarCall = getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(instanceId, entityType, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -231,6 +239,7 @@ public class InstanceFileExplorerApi {
      * @param entityType  (required)
      * @param instanceId  (required)
      * @param path  (optional, default to )
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -243,7 +252,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetCall(String entityType, UUID instanceId, String path, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetCall(String entityType, UUID instanceId, String path, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -274,6 +283,10 @@ public class InstanceFileExplorerApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("path", path));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -299,7 +312,7 @@ public class InstanceFileExplorerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(String entityType, UUID instanceId, String path, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(String entityType, UUID instanceId, String path, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'entityType' is set
         if (entityType == null) {
             throw new ApiException("Missing the required parameter 'entityType' when calling listDirectoryInstancesInstanceIdFilesEntityTypeGet(Async)");
@@ -310,7 +323,7 @@ public class InstanceFileExplorerApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling listDirectoryInstancesInstanceIdFilesEntityTypeGet(Async)");
         }
 
-        return listDirectoryInstancesInstanceIdFilesEntityTypeGetCall(entityType, instanceId, path, authorization, _callback);
+        return listDirectoryInstancesInstanceIdFilesEntityTypeGetCall(entityType, instanceId, path, spaceId, authorization, _callback);
 
     }
 
@@ -320,6 +333,7 @@ public class InstanceFileExplorerApi {
      * @param entityType  (required)
      * @param instanceId  (required)
      * @param path  (optional, default to )
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -331,8 +345,8 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(String entityType, UUID instanceId, String path, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listDirectoryInstancesInstanceIdFilesEntityTypeGetWithHttpInfo(entityType, instanceId, path, authorization);
+    public Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(String entityType, UUID instanceId, String path, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listDirectoryInstancesInstanceIdFilesEntityTypeGetWithHttpInfo(entityType, instanceId, path, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -342,6 +356,7 @@ public class InstanceFileExplorerApi {
      * @param entityType  (required)
      * @param instanceId  (required)
      * @param path  (optional, default to )
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -353,8 +368,8 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listDirectoryInstancesInstanceIdFilesEntityTypeGetWithHttpInfo(String entityType, UUID instanceId, String path, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(entityType, instanceId, path, authorization, null);
+    public ApiResponse<Object> listDirectoryInstancesInstanceIdFilesEntityTypeGetWithHttpInfo(String entityType, UUID instanceId, String path, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(entityType, instanceId, path, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -365,6 +380,7 @@ public class InstanceFileExplorerApi {
      * @param entityType  (required)
      * @param instanceId  (required)
      * @param path  (optional, default to )
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -377,9 +393,9 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetAsync(String entityType, UUID instanceId, String path, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetAsync(String entityType, UUID instanceId, String path, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(entityType, instanceId, path, authorization, _callback);
+        okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(entityType, instanceId, path, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

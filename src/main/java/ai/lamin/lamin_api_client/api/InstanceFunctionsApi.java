@@ -78,6 +78,7 @@ public class InstanceFunctionsApi {
      * Build call for executeFunctionInstancesInstanceIdFunctionExecutePost
      * @param instanceId  (required)
      * @param executeFunctionRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +91,7 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostCall(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostCall(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -115,6 +116,10 @@ public class InstanceFunctionsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -142,7 +147,7 @@ public class InstanceFunctionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling executeFunctionInstancesInstanceIdFunctionExecutePost(Async)");
@@ -153,7 +158,7 @@ public class InstanceFunctionsApi {
             throw new ApiException("Missing the required parameter 'executeFunctionRequestBody' when calling executeFunctionInstancesInstanceIdFunctionExecutePost(Async)");
         }
 
-        return executeFunctionInstancesInstanceIdFunctionExecutePostCall(instanceId, executeFunctionRequestBody, authorization, _callback);
+        return executeFunctionInstancesInstanceIdFunctionExecutePostCall(instanceId, executeFunctionRequestBody, spaceId, authorization, _callback);
 
     }
 
@@ -162,6 +167,7 @@ public class InstanceFunctionsApi {
      * 
      * @param instanceId  (required)
      * @param executeFunctionRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -173,8 +179,8 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object executeFunctionInstancesInstanceIdFunctionExecutePost(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = executeFunctionInstancesInstanceIdFunctionExecutePostWithHttpInfo(instanceId, executeFunctionRequestBody, authorization);
+    public Object executeFunctionInstancesInstanceIdFunctionExecutePost(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = executeFunctionInstancesInstanceIdFunctionExecutePostWithHttpInfo(instanceId, executeFunctionRequestBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -183,6 +189,7 @@ public class InstanceFunctionsApi {
      * 
      * @param instanceId  (required)
      * @param executeFunctionRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -194,8 +201,8 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> executeFunctionInstancesInstanceIdFunctionExecutePostWithHttpInfo(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(instanceId, executeFunctionRequestBody, authorization, null);
+    public ApiResponse<Object> executeFunctionInstancesInstanceIdFunctionExecutePostWithHttpInfo(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(instanceId, executeFunctionRequestBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,6 +212,7 @@ public class InstanceFunctionsApi {
      * 
      * @param instanceId  (required)
      * @param executeFunctionRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -217,9 +225,9 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostAsync(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostAsync(UUID instanceId, ExecuteFunctionRequestBody executeFunctionRequestBody, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(instanceId, executeFunctionRequestBody, authorization, _callback);
+        okhttp3.Call localVarCall = executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(instanceId, executeFunctionRequestBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

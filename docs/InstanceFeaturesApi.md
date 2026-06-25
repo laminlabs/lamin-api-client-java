@@ -1,6 +1,6 @@
 # InstanceFeaturesApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost"></a>
 # **queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost**
-> Object queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, authorization, getRecordsRequestBody)
+> Object queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, spaceId, authorization, getRecordsRequestBody)
 
 Query Linked Features
 
@@ -27,7 +27,7 @@ import ai.lamin.lamin_api_client.api.InstanceFeaturesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceFeaturesApi apiInstance = new InstanceFeaturesApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -35,10 +35,11 @@ public class Example {
     UUID instanceId = UUID.randomUUID(); // UUID | 
     Integer limit = 50; // Integer | 
     Integer offset = 0; // Integer | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     GetRecordsRequestBody getRecordsRequestBody = new GetRecordsRequestBody(); // GetRecordsRequestBody | 
     try {
-      Object result = apiInstance.queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, authorization, getRecordsRequestBody);
+      Object result = apiInstance.queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, spaceId, authorization, getRecordsRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFeaturesApi#queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost");
@@ -60,6 +61,7 @@ public class Example {
 | **instanceId** | **UUID**|  | |
 | **limit** | **Integer**|  | [optional] [default to 50] |
 | **offset** | **Integer**|  | [optional] [default to 0] |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 | **getRecordsRequestBody** | [**GetRecordsRequestBody**](GetRecordsRequestBody.md)|  | [optional] |
 

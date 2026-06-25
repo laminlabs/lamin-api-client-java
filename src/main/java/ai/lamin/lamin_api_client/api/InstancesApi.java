@@ -79,6 +79,7 @@ public class InstancesApi {
      * Build call for addCollaboratorInstancesInstanceIdCollaboratorsPut
      * @param instanceId  (required)
      * @param addCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,7 +92,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addCollaboratorInstancesInstanceIdCollaboratorsPutCall(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addCollaboratorInstancesInstanceIdCollaboratorsPutCall(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -116,6 +117,10 @@ public class InstancesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -143,7 +148,7 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addCollaboratorInstancesInstanceIdCollaboratorsPutValidateBeforeCall(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addCollaboratorInstancesInstanceIdCollaboratorsPutValidateBeforeCall(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling addCollaboratorInstancesInstanceIdCollaboratorsPut(Async)");
@@ -154,15 +159,16 @@ public class InstancesApi {
             throw new ApiException("Missing the required parameter 'addCollaboratorRequestBody' when calling addCollaboratorInstancesInstanceIdCollaboratorsPut(Async)");
         }
 
-        return addCollaboratorInstancesInstanceIdCollaboratorsPutCall(instanceId, addCollaboratorRequestBody, authorization, _callback);
+        return addCollaboratorInstancesInstanceIdCollaboratorsPutCall(instanceId, addCollaboratorRequestBody, spaceId, authorization, _callback);
 
     }
 
     /**
      * Add Collaborator
-     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
+     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the instance organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
      * @param instanceId  (required)
      * @param addCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -174,16 +180,17 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object addCollaboratorInstancesInstanceIdCollaboratorsPut(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = addCollaboratorInstancesInstanceIdCollaboratorsPutWithHttpInfo(instanceId, addCollaboratorRequestBody, authorization);
+    public Object addCollaboratorInstancesInstanceIdCollaboratorsPut(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = addCollaboratorInstancesInstanceIdCollaboratorsPutWithHttpInfo(instanceId, addCollaboratorRequestBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
     /**
      * Add Collaborator
-     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
+     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the instance organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
      * @param instanceId  (required)
      * @param addCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -195,17 +202,18 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> addCollaboratorInstancesInstanceIdCollaboratorsPutWithHttpInfo(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = addCollaboratorInstancesInstanceIdCollaboratorsPutValidateBeforeCall(instanceId, addCollaboratorRequestBody, authorization, null);
+    public ApiResponse<Object> addCollaboratorInstancesInstanceIdCollaboratorsPutWithHttpInfo(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = addCollaboratorInstancesInstanceIdCollaboratorsPutValidateBeforeCall(instanceId, addCollaboratorRequestBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * Add Collaborator (asynchronously)
-     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
+     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the instance organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
      * @param instanceId  (required)
      * @param addCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -218,9 +226,9 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addCollaboratorInstancesInstanceIdCollaboratorsPutAsync(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call addCollaboratorInstancesInstanceIdCollaboratorsPutAsync(UUID instanceId, AddCollaboratorRequestBody addCollaboratorRequestBody, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = addCollaboratorInstancesInstanceIdCollaboratorsPutValidateBeforeCall(instanceId, addCollaboratorRequestBody, authorization, _callback);
+        okhttp3.Call localVarCall = addCollaboratorInstancesInstanceIdCollaboratorsPutValidateBeforeCall(instanceId, addCollaboratorRequestBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -233,6 +241,7 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
+     * @param _public  (optional, default to false)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @param _callback Callback for upload/download progress
@@ -246,7 +255,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createInstanceInstancesPutCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, Boolean _public, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -295,6 +304,10 @@ public class InstancesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("account_id", accountId));
         }
 
+        if (_public != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("public", _public));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -321,13 +334,13 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createInstanceInstancesPutValidateBeforeCall(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, Boolean _public, String authorization, Map<String, Object> requestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'name' is set
         if (name == null) {
             throw new ApiException("Missing the required parameter 'name' when calling createInstanceInstancesPut(Async)");
         }
 
-        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody, _callback);
+        return createInstanceInstancesPutCall(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, authorization, requestBody, _callback);
 
     }
 
@@ -340,6 +353,7 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
+     * @param _public  (optional, default to false)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @return Object
@@ -352,8 +366,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody) throws ApiException {
-        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody);
+    public Object createInstanceInstancesPut(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, Boolean _public, String authorization, Map<String, Object> requestBody) throws ApiException {
+        ApiResponse<Object> localVarResp = createInstanceInstancesPutWithHttpInfo(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, authorization, requestBody);
         return localVarResp.getData();
     }
 
@@ -366,6 +380,7 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
+     * @param _public  (optional, default to false)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -378,8 +393,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody) throws ApiException {
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody, null);
+    public ApiResponse<Object> createInstanceInstancesPutWithHttpInfo(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, Boolean _public, String authorization, Map<String, Object> requestBody) throws ApiException {
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, authorization, requestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -393,6 +408,7 @@ public class InstancesApi {
      * @param dbServerName  (optional)
      * @param storageUid  (optional)
      * @param accountId  (optional)
+     * @param _public  (optional, default to false)
      * @param authorization  (optional)
      * @param requestBody  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -406,9 +422,9 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, String authorization, Map<String, Object> requestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createInstanceInstancesPutAsync(String name, String storage, String schemaStr, String dbServerName, String storageUid, UUID accountId, Boolean _public, String authorization, Map<String, Object> requestBody, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody, _callback);
+        okhttp3.Call localVarCall = createInstanceInstancesPutValidateBeforeCall(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, authorization, requestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -417,6 +433,7 @@ public class InstancesApi {
      * Build call for deleteInstanceInstancesInstanceIdDelete
      * @param instanceId  (required)
      * @param instanceName  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -429,7 +446,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstanceInstancesInstanceIdDeleteCall(UUID instanceId, String instanceName, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteInstanceInstancesInstanceIdDeleteCall(UUID instanceId, String instanceName, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -459,6 +476,10 @@ public class InstancesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("instance_name", instanceName));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -484,7 +505,7 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteInstanceInstancesInstanceIdDeleteValidateBeforeCall(UUID instanceId, String instanceName, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteInstanceInstancesInstanceIdDeleteValidateBeforeCall(UUID instanceId, String instanceName, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling deleteInstanceInstancesInstanceIdDelete(Async)");
@@ -495,7 +516,7 @@ public class InstancesApi {
             throw new ApiException("Missing the required parameter 'instanceName' when calling deleteInstanceInstancesInstanceIdDelete(Async)");
         }
 
-        return deleteInstanceInstancesInstanceIdDeleteCall(instanceId, instanceName, authorization, _callback);
+        return deleteInstanceInstancesInstanceIdDeleteCall(instanceId, instanceName, spaceId, authorization, _callback);
 
     }
 
@@ -504,6 +525,7 @@ public class InstancesApi {
      * 
      * @param instanceId  (required)
      * @param instanceName  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -515,8 +537,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object deleteInstanceInstancesInstanceIdDelete(UUID instanceId, String instanceName, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = deleteInstanceInstancesInstanceIdDeleteWithHttpInfo(instanceId, instanceName, authorization);
+    public Object deleteInstanceInstancesInstanceIdDelete(UUID instanceId, String instanceName, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteInstanceInstancesInstanceIdDeleteWithHttpInfo(instanceId, instanceName, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -525,6 +547,7 @@ public class InstancesApi {
      * 
      * @param instanceId  (required)
      * @param instanceName  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -536,8 +559,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> deleteInstanceInstancesInstanceIdDeleteWithHttpInfo(UUID instanceId, String instanceName, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = deleteInstanceInstancesInstanceIdDeleteValidateBeforeCall(instanceId, instanceName, authorization, null);
+    public ApiResponse<Object> deleteInstanceInstancesInstanceIdDeleteWithHttpInfo(UUID instanceId, String instanceName, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = deleteInstanceInstancesInstanceIdDeleteValidateBeforeCall(instanceId, instanceName, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -547,6 +570,7 @@ public class InstancesApi {
      * 
      * @param instanceId  (required)
      * @param instanceName  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -559,16 +583,17 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteInstanceInstancesInstanceIdDeleteAsync(UUID instanceId, String instanceName, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call deleteInstanceInstancesInstanceIdDeleteAsync(UUID instanceId, String instanceName, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteInstanceInstancesInstanceIdDeleteValidateBeforeCall(instanceId, instanceName, authorization, _callback);
+        okhttp3.Call localVarCall = deleteInstanceInstancesInstanceIdDeleteValidateBeforeCall(instanceId, instanceName, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for listCollaboratorsInstancesInstanceIdCollaboratorsGet
-     * @param instanceId  (required)
+     * Build call for getInstanceSettingsInstancesOwnerNameSettingsGet
+     * @param owner  (required)
+     * @param name  (required)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -581,7 +606,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCollaboratorsInstancesInstanceIdCollaboratorsGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInstanceSettingsInstancesOwnerNameSettingsGetCall(String owner, String name, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -598,8 +623,9 @@ public class InstancesApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/instances/{instance_id}/collaborators"
-            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+        String localVarPath = "/instances/{owner}/{name}/settings"
+            .replace("{" + "owner" + "}", localVarApiClient.escapeString(owner.toString()))
+            .replace("{" + "name" + "}", localVarApiClient.escapeString(name.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -632,20 +658,26 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listCollaboratorsInstancesInstanceIdCollaboratorsGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'instanceId' is set
-        if (instanceId == null) {
-            throw new ApiException("Missing the required parameter 'instanceId' when calling listCollaboratorsInstancesInstanceIdCollaboratorsGet(Async)");
+    private okhttp3.Call getInstanceSettingsInstancesOwnerNameSettingsGetValidateBeforeCall(String owner, String name, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'owner' is set
+        if (owner == null) {
+            throw new ApiException("Missing the required parameter 'owner' when calling getInstanceSettingsInstancesOwnerNameSettingsGet(Async)");
         }
 
-        return listCollaboratorsInstancesInstanceIdCollaboratorsGetCall(instanceId, authorization, _callback);
+        // verify the required parameter 'name' is set
+        if (name == null) {
+            throw new ApiException("Missing the required parameter 'name' when calling getInstanceSettingsInstancesOwnerNameSettingsGet(Async)");
+        }
+
+        return getInstanceSettingsInstancesOwnerNameSettingsGetCall(owner, name, authorization, _callback);
 
     }
 
     /**
-     * List Collaborators
-     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
-     * @param instanceId  (required)
+     * Get Instance Settings
+     * 
+     * @param owner  (required)
+     * @param name  (required)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -657,15 +689,16 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listCollaboratorsInstancesInstanceIdCollaboratorsGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listCollaboratorsInstancesInstanceIdCollaboratorsGetWithHttpInfo(instanceId, authorization);
+    public Object getInstanceSettingsInstancesOwnerNameSettingsGet(String owner, String name, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getInstanceSettingsInstancesOwnerNameSettingsGetWithHttpInfo(owner, name, authorization);
         return localVarResp.getData();
     }
 
     /**
-     * List Collaborators
-     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
-     * @param instanceId  (required)
+     * Get Instance Settings
+     * 
+     * @param owner  (required)
+     * @param name  (required)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -677,16 +710,17 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listCollaboratorsInstancesInstanceIdCollaboratorsGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listCollaboratorsInstancesInstanceIdCollaboratorsGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> getInstanceSettingsInstancesOwnerNameSettingsGetWithHttpInfo(String owner, String name, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getInstanceSettingsInstancesOwnerNameSettingsGetValidateBeforeCall(owner, name, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Collaborators (asynchronously)
-     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
-     * @param instanceId  (required)
+     * Get Instance Settings (asynchronously)
+     * 
+     * @param owner  (required)
+     * @param name  (required)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -699,16 +733,17 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listCollaboratorsInstancesInstanceIdCollaboratorsGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getInstanceSettingsInstancesOwnerNameSettingsGetAsync(String owner, String name, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listCollaboratorsInstancesInstanceIdCollaboratorsGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getInstanceSettingsInstancesOwnerNameSettingsGetValidateBeforeCall(owner, name, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for migrateInstanceInstancesInstanceIdMigratePost
+     * Build call for listCollaboratorsInstancesInstanceIdCollaboratorsGet
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -721,7 +756,155 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call migrateInstanceInstancesInstanceIdMigratePostCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listCollaboratorsInstancesInstanceIdCollaboratorsGetCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/collaborators"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listCollaboratorsInstancesInstanceIdCollaboratorsGetValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling listCollaboratorsInstancesInstanceIdCollaboratorsGet(Async)");
+        }
+
+        return listCollaboratorsInstancesInstanceIdCollaboratorsGetCall(instanceId, spaceId, authorization, _callback);
+
+    }
+
+    /**
+     * List Collaborators
+     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
+     * @param instanceId  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object listCollaboratorsInstancesInstanceIdCollaboratorsGet(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listCollaboratorsInstancesInstanceIdCollaboratorsGetWithHttpInfo(instanceId, spaceId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Collaborators
+     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
+     * @param instanceId  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> listCollaboratorsInstancesInstanceIdCollaboratorsGetWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listCollaboratorsInstancesInstanceIdCollaboratorsGetValidateBeforeCall(instanceId, spaceId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Collaborators (asynchronously)
+     * List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
+     * @param instanceId  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listCollaboratorsInstancesInstanceIdCollaboratorsGetAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listCollaboratorsInstancesInstanceIdCollaboratorsGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for migrateInstanceInstancesInstanceIdMigratePost
+     * @param instanceId  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call migrateInstanceInstancesInstanceIdMigratePostCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -746,6 +929,10 @@ public class InstancesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -772,13 +959,13 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call migrateInstanceInstancesInstanceIdMigratePostValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call migrateInstanceInstancesInstanceIdMigratePostValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling migrateInstanceInstancesInstanceIdMigratePost(Async)");
         }
 
-        return migrateInstanceInstancesInstanceIdMigratePostCall(instanceId, authorization, _callback);
+        return migrateInstanceInstancesInstanceIdMigratePostCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -786,6 +973,7 @@ public class InstancesApi {
      * Migrate Instance
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -797,8 +985,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object migrateInstanceInstancesInstanceIdMigratePost(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = migrateInstanceInstancesInstanceIdMigratePostWithHttpInfo(instanceId, authorization);
+    public Object migrateInstanceInstancesInstanceIdMigratePost(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = migrateInstanceInstancesInstanceIdMigratePostWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -806,6 +994,7 @@ public class InstancesApi {
      * Migrate Instance
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -817,8 +1006,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> migrateInstanceInstancesInstanceIdMigratePostWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = migrateInstanceInstancesInstanceIdMigratePostValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> migrateInstanceInstancesInstanceIdMigratePostWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = migrateInstanceInstancesInstanceIdMigratePostValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -827,6 +1016,7 @@ public class InstancesApi {
      * Migrate Instance (asynchronously)
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -839,9 +1029,9 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call migrateInstanceInstancesInstanceIdMigratePostAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call migrateInstanceInstancesInstanceIdMigratePostAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = migrateInstanceInstancesInstanceIdMigratePostValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = migrateInstanceInstancesInstanceIdMigratePostValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -851,6 +1041,7 @@ public class InstancesApi {
      * @param instanceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -863,7 +1054,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeCollaboratorInstancesInstanceIdCollaboratorsDeleteCall(UUID instanceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeCollaboratorInstancesInstanceIdCollaboratorsDeleteCall(UUID instanceId, UUID accountId, UUID teamId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -897,6 +1088,10 @@ public class InstancesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("team_id", teamId));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -922,13 +1117,13 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeCollaboratorInstancesInstanceIdCollaboratorsDeleteValidateBeforeCall(UUID instanceId, UUID accountId, UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeCollaboratorInstancesInstanceIdCollaboratorsDeleteValidateBeforeCall(UUID instanceId, UUID accountId, UUID teamId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling removeCollaboratorInstancesInstanceIdCollaboratorsDelete(Async)");
         }
 
-        return removeCollaboratorInstancesInstanceIdCollaboratorsDeleteCall(instanceId, accountId, teamId, authorization, _callback);
+        return removeCollaboratorInstancesInstanceIdCollaboratorsDeleteCall(instanceId, accountId, teamId, spaceId, authorization, _callback);
 
     }
 
@@ -938,6 +1133,7 @@ public class InstancesApi {
      * @param instanceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -949,8 +1145,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object removeCollaboratorInstancesInstanceIdCollaboratorsDelete(UUID instanceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = removeCollaboratorInstancesInstanceIdCollaboratorsDeleteWithHttpInfo(instanceId, accountId, teamId, authorization);
+    public Object removeCollaboratorInstancesInstanceIdCollaboratorsDelete(UUID instanceId, UUID accountId, UUID teamId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = removeCollaboratorInstancesInstanceIdCollaboratorsDeleteWithHttpInfo(instanceId, accountId, teamId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -960,6 +1156,7 @@ public class InstancesApi {
      * @param instanceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -971,8 +1168,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> removeCollaboratorInstancesInstanceIdCollaboratorsDeleteWithHttpInfo(UUID instanceId, UUID accountId, UUID teamId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = removeCollaboratorInstancesInstanceIdCollaboratorsDeleteValidateBeforeCall(instanceId, accountId, teamId, authorization, null);
+    public ApiResponse<Object> removeCollaboratorInstancesInstanceIdCollaboratorsDeleteWithHttpInfo(UUID instanceId, UUID accountId, UUID teamId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = removeCollaboratorInstancesInstanceIdCollaboratorsDeleteValidateBeforeCall(instanceId, accountId, teamId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -983,6 +1180,7 @@ public class InstancesApi {
      * @param instanceId  (required)
      * @param accountId  (optional)
      * @param teamId  (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -995,9 +1193,9 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeCollaboratorInstancesInstanceIdCollaboratorsDeleteAsync(UUID instanceId, UUID accountId, UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call removeCollaboratorInstancesInstanceIdCollaboratorsDeleteAsync(UUID instanceId, UUID accountId, UUID teamId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = removeCollaboratorInstancesInstanceIdCollaboratorsDeleteValidateBeforeCall(instanceId, accountId, teamId, authorization, _callback);
+        okhttp3.Call localVarCall = removeCollaboratorInstancesInstanceIdCollaboratorsDeleteValidateBeforeCall(instanceId, accountId, teamId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1006,6 +1204,7 @@ public class InstancesApi {
      * Build call for transferOwnershipInstancesInstanceIdOwnerHandlePatch
      * @param handle  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1018,7 +1217,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call transferOwnershipInstancesInstanceIdOwnerHandlePatchCall(String handle, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call transferOwnershipInstancesInstanceIdOwnerHandlePatchCall(String handle, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1045,6 +1244,10 @@ public class InstancesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1070,7 +1273,7 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call transferOwnershipInstancesInstanceIdOwnerHandlePatchValidateBeforeCall(String handle, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call transferOwnershipInstancesInstanceIdOwnerHandlePatchValidateBeforeCall(String handle, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'handle' is set
         if (handle == null) {
             throw new ApiException("Missing the required parameter 'handle' when calling transferOwnershipInstancesInstanceIdOwnerHandlePatch(Async)");
@@ -1081,7 +1284,7 @@ public class InstancesApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling transferOwnershipInstancesInstanceIdOwnerHandlePatch(Async)");
         }
 
-        return transferOwnershipInstancesInstanceIdOwnerHandlePatchCall(handle, instanceId, authorization, _callback);
+        return transferOwnershipInstancesInstanceIdOwnerHandlePatchCall(handle, instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -1090,6 +1293,7 @@ public class InstancesApi {
      * 
      * @param handle  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1101,8 +1305,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object transferOwnershipInstancesInstanceIdOwnerHandlePatch(String handle, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = transferOwnershipInstancesInstanceIdOwnerHandlePatchWithHttpInfo(handle, instanceId, authorization);
+    public Object transferOwnershipInstancesInstanceIdOwnerHandlePatch(String handle, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = transferOwnershipInstancesInstanceIdOwnerHandlePatchWithHttpInfo(handle, instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -1111,6 +1315,7 @@ public class InstancesApi {
      * 
      * @param handle  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1122,8 +1327,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> transferOwnershipInstancesInstanceIdOwnerHandlePatchWithHttpInfo(String handle, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = transferOwnershipInstancesInstanceIdOwnerHandlePatchValidateBeforeCall(handle, instanceId, authorization, null);
+    public ApiResponse<Object> transferOwnershipInstancesInstanceIdOwnerHandlePatchWithHttpInfo(String handle, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = transferOwnershipInstancesInstanceIdOwnerHandlePatchValidateBeforeCall(handle, instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1133,6 +1338,7 @@ public class InstancesApi {
      * 
      * @param handle  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1145,9 +1351,9 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call transferOwnershipInstancesInstanceIdOwnerHandlePatchAsync(String handle, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call transferOwnershipInstancesInstanceIdOwnerHandlePatchAsync(String handle, UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = transferOwnershipInstancesInstanceIdOwnerHandlePatchValidateBeforeCall(handle, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = transferOwnershipInstancesInstanceIdOwnerHandlePatchValidateBeforeCall(handle, instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1156,6 +1362,7 @@ public class InstancesApi {
      * Build call for updateCollaboratorInstancesInstanceIdCollaboratorsPatch
      * @param instanceId  (required)
      * @param updateCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1168,7 +1375,7 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCollaboratorInstancesInstanceIdCollaboratorsPatchCall(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateCollaboratorInstancesInstanceIdCollaboratorsPatchCall(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1194,6 +1401,10 @@ public class InstancesApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1220,7 +1431,7 @@ public class InstancesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateCollaboratorInstancesInstanceIdCollaboratorsPatchValidateBeforeCall(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateCollaboratorInstancesInstanceIdCollaboratorsPatchValidateBeforeCall(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling updateCollaboratorInstancesInstanceIdCollaboratorsPatch(Async)");
@@ -1231,7 +1442,7 @@ public class InstancesApi {
             throw new ApiException("Missing the required parameter 'updateCollaboratorRequestBody' when calling updateCollaboratorInstancesInstanceIdCollaboratorsPatch(Async)");
         }
 
-        return updateCollaboratorInstancesInstanceIdCollaboratorsPatchCall(instanceId, updateCollaboratorRequestBody, authorization, _callback);
+        return updateCollaboratorInstancesInstanceIdCollaboratorsPatchCall(instanceId, updateCollaboratorRequestBody, spaceId, authorization, _callback);
 
     }
 
@@ -1240,6 +1451,7 @@ public class InstancesApi {
      * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param updateCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1251,8 +1463,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateCollaboratorInstancesInstanceIdCollaboratorsPatch(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = updateCollaboratorInstancesInstanceIdCollaboratorsPatchWithHttpInfo(instanceId, updateCollaboratorRequestBody, authorization);
+    public Object updateCollaboratorInstancesInstanceIdCollaboratorsPatch(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateCollaboratorInstancesInstanceIdCollaboratorsPatchWithHttpInfo(instanceId, updateCollaboratorRequestBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -1261,6 +1473,7 @@ public class InstancesApi {
      * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param updateCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1272,8 +1485,8 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateCollaboratorInstancesInstanceIdCollaboratorsPatchWithHttpInfo(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = updateCollaboratorInstancesInstanceIdCollaboratorsPatchValidateBeforeCall(instanceId, updateCollaboratorRequestBody, authorization, null);
+    public ApiResponse<Object> updateCollaboratorInstancesInstanceIdCollaboratorsPatchWithHttpInfo(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateCollaboratorInstancesInstanceIdCollaboratorsPatchValidateBeforeCall(instanceId, updateCollaboratorRequestBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1283,6 +1496,7 @@ public class InstancesApi {
      * Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
      * @param instanceId  (required)
      * @param updateCollaboratorRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1295,9 +1509,9 @@ public class InstancesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateCollaboratorInstancesInstanceIdCollaboratorsPatchAsync(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateCollaboratorInstancesInstanceIdCollaboratorsPatchAsync(UUID instanceId, UpdateCollaboratorRequestBody updateCollaboratorRequestBody, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateCollaboratorInstancesInstanceIdCollaboratorsPatchValidateBeforeCall(instanceId, updateCollaboratorRequestBody, authorization, _callback);
+        okhttp3.Call localVarCall = updateCollaboratorInstancesInstanceIdCollaboratorsPatchValidateBeforeCall(instanceId, updateCollaboratorRequestBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

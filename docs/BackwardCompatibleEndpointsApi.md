@@ -1,6 +1,6 @@
 # BackwardCompatibleEndpointsApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet"></a>
 # **getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet**
-> Object getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(instanceId, authorization)
+> Object getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization)
 
 Get Db Token Backward Compatible
 
@@ -25,13 +25,14 @@ import ai.lamin.lamin_api_client.api.BackwardCompatibleEndpointsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     BackwardCompatibleEndpointsApi apiInstance = new BackwardCompatibleEndpointsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(instanceId, authorization);
+      Object result = apiInstance.getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling BackwardCompatibleEndpointsApi#getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet");
@@ -49,6 +50,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

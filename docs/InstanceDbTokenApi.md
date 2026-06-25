@@ -1,6 +1,6 @@
 # InstanceDbTokenApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -9,7 +9,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="getDbTokenInstancesInstanceIdDbTokenGet"></a>
 # **getDbTokenInstancesInstanceIdDbTokenGet**
-> Object getDbTokenInstancesInstanceIdDbTokenGet(instanceId, authorization)
+> Object getDbTokenInstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization)
 
 Get Db Token
 
@@ -27,13 +27,14 @@ import ai.lamin.lamin_api_client.api.InstanceDbTokenApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceDbTokenApi apiInstance = new InstanceDbTokenApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getDbTokenInstancesInstanceIdDbTokenGet(instanceId, authorization);
+      Object result = apiInstance.getDbTokenInstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceDbTokenApi#getDbTokenInstancesInstanceIdDbTokenGet");
@@ -51,6 +52,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

@@ -81,6 +81,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -93,7 +94,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -124,6 +125,10 @@ public class InstanceLabelsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -149,7 +154,7 @@ public class InstanceLabelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(Async)");
@@ -180,7 +185,7 @@ public class InstanceLabelsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(Async)");
         }
 
-        return attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, _callback);
+        return attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutCall(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -193,6 +198,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -204,8 +210,8 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutWithHttpInfo(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
+    public Object attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutWithHttpInfo(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -218,6 +224,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -229,8 +236,8 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutWithHttpInfo(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, null);
+    public ApiResponse<Object> attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutWithHttpInfo(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -244,6 +251,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -256,9 +264,9 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutAsync(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutAsync(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPutValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -271,6 +279,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -283,7 +292,7 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -314,6 +323,10 @@ public class InstanceLabelsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -339,7 +352,7 @@ public class InstanceLabelsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(Async)");
@@ -370,7 +383,7 @@ public class InstanceLabelsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(Async)");
         }
 
-        return detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, _callback);
+        return detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteCall(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -383,6 +396,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -394,8 +408,8 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteWithHttpInfo(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
+    public Object detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteWithHttpInfo(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -408,6 +422,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -419,8 +434,8 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteWithHttpInfo(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, null);
+    public ApiResponse<Object> detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteWithHttpInfo(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -434,6 +449,7 @@ public class InstanceLabelsApi {
      * @param labelField  (required)
      * @param labelId  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -446,9 +462,9 @@ public class InstanceLabelsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteAsync(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteAsync(String moduleName, String modelName, Integer id, String labelField, Integer labelId, UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDeleteValidateBeforeCall(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

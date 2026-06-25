@@ -1,6 +1,6 @@
 # HealthChecksApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -25,7 +25,7 @@ import ai.lamin.lamin_api_client.api.HealthChecksApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     HealthChecksApi apiInstance = new HealthChecksApi(defaultClient);
     try {

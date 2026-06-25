@@ -78,6 +78,7 @@ public class InstanceTransformsApi {
      * Build call for createTransformInstancesInstanceIdTransformsPost
      * @param instanceId  (required)
      * @param createTransformRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +91,7 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -115,6 +116,10 @@ public class InstanceTransformsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -142,7 +147,7 @@ public class InstanceTransformsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling createTransformInstancesInstanceIdTransformsPost(Async)");
@@ -153,7 +158,7 @@ public class InstanceTransformsApi {
             throw new ApiException("Missing the required parameter 'createTransformRequestBody' when calling createTransformInstancesInstanceIdTransformsPost(Async)");
         }
 
-        return createTransformInstancesInstanceIdTransformsPostCall(instanceId, createTransformRequestBody, authorization, _callback);
+        return createTransformInstancesInstanceIdTransformsPostCall(instanceId, createTransformRequestBody, spaceId, authorization, _callback);
 
     }
 
@@ -162,6 +167,7 @@ public class InstanceTransformsApi {
      * 
      * @param instanceId  (required)
      * @param createTransformRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -173,8 +179,8 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createTransformInstancesInstanceIdTransformsPost(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createTransformInstancesInstanceIdTransformsPostWithHttpInfo(instanceId, createTransformRequestBody, authorization);
+    public Object createTransformInstancesInstanceIdTransformsPost(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createTransformInstancesInstanceIdTransformsPostWithHttpInfo(instanceId, createTransformRequestBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -183,6 +189,7 @@ public class InstanceTransformsApi {
      * 
      * @param instanceId  (required)
      * @param createTransformRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -194,8 +201,8 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createTransformInstancesInstanceIdTransformsPostWithHttpInfo(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, authorization, null);
+    public ApiResponse<Object> createTransformInstancesInstanceIdTransformsPostWithHttpInfo(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,6 +212,7 @@ public class InstanceTransformsApi {
      * 
      * @param instanceId  (required)
      * @param createTransformRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -217,9 +225,9 @@ public class InstanceTransformsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostAsync(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createTransformInstancesInstanceIdTransformsPostAsync(UUID instanceId, CreateTransformRequestBody createTransformRequestBody, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, authorization, _callback);
+        okhttp3.Call localVarCall = createTransformInstancesInstanceIdTransformsPostValidateBeforeCall(instanceId, createTransformRequestBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

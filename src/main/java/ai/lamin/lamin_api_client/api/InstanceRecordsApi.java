@@ -90,6 +90,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchDeleteBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -102,7 +103,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostCall(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostCall(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -130,6 +131,10 @@ public class InstanceRecordsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -156,7 +161,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(Async)");
@@ -177,7 +182,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'batchDeleteBody' when calling batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(Async)");
         }
 
-        return batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostCall(moduleName, modelName, instanceId, batchDeleteBody, authorization, _callback);
+        return batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostCall(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization, _callback);
 
     }
 
@@ -188,6 +193,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchDeleteBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return BatchDeleteResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -199,8 +205,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, String authorization) throws ApiException {
-        ApiResponse<BatchDeleteResponse> localVarResp = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostWithHttpInfo(moduleName, modelName, instanceId, batchDeleteBody, authorization);
+    public BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<BatchDeleteResponse> localVarResp = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostWithHttpInfo(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -211,6 +217,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchDeleteBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;BatchDeleteResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -222,8 +229,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchDeleteResponse> batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(moduleName, modelName, instanceId, batchDeleteBody, authorization, null);
+    public ApiResponse<BatchDeleteResponse> batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<BatchDeleteResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -235,6 +242,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchDeleteBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -247,9 +255,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostAsync(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, String authorization, final ApiCallback<BatchDeleteResponse> _callback) throws ApiException {
+    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostAsync(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization, final ApiCallback<BatchDeleteResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(moduleName, modelName, instanceId, batchDeleteBody, authorization, _callback);
+        okhttp3.Call localVarCall = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<BatchDeleteResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -260,6 +268,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchSyncLinksBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -272,7 +281,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutCall(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutCall(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -300,6 +309,10 @@ public class InstanceRecordsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -326,7 +339,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(Async)");
@@ -347,7 +360,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'batchSyncLinksBody' when calling batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(Async)");
         }
 
-        return batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutCall(moduleName, modelName, instanceId, batchSyncLinksBody, authorization, _callback);
+        return batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutCall(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization, _callback);
 
     }
 
@@ -358,6 +371,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchSyncLinksBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return BatchSyncResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -369,8 +383,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, String authorization) throws ApiException {
-        ApiResponse<BatchSyncResponse> localVarResp = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutWithHttpInfo(moduleName, modelName, instanceId, batchSyncLinksBody, authorization);
+    public BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<BatchSyncResponse> localVarResp = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutWithHttpInfo(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -381,6 +395,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchSyncLinksBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;BatchSyncResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -392,8 +407,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchSyncResponse> batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(moduleName, modelName, instanceId, batchSyncLinksBody, authorization, null);
+    public ApiResponse<BatchSyncResponse> batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<BatchSyncResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -405,6 +420,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchSyncLinksBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -417,9 +433,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutAsync(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, String authorization, final ApiCallback<BatchSyncResponse> _callback) throws ApiException {
+    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutAsync(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization, final ApiCallback<BatchSyncResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(moduleName, modelName, instanceId, batchSyncLinksBody, authorization, _callback);
+        okhttp3.Call localVarCall = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<BatchSyncResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -430,6 +446,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchUpdateBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -442,7 +459,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchCall(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchCall(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -470,6 +487,10 @@ public class InstanceRecordsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -496,7 +517,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(Async)");
@@ -517,7 +538,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'batchUpdateBody' when calling batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(Async)");
         }
 
-        return batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchCall(moduleName, modelName, instanceId, batchUpdateBody, authorization, _callback);
+        return batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchCall(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization, _callback);
 
     }
 
@@ -528,6 +549,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchUpdateBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return List&lt;Map&lt;String, Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -539,8 +561,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Map<String, Object>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, String authorization) throws ApiException {
-        ApiResponse<List<Map<String, Object>>> localVarResp = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchWithHttpInfo(moduleName, modelName, instanceId, batchUpdateBody, authorization);
+    public List<Map<String, Object>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<List<Map<String, Object>>> localVarResp = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchWithHttpInfo(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -551,6 +573,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchUpdateBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;List&lt;Map&lt;String, Object&gt;&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -562,8 +585,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Map<String, Object>>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(moduleName, modelName, instanceId, batchUpdateBody, authorization, null);
+    public ApiResponse<List<Map<String, Object>>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<List<Map<String, Object>>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -575,6 +598,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param batchUpdateBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -587,9 +611,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchAsync(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, String authorization, final ApiCallback<List<Map<String, Object>>> _callback) throws ApiException {
+    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchAsync(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization, final ApiCallback<List<Map<String, Object>>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(moduleName, modelName, instanceId, batchUpdateBody, authorization, _callback);
+        okhttp3.Call localVarCall = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<List<Map<String, Object>>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -600,6 +624,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -612,7 +637,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(String moduleName, String modelName, UUID instanceId, Object body, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -640,6 +665,10 @@ public class InstanceRecordsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -666,7 +695,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
@@ -687,7 +716,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'body' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
         }
 
-        return createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(moduleName, modelName, instanceId, body, authorization, _callback);
+        return createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(moduleName, modelName, instanceId, body, spaceId, authorization, _callback);
 
     }
 
@@ -698,6 +727,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -709,8 +739,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(String moduleName, String modelName, UUID instanceId, Object body, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(moduleName, modelName, instanceId, body, authorization);
+    public Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(moduleName, modelName, instanceId, body, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -721,6 +751,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -732,8 +763,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, authorization, null);
+    public ApiResponse<Object> createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -745,6 +776,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -757,9 +789,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutAsync(String moduleName, String modelName, UUID instanceId, Object body, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutAsync(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, authorization, _callback);
+        okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -770,6 +802,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -782,7 +815,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteCall(String moduleName, String modelName, String uid, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteCall(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -811,6 +844,10 @@ public class InstanceRecordsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -836,7 +873,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(String moduleName, String modelName, String uid, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(Async)");
@@ -857,7 +894,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(Async)");
         }
 
-        return deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteCall(moduleName, modelName, uid, instanceId, authorization, _callback);
+        return deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteCall(moduleName, modelName, uid, instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -868,6 +905,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -879,8 +917,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(String moduleName, String modelName, String uid, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteWithHttpInfo(moduleName, modelName, uid, instanceId, authorization);
+    public Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteWithHttpInfo(moduleName, modelName, uid, instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -891,6 +929,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -902,8 +941,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteWithHttpInfo(String moduleName, String modelName, String uid, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(moduleName, modelName, uid, instanceId, authorization, null);
+    public ApiResponse<Object> deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteWithHttpInfo(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(moduleName, modelName, uid, instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -915,6 +954,7 @@ public class InstanceRecordsApi {
      * @param modelName  (required)
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -927,9 +967,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteAsync(String moduleName, String modelName, String uid, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteAsync(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(moduleName, modelName, uid, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(moduleName, modelName, uid, instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -938,6 +978,7 @@ public class InstanceRecordsApi {
      * Build call for exportRecordsInstancesInstanceIdRecordsUidExportPost
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param exportRecordsRequestBody  (optional)
      * @param _callback Callback for upload/download progress
@@ -951,7 +992,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostCall(String uid, UUID instanceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostCall(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -977,6 +1018,10 @@ public class InstanceRecordsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -1004,7 +1049,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(String uid, UUID instanceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'uid' is set
         if (uid == null) {
             throw new ApiException("Missing the required parameter 'uid' when calling exportRecordsInstancesInstanceIdRecordsUidExportPost(Async)");
@@ -1015,7 +1060,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling exportRecordsInstancesInstanceIdRecordsUidExportPost(Async)");
         }
 
-        return exportRecordsInstancesInstanceIdRecordsUidExportPostCall(uid, instanceId, authorization, exportRecordsRequestBody, _callback);
+        return exportRecordsInstancesInstanceIdRecordsUidExportPostCall(uid, instanceId, spaceId, authorization, exportRecordsRequestBody, _callback);
 
     }
 
@@ -1024,6 +1069,7 @@ public class InstanceRecordsApi {
      * 
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param exportRecordsRequestBody  (optional)
      * @return Object
@@ -1036,8 +1082,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object exportRecordsInstancesInstanceIdRecordsUidExportPost(String uid, UUID instanceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
-        ApiResponse<Object> localVarResp = exportRecordsInstancesInstanceIdRecordsUidExportPostWithHttpInfo(uid, instanceId, authorization, exportRecordsRequestBody);
+    public Object exportRecordsInstancesInstanceIdRecordsUidExportPost(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
+        ApiResponse<Object> localVarResp = exportRecordsInstancesInstanceIdRecordsUidExportPostWithHttpInfo(uid, instanceId, spaceId, authorization, exportRecordsRequestBody);
         return localVarResp.getData();
     }
 
@@ -1046,6 +1092,7 @@ public class InstanceRecordsApi {
      * 
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param exportRecordsRequestBody  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -1058,8 +1105,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> exportRecordsInstancesInstanceIdRecordsUidExportPostWithHttpInfo(String uid, UUID instanceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
-        okhttp3.Call localVarCall = exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(uid, instanceId, authorization, exportRecordsRequestBody, null);
+    public ApiResponse<Object> exportRecordsInstancesInstanceIdRecordsUidExportPostWithHttpInfo(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
+        okhttp3.Call localVarCall = exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(uid, instanceId, spaceId, authorization, exportRecordsRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1069,6 +1116,7 @@ public class InstanceRecordsApi {
      * 
      * @param uid  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param exportRecordsRequestBody  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1082,9 +1130,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostAsync(String uid, UUID instanceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostAsync(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(uid, instanceId, authorization, exportRecordsRequestBody, _callback);
+        okhttp3.Call localVarCall = exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(uid, instanceId, spaceId, authorization, exportRecordsRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1097,6 +1145,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordRequestBody  (optional)
      * @param _callback Callback for upload/download progress
@@ -1110,7 +1159,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostCall(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostCall(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1147,6 +1196,10 @@ public class InstanceRecordsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_foreign_keys", includeForeignKeys));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1173,7 +1226,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(Async)");
@@ -1194,7 +1247,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(Async)");
         }
 
-        return getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, authorization, getRecordRequestBody, _callback);
+        return getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody, _callback);
 
     }
 
@@ -1207,6 +1260,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordRequestBody  (optional)
      * @return Object
@@ -1219,8 +1273,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordRequestBody getRecordRequestBody) throws ApiException {
-        ApiResponse<Object> localVarResp = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostWithHttpInfo(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, authorization, getRecordRequestBody);
+    public Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody) throws ApiException {
+        ApiResponse<Object> localVarResp = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostWithHttpInfo(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody);
         return localVarResp.getData();
     }
 
@@ -1233,6 +1287,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordRequestBody  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -1245,8 +1300,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostWithHttpInfo(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordRequestBody getRecordRequestBody) throws ApiException {
-        okhttp3.Call localVarCall = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, authorization, getRecordRequestBody, null);
+    public ApiResponse<Object> getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostWithHttpInfo(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody) throws ApiException {
+        okhttp3.Call localVarCall = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1260,6 +1315,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordRequestBody  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1273,9 +1329,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostAsync(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostAsync(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, authorization, getRecordRequestBody, _callback);
+        okhttp3.Call localVarCall = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1289,6 +1345,7 @@ public class InstanceRecordsApi {
      * @param offset  (optional, default to 0)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordsRequestBody  (optional)
      * @param _callback Callback for upload/download progress
@@ -1302,7 +1359,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1346,6 +1403,10 @@ public class InstanceRecordsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_foreign_keys", includeForeignKeys));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1372,7 +1433,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(Async)");
@@ -1388,7 +1449,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(Async)");
         }
 
-        return getRecordsInstancesInstanceIdModulesModuleNameModelNamePostCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, authorization, getRecordsRequestBody, _callback);
+        return getRecordsInstancesInstanceIdModulesModuleNameModelNamePostCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody, _callback);
 
     }
 
@@ -1402,6 +1463,7 @@ public class InstanceRecordsApi {
      * @param offset  (optional, default to 0)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordsRequestBody  (optional)
      * @return Object
@@ -1414,8 +1476,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
-        ApiResponse<Object> localVarResp = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostWithHttpInfo(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, authorization, getRecordsRequestBody);
+    public Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
+        ApiResponse<Object> localVarResp = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostWithHttpInfo(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody);
         return localVarResp.getData();
     }
 
@@ -1429,6 +1491,7 @@ public class InstanceRecordsApi {
      * @param offset  (optional, default to 0)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordsRequestBody  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -1441,8 +1504,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRecordsInstancesInstanceIdModulesModuleNameModelNamePostWithHttpInfo(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
-        okhttp3.Call localVarCall = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, authorization, getRecordsRequestBody, null);
+    public ApiResponse<Object> getRecordsInstancesInstanceIdModulesModuleNameModelNamePostWithHttpInfo(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
+        okhttp3.Call localVarCall = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1457,6 +1520,7 @@ public class InstanceRecordsApi {
      * @param offset  (optional, default to 0)
      * @param limitToMany  (optional, default to 10)
      * @param includeForeignKeys  (optional, default to false)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getRecordsRequestBody  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1470,9 +1534,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostAsync(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostAsync(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, authorization, getRecordsRequestBody, _callback);
+        okhttp3.Call localVarCall = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1485,6 +1549,7 @@ public class InstanceRecordsApi {
      * @param request  (required)
      * @param limit The maximum number of relative records to return. (optional, default to 100)
      * @param offset The offset for paginating through the results. (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1497,7 +1562,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostCall(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostCall(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1533,6 +1598,10 @@ public class InstanceRecordsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1559,7 +1628,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(Async)");
@@ -1580,7 +1649,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'request' when calling getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(Async)");
         }
 
-        return getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostCall(moduleName, modelName, instanceId, request, limit, offset, authorization, _callback);
+        return getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostCall(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization, _callback);
 
     }
 
@@ -1593,6 +1662,7 @@ public class InstanceRecordsApi {
      * @param request  (required)
      * @param limit The maximum number of relative records to return. (optional, default to 100)
      * @param offset The offset for paginating through the results. (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1604,8 +1674,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostWithHttpInfo(moduleName, modelName, instanceId, request, limit, offset, authorization);
+    public Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostWithHttpInfo(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -1618,6 +1688,7 @@ public class InstanceRecordsApi {
      * @param request  (required)
      * @param limit The maximum number of relative records to return. (optional, default to 100)
      * @param offset The offset for paginating through the results. (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1629,8 +1700,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostWithHttpInfo(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(moduleName, modelName, instanceId, request, limit, offset, authorization, null);
+    public ApiResponse<Object> getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostWithHttpInfo(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1644,6 +1715,7 @@ public class InstanceRecordsApi {
      * @param request  (required)
      * @param limit The maximum number of relative records to return. (optional, default to 100)
      * @param offset The offset for paginating through the results. (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1656,9 +1728,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostAsync(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostAsync(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(moduleName, modelName, instanceId, request, limit, offset, authorization, _callback);
+        okhttp3.Call localVarCall = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1671,6 +1743,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limit  (optional, default to 50)
      * @param offset  (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getValuesRequestBody  (optional)
      * @param _callback Callback for upload/download progress
@@ -1684,7 +1757,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostCall(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostCall(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1721,6 +1794,10 @@ public class InstanceRecordsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1747,7 +1824,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(Async)");
@@ -1768,7 +1845,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(Async)");
         }
 
-        return getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostCall(moduleName, modelName, fieldPath, instanceId, limit, offset, authorization, getValuesRequestBody, _callback);
+        return getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostCall(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody, _callback);
 
     }
 
@@ -1781,6 +1858,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limit  (optional, default to 50)
      * @param offset  (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getValuesRequestBody  (optional)
      * @return Object
@@ -1793,8 +1871,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, String authorization, GetValuesRequestBody getValuesRequestBody) throws ApiException {
-        ApiResponse<Object> localVarResp = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostWithHttpInfo(moduleName, modelName, fieldPath, instanceId, limit, offset, authorization, getValuesRequestBody);
+    public Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody) throws ApiException {
+        ApiResponse<Object> localVarResp = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostWithHttpInfo(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody);
         return localVarResp.getData();
     }
 
@@ -1807,6 +1885,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limit  (optional, default to 50)
      * @param offset  (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getValuesRequestBody  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -1819,8 +1898,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostWithHttpInfo(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, String authorization, GetValuesRequestBody getValuesRequestBody) throws ApiException {
-        okhttp3.Call localVarCall = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(moduleName, modelName, fieldPath, instanceId, limit, offset, authorization, getValuesRequestBody, null);
+    public ApiResponse<Object> getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostWithHttpInfo(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody) throws ApiException {
+        okhttp3.Call localVarCall = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1834,6 +1913,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param limit  (optional, default to 50)
      * @param offset  (optional, default to 0)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param getValuesRequestBody  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -1847,9 +1927,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostAsync(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostAsync(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(moduleName, modelName, fieldPath, instanceId, limit, offset, authorization, getValuesRequestBody, _callback);
+        okhttp3.Call localVarCall = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1861,6 +1941,7 @@ public class InstanceRecordsApi {
      * @param uid  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1873,7 +1954,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchCall(String moduleName, String modelName, String uid, UUID instanceId, Object body, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchCall(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1902,6 +1983,10 @@ public class InstanceRecordsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -1928,7 +2013,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(String moduleName, String modelName, String uid, UUID instanceId, Object body, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(Async)");
@@ -1954,7 +2039,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'body' when calling updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(Async)");
         }
 
-        return updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchCall(moduleName, modelName, uid, instanceId, body, authorization, _callback);
+        return updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchCall(moduleName, modelName, uid, instanceId, body, spaceId, authorization, _callback);
 
     }
 
@@ -1966,6 +2051,7 @@ public class InstanceRecordsApi {
      * @param uid  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1977,8 +2063,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(String moduleName, String modelName, String uid, UUID instanceId, Object body, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchWithHttpInfo(moduleName, modelName, uid, instanceId, body, authorization);
+    public Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchWithHttpInfo(moduleName, modelName, uid, instanceId, body, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -1990,6 +2076,7 @@ public class InstanceRecordsApi {
      * @param uid  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2001,8 +2088,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchWithHttpInfo(String moduleName, String modelName, String uid, UUID instanceId, Object body, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(moduleName, modelName, uid, instanceId, body, authorization, null);
+    public ApiResponse<Object> updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchWithHttpInfo(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(moduleName, modelName, uid, instanceId, body, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2015,6 +2102,7 @@ public class InstanceRecordsApi {
      * @param uid  (required)
      * @param instanceId  (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2027,9 +2115,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchAsync(String moduleName, String modelName, String uid, UUID instanceId, Object body, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchAsync(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(moduleName, modelName, uid, instanceId, body, authorization, _callback);
+        okhttp3.Call localVarCall = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(moduleName, modelName, uid, instanceId, body, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -2041,6 +2129,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param conflictColumns A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database. (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -2055,7 +2144,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2087,6 +2176,10 @@ public class InstanceRecordsApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "conflict_columns", conflictColumns));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -2113,7 +2206,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
@@ -2139,7 +2232,7 @@ public class InstanceRecordsApi {
             throw new ApiException("Missing the required parameter 'body' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
         }
 
-        return upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(moduleName, modelName, instanceId, conflictColumns, body, authorization, _callback);
+        return upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization, _callback);
 
     }
 
@@ -2151,6 +2244,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param conflictColumns A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database. (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2164,8 +2258,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(moduleName, modelName, instanceId, conflictColumns, body, authorization);
+    public Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -2177,6 +2271,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param conflictColumns A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database. (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -2190,8 +2285,8 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, conflictColumns, body, authorization, null);
+    public ApiResponse<Object> upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -2204,6 +2299,7 @@ public class InstanceRecordsApi {
      * @param instanceId  (required)
      * @param conflictColumns A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database. (required)
      * @param body  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -2218,9 +2314,9 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutAsync(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutAsync(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, conflictColumns, body, authorization, _callback);
+        okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

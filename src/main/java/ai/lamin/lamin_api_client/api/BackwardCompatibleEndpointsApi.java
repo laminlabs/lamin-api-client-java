@@ -76,6 +76,7 @@ public class BackwardCompatibleEndpointsApi {
     /**
      * Build call for getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -88,7 +89,7 @@ public class BackwardCompatibleEndpointsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -113,6 +114,10 @@ public class BackwardCompatibleEndpointsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -139,13 +144,13 @@ public class BackwardCompatibleEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(Async)");
         }
 
-        return getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetCall(instanceId, authorization, _callback);
+        return getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -153,6 +158,7 @@ public class BackwardCompatibleEndpointsApi {
      * Get Db Token Backward Compatible
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -164,8 +170,8 @@ public class BackwardCompatibleEndpointsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetWithHttpInfo(instanceId, authorization);
+    public Object getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -173,6 +179,7 @@ public class BackwardCompatibleEndpointsApi {
      * Get Db Token Backward Compatible
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -184,8 +191,8 @@ public class BackwardCompatibleEndpointsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -194,6 +201,7 @@ public class BackwardCompatibleEndpointsApi {
      * Get Db Token Backward Compatible (asynchronously)
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -206,9 +214,9 @@ public class BackwardCompatibleEndpointsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

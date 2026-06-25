@@ -81,6 +81,7 @@ public class InstanceStatisticsApi {
      * Build call for getInstanceStatisticsInstancesInstanceIdStatisticsGet
      * @param instanceId  (required)
      * @param q A list of models in \&quot;${module}.${model}\&quot; format (case-sensitive). If omitted, statistics for all primary tables are returned. (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -96,7 +97,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetCall(UUID instanceId, List<String> q, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetCall(UUID instanceId, List<String> q, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -126,6 +127,10 @@ public class InstanceStatisticsApi {
             localVarCollectionQueryParams.addAll(localVarApiClient.parameterToPairs("multi", "q", q));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -151,13 +156,13 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(UUID instanceId, List<String> q, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(UUID instanceId, List<String> q, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getInstanceStatisticsInstancesInstanceIdStatisticsGet(Async)");
         }
 
-        return getInstanceStatisticsInstancesInstanceIdStatisticsGetCall(instanceId, q, authorization, _callback);
+        return getInstanceStatisticsInstancesInstanceIdStatisticsGetCall(instanceId, q, spaceId, authorization, _callback);
 
     }
 
@@ -166,6 +171,7 @@ public class InstanceStatisticsApi {
      * Retrieves instance statistics, including artifact size and table row counts.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **Row Counts (&#x60;counts&#x60;)**: Uses a hybrid counting strategy:   - For small tables (≤ 2000 estimated rows): **Exact counts** using     &#x60;COUNT(*)&#x60; to ensure accuracy for small datasets.   - For larger tables: **Fast approximations** based on PostgreSQL statistics catalog     (&#x60;pg_class.reltuples&#x60;) for near-instant retrieval. These stats are updated     periodically by database operations like &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;. - **Artifact Size (&#x60;instance_size&#x60;)**: This is an **exact** real-time calculation,   derived by performing a &#x60;SUM(size)&#x60; on the artifact table.
      * @param instanceId  (required)
      * @param q A list of models in \&quot;${module}.${model}\&quot; format (case-sensitive). If omitted, statistics for all primary tables are returned. (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return StatisticsResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,8 +186,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(UUID instanceId, List<String> q, String authorization) throws ApiException {
-        ApiResponse<StatisticsResponse> localVarResp = getInstanceStatisticsInstancesInstanceIdStatisticsGetWithHttpInfo(instanceId, q, authorization);
+    public StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(UUID instanceId, List<String> q, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<StatisticsResponse> localVarResp = getInstanceStatisticsInstancesInstanceIdStatisticsGetWithHttpInfo(instanceId, q, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -190,6 +196,7 @@ public class InstanceStatisticsApi {
      * Retrieves instance statistics, including artifact size and table row counts.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **Row Counts (&#x60;counts&#x60;)**: Uses a hybrid counting strategy:   - For small tables (≤ 2000 estimated rows): **Exact counts** using     &#x60;COUNT(*)&#x60; to ensure accuracy for small datasets.   - For larger tables: **Fast approximations** based on PostgreSQL statistics catalog     (&#x60;pg_class.reltuples&#x60;) for near-instant retrieval. These stats are updated     periodically by database operations like &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;. - **Artifact Size (&#x60;instance_size&#x60;)**: This is an **exact** real-time calculation,   derived by performing a &#x60;SUM(size)&#x60; on the artifact table.
      * @param instanceId  (required)
      * @param q A list of models in \&quot;${module}.${model}\&quot; format (case-sensitive). If omitted, statistics for all primary tables are returned. (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;StatisticsResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -204,8 +211,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<StatisticsResponse> getInstanceStatisticsInstancesInstanceIdStatisticsGetWithHttpInfo(UUID instanceId, List<String> q, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(instanceId, q, authorization, null);
+    public ApiResponse<StatisticsResponse> getInstanceStatisticsInstancesInstanceIdStatisticsGetWithHttpInfo(UUID instanceId, List<String> q, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(instanceId, q, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<StatisticsResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -215,6 +222,7 @@ public class InstanceStatisticsApi {
      * Retrieves instance statistics, including artifact size and table row counts.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **Row Counts (&#x60;counts&#x60;)**: Uses a hybrid counting strategy:   - For small tables (≤ 2000 estimated rows): **Exact counts** using     &#x60;COUNT(*)&#x60; to ensure accuracy for small datasets.   - For larger tables: **Fast approximations** based on PostgreSQL statistics catalog     (&#x60;pg_class.reltuples&#x60;) for near-instant retrieval. These stats are updated     periodically by database operations like &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;. - **Artifact Size (&#x60;instance_size&#x60;)**: This is an **exact** real-time calculation,   derived by performing a &#x60;SUM(size)&#x60; on the artifact table.
      * @param instanceId  (required)
      * @param q A list of models in \&quot;${module}.${model}\&quot; format (case-sensitive). If omitted, statistics for all primary tables are returned. (optional)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -230,9 +238,9 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetAsync(UUID instanceId, List<String> q, String authorization, final ApiCallback<StatisticsResponse> _callback) throws ApiException {
+    public okhttp3.Call getInstanceStatisticsInstancesInstanceIdStatisticsGetAsync(UUID instanceId, List<String> q, UUID spaceId, String authorization, final ApiCallback<StatisticsResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(instanceId, q, authorization, _callback);
+        okhttp3.Call localVarCall = getInstanceStatisticsInstancesInstanceIdStatisticsGetValidateBeforeCall(instanceId, q, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<StatisticsResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -240,6 +248,7 @@ public class InstanceStatisticsApi {
     /**
      * Build call for getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -255,7 +264,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -281,6 +290,10 @@ public class InstanceStatisticsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -306,13 +319,13 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(Async)");
         }
 
-        return getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetCall(instanceId, authorization, _callback);
+        return getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -320,6 +333,7 @@ public class InstanceStatisticsApi {
      * List Non-Empty Data Tables by Module
      * Analyzes the instance&#39;s database schema to identify all tables that contain data.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **For small tables (≤ 2000 estimated rows)**: **Exact non-empty check** using   &#x60;COUNT(*) &gt; 0&#x60; to ensure accuracy for small datasets. - **For larger tables (&gt; 2000 estimated rows)**: **Fast approximation** based on   PostgreSQL statistics catalog (&#x60;pg_class.reltuples &gt; 0&#x60;) for near-instant   retrieval. These stats are updated periodically by database operations like   &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;.  **Accuracy Note**: - Small tables: Guaranteed accurate non-empty detection - Large tables: May have acceptable false positives if all rows are deleted   but space hasn&#39;t been reclaimed until &#x60;VACUUM FULL&#x60; or &#x60;TRUNCATE&#x60; is run.
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return NonEmptyTablesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -334,8 +348,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<NonEmptyTablesResponse> localVarResp = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetWithHttpInfo(instanceId, authorization);
+    public NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<NonEmptyTablesResponse> localVarResp = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -343,6 +357,7 @@ public class InstanceStatisticsApi {
      * List Non-Empty Data Tables by Module
      * Analyzes the instance&#39;s database schema to identify all tables that contain data.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **For small tables (≤ 2000 estimated rows)**: **Exact non-empty check** using   &#x60;COUNT(*) &gt; 0&#x60; to ensure accuracy for small datasets. - **For larger tables (&gt; 2000 estimated rows)**: **Fast approximation** based on   PostgreSQL statistics catalog (&#x60;pg_class.reltuples &gt; 0&#x60;) for near-instant   retrieval. These stats are updated periodically by database operations like   &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;.  **Accuracy Note**: - Small tables: Guaranteed accurate non-empty detection - Large tables: May have acceptable false positives if all rows are deleted   but space hasn&#39;t been reclaimed until &#x60;VACUUM FULL&#x60; or &#x60;TRUNCATE&#x60; is run.
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;NonEmptyTablesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -357,8 +372,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<NonEmptyTablesResponse> getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<NonEmptyTablesResponse> getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<NonEmptyTablesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -367,6 +382,7 @@ public class InstanceStatisticsApi {
      * List Non-Empty Data Tables by Module (asynchronously)
      * Analyzes the instance&#39;s database schema to identify all tables that contain data.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **For small tables (≤ 2000 estimated rows)**: **Exact non-empty check** using   &#x60;COUNT(*) &gt; 0&#x60; to ensure accuracy for small datasets. - **For larger tables (&gt; 2000 estimated rows)**: **Fast approximation** based on   PostgreSQL statistics catalog (&#x60;pg_class.reltuples &gt; 0&#x60;) for near-instant   retrieval. These stats are updated periodically by database operations like   &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;.  **Accuracy Note**: - Small tables: Guaranteed accurate non-empty detection - Large tables: May have acceptable false positives if all rows are deleted   but space hasn&#39;t been reclaimed until &#x60;VACUUM FULL&#x60; or &#x60;TRUNCATE&#x60; is run.
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -382,9 +398,9 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetAsync(UUID instanceId, String authorization, final ApiCallback<NonEmptyTablesResponse> _callback) throws ApiException {
+    public okhttp3.Call getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<NonEmptyTablesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<NonEmptyTablesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -395,6 +411,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param id  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -407,7 +424,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetCall(String moduleName, String modelName, Integer id, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetCall(String moduleName, String modelName, Integer id, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -436,6 +453,10 @@ public class InstanceStatisticsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -461,7 +482,7 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(String moduleName, String modelName, Integer id, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(String moduleName, String modelName, Integer id, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(Async)");
@@ -482,7 +503,7 @@ public class InstanceStatisticsApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(Async)");
         }
 
-        return getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetCall(moduleName, modelName, id, instanceId, authorization, _callback);
+        return getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetCall(moduleName, modelName, id, instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -493,6 +514,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param id  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -504,8 +526,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(String moduleName, String modelName, Integer id, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetWithHttpInfo(moduleName, modelName, id, instanceId, authorization);
+    public Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(String moduleName, String modelName, Integer id, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetWithHttpInfo(moduleName, modelName, id, instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -516,6 +538,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param id  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -527,8 +550,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetWithHttpInfo(String moduleName, String modelName, Integer id, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(moduleName, modelName, id, instanceId, authorization, null);
+    public ApiResponse<Object> getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetWithHttpInfo(String moduleName, String modelName, Integer id, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(moduleName, modelName, id, instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -540,6 +563,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param id  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -552,9 +576,9 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetAsync(String moduleName, String modelName, Integer id, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetAsync(String moduleName, String modelName, Integer id, UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(moduleName, modelName, id, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGetValidateBeforeCall(moduleName, modelName, id, instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -565,6 +589,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param groupByRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -577,7 +602,7 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostCall(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostCall(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -605,6 +630,10 @@ public class InstanceStatisticsApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -631,7 +660,7 @@ public class InstanceStatisticsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(Async)");
@@ -652,7 +681,7 @@ public class InstanceStatisticsApi {
             throw new ApiException("Missing the required parameter 'groupByRequestBody' when calling groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(Async)");
         }
 
-        return groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostCall(moduleName, modelName, instanceId, groupByRequestBody, authorization, _callback);
+        return groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostCall(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization, _callback);
 
     }
 
@@ -663,6 +692,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param groupByRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -674,8 +704,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostWithHttpInfo(moduleName, modelName, instanceId, groupByRequestBody, authorization);
+    public Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostWithHttpInfo(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -686,6 +716,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param groupByRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -697,8 +728,8 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostWithHttpInfo(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(moduleName, modelName, instanceId, groupByRequestBody, authorization, null);
+    public ApiResponse<Object> groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostWithHttpInfo(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -710,6 +741,7 @@ public class InstanceStatisticsApi {
      * @param modelName  (required)
      * @param instanceId  (required)
      * @param groupByRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -722,9 +754,9 @@ public class InstanceStatisticsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostAsync(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostAsync(String moduleName, String modelName, UUID instanceId, GroupByRequestBody groupByRequestBody, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(moduleName, modelName, instanceId, groupByRequestBody, authorization, _callback);
+        okhttp3.Call localVarCall = groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPostValidateBeforeCall(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

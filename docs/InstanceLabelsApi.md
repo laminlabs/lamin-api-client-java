@@ -1,6 +1,6 @@
 # InstanceLabelsApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -10,7 +10,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut"></a>
 # **attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut**
-> Object attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(moduleName, modelName, id, labelField, labelId, instanceId, authorization)
+> Object attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization)
 
 Attach Label
 
@@ -26,7 +26,7 @@ import ai.lamin.lamin_api_client.api.InstanceLabelsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceLabelsApi apiInstance = new InstanceLabelsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -35,9 +35,10 @@ public class Example {
     String labelField = "labelField_example"; // String | 
     Integer labelId = 56; // Integer | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
+      Object result = apiInstance.attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceLabelsApi#attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut");
@@ -60,6 +61,7 @@ public class Example {
 | **labelField** | **String**|  | |
 | **labelId** | **Integer**|  | |
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -83,7 +85,7 @@ No authorization required
 
 <a id="detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete"></a>
 # **detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete**
-> Object detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(moduleName, modelName, id, labelField, labelId, instanceId, authorization)
+> Object detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization)
 
 Detach Label
 
@@ -99,7 +101,7 @@ import ai.lamin.lamin_api_client.api.InstanceLabelsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceLabelsApi apiInstance = new InstanceLabelsApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
@@ -108,9 +110,10 @@ public class Example {
     String labelField = "labelField_example"; // String | 
     Integer labelId = 56; // Integer | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
+      Object result = apiInstance.detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceLabelsApi#detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete");
@@ -133,6 +136,7 @@ public class Example {
 | **labelField** | **String**|  | |
 | **labelId** | **Integer**|  | |
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

@@ -14,6 +14,7 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
+import ai.lamin.lamin_api_client.model.QueryScope;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -51,12 +52,17 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetRecordRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class GetRecordRequestBody {
   public static final String SERIALIZED_NAME_SELECT = "select";
   @SerializedName(SERIALIZED_NAME_SELECT)
   @javax.annotation.Nullable
-  private List<String> select;
+  private List<String> select = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_SCOPE = "scope";
+  @SerializedName(SERIALIZED_NAME_SCOPE)
+  @javax.annotation.Nullable
+  private QueryScope scope;
 
   public GetRecordRequestBody() {
   }
@@ -88,6 +94,25 @@ public class GetRecordRequestBody {
   }
 
 
+  public GetRecordRequestBody scope(@javax.annotation.Nullable QueryScope scope) {
+    this.scope = scope;
+    return this;
+  }
+
+  /**
+   * Get scope
+   * @return scope
+   */
+  @javax.annotation.Nullable
+  public QueryScope getScope() {
+    return scope;
+  }
+
+  public void setScope(@javax.annotation.Nullable QueryScope scope) {
+    this.scope = scope;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -98,7 +123,8 @@ public class GetRecordRequestBody {
       return false;
     }
     GetRecordRequestBody getRecordRequestBody = (GetRecordRequestBody) o;
-    return Objects.equals(this.select, getRecordRequestBody.select);
+    return Objects.equals(this.select, getRecordRequestBody.select) &&
+        Objects.equals(this.scope, getRecordRequestBody.scope);
   }
 
   private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
@@ -107,7 +133,7 @@ public class GetRecordRequestBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(select);
+    return Objects.hash(select, scope);
   }
 
   private static <T> int hashCodeNullable(JsonNullable<T> a) {
@@ -122,6 +148,7 @@ public class GetRecordRequestBody {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRecordRequestBody {\n");
     sb.append("    select: ").append(toIndentedString(select)).append("\n");
+    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -145,6 +172,7 @@ public class GetRecordRequestBody {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("select");
+    openapiFields.add("scope");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

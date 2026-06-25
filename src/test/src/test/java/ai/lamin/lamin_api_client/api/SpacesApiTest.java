@@ -40,7 +40,7 @@ public class SpacesApiTest {
     /**
      * Add Space Collaborator
      *
-     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
+     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the space organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
      *
      * @throws ApiException if the Api call fails
      */
@@ -140,8 +140,9 @@ public class SpacesApiTest {
     @Test
     public void listInstanceSpacesSpacesInstancesInstanceIdGetTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.listInstanceSpacesSpacesInstancesInstanceIdGet(instanceId, authorization);
+        Object response = api.listInstanceSpacesSpacesInstancesInstanceIdGet(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -199,11 +200,12 @@ public class SpacesApiTest {
      */
     @Test
     public void moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutTest() throws ApiException {
+        UUID spaceId = null;
         Integer instanceDbSpaceId = null;
         AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody = null;
         UUID instanceId = null;
         String authorization = null;
-        Object response = api.moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization);
+        Object response = api.moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization);
         // TODO: test validations
     }
 

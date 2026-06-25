@@ -10,6 +10,7 @@
 |**accountId** | **UUID** |  |  [optional] |
 |**teamId** | **UUID** |  |  [optional] |
 |**role** | [**RoleEnum**](#RoleEnum) |  |  [optional] |
+|**addGuestIfMissing** | **Boolean** |  |  [optional] |
 
 
 

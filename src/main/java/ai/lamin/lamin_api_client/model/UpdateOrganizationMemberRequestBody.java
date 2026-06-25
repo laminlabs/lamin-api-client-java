@@ -14,6 +14,7 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
+import ai.lamin.lamin_api_client.model.ORGANIZATION;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -48,73 +49,17 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * UpdateOrganizationMemberRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-01-19T09:11:02.411898486+01:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
 public class UpdateOrganizationMemberRequestBody {
-  /**
-   * Gets or Sets role
-   */
-  @JsonAdapter(RoleEnum.Adapter.class)
-  public enum RoleEnum {
-    ADMIN("admin"),
-    
-    MANAGER("manager"),
-    
-    MEMBER("member"),
-    
-    GUEST("guest");
-
-    private String value;
-
-    RoleEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static RoleEnum fromValue(String value) {
-      for (RoleEnum b : RoleEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<RoleEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final RoleEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public RoleEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return RoleEnum.fromValue(value);
-      }
-    }
-
-    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
-      String value = jsonElement.getAsString();
-      RoleEnum.fromValue(value);
-    }
-  }
-
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nonnull
-  private RoleEnum role;
+  private ORGANIZATION role;
 
   public UpdateOrganizationMemberRequestBody() {
   }
 
-  public UpdateOrganizationMemberRequestBody role(@javax.annotation.Nonnull RoleEnum role) {
+  public UpdateOrganizationMemberRequestBody role(@javax.annotation.Nonnull ORGANIZATION role) {
     this.role = role;
     return this;
   }
@@ -124,11 +69,11 @@ public class UpdateOrganizationMemberRequestBody {
    * @return role
    */
   @javax.annotation.Nonnull
-  public RoleEnum getRole() {
+  public ORGANIZATION getRole() {
     return role;
   }
 
-  public void setRole(@javax.annotation.Nonnull RoleEnum role) {
+  public void setRole(@javax.annotation.Nonnull ORGANIZATION role) {
     this.role = role;
   }
 
@@ -213,11 +158,8 @@ public class UpdateOrganizationMemberRequestBody {
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("role").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
-      }
       // validate the required field `role`
-      RoleEnum.validateJsonElement(jsonObj.get("role"));
+      ORGANIZATION.validateJsonElement(jsonObj.get("role"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

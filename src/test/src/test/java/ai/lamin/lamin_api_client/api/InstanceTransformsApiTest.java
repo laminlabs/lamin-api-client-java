@@ -42,8 +42,9 @@ public class InstanceTransformsApiTest {
     public void createTransformInstancesInstanceIdTransformsPostTest() throws ApiException {
         UUID instanceId = null;
         CreateTransformRequestBody createTransformRequestBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.createTransformInstancesInstanceIdTransformsPost(instanceId, createTransformRequestBody, authorization);
+        Object response = api.createTransformInstancesInstanceIdTransformsPost(instanceId, createTransformRequestBody, spaceId, authorization);
         // TODO: test validations
     }
 

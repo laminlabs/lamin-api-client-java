@@ -44,8 +44,9 @@ public class InstanceFormsApiTest {
     public void registerFormInstancesInstanceIdFormsPostTest() throws ApiException {
         UUID instanceId = null;
         RegisterFormRequest registerFormRequest = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, authorization);
+        Object response = api.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, spaceId, authorization);
         // TODO: test validations
     }
 

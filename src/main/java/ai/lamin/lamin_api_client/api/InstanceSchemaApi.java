@@ -78,6 +78,7 @@ public class InstanceSchemaApi {
      * @param moduleName  (required)
      * @param modelName  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -90,7 +91,7 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetCall(String moduleName, String modelName, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetCall(String moduleName, String modelName, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -118,6 +119,10 @@ public class InstanceSchemaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -143,7 +148,7 @@ public class InstanceSchemaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetValidateBeforeCall(String moduleName, String modelName, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetValidateBeforeCall(String moduleName, String modelName, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(Async)");
@@ -159,7 +164,7 @@ public class InstanceSchemaApi {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(Async)");
         }
 
-        return getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetCall(moduleName, modelName, instanceId, authorization, _callback);
+        return getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetCall(moduleName, modelName, instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -169,6 +174,7 @@ public class InstanceSchemaApi {
      * @param moduleName  (required)
      * @param modelName  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -180,8 +186,8 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(String moduleName, String modelName, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetWithHttpInfo(moduleName, modelName, instanceId, authorization);
+    public Object getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(String moduleName, String modelName, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetWithHttpInfo(moduleName, modelName, instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -191,6 +197,7 @@ public class InstanceSchemaApi {
      * @param moduleName  (required)
      * @param modelName  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -202,8 +209,8 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetWithHttpInfo(String moduleName, String modelName, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetValidateBeforeCall(moduleName, modelName, instanceId, authorization, null);
+    public ApiResponse<Object> getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetWithHttpInfo(String moduleName, String modelName, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetValidateBeforeCall(moduleName, modelName, instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -214,6 +221,7 @@ public class InstanceSchemaApi {
      * @param moduleName  (required)
      * @param modelName  (required)
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -226,9 +234,9 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetAsync(String moduleName, String modelName, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetAsync(String moduleName, String modelName, UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetValidateBeforeCall(moduleName, modelName, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getRelationsInstancesInstanceIdSchemaModuleNameModelNameGetValidateBeforeCall(moduleName, modelName, instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -236,6 +244,7 @@ public class InstanceSchemaApi {
     /**
      * Build call for getSchemaInstancesInstanceIdSchemaGet
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -248,7 +257,7 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSchemaInstancesInstanceIdSchemaGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getSchemaInstancesInstanceIdSchemaGetCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -274,6 +283,10 @@ public class InstanceSchemaApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -299,13 +312,13 @@ public class InstanceSchemaApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getSchemaInstancesInstanceIdSchemaGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getSchemaInstancesInstanceIdSchemaGetValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getSchemaInstancesInstanceIdSchemaGet(Async)");
         }
 
-        return getSchemaInstancesInstanceIdSchemaGetCall(instanceId, authorization, _callback);
+        return getSchemaInstancesInstanceIdSchemaGetCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -313,6 +326,7 @@ public class InstanceSchemaApi {
      * Get Schema
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -324,8 +338,8 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getSchemaInstancesInstanceIdSchemaGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getSchemaInstancesInstanceIdSchemaGetWithHttpInfo(instanceId, authorization);
+    public Object getSchemaInstancesInstanceIdSchemaGet(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getSchemaInstancesInstanceIdSchemaGetWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -333,6 +347,7 @@ public class InstanceSchemaApi {
      * Get Schema
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -344,8 +359,8 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getSchemaInstancesInstanceIdSchemaGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getSchemaInstancesInstanceIdSchemaGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> getSchemaInstancesInstanceIdSchemaGetWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getSchemaInstancesInstanceIdSchemaGetValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -354,6 +369,7 @@ public class InstanceSchemaApi {
      * Get Schema (asynchronously)
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -366,9 +382,9 @@ public class InstanceSchemaApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getSchemaInstancesInstanceIdSchemaGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getSchemaInstancesInstanceIdSchemaGetAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getSchemaInstancesInstanceIdSchemaGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getSchemaInstancesInstanceIdSchemaGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

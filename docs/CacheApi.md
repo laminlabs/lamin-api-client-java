@@ -1,6 +1,6 @@
 # CacheApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -10,7 +10,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="getInstanceCacheCacheInstancesInstanceIdGet"></a>
 # **getInstanceCacheCacheInstancesInstanceIdGet**
-> Object getInstanceCacheCacheInstancesInstanceIdGet(instanceId, authorization)
+> Object getInstanceCacheCacheInstancesInstanceIdGet(instanceId, spaceId, authorization)
 
 Get Instance Cache
 
@@ -26,13 +26,14 @@ import ai.lamin.lamin_api_client.api.CacheApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     CacheApi apiInstance = new CacheApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getInstanceCacheCacheInstancesInstanceIdGet(instanceId, authorization);
+      Object result = apiInstance.getInstanceCacheCacheInstancesInstanceIdGet(instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CacheApi#getInstanceCacheCacheInstancesInstanceIdGet");
@@ -50,6 +51,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -73,7 +75,7 @@ No authorization required
 
 <a id="invalidateInstanceCacheCacheInstancesInstanceIdDelete"></a>
 # **invalidateInstanceCacheCacheInstancesInstanceIdDelete**
-> Object invalidateInstanceCacheCacheInstancesInstanceIdDelete(instanceId, authorization)
+> Object invalidateInstanceCacheCacheInstancesInstanceIdDelete(instanceId, spaceId, authorization)
 
 Invalidate Instance Cache
 
@@ -89,13 +91,14 @@ import ai.lamin.lamin_api_client.api.CacheApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     CacheApi apiInstance = new CacheApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.invalidateInstanceCacheCacheInstancesInstanceIdDelete(instanceId, authorization);
+      Object result = apiInstance.invalidateInstanceCacheCacheInstancesInstanceIdDelete(instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CacheApi#invalidateInstanceCacheCacheInstancesInstanceIdDelete");
@@ -113,6 +116,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

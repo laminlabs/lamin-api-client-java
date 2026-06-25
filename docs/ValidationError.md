@@ -10,6 +10,8 @@
 |**loc** | [**List&lt;ValidationErrorLocInner&gt;**](ValidationErrorLocInner.md) |  |  |
 |**msg** | **String** |  |  |
 |**type** | **String** |  |  |
+|**input** | **Object** |  |  [optional] |
+|**ctx** | **Object** |  |  [optional] |
 
 
 

@@ -41,8 +41,9 @@ public class InstanceFileExplorerApiTest {
     public void getTreeInstancesInstanceIdFilesTreeGetTest() throws ApiException {
         UUID instanceId = null;
         String entityType = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, authorization);
+        Object response = api.getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -56,8 +57,9 @@ public class InstanceFileExplorerApiTest {
         String entityType = null;
         UUID instanceId = null;
         String path = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, authorization);
+        Object response = api.listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, spaceId, authorization);
         // TODO: test validations
     }
 

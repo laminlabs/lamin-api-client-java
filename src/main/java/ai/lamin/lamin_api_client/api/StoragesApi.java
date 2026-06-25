@@ -27,6 +27,7 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import ai.lamin.lamin_api_client.model.CloudAccessRequest;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import ai.lamin.lamin_api_client.model.S3PermissionsRequest;
 
@@ -73,6 +74,286 @@ public class StoragesApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for getCloudAccessStoragesCredentialsPost
+     * @param cloudAccessRequest  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCloudAccessStoragesCredentialsPostCall(CloudAccessRequest cloudAccessRequest, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = cloudAccessRequest;
+
+        // create path and map variables
+        String localVarPath = "/storages/credentials";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getCloudAccessStoragesCredentialsPostValidateBeforeCall(CloudAccessRequest cloudAccessRequest, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'cloudAccessRequest' is set
+        if (cloudAccessRequest == null) {
+            throw new ApiException("Missing the required parameter 'cloudAccessRequest' when calling getCloudAccessStoragesCredentialsPost(Async)");
+        }
+
+        return getCloudAccessStoragesCredentialsPostCall(cloudAccessRequest, authorization, _callback);
+
+    }
+
+    /**
+     * Get Cloud Access
+     * 
+     * @param cloudAccessRequest  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object getCloudAccessStoragesCredentialsPost(CloudAccessRequest cloudAccessRequest, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getCloudAccessStoragesCredentialsPostWithHttpInfo(cloudAccessRequest, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Cloud Access
+     * 
+     * @param cloudAccessRequest  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> getCloudAccessStoragesCredentialsPostWithHttpInfo(CloudAccessRequest cloudAccessRequest, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getCloudAccessStoragesCredentialsPostValidateBeforeCall(cloudAccessRequest, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Cloud Access (asynchronously)
+     * 
+     * @param cloudAccessRequest  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getCloudAccessStoragesCredentialsPostAsync(CloudAccessRequest cloudAccessRequest, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getCloudAccessStoragesCredentialsPostValidateBeforeCall(cloudAccessRequest, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getS3FileStoragesS3FullPathGet
+     * @param fullPath  (required)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getS3FileStoragesS3FullPathGetCall(String fullPath, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/storages/s3/{full_path}"
+            .replace("{" + "full_path" + "}", localVarApiClient.escapeString(fullPath.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getS3FileStoragesS3FullPathGetValidateBeforeCall(String fullPath, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'fullPath' is set
+        if (fullPath == null) {
+            throw new ApiException("Missing the required parameter 'fullPath' when calling getS3FileStoragesS3FullPathGet(Async)");
+        }
+
+        return getS3FileStoragesS3FullPathGetCall(fullPath, authorization, _callback);
+
+    }
+
+    /**
+     * Get S3 File
+     * 
+     * @param fullPath  (required)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object getS3FileStoragesS3FullPathGet(String fullPath, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getS3FileStoragesS3FullPathGetWithHttpInfo(fullPath, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get S3 File
+     * 
+     * @param fullPath  (required)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> getS3FileStoragesS3FullPathGetWithHttpInfo(String fullPath, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getS3FileStoragesS3FullPathGetValidateBeforeCall(fullPath, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get S3 File (asynchronously)
+     * 
+     * @param fullPath  (required)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getS3FileStoragesS3FullPathGetAsync(String fullPath, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getS3FileStoragesS3FullPathGetValidateBeforeCall(fullPath, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for grantS3PermissionsStoragesS3BucketNamePermissionsPut
      * @param bucketName  (required)

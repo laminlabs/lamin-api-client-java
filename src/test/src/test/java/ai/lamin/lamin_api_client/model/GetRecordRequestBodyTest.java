@@ -13,6 +13,7 @@
 
 package ai.lamin.lamin_api_client.model;
 
+import ai.lamin.lamin_api_client.model.QueryScope;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -46,6 +47,14 @@ public class GetRecordRequestBodyTest {
     @Test
     public void selectTest() {
         // TODO: test select
+    }
+
+    /**
+     * Test the property 'scope'
+     */
+    @Test
+    public void scopeTest() {
+        // TODO: test scope
     }
 
 }

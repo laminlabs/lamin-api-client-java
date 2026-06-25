@@ -63,4 +63,12 @@ public class AddSpaceCollaboratorRequestBodyTest {
         // TODO: test role
     }
 
+    /**
+     * Test the property 'addGuestIfMissing'
+     */
+    @Test
+    public void addGuestIfMissingTest() {
+        // TODO: test addGuestIfMissing
+    }
+
 }

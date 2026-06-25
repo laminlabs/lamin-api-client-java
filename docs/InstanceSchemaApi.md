@@ -1,6 +1,6 @@
 # InstanceSchemaApi
 
-All URIs are relative to *https://staging.laminhub.com/api*
+All URIs are relative to */api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -10,7 +10,7 @@ All URIs are relative to *https://staging.laminhub.com/api*
 
 <a id="getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet"></a>
 # **getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet**
-> Object getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, authorization)
+> Object getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, spaceId, authorization)
 
 Get Relations
 
@@ -26,15 +26,16 @@ import ai.lamin.lamin_api_client.api.InstanceSchemaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceSchemaApi apiInstance = new InstanceSchemaApi(defaultClient);
     String moduleName = "moduleName_example"; // String | 
     String modelName = "modelName_example"; // String | 
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, authorization);
+      Object result = apiInstance.getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceSchemaApi#getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet");
@@ -54,6 +55,7 @@ public class Example {
 | **moduleName** | **String**|  | |
 | **modelName** | **String**|  | |
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type
@@ -77,7 +79,7 @@ No authorization required
 
 <a id="getSchemaInstancesInstanceIdSchemaGet"></a>
 # **getSchemaInstancesInstanceIdSchemaGet**
-> Object getSchemaInstancesInstanceIdSchemaGet(instanceId, authorization)
+> Object getSchemaInstancesInstanceIdSchemaGet(instanceId, spaceId, authorization)
 
 Get Schema
 
@@ -93,13 +95,14 @@ import ai.lamin.lamin_api_client.api.InstanceSchemaApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://staging.laminhub.com/api");
+    defaultClient.setBasePath("/api");
 
     InstanceSchemaApi apiInstance = new InstanceSchemaApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.getSchemaInstancesInstanceIdSchemaGet(instanceId, authorization);
+      Object result = apiInstance.getSchemaInstancesInstanceIdSchemaGet(instanceId, spaceId, authorization);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceSchemaApi#getSchemaInstancesInstanceIdSchemaGet");
@@ -117,6 +120,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
+| **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 
 ### Return type

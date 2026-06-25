@@ -14,6 +14,7 @@
 package ai.lamin.lamin_api_client.api;
 
 import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.model.ApiKeyExchangeRequest;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -40,6 +41,18 @@ public class AccountsApiTest {
     public void getCallerAccountAccountGetTest() throws ApiException {
         String authorization = null;
         Object response = api.getCallerAccountAccountGet(authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Get Central Jwt
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getCentralJwtAccountJwtPostTest() throws ApiException {
+        ApiKeyExchangeRequest apiKeyExchangeRequest = null;
+        Object response = api.getCentralJwtAccountJwtPost(apiKeyExchangeRequest);
         // TODO: test validations
     }
 

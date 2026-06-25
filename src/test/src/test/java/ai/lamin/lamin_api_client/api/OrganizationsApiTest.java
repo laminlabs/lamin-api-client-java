@@ -15,6 +15,7 @@ package ai.lamin.lamin_api_client.api;
 
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.model.AddOrganizationMemberRequestBody;
+import ai.lamin.lamin_api_client.model.CreateOrganizationRequestBody;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import java.util.UUID;
 import ai.lamin.lamin_api_client.model.UpdateOrganizationMemberRequestBody;
@@ -48,6 +49,19 @@ public class OrganizationsApiTest {
         AddOrganizationMemberRequestBody addOrganizationMemberRequestBody = null;
         String authorization = null;
         Object response = api.addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Create Organization
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createOrganizationOrganizationsPutTest() throws ApiException {
+        CreateOrganizationRequestBody createOrganizationRequestBody = null;
+        String authorization = null;
+        Object response = api.createOrganizationOrganizationsPut(createOrganizationRequestBody, authorization);
         // TODO: test validations
     }
 

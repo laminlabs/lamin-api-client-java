@@ -47,8 +47,9 @@ public class InstanceStatisticsApiTest {
     public void getInstanceStatisticsInstancesInstanceIdStatisticsGetTest() throws ApiException {
         UUID instanceId = null;
         List<String> q = null;
+        UUID spaceId = null;
         String authorization = null;
-        StatisticsResponse response = api.getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, authorization);
+        StatisticsResponse response = api.getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -62,8 +63,9 @@ public class InstanceStatisticsApiTest {
     @Test
     public void getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGetTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        NonEmptyTablesResponse response = api.getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, authorization);
+        NonEmptyTablesResponse response = api.getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -78,8 +80,9 @@ public class InstanceStatisticsApiTest {
         String modelName = null;
         Integer id = null;
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, authorization);
+        Object response = api.getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -94,8 +97,9 @@ public class InstanceStatisticsApiTest {
         String modelName = null;
         UUID instanceId = null;
         GroupByRequestBody groupByRequestBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, authorization);
+        Object response = api.groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization);
         // TODO: test validations
     }
 

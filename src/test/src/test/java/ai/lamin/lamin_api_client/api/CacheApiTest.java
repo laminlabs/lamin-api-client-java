@@ -40,8 +40,9 @@ public class CacheApiTest {
     @Test
     public void getInstanceCacheCacheInstancesInstanceIdGetTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getInstanceCacheCacheInstancesInstanceIdGet(instanceId, authorization);
+        Object response = api.getInstanceCacheCacheInstancesInstanceIdGet(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -53,8 +54,9 @@ public class CacheApiTest {
     @Test
     public void invalidateInstanceCacheCacheInstancesInstanceIdDeleteTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.invalidateInstanceCacheCacheInstancesInstanceIdDelete(instanceId, authorization);
+        Object response = api.invalidateInstanceCacheCacheInstancesInstanceIdDelete(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 

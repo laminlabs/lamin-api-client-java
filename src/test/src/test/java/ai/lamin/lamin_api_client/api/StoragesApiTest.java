@@ -14,6 +14,7 @@
 package ai.lamin.lamin_api_client.api;
 
 import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.model.CloudAccessRequest;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import ai.lamin.lamin_api_client.model.S3PermissionsRequest;
 import org.junit.jupiter.api.Disabled;
@@ -31,6 +32,32 @@ import java.util.Map;
 public class StoragesApiTest {
 
     private final StoragesApi api = new StoragesApi();
+
+    /**
+     * Get Cloud Access
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getCloudAccessStoragesCredentialsPostTest() throws ApiException {
+        CloudAccessRequest cloudAccessRequest = null;
+        String authorization = null;
+        Object response = api.getCloudAccessStoragesCredentialsPost(cloudAccessRequest, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Get S3 File
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getS3FileStoragesS3FullPathGetTest() throws ApiException {
+        String fullPath = null;
+        String authorization = null;
+        Object response = api.getS3FileStoragesS3FullPathGet(fullPath, authorization);
+        // TODO: test validations
+    }
 
     /**
      * Grant S3 Permissions

@@ -45,8 +45,9 @@ public class InstanceLabelsApiTest {
         String labelField = null;
         Integer labelId = null;
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
+        Object response = api.attachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdPut(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -63,8 +64,9 @@ public class InstanceLabelsApiTest {
         String labelField = null;
         Integer labelId = null;
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(moduleName, modelName, id, labelField, labelId, instanceId, authorization);
+        Object response = api.detachLabelInstancesInstanceIdModulesModuleNameModelNameIdLabelFieldLabelIdDelete(moduleName, modelName, id, labelField, labelId, instanceId, spaceId, authorization);
         // TODO: test validations
     }
 

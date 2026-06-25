@@ -37,7 +37,7 @@ public class InstancesApiTest {
     /**
      * Add Collaborator
      *
-     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
+     * Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the instance organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
      *
      * @throws ApiException if the Api call fails
      */
@@ -45,8 +45,9 @@ public class InstancesApiTest {
     public void addCollaboratorInstancesInstanceIdCollaboratorsPutTest() throws ApiException {
         UUID instanceId = null;
         AddCollaboratorRequestBody addCollaboratorRequestBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.addCollaboratorInstancesInstanceIdCollaboratorsPut(instanceId, addCollaboratorRequestBody, authorization);
+        Object response = api.addCollaboratorInstancesInstanceIdCollaboratorsPut(instanceId, addCollaboratorRequestBody, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -63,9 +64,10 @@ public class InstancesApiTest {
         String dbServerName = null;
         String storageUid = null;
         UUID accountId = null;
+        Boolean _public = null;
         String authorization = null;
         Map<String, Object> requestBody = null;
-        Object response = api.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, authorization, requestBody);
+        Object response = api.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, authorization, requestBody);
         // TODO: test validations
     }
 
@@ -78,8 +80,23 @@ public class InstancesApiTest {
     public void deleteInstanceInstancesInstanceIdDeleteTest() throws ApiException {
         UUID instanceId = null;
         String instanceName = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.deleteInstanceInstancesInstanceIdDelete(instanceId, instanceName, authorization);
+        Object response = api.deleteInstanceInstancesInstanceIdDelete(instanceId, instanceName, spaceId, authorization);
+        // TODO: test validations
+    }
+
+    /**
+     * Get Instance Settings
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getInstanceSettingsInstancesOwnerNameSettingsGetTest() throws ApiException {
+        String owner = null;
+        String name = null;
+        String authorization = null;
+        Object response = api.getInstanceSettingsInstancesOwnerNameSettingsGet(owner, name, authorization);
         // TODO: test validations
     }
 
@@ -93,8 +110,9 @@ public class InstancesApiTest {
     @Test
     public void listCollaboratorsInstancesInstanceIdCollaboratorsGetTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.listCollaboratorsInstancesInstanceIdCollaboratorsGet(instanceId, authorization);
+        Object response = api.listCollaboratorsInstancesInstanceIdCollaboratorsGet(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -106,8 +124,9 @@ public class InstancesApiTest {
     @Test
     public void migrateInstanceInstancesInstanceIdMigratePostTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.migrateInstanceInstancesInstanceIdMigratePost(instanceId, authorization);
+        Object response = api.migrateInstanceInstancesInstanceIdMigratePost(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -123,8 +142,9 @@ public class InstancesApiTest {
         UUID instanceId = null;
         UUID accountId = null;
         UUID teamId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.removeCollaboratorInstancesInstanceIdCollaboratorsDelete(instanceId, accountId, teamId, authorization);
+        Object response = api.removeCollaboratorInstancesInstanceIdCollaboratorsDelete(instanceId, accountId, teamId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -137,8 +157,9 @@ public class InstancesApiTest {
     public void transferOwnershipInstancesInstanceIdOwnerHandlePatchTest() throws ApiException {
         String handle = null;
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.transferOwnershipInstancesInstanceIdOwnerHandlePatch(handle, instanceId, authorization);
+        Object response = api.transferOwnershipInstancesInstanceIdOwnerHandlePatch(handle, instanceId, spaceId, authorization);
         // TODO: test validations
     }
 
@@ -153,8 +174,9 @@ public class InstancesApiTest {
     public void updateCollaboratorInstancesInstanceIdCollaboratorsPatchTest() throws ApiException {
         UUID instanceId = null;
         UpdateCollaboratorRequestBody updateCollaboratorRequestBody = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.updateCollaboratorInstancesInstanceIdCollaboratorsPatch(instanceId, updateCollaboratorRequestBody, authorization);
+        Object response = api.updateCollaboratorInstancesInstanceIdCollaboratorsPatch(instanceId, updateCollaboratorRequestBody, spaceId, authorization);
         // TODO: test validations
     }
 

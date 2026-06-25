@@ -28,7 +28,6 @@ import java.io.IOException;
 
 
 import ai.lamin.lamin_api_client.model.CreateArtifactRequestBody;
-import java.io.File;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import java.util.UUID;
 
@@ -79,6 +78,7 @@ public class InstanceArtifactsApi {
      * Build call for createArtifactInstancesInstanceIdArtifactsCreatePost
      * @param instanceId  (required)
      * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -91,7 +91,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -116,6 +116,10 @@ public class InstanceArtifactsApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -143,7 +147,7 @@ public class InstanceArtifactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling createArtifactInstancesInstanceIdArtifactsCreatePost(Async)");
@@ -154,7 +158,7 @@ public class InstanceArtifactsApi {
             throw new ApiException("Missing the required parameter 'createArtifactRequestBody' when calling createArtifactInstancesInstanceIdArtifactsCreatePost(Async)");
         }
 
-        return createArtifactInstancesInstanceIdArtifactsCreatePostCall(instanceId, createArtifactRequestBody, authorization, _callback);
+        return createArtifactInstancesInstanceIdArtifactsCreatePostCall(instanceId, createArtifactRequestBody, spaceId, authorization, _callback);
 
     }
 
@@ -163,6 +167,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -174,8 +179,8 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createArtifactInstancesInstanceIdArtifactsCreatePost(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(instanceId, createArtifactRequestBody, authorization);
+    public Object createArtifactInstancesInstanceIdArtifactsCreatePost(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(instanceId, createArtifactRequestBody, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -184,6 +189,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -195,8 +201,8 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, authorization, null);
+    public ApiResponse<Object> createArtifactInstancesInstanceIdArtifactsCreatePostWithHttpInfo(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -206,6 +212,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -218,17 +225,18 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostAsync(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createArtifactInstancesInstanceIdArtifactsCreatePostAsync(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, authorization, _callback);
+        okhttp3.Call localVarCall = createArtifactInstancesInstanceIdArtifactsCreatePostValidateBeforeCall(instanceId, createArtifactRequestBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for getArtifactByPathInstancesInstanceIdArtifactsByPathGet
+     * Build call for createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost
      * @param instanceId  (required)
-     * @param path  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -241,7 +249,165 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getArtifactByPathInstancesInstanceIdArtifactsByPathGetCall(UUID instanceId, String path, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createArtifactRequestBody;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/artifacts/create-sql"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostValidateBeforeCall(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost(Async)");
+        }
+
+        // verify the required parameter 'createArtifactRequestBody' is set
+        if (createArtifactRequestBody == null) {
+            throw new ApiException("Missing the required parameter 'createArtifactRequestBody' when calling createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost(Async)");
+        }
+
+        return createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostCall(instanceId, createArtifactRequestBody, spaceId, authorization, _callback);
+
+    }
+
+    /**
+     * Create Artifact Sql
+     * Register an Artifact for an existing storage path via direct SQL.  Unlike &#x60;&#x60;/create&#x60;&#x60; (which invokes a lambda running lamindb), this resolves the path&#39;s S3 metadata and inserts the artifact row straight into the instance DB.
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostWithHttpInfo(instanceId, createArtifactRequestBody, spaceId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Artifact Sql
+     * Register an Artifact for an existing storage path via direct SQL.  Unlike &#x60;&#x60;/create&#x60;&#x60; (which invokes a lambda running lamindb), this resolves the path&#39;s S3 metadata and inserts the artifact row straight into the instance DB.
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostWithHttpInfo(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostValidateBeforeCall(instanceId, createArtifactRequestBody, spaceId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Artifact Sql (asynchronously)
+     * Register an Artifact for an existing storage path via direct SQL.  Unlike &#x60;&#x60;/create&#x60;&#x60; (which invokes a lambda running lamindb), this resolves the path&#39;s S3 metadata and inserts the artifact row straight into the instance DB.
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostAsync(UUID instanceId, CreateArtifactRequestBody createArtifactRequestBody, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPostValidateBeforeCall(instanceId, createArtifactRequestBody, spaceId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getArtifactByPathInstancesInstanceIdArtifactsByPathGet
+     * @param instanceId  (required)
+     * @param path  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getArtifactByPathInstancesInstanceIdArtifactsByPathGetCall(UUID instanceId, String path, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -271,6 +437,10 @@ public class InstanceArtifactsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("path", path));
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -296,7 +466,7 @@ public class InstanceArtifactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getArtifactByPathInstancesInstanceIdArtifactsByPathGetValidateBeforeCall(UUID instanceId, String path, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getArtifactByPathInstancesInstanceIdArtifactsByPathGetValidateBeforeCall(UUID instanceId, String path, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getArtifactByPathInstancesInstanceIdArtifactsByPathGet(Async)");
@@ -307,7 +477,7 @@ public class InstanceArtifactsApi {
             throw new ApiException("Missing the required parameter 'path' when calling getArtifactByPathInstancesInstanceIdArtifactsByPathGet(Async)");
         }
 
-        return getArtifactByPathInstancesInstanceIdArtifactsByPathGetCall(instanceId, path, authorization, _callback);
+        return getArtifactByPathInstancesInstanceIdArtifactsByPathGetCall(instanceId, path, spaceId, authorization, _callback);
 
     }
 
@@ -316,6 +486,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param path  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -327,8 +498,8 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getArtifactByPathInstancesInstanceIdArtifactsByPathGet(UUID instanceId, String path, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getArtifactByPathInstancesInstanceIdArtifactsByPathGetWithHttpInfo(instanceId, path, authorization);
+    public Object getArtifactByPathInstancesInstanceIdArtifactsByPathGet(UUID instanceId, String path, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getArtifactByPathInstancesInstanceIdArtifactsByPathGetWithHttpInfo(instanceId, path, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -337,6 +508,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param path  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -348,8 +520,8 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getArtifactByPathInstancesInstanceIdArtifactsByPathGetWithHttpInfo(UUID instanceId, String path, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getArtifactByPathInstancesInstanceIdArtifactsByPathGetValidateBeforeCall(instanceId, path, authorization, null);
+    public ApiResponse<Object> getArtifactByPathInstancesInstanceIdArtifactsByPathGetWithHttpInfo(UUID instanceId, String path, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getArtifactByPathInstancesInstanceIdArtifactsByPathGetValidateBeforeCall(instanceId, path, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -359,6 +531,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param path  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -371,9 +544,9 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getArtifactByPathInstancesInstanceIdArtifactsByPathGetAsync(UUID instanceId, String path, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getArtifactByPathInstancesInstanceIdArtifactsByPathGetAsync(UUID instanceId, String path, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getArtifactByPathInstancesInstanceIdArtifactsByPathGetValidateBeforeCall(instanceId, path, authorization, _callback);
+        okhttp3.Call localVarCall = getArtifactByPathInstancesInstanceIdArtifactsByPathGetValidateBeforeCall(instanceId, path, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -382,6 +555,7 @@ public class InstanceArtifactsApi {
      * Build call for uploadArtifactInstancesInstanceIdArtifactsUploadPost
      * @param instanceId  (required)
      * @param _file  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param kwargs  (optional)
      * @param _callback Callback for upload/download progress
@@ -395,7 +569,7 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(UUID instanceId, String _file, UUID spaceId, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -429,6 +603,10 @@ public class InstanceArtifactsApi {
             localVarFormParams.put("kwargs", kwargs);
         }
 
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -455,7 +633,7 @@ public class InstanceArtifactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(UUID instanceId, String _file, UUID spaceId, String authorization, String kwargs, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling uploadArtifactInstancesInstanceIdArtifactsUploadPost(Async)");
@@ -466,7 +644,7 @@ public class InstanceArtifactsApi {
             throw new ApiException("Missing the required parameter '_file' when calling uploadArtifactInstancesInstanceIdArtifactsUploadPost(Async)");
         }
 
-        return uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(instanceId, _file, authorization, kwargs, _callback);
+        return uploadArtifactInstancesInstanceIdArtifactsUploadPostCall(instanceId, _file, spaceId, authorization, kwargs, _callback);
 
     }
 
@@ -475,6 +653,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param _file  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param kwargs  (optional)
      * @return Object
@@ -487,8 +666,8 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object uploadArtifactInstancesInstanceIdArtifactsUploadPost(UUID instanceId, File _file, String authorization, String kwargs) throws ApiException {
-        ApiResponse<Object> localVarResp = uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(instanceId, _file, authorization, kwargs);
+    public Object uploadArtifactInstancesInstanceIdArtifactsUploadPost(UUID instanceId, String _file, UUID spaceId, String authorization, String kwargs) throws ApiException {
+        ApiResponse<Object> localVarResp = uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(instanceId, _file, spaceId, authorization, kwargs);
         return localVarResp.getData();
     }
 
@@ -497,6 +676,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param _file  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param kwargs  (optional)
      * @return ApiResponse&lt;Object&gt;
@@ -509,8 +689,8 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(UUID instanceId, File _file, String authorization, String kwargs) throws ApiException {
-        okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, authorization, kwargs, null);
+    public ApiResponse<Object> uploadArtifactInstancesInstanceIdArtifactsUploadPostWithHttpInfo(UUID instanceId, String _file, UUID spaceId, String authorization, String kwargs) throws ApiException {
+        okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, spaceId, authorization, kwargs, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -520,6 +700,7 @@ public class InstanceArtifactsApi {
      * 
      * @param instanceId  (required)
      * @param _file  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param kwargs  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -533,9 +714,9 @@ public class InstanceArtifactsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostAsync(UUID instanceId, File _file, String authorization, String kwargs, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call uploadArtifactInstancesInstanceIdArtifactsUploadPostAsync(UUID instanceId, String _file, UUID spaceId, String authorization, String kwargs, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, authorization, kwargs, _callback);
+        okhttp3.Call localVarCall = uploadArtifactInstancesInstanceIdArtifactsUploadPostValidateBeforeCall(instanceId, _file, spaceId, authorization, kwargs, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

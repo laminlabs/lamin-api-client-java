@@ -42,8 +42,9 @@ public class InstanceDbTokenApiTest {
     @Test
     public void getDbTokenInstancesInstanceIdDbTokenGetTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getDbTokenInstancesInstanceIdDbTokenGet(instanceId, authorization);
+        Object response = api.getDbTokenInstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 

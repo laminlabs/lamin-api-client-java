@@ -40,8 +40,9 @@ public class BackwardCompatibleEndpointsApiTest {
     @Test
     public void getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGetTest() throws ApiException {
         UUID instanceId = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(instanceId, authorization);
+        Object response = api.getDbTokenBackwardCompatibleAccessV2InstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization);
         // TODO: test validations
     }
 

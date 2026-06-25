@@ -41,8 +41,9 @@ public class InstanceSearchApiTest {
     public void globalSearchInstancesInstanceIdSearchGetTest() throws ApiException {
         UUID instanceId = null;
         String searchTerm = null;
+        UUID spaceId = null;
         String authorization = null;
-        Object response = api.globalSearchInstancesInstanceIdSearchGet(instanceId, searchTerm, authorization);
+        Object response = api.globalSearchInstancesInstanceIdSearchGet(instanceId, searchTerm, spaceId, authorization);
         // TODO: test validations
     }
 

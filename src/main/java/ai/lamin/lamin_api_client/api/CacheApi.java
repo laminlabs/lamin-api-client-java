@@ -76,6 +76,7 @@ public class CacheApi {
     /**
      * Build call for getInstanceCacheCacheInstancesInstanceIdGet
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -88,7 +89,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -113,6 +114,10 @@ public class CacheApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -139,13 +144,13 @@ public class CacheApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getInstanceCacheCacheInstancesInstanceIdGet(Async)");
         }
 
-        return getInstanceCacheCacheInstancesInstanceIdGetCall(instanceId, authorization, _callback);
+        return getInstanceCacheCacheInstancesInstanceIdGetCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -153,6 +158,7 @@ public class CacheApi {
      * Get Instance Cache
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -164,8 +170,8 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getInstanceCacheCacheInstancesInstanceIdGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = getInstanceCacheCacheInstancesInstanceIdGetWithHttpInfo(instanceId, authorization);
+    public Object getInstanceCacheCacheInstancesInstanceIdGet(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = getInstanceCacheCacheInstancesInstanceIdGetWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -173,6 +179,7 @@ public class CacheApi {
      * Get Instance Cache
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -184,8 +191,8 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getInstanceCacheCacheInstancesInstanceIdGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> getInstanceCacheCacheInstancesInstanceIdGetWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -194,6 +201,7 @@ public class CacheApi {
      * Get Instance Cache (asynchronously)
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -206,9 +214,9 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getInstanceCacheCacheInstancesInstanceIdGetAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = getInstanceCacheCacheInstancesInstanceIdGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -216,6 +224,7 @@ public class CacheApi {
     /**
      * Build call for invalidateInstanceCacheCacheInstancesInstanceIdDelete
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -228,7 +237,7 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -253,6 +262,10 @@ public class CacheApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -279,13 +292,13 @@ public class CacheApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling invalidateInstanceCacheCacheInstancesInstanceIdDelete(Async)");
         }
 
-        return invalidateInstanceCacheCacheInstancesInstanceIdDeleteCall(instanceId, authorization, _callback);
+        return invalidateInstanceCacheCacheInstancesInstanceIdDeleteCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -293,6 +306,7 @@ public class CacheApi {
      * Invalidate Instance Cache
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -304,8 +318,8 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object invalidateInstanceCacheCacheInstancesInstanceIdDelete(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = invalidateInstanceCacheCacheInstancesInstanceIdDeleteWithHttpInfo(instanceId, authorization);
+    public Object invalidateInstanceCacheCacheInstancesInstanceIdDelete(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = invalidateInstanceCacheCacheInstancesInstanceIdDeleteWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -313,6 +327,7 @@ public class CacheApi {
      * Invalidate Instance Cache
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -324,8 +339,8 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> invalidateInstanceCacheCacheInstancesInstanceIdDeleteWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> invalidateInstanceCacheCacheInstancesInstanceIdDeleteWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -334,6 +349,7 @@ public class CacheApi {
      * Invalidate Instance Cache (asynchronously)
      * 
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -346,9 +362,9 @@ public class CacheApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call invalidateInstanceCacheCacheInstancesInstanceIdDeleteAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = invalidateInstanceCacheCacheInstancesInstanceIdDeleteValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

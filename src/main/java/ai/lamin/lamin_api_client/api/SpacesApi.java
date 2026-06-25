@@ -163,7 +163,7 @@ public class SpacesApi {
 
     /**
      * Add Space Collaborator
-     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
+     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the space organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
      * @param spaceId  (required)
      * @param addSpaceCollaboratorRequestBody  (required)
      * @param authorization  (optional)
@@ -184,7 +184,7 @@ public class SpacesApi {
 
     /**
      * Add Space Collaborator
-     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
+     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the space organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
      * @param spaceId  (required)
      * @param addSpaceCollaboratorRequestBody  (required)
      * @param authorization  (optional)
@@ -206,7 +206,7 @@ public class SpacesApi {
 
     /**
      * Add Space Collaborator (asynchronously)
-     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
+     * Add a collaborator (account or team) to a space.  Parameters: - **space_id**: ID of the space to add the collaborator to - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the space organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added to space successfully - **400**: Invalid input (e.g., both account_id and team_id provided)
      * @param spaceId  (required)
      * @param addSpaceCollaboratorRequestBody  (required)
      * @param authorization  (optional)
@@ -951,6 +951,7 @@ public class SpacesApi {
     /**
      * Build call for listInstanceSpacesSpacesInstancesInstanceIdGet
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -963,7 +964,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -988,6 +989,10 @@ public class SpacesApi {
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
 
         final String[] localVarAccepts = {
             "application/json"
@@ -1014,13 +1019,13 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling listInstanceSpacesSpacesInstancesInstanceIdGet(Async)");
         }
 
-        return listInstanceSpacesSpacesInstancesInstanceIdGetCall(instanceId, authorization, _callback);
+        return listInstanceSpacesSpacesInstancesInstanceIdGetCall(instanceId, spaceId, authorization, _callback);
 
     }
 
@@ -1028,6 +1033,7 @@ public class SpacesApi {
      * List Instance Spaces
      * List all spaces attached to an instance.  Parameters: - **instance_id**: UUID of the instance to list spaces for (from URL path)  Returns: - **200**: List of spaces attached to the instance retrieved successfully
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1039,8 +1045,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listInstanceSpacesSpacesInstancesInstanceIdGet(UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = listInstanceSpacesSpacesInstancesInstanceIdGetWithHttpInfo(instanceId, authorization);
+    public Object listInstanceSpacesSpacesInstancesInstanceIdGet(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = listInstanceSpacesSpacesInstancesInstanceIdGetWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
 
@@ -1048,6 +1054,7 @@ public class SpacesApi {
      * List Instance Spaces
      * List all spaces attached to an instance.  Parameters: - **instance_id**: UUID of the instance to list spaces for (from URL path)  Returns: - **200**: List of spaces attached to the instance retrieved successfully
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1059,8 +1066,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listInstanceSpacesSpacesInstancesInstanceIdGetWithHttpInfo(UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(instanceId, authorization, null);
+    public ApiResponse<Object> listInstanceSpacesSpacesInstancesInstanceIdGetWithHttpInfo(UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1069,6 +1076,7 @@ public class SpacesApi {
      * List Instance Spaces (asynchronously)
      * List all spaces attached to an instance.  Parameters: - **instance_id**: UUID of the instance to list spaces for (from URL path)  Returns: - **200**: List of spaces attached to the instance retrieved successfully
      * @param instanceId  (required)
+     * @param spaceId  (optional)
      * @param authorization  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1081,9 +1089,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetAsync(UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetAsync(UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1510,6 +1518,7 @@ public class SpacesApi {
     }
     /**
      * Build call for moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut
+     * @param spaceId  (required)
      * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
@@ -1525,7 +1534,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutCall(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutCall(UUID spaceId, Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1542,7 +1551,8 @@ public class SpacesApi {
         Object localVarPostBody = attachSpaceToRecordRequestBody;
 
         // create path and map variables
-        String localVarPath = "/spaces/{space_id}/record-attachments";
+        String localVarPath = "/spaces/{space_id}/record-attachments"
+            .replace("{" + "space_id" + "}", localVarApiClient.escapeString(spaceId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1584,7 +1594,12 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(UUID spaceId, Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'spaceId' is set
+        if (spaceId == null) {
+            throw new ApiException("Missing the required parameter 'spaceId' when calling moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(Async)");
+        }
+
         // verify the required parameter 'instanceDbSpaceId' is set
         if (instanceDbSpaceId == null) {
             throw new ApiException("Missing the required parameter 'instanceDbSpaceId' when calling moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(Async)");
@@ -1595,13 +1610,14 @@ public class SpacesApi {
             throw new ApiException("Missing the required parameter 'attachSpaceToRecordRequestBody' when calling moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(Async)");
         }
 
-        return moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutCall(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, _callback);
+        return moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutCall(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, _callback);
 
     }
 
     /**
      * Move Record To Space
      * Move a record to a specific space.  Parameters: - **space_id**: ID of the space to move the record to - **body**: Request body containing record details   - **module_name**: Module name of the record   - **model_name**: Model name of the record   - **record_id**: ID of the record to move in the space - **instance_id**: UUID of the instance (from URL path) - **schema_id**: UUID of the schema (from URL path)  Returns: - **200**: Record moved to the space successfully  Requires admin access to the instance
+     * @param spaceId  (required)
      * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
@@ -1616,14 +1632,15 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization) throws ApiException {
-        ApiResponse<Object> localVarResp = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutWithHttpInfo(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization);
+    public Object moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(UUID spaceId, Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutWithHttpInfo(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization);
         return localVarResp.getData();
     }
 
     /**
      * Move Record To Space
      * Move a record to a specific space.  Parameters: - **space_id**: ID of the space to move the record to - **body**: Request body containing record details   - **module_name**: Module name of the record   - **model_name**: Model name of the record   - **record_id**: ID of the record to move in the space - **instance_id**: UUID of the instance (from URL path) - **schema_id**: UUID of the schema (from URL path)  Returns: - **200**: Record moved to the space successfully  Requires admin access to the instance
+     * @param spaceId  (required)
      * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
@@ -1638,8 +1655,8 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutWithHttpInfo(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization) throws ApiException {
-        okhttp3.Call localVarCall = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, null);
+    public ApiResponse<Object> moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutWithHttpInfo(UUID spaceId, Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization) throws ApiException {
+        okhttp3.Call localVarCall = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1647,6 +1664,7 @@ public class SpacesApi {
     /**
      * Move Record To Space (asynchronously)
      * Move a record to a specific space.  Parameters: - **space_id**: ID of the space to move the record to - **body**: Request body containing record details   - **module_name**: Module name of the record   - **model_name**: Model name of the record   - **record_id**: ID of the record to move in the space - **instance_id**: UUID of the instance (from URL path) - **schema_id**: UUID of the schema (from URL path)  Returns: - **200**: Record moved to the space successfully  Requires admin access to the instance
+     * @param spaceId  (required)
      * @param instanceDbSpaceId  (required)
      * @param attachSpaceToRecordRequestBody  (required)
      * @param instanceId  (optional)
@@ -1662,9 +1680,9 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutAsync(Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutAsync(UUID spaceId, Integer instanceDbSpaceId, AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, UUID instanceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, _callback);
+        okhttp3.Call localVarCall = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
