@@ -14,7 +14,6 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
-import ai.lamin.lamin_api_client.model.Role1;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -49,17 +48,73 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * UpdateTeamMemberRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class UpdateTeamMemberRequestBody {
+  /**
+   * Gets or Sets role
+   */
+  @JsonAdapter(RoleEnum.Adapter.class)
+  public enum RoleEnum {
+    ADMIN("admin"),
+    
+    MEMBER("member"),
+    
+    MANAGER("manager"),
+    
+    GUEST("guest");
+
+    private String value;
+
+    RoleEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static RoleEnum fromValue(String value) {
+      for (RoleEnum b : RoleEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<RoleEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final RoleEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public RoleEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return RoleEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      RoleEnum.fromValue(value);
+    }
+  }
+
   public static final String SERIALIZED_NAME_ROLE = "role";
   @SerializedName(SERIALIZED_NAME_ROLE)
   @javax.annotation.Nonnull
-  private Role1 role;
+  private RoleEnum role;
 
   public UpdateTeamMemberRequestBody() {
   }
 
-  public UpdateTeamMemberRequestBody role(@javax.annotation.Nonnull Role1 role) {
+  public UpdateTeamMemberRequestBody role(@javax.annotation.Nonnull RoleEnum role) {
     this.role = role;
     return this;
   }
@@ -69,11 +124,11 @@ public class UpdateTeamMemberRequestBody {
    * @return role
    */
   @javax.annotation.Nonnull
-  public Role1 getRole() {
+  public RoleEnum getRole() {
     return role;
   }
 
-  public void setRole(@javax.annotation.Nonnull Role1 role) {
+  public void setRole(@javax.annotation.Nonnull RoleEnum role) {
     this.role = role;
   }
 
@@ -110,10 +165,7 @@ public class UpdateTeamMemberRequestBody {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -122,12 +174,10 @@ public class UpdateTeamMemberRequestBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("role");
+    openapiFields = new HashSet<String>(Arrays.asList("role"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("role");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("role"));
   }
 
   /**
@@ -139,7 +189,7 @@ public class UpdateTeamMemberRequestBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!UpdateTeamMemberRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateTeamMemberRequestBody is not found in the empty JSON string", UpdateTeamMemberRequestBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in UpdateTeamMemberRequestBody is not found in the empty JSON string", UpdateTeamMemberRequestBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -147,19 +197,22 @@ public class UpdateTeamMemberRequestBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!UpdateTeamMemberRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `UpdateTeamMemberRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `UpdateTeamMemberRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : UpdateTeamMemberRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
+      if (!jsonObj.get("role").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `role` to be a primitive type in the JSON string but got `%s`", jsonObj.get("role").toString()));
+      }
       // validate the required field `role`
-      Role1.validateJsonElement(jsonObj.get("role"));
+      RoleEnum.validateJsonElement(jsonObj.get("role"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

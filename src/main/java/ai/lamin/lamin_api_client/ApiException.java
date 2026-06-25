@@ -21,7 +21,7 @@ import java.util.List;
  * <p>ApiException class.</p>
  */
 @SuppressWarnings("serial")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class ApiException extends Exception {
     private static final long serialVersionUID = 1L;
 
@@ -161,7 +161,7 @@ public class ApiException extends Exception {
      * @return The exception message
      */
     public String getMessage() {
-        return String.format("Message: %s%nHTTP response code: %s%nHTTP response body: %s%nHTTP response headers: %s",
+        return String.format(java.util.Locale.ROOT, "Message: %s%nHTTP response code: %s%nHTTP response body: %s%nHTTP response headers: %s",
                 super.getMessage(), this.getCode(), this.getResponseBody(), this.getResponseHeaders());
     }
 }

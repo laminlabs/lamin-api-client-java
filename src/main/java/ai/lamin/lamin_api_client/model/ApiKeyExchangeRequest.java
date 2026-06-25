@@ -48,7 +48,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * ApiKeyExchangeRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class ApiKeyExchangeRequest {
   public static final String SERIALIZED_NAME_API_KEY = "api_key";
   @SerializedName(SERIALIZED_NAME_API_KEY)
@@ -109,10 +109,7 @@ public class ApiKeyExchangeRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -121,12 +118,10 @@ public class ApiKeyExchangeRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("api_key");
+    openapiFields = new HashSet<String>(Arrays.asList("api_key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("api_key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("api_key"));
   }
 
   /**
@@ -138,7 +133,7 @@ public class ApiKeyExchangeRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ApiKeyExchangeRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ApiKeyExchangeRequest is not found in the empty JSON string", ApiKeyExchangeRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ApiKeyExchangeRequest is not found in the empty JSON string", ApiKeyExchangeRequest.openapiRequiredFields.toString()));
         }
       }
 
@@ -146,19 +141,19 @@ public class ApiKeyExchangeRequest {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ApiKeyExchangeRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ApiKeyExchangeRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ApiKeyExchangeRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ApiKeyExchangeRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("api_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `api_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `api_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("api_key").toString()));
       }
   }
 

@@ -56,7 +56,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GroupByRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class GroupByRequestBody {
   public static final String SERIALIZED_NAME_DIMENSIONS = "dimensions";
   @SerializedName(SERIALIZED_NAME_DIMENSIONS)
@@ -230,10 +230,7 @@ public class GroupByRequestBody {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -242,16 +239,10 @@ public class GroupByRequestBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("dimensions");
-    openapiFields.add("measures");
-    openapiFields.add("filter");
-    openapiFields.add("scope");
+    openapiFields = new HashSet<String>(Arrays.asList("dimensions", "measures", "filter", "scope"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("dimensions");
-    openapiRequiredFields.add("measures");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("dimensions", "measures"));
   }
 
   /**
@@ -263,7 +254,7 @@ public class GroupByRequestBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GroupByRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GroupByRequestBody is not found in the empty JSON string", GroupByRequestBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GroupByRequestBody is not found in the empty JSON string", GroupByRequestBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -271,37 +262,41 @@ public class GroupByRequestBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GroupByRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GroupByRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GroupByRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : GroupByRequestBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("dimensions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `dimensions` to be an array in the JSON string but got `%s`", jsonObj.get("dimensions").toString()));
+      if (jsonObj.get("dimensions") != null) {
+        if (!jsonObj.get("dimensions").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `dimensions` to be an array in the JSON string but got `%s`", jsonObj.get("dimensions").toString()));
+        }
+        JsonArray jsonArraydimensions = jsonObj.getAsJsonArray("dimensions");
+        // validate the required field `dimensions` (array)
+        for (int i = 0; i < jsonArraydimensions.size(); i++) {
+          Dimension.validateJsonElement(jsonArraydimensions.get(i));
+        }
       }
-
-      JsonArray jsonArraydimensions = jsonObj.getAsJsonArray("dimensions");
-      // validate the required field `dimensions` (array)
-      for (int i = 0; i < jsonArraydimensions.size(); i++) {
-        Dimension.validateJsonElement(jsonArraydimensions.get(i));
-      };
-      // ensure the json data is an array
-      if (!jsonObj.get("measures").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `measures` to be an array in the JSON string but got `%s`", jsonObj.get("measures").toString()));
+      if (jsonObj.get("measures") != null) {
+        if (!jsonObj.get("measures").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `measures` to be an array in the JSON string but got `%s`", jsonObj.get("measures").toString()));
+        }
+        JsonArray jsonArraymeasures = jsonObj.getAsJsonArray("measures");
+        // validate the required field `measures` (array)
+        for (int i = 0; i < jsonArraymeasures.size(); i++) {
+          Measure.validateJsonElement(jsonArraymeasures.get(i));
+        }
       }
-
-      JsonArray jsonArraymeasures = jsonObj.getAsJsonArray("measures");
-      // validate the required field `measures` (array)
-      for (int i = 0; i < jsonArraymeasures.size(); i++) {
-        Measure.validateJsonElement(jsonArraymeasures.get(i));
-      };
+      // validate the optional field `scope`
+      if (jsonObj.get("scope") != null && !jsonObj.get("scope").isJsonNull()) {
+        QueryScope.validateJsonElement(jsonObj.get("scope"));
+      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

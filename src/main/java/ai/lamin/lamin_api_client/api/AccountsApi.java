@@ -87,7 +87,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCallerAccountAccountGetCall(String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCallerAccountAccountGetCall(@javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -137,7 +137,7 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCallerAccountAccountGetValidateBeforeCall(String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCallerAccountAccountGetValidateBeforeCall(@javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         return getCallerAccountAccountGetCall(authorization, _callback);
 
     }
@@ -156,7 +156,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getCallerAccountAccountGet(String authorization) throws ApiException {
+    public Object getCallerAccountAccountGet(@javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getCallerAccountAccountGetWithHttpInfo(authorization);
         return localVarResp.getData();
     }
@@ -175,7 +175,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getCallerAccountAccountGetWithHttpInfo(String authorization) throws ApiException {
+    public ApiResponse<Object> getCallerAccountAccountGetWithHttpInfo(@javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -196,7 +196,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCallerAccountAccountGetAsync(String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getCallerAccountAccountGetAsync(@javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCallerAccountAccountGetValidateBeforeCall(authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -217,7 +217,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCentralJwtAccountJwtPostCall(ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCentralJwtAccountJwtPostCall(@javax.annotation.Nonnull ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -263,7 +263,7 @@ public class AccountsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCentralJwtAccountJwtPostValidateBeforeCall(ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCentralJwtAccountJwtPostValidateBeforeCall(@javax.annotation.Nonnull ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'apiKeyExchangeRequest' is set
         if (apiKeyExchangeRequest == null) {
             throw new ApiException("Missing the required parameter 'apiKeyExchangeRequest' when calling getCentralJwtAccountJwtPost(Async)");
@@ -287,7 +287,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getCentralJwtAccountJwtPost(ApiKeyExchangeRequest apiKeyExchangeRequest) throws ApiException {
+    public Object getCentralJwtAccountJwtPost(@javax.annotation.Nonnull ApiKeyExchangeRequest apiKeyExchangeRequest) throws ApiException {
         ApiResponse<Object> localVarResp = getCentralJwtAccountJwtPostWithHttpInfo(apiKeyExchangeRequest);
         return localVarResp.getData();
     }
@@ -306,7 +306,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getCentralJwtAccountJwtPostWithHttpInfo(ApiKeyExchangeRequest apiKeyExchangeRequest) throws ApiException {
+    public ApiResponse<Object> getCentralJwtAccountJwtPostWithHttpInfo(@javax.annotation.Nonnull ApiKeyExchangeRequest apiKeyExchangeRequest) throws ApiException {
         okhttp3.Call localVarCall = getCentralJwtAccountJwtPostValidateBeforeCall(apiKeyExchangeRequest, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -327,7 +327,7 @@ public class AccountsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCentralJwtAccountJwtPostAsync(ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getCentralJwtAccountJwtPostAsync(@javax.annotation.Nonnull ApiKeyExchangeRequest apiKeyExchangeRequest, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCentralJwtAccountJwtPostValidateBeforeCall(apiKeyExchangeRequest, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

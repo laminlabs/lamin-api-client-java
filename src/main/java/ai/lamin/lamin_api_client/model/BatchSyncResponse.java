@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * The detailed response model for a batch synchronization operation, including the lists of records that were processed.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class BatchSyncResponse {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -206,10 +206,7 @@ public class BatchSyncResponse {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -218,18 +215,10 @@ public class BatchSyncResponse {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("status");
-    openapiFields.add("deleted");
-    openapiFields.add("inserted");
-    openapiFields.add("kept");
+    openapiFields = new HashSet<String>(Arrays.asList("status", "deleted", "inserted", "kept"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("deleted");
-    openapiRequiredFields.add("inserted");
-    openapiRequiredFields.add("kept");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("status", "deleted", "inserted", "kept"));
   }
 
   /**
@@ -241,7 +230,7 @@ public class BatchSyncResponse {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BatchSyncResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BatchSyncResponse is not found in the empty JSON string", BatchSyncResponse.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BatchSyncResponse is not found in the empty JSON string", BatchSyncResponse.openapiRequiredFields.toString()));
         }
       }
 
@@ -249,31 +238,31 @@ public class BatchSyncResponse {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!BatchSyncResponse.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BatchSyncResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BatchSyncResponse` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BatchSyncResponse.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("status").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("deleted") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("deleted").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `deleted` to be an array in the JSON string but got `%s`", jsonObj.get("deleted").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `deleted` to be an array in the JSON string but got `%s`", jsonObj.get("deleted").toString()));
       }
       // ensure the required json array is present
       if (jsonObj.get("inserted") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
       } else if (!jsonObj.get("inserted").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `inserted` to be an array in the JSON string but got `%s`", jsonObj.get("inserted").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `inserted` to be an array in the JSON string but got `%s`", jsonObj.get("inserted").toString()));
       }
   }
 

@@ -14,7 +14,7 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
-import ai.lamin.lamin_api_client.model.TraversalParamsValuesInner;
+import ai.lamin.lamin_api_client.model.ValuesInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,12 +52,12 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * Parameters that define the hierarchical traversal.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class TraversalParams {
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
   @javax.annotation.Nonnull
-  private List<TraversalParamsValuesInner> values = new ArrayList<>();
+  private List<ValuesInner> values = new ArrayList<>();
 
   /**
    * The direction of traversal
@@ -129,12 +129,12 @@ public class TraversalParams {
   public TraversalParams() {
   }
 
-  public TraversalParams values(@javax.annotation.Nonnull List<TraversalParamsValuesInner> values) {
+  public TraversalParams values(@javax.annotation.Nonnull List<ValuesInner> values) {
     this.values = values;
     return this;
   }
 
-  public TraversalParams addValuesItem(TraversalParamsValuesInner valuesItem) {
+  public TraversalParams addValuesItem(ValuesInner valuesItem) {
     if (this.values == null) {
       this.values = new ArrayList<>();
     }
@@ -147,11 +147,11 @@ public class TraversalParams {
    * @return values
    */
   @javax.annotation.Nonnull
-  public List<TraversalParamsValuesInner> getValues() {
+  public List<ValuesInner> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nonnull List<TraversalParamsValuesInner> values) {
+  public void setValues(@javax.annotation.Nonnull List<ValuesInner> values) {
     this.values = values;
   }
 
@@ -200,7 +200,8 @@ public class TraversalParams {
   }
 
   /**
-   * Get depth
+   * Optional traversal depth. Cannot exceed 8.
+   * minimum: 0
    * @return depth
    */
   @javax.annotation.Nullable
@@ -262,10 +263,7 @@ public class TraversalParams {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -274,16 +272,10 @@ public class TraversalParams {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("values");
-    openapiFields.add("kind");
-    openapiFields.add("field");
-    openapiFields.add("depth");
+    openapiFields = new HashSet<String>(Arrays.asList("values", "kind", "field", "depth"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("values");
-    openapiRequiredFields.add("kind");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("values", "kind"));
   }
 
   /**
@@ -295,7 +287,7 @@ public class TraversalParams {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!TraversalParams.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in TraversalParams is not found in the empty JSON string", TraversalParams.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in TraversalParams is not found in the empty JSON string", TraversalParams.openapiRequiredFields.toString()));
         }
       }
 
@@ -303,34 +295,34 @@ public class TraversalParams {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!TraversalParams.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TraversalParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `TraversalParams` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : TraversalParams.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("values").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
+      if (jsonObj.get("values") != null) {
+        if (!jsonObj.get("values").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `values` to be an array in the JSON string but got `%s`", jsonObj.get("values").toString()));
+        }
+        JsonArray jsonArrayvalues = jsonObj.getAsJsonArray("values");
+        // validate the required field `values` (array)
+        for (int i = 0; i < jsonArrayvalues.size(); i++) {
+          ValuesInner.validateJsonElement(jsonArrayvalues.get(i));
+        }
       }
-
-      JsonArray jsonArrayvalues = jsonObj.getAsJsonArray("values");
-      // validate the required field `values` (array)
-      for (int i = 0; i < jsonArrayvalues.size(); i++) {
-        TraversalParamsValuesInner.validateJsonElement(jsonArrayvalues.get(i));
-      };
       if (!jsonObj.get("kind").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `kind` to be a primitive type in the JSON string but got `%s`", jsonObj.get("kind").toString()));
       }
       // validate the required field `kind`
       KindEnum.validateJsonElement(jsonObj.get("kind"));
       if ((jsonObj.get("field") != null && !jsonObj.get("field").isJsonNull()) && !jsonObj.get("field").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `field` to be a primitive type in the JSON string but got `%s`", jsonObj.get("field").toString()));
       }
   }
 

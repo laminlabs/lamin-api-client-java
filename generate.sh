@@ -7,31 +7,10 @@ INPUT_SPEC="https://aws.us-east-1.lamin.ai/api/openapi.json"
 
 rm -r ./src
 
-# Download the spec and collapse FastAPI's `anyOf: [<array>, {type: null}]`
-# (i.e. `Optional[list[...]]`) into a plain nullable array. The Java generator
-# otherwise promotes some of these (space_ids, branch_ids in QueryScope) into
-# named wrapper schemas that reference a `ModelNull` class it never generates,
-# which breaks compilation. The inline cases already collapse to nullable arrays,
-# so this just makes every case consistent.
-PATCHED_SPEC="$(mktemp --suffix=.openapi.json)"
-trap 'rm -f "$PATCHED_SPEC"' EXIT
-curl -fsSL "$INPUT_SPEC" | jq '
-    walk(
-      if (type == "object") and (.anyOf | type == "array")
-         and ((.anyOf | length) == 2)
-         and ([.anyOf[] | select(.type == "null")] | length == 1)
-         and ([.anyOf[] | select(.type == "array")] | length == 1)
-      then
-        ([.anyOf[] | select(.type == "array")][0]) as $arr
-        | (. + $arr | del(.anyOf) | .nullable = true)
-      else . end
-    )
-  ' > "$PATCHED_SPEC"
-
 npx @openapitools/openapi-generator-cli generate \
     --generator-name java \
     --config config.yaml \
-    --input-spec "$PATCHED_SPEC" \
+    --input-spec "$INPUT_SPEC" \
     --skip-validate-spec \
     --output .
 

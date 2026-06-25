@@ -89,7 +89,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudAccessStoragesCredentialsPostCall(CloudAccessRequest cloudAccessRequest, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getCloudAccessStoragesCredentialsPostCall(@javax.annotation.Nonnull CloudAccessRequest cloudAccessRequest, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -140,7 +140,7 @@ public class StoragesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getCloudAccessStoragesCredentialsPostValidateBeforeCall(CloudAccessRequest cloudAccessRequest, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getCloudAccessStoragesCredentialsPostValidateBeforeCall(@javax.annotation.Nonnull CloudAccessRequest cloudAccessRequest, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'cloudAccessRequest' is set
         if (cloudAccessRequest == null) {
             throw new ApiException("Missing the required parameter 'cloudAccessRequest' when calling getCloudAccessStoragesCredentialsPost(Async)");
@@ -165,7 +165,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getCloudAccessStoragesCredentialsPost(CloudAccessRequest cloudAccessRequest, String authorization) throws ApiException {
+    public Object getCloudAccessStoragesCredentialsPost(@javax.annotation.Nonnull CloudAccessRequest cloudAccessRequest, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getCloudAccessStoragesCredentialsPostWithHttpInfo(cloudAccessRequest, authorization);
         return localVarResp.getData();
     }
@@ -185,7 +185,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getCloudAccessStoragesCredentialsPostWithHttpInfo(CloudAccessRequest cloudAccessRequest, String authorization) throws ApiException {
+    public ApiResponse<Object> getCloudAccessStoragesCredentialsPostWithHttpInfo(@javax.annotation.Nonnull CloudAccessRequest cloudAccessRequest, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getCloudAccessStoragesCredentialsPostValidateBeforeCall(cloudAccessRequest, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -207,7 +207,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getCloudAccessStoragesCredentialsPostAsync(CloudAccessRequest cloudAccessRequest, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getCloudAccessStoragesCredentialsPostAsync(@javax.annotation.Nonnull CloudAccessRequest cloudAccessRequest, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getCloudAccessStoragesCredentialsPostValidateBeforeCall(cloudAccessRequest, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -229,7 +229,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getS3FileStoragesS3FullPathGetCall(String fullPath, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getS3FileStoragesS3FullPathGetCall(@javax.annotation.Nonnull String fullPath, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -280,7 +280,7 @@ public class StoragesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getS3FileStoragesS3FullPathGetValidateBeforeCall(String fullPath, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getS3FileStoragesS3FullPathGetValidateBeforeCall(@javax.annotation.Nonnull String fullPath, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'fullPath' is set
         if (fullPath == null) {
             throw new ApiException("Missing the required parameter 'fullPath' when calling getS3FileStoragesS3FullPathGet(Async)");
@@ -305,7 +305,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getS3FileStoragesS3FullPathGet(String fullPath, String authorization) throws ApiException {
+    public Object getS3FileStoragesS3FullPathGet(@javax.annotation.Nonnull String fullPath, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getS3FileStoragesS3FullPathGetWithHttpInfo(fullPath, authorization);
         return localVarResp.getData();
     }
@@ -325,7 +325,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getS3FileStoragesS3FullPathGetWithHttpInfo(String fullPath, String authorization) throws ApiException {
+    public ApiResponse<Object> getS3FileStoragesS3FullPathGetWithHttpInfo(@javax.annotation.Nonnull String fullPath, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getS3FileStoragesS3FullPathGetValidateBeforeCall(fullPath, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -347,7 +347,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getS3FileStoragesS3FullPathGetAsync(String fullPath, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getS3FileStoragesS3FullPathGetAsync(@javax.annotation.Nonnull String fullPath, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getS3FileStoragesS3FullPathGetValidateBeforeCall(fullPath, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -372,7 +372,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutCall(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutCall(@javax.annotation.Nonnull String bucketName, @javax.annotation.Nonnull S3PermissionsRequest s3PermissionsRequest, @javax.annotation.Nullable String awsAccountId, @javax.annotation.Nullable String awsUserName, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -432,7 +432,7 @@ public class StoragesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(@javax.annotation.Nonnull String bucketName, @javax.annotation.Nonnull S3PermissionsRequest s3PermissionsRequest, @javax.annotation.Nullable String awsAccountId, @javax.annotation.Nullable String awsUserName, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'bucketName' is set
         if (bucketName == null) {
             throw new ApiException("Missing the required parameter 'bucketName' when calling grantS3PermissionsStoragesS3BucketNamePermissionsPut(Async)");
@@ -465,7 +465,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object grantS3PermissionsStoragesS3BucketNamePermissionsPut(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization) throws ApiException {
+    public Object grantS3PermissionsStoragesS3BucketNamePermissionsPut(@javax.annotation.Nonnull String bucketName, @javax.annotation.Nonnull S3PermissionsRequest s3PermissionsRequest, @javax.annotation.Nullable String awsAccountId, @javax.annotation.Nullable String awsUserName, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = grantS3PermissionsStoragesS3BucketNamePermissionsPutWithHttpInfo(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization);
         return localVarResp.getData();
     }
@@ -488,7 +488,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> grantS3PermissionsStoragesS3BucketNamePermissionsPutWithHttpInfo(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization) throws ApiException {
+    public ApiResponse<Object> grantS3PermissionsStoragesS3BucketNamePermissionsPutWithHttpInfo(@javax.annotation.Nonnull String bucketName, @javax.annotation.Nonnull S3PermissionsRequest s3PermissionsRequest, @javax.annotation.Nullable String awsAccountId, @javax.annotation.Nullable String awsUserName, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -513,7 +513,7 @@ public class StoragesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutAsync(String bucketName, S3PermissionsRequest s3PermissionsRequest, String awsAccountId, String awsUserName, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call grantS3PermissionsStoragesS3BucketNamePermissionsPutAsync(@javax.annotation.Nonnull String bucketName, @javax.annotation.Nonnull S3PermissionsRequest s3PermissionsRequest, @javax.annotation.Nullable String awsAccountId, @javax.annotation.Nullable String awsUserName, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = grantS3PermissionsStoragesS3BucketNamePermissionsPutValidateBeforeCall(bucketName, s3PermissionsRequest, awsAccountId, awsUserName, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

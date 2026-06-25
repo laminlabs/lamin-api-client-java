@@ -1,6 +1,6 @@
 # AccountsApi
 
-All URIs are relative to */api*
+All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -26,7 +26,7 @@ import ai.lamin.lamin_api_client.api.AccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     AccountsApi apiInstance = new AccountsApi(defaultClient);
     String authorization = "authorization_example"; // String | 
@@ -87,7 +87,7 @@ import ai.lamin.lamin_api_client.api.AccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     AccountsApi apiInstance = new AccountsApi(defaultClient);
     ApiKeyExchangeRequest apiKeyExchangeRequest = new ApiKeyExchangeRequest(); // ApiKeyExchangeRequest | 

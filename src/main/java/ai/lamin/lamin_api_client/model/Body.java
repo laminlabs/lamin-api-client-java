@@ -52,7 +52,7 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class Body extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Body.class.getName());
 
@@ -81,7 +81,7 @@ public class Body extends AbstractOpenApiSchema {
                     // check if the actual instance is of the type `List<Map<String, Object>>`
                     if (value.getActualInstance() instanceof List<?>) {
                         List<?> list = (List<?>) value.getActualInstance();
-                        if (list.get(0) instanceof Map<?, ?>) {
+                        if (!list.isEmpty() && list.get(0) instanceof Map<?, ?>) {
                             JsonArray array = adapterListMapStringObject.toJsonTree((List<Map<String, Object>>)value.getActualInstance()).getAsJsonArray();
                             elementAdapter.write(out, array);
                             return;
@@ -108,14 +108,14 @@ public class Body extends AbstractOpenApiSchema {
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.isJsonArray()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be a array type in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a array type in the JSON string but got `%s`", jsonElement.toString()));
                         }
 
                         JsonArray array = jsonElement.getAsJsonArray();
                         // validate array items
                         for(JsonElement element : array) {
                             if (!element.getAsJsonPrimitive().isNumber()) {
-                                throw new IllegalArgumentException(String.format("Expected array items to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected array items to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
                             }
                         }
                         actualAdapter = adapterListMapStringObject;
@@ -124,14 +124,14 @@ public class Body extends AbstractOpenApiSchema {
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for List<Map<String, Object>> failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for List<Map<String, Object>> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'List<Map<String, Object>>'", e);
                     }
                     // deserialize Map<String, Object>
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
                         }
                         actualAdapter = adapterMapStringObject;
                         Body ret = new Body();
@@ -139,11 +139,11 @@ public class Body extends AbstractOpenApiSchema {
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Map<String, Object>'", e);
                     }
 
-                    throw new IOException(String.format("Failed deserialization for Body: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for Body: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -174,7 +174,7 @@ public class Body extends AbstractOpenApiSchema {
     /**
      * Set the instance that matches the anyOf child schema, check
      * the instance parameter is valid against the anyOf child schemas:
-     * List<Map<String, Object>>, Map<String, Object>
+     * List&lt;Map&lt;String, Object&gt;&gt;, Map&lt;String, Object&gt;
      *
      * It could be an instance of the 'anyOf' schemas.
      */
@@ -182,7 +182,7 @@ public class Body extends AbstractOpenApiSchema {
     public void setActualInstance(Object instance) {
         if (instance instanceof List<?>) {
             List<?> list = (List<?>) instance;
-            if (list.get(0) instanceof Map<?, ?>) {
+            if (!list.isEmpty() && list.get(0) instanceof Map<?, ?>) {
                 super.setActualInstance(instance);
                 return;
             }
@@ -198,9 +198,9 @@ public class Body extends AbstractOpenApiSchema {
 
     /**
      * Get the actual instance, which can be the following:
-     * List<Map<String, Object>>, Map<String, Object>
+     * List&lt;Map&lt;String, Object&gt;&gt;, Map&lt;String, Object&gt;
      *
-     * @return The actual instance (List<Map<String, Object>>, Map<String, Object>)
+     * @return The actual instance (List&lt;Map&lt;String, Object&gt;&gt;, Map&lt;String, Object&gt;)
      */
     @SuppressWarnings("unchecked")
     @Override
@@ -209,22 +209,22 @@ public class Body extends AbstractOpenApiSchema {
     }
 
     /**
-     * Get the actual instance of `List<Map<String, Object>>`. If the actual instance is not `List<Map<String, Object>>`,
+     * Get the actual instance of `List&lt;Map&lt;String, Object&gt;&gt;`. If the actual instance is not `List&lt;Map&lt;String, Object&gt;&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `List<Map<String, Object>>`
-     * @throws ClassCastException if the instance is not `List<Map<String, Object>>`
+     * @return The actual instance of `List&lt;Map&lt;String, Object&gt;&gt;`
+     * @throws ClassCastException if the instance is not `List&lt;Map&lt;String, Object&gt;&gt;`
      */
     public List<Map<String, Object>> getListMapStringObject() throws ClassCastException {
         return (List<Map<String, Object>>)super.getActualInstance();
     }
 
     /**
-     * Get the actual instance of `Map<String, Object>`. If the actual instance is not `Map<String, Object>`,
+     * Get the actual instance of `Map&lt;String, Object&gt;`. If the actual instance is not `Map&lt;String, Object&gt;`,
      * the ClassCastException will be thrown.
      *
-     * @return The actual instance of `Map<String, Object>`
-     * @throws ClassCastException if the instance is not `Map<String, Object>`
+     * @return The actual instance of `Map&lt;String, Object&gt;`
+     * @throws ClassCastException if the instance is not `Map&lt;String, Object&gt;`
      */
     public Map<String, Object> getMapStringObject() throws ClassCastException {
         return (Map<String, Object>)super.getActualInstance();
@@ -242,31 +242,31 @@ public class Body extends AbstractOpenApiSchema {
         // validate the json string with List<Map<String, Object>>
         try {
             if (!jsonElement.isJsonArray()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be a array type in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be a array type in the JSON string but got `%s`", jsonElement.toString()));
             }
             JsonArray array = jsonElement.getAsJsonArray();
             // validate array items
             for(JsonElement element : array) {
                 if (!element.getAsJsonPrimitive().isNumber()) {
-                    throw new IllegalArgumentException(String.format("Expected array items to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                    throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected array items to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
                 }
             }
             return;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for List<Map<String, Object>> failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for List<Map<String, Object>> failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with Map<String, Object>
         try {
             if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
             }
             return;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Map<String, Object> failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        throw new IOException(String.format("The JSON string is invalid for Body with anyOf schemas: List<Map<String, Object>>, Map<String, Object>. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+        throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for Body with anyOf schemas: List<Map<String, Object>>, Map<String, Object>. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
 
     /**

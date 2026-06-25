@@ -103,7 +103,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostCall(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchDeleteBody batchDeleteBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -161,7 +161,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchDeleteBody batchDeleteBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(Async)");
@@ -205,7 +205,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization) throws ApiException {
+    public BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchDeleteBody batchDeleteBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<BatchDeleteResponse> localVarResp = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostWithHttpInfo(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -229,7 +229,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchDeleteResponse> batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<BatchDeleteResponse> batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchDeleteBody batchDeleteBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<BatchDeleteResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -255,7 +255,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostAsync(String moduleName, String modelName, UUID instanceId, BatchDeleteBody batchDeleteBody, UUID spaceId, String authorization, final ApiCallback<BatchDeleteResponse> _callback) throws ApiException {
+    public okhttp3.Call batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchDeleteBody batchDeleteBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<BatchDeleteResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePostValidateBeforeCall(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<BatchDeleteResponse>(){}.getType();
@@ -281,7 +281,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutCall(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchSyncLinksBody batchSyncLinksBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -339,7 +339,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchSyncLinksBody batchSyncLinksBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(Async)");
@@ -383,7 +383,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization) throws ApiException {
+    public BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchSyncLinksBody batchSyncLinksBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<BatchSyncResponse> localVarResp = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutWithHttpInfo(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -407,7 +407,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<BatchSyncResponse> batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<BatchSyncResponse> batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchSyncLinksBody batchSyncLinksBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<BatchSyncResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -433,7 +433,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutAsync(String moduleName, String modelName, UUID instanceId, BatchSyncLinksBody batchSyncLinksBody, UUID spaceId, String authorization, final ApiCallback<BatchSyncResponse> _callback) throws ApiException {
+    public okhttp3.Call batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchSyncLinksBody batchSyncLinksBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<BatchSyncResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPutValidateBeforeCall(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<BatchSyncResponse>(){}.getType();
@@ -459,7 +459,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchCall(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchUpdateBody batchUpdateBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -517,7 +517,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchUpdateBody batchUpdateBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(Async)");
@@ -561,7 +561,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Map<String, Object>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization) throws ApiException {
+    public List<Map<String, Object>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchUpdateBody batchUpdateBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<List<Map<String, Object>>> localVarResp = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchWithHttpInfo(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -585,7 +585,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Map<String, Object>>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchWithHttpInfo(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<List<Map<String, Object>>> batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchUpdateBody batchUpdateBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<List<Map<String, Object>>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -611,7 +611,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> A record in the payload is missing a required index key. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchAsync(String moduleName, String modelName, UUID instanceId, BatchUpdateBody batchUpdateBody, UUID spaceId, String authorization, final ApiCallback<List<Map<String, Object>>> _callback) throws ApiException {
+    public okhttp3.Call batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull BatchUpdateBody batchUpdateBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<List<Map<String, Object>>> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatchValidateBeforeCall(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<List<Map<String, Object>>>(){}.getType();
@@ -637,7 +637,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -695,7 +695,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(Async)");
@@ -739,7 +739,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+    public Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(moduleName, modelName, instanceId, body, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -763,7 +763,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> createRecordsInstancesInstanceIdModulesModuleNameModelNamePutWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -789,7 +789,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutAsync(String moduleName, String modelName, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createRecordsInstancesInstanceIdModulesModuleNameModelNamePutAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createRecordsInstancesInstanceIdModulesModuleNameModelNamePutValidateBeforeCall(moduleName, modelName, instanceId, body, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -815,7 +815,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteCall(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -873,7 +873,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(Async)");
@@ -917,7 +917,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+    public Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteWithHttpInfo(moduleName, modelName, uid, instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -941,7 +941,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteWithHttpInfo(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(moduleName, modelName, uid, instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -967,7 +967,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteAsync(String moduleName, String modelName, String uid, UUID instanceId, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDeleteValidateBeforeCall(moduleName, modelName, uid, instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -992,7 +992,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostCall(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostCall(@javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1049,7 +1049,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(@javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'uid' is set
         if (uid == null) {
             throw new ApiException("Missing the required parameter 'uid' when calling exportRecordsInstancesInstanceIdRecordsUidExportPost(Async)");
@@ -1082,7 +1082,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object exportRecordsInstancesInstanceIdRecordsUidExportPost(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
+    public Object exportRecordsInstancesInstanceIdRecordsUidExportPost(@javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
         ApiResponse<Object> localVarResp = exportRecordsInstancesInstanceIdRecordsUidExportPostWithHttpInfo(uid, instanceId, spaceId, authorization, exportRecordsRequestBody);
         return localVarResp.getData();
     }
@@ -1105,7 +1105,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> exportRecordsInstancesInstanceIdRecordsUidExportPostWithHttpInfo(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
+    public ApiResponse<Object> exportRecordsInstancesInstanceIdRecordsUidExportPostWithHttpInfo(@javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable ExportRecordsRequestBody exportRecordsRequestBody) throws ApiException {
         okhttp3.Call localVarCall = exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(uid, instanceId, spaceId, authorization, exportRecordsRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1130,7 +1130,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostAsync(String uid, UUID instanceId, UUID spaceId, String authorization, ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call exportRecordsInstancesInstanceIdRecordsUidExportPostAsync(@javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable ExportRecordsRequestBody exportRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = exportRecordsInstancesInstanceIdRecordsUidExportPostValidateBeforeCall(uid, instanceId, spaceId, authorization, exportRecordsRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1159,7 +1159,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostCall(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String idOrUid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1226,7 +1226,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String idOrUid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordRequestBody getRecordRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(Async)");
@@ -1273,7 +1273,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody) throws ApiException {
+    public Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String idOrUid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordRequestBody getRecordRequestBody) throws ApiException {
         ApiResponse<Object> localVarResp = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostWithHttpInfo(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody);
         return localVarResp.getData();
     }
@@ -1300,7 +1300,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostWithHttpInfo(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody) throws ApiException {
+    public ApiResponse<Object> getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String idOrUid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordRequestBody getRecordRequestBody) throws ApiException {
         okhttp3.Call localVarCall = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1329,7 +1329,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostAsync(String moduleName, String modelName, String idOrUid, UUID instanceId, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordRequestBody getRecordRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String idOrUid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordRequestBody getRecordRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPostValidateBeforeCall(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1359,7 +1359,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1433,7 +1433,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(Async)");
@@ -1476,7 +1476,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
+    public Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
         ApiResponse<Object> localVarResp = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostWithHttpInfo(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody);
         return localVarResp.getData();
     }
@@ -1504,7 +1504,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRecordsInstancesInstanceIdModulesModuleNameModelNamePostWithHttpInfo(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
+    public ApiResponse<Object> getRecordsInstancesInstanceIdModulesModuleNameModelNamePostWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody) throws ApiException {
         okhttp3.Call localVarCall = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1534,7 +1534,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostAsync(String moduleName, String modelName, UUID instanceId, Integer limit, Integer offset, Integer limitToMany, Boolean includeForeignKeys, UUID spaceId, String authorization, GetRecordsRequestBody getRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRecordsInstancesInstanceIdModulesModuleNameModelNamePostAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable Integer limitToMany, @javax.annotation.Nullable Boolean includeForeignKeys, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetRecordsRequestBody getRecordsRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRecordsInstancesInstanceIdModulesModuleNameModelNamePostValidateBeforeCall(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1562,7 +1562,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostCall(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull Request request, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1628,7 +1628,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull Request request, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(Async)");
@@ -1674,7 +1674,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization) throws ApiException {
+    public Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull Request request, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostWithHttpInfo(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -1700,7 +1700,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostWithHttpInfo(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull Request request, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1728,7 +1728,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostAsync(String moduleName, String modelName, UUID instanceId, Request request, Integer limit, Integer offset, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull Request request, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPostValidateBeforeCall(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1757,7 +1757,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostCall(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String fieldPath, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1824,7 +1824,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String fieldPath, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetValuesRequestBody getValuesRequestBody, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(Async)");
@@ -1871,7 +1871,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody) throws ApiException {
+    public Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String fieldPath, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetValuesRequestBody getValuesRequestBody) throws ApiException {
         ApiResponse<Object> localVarResp = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostWithHttpInfo(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody);
         return localVarResp.getData();
     }
@@ -1898,7 +1898,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostWithHttpInfo(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody) throws ApiException {
+    public ApiResponse<Object> getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String fieldPath, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetValuesRequestBody getValuesRequestBody) throws ApiException {
         okhttp3.Call localVarCall = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1927,7 +1927,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostAsync(String moduleName, String modelName, String fieldPath, UUID instanceId, Integer limit, Integer offset, UUID spaceId, String authorization, GetValuesRequestBody getValuesRequestBody, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String fieldPath, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Integer limit, @javax.annotation.Nullable Integer offset, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetValuesRequestBody getValuesRequestBody, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPostValidateBeforeCall(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1954,7 +1954,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchCall(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2013,7 +2013,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(Async)");
@@ -2063,7 +2063,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+    public Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchWithHttpInfo(moduleName, modelName, uid, instanceId, body, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -2088,7 +2088,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchWithHttpInfo(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(moduleName, modelName, uid, instanceId, body, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2115,7 +2115,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchAsync(String moduleName, String modelName, String uid, UUID instanceId, Object body, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nonnull String uid, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable Object body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatchValidateBeforeCall(moduleName, modelName, uid, instanceId, body, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -2144,7 +2144,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull List<String> conflictColumns, @javax.annotation.Nullable Body body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -2206,7 +2206,7 @@ public class InstanceRecordsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull List<String> conflictColumns, @javax.annotation.Nullable Body body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'moduleName' is set
         if (moduleName == null) {
             throw new ApiException("Missing the required parameter 'moduleName' when calling upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(Async)");
@@ -2258,7 +2258,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization) throws ApiException {
+    public Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull List<String> conflictColumns, @javax.annotation.Nullable Body body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -2285,7 +2285,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization) throws ApiException {
+    public ApiResponse<Object> upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutWithHttpInfo(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull List<String> conflictColumns, @javax.annotation.Nullable Body body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2314,7 +2314,7 @@ public class InstanceRecordsApi {
         <tr><td> 422 </td><td> The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutAsync(String moduleName, String modelName, UUID instanceId, List<String> conflictColumns, Body body, UUID spaceId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutAsync(@javax.annotation.Nonnull String moduleName, @javax.annotation.Nonnull String modelName, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull List<String> conflictColumns, @javax.annotation.Nullable Body body, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPutValidateBeforeCall(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

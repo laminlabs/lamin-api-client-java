@@ -17,17 +17,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for TraversalParamsValuesInner
+ * Model tests for LocationInner
  */
-public class TraversalParamsValuesInnerTest {
-    private final TraversalParamsValuesInner model = new TraversalParamsValuesInner();
+public class LocationInnerTest {
+    private final LocationInner model = new LocationInner();
 
     /**
-     * Model tests for TraversalParamsValuesInner
+     * Model tests for LocationInner
      */
     @Test
-    public void testTraversalParamsValuesInner() {
-        // TODO: test TraversalParamsValuesInner
+    public void testLocationInner() {
+        // TODO: test LocationInner
     }
 
 }

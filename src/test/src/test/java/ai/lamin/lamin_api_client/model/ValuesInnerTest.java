@@ -17,17 +17,17 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 /**
- * Model tests for ValidationErrorLocInner
+ * Model tests for ValuesInner
  */
-public class ValidationErrorLocInnerTest {
-    private final ValidationErrorLocInner model = new ValidationErrorLocInner();
+public class ValuesInnerTest {
+    private final ValuesInner model = new ValuesInner();
 
     /**
-     * Model tests for ValidationErrorLocInner
+     * Model tests for ValuesInner
      */
     @Test
-    public void testValidationErrorLocInner() {
-        // TODO: test ValidationErrorLocInner
+    public void testValuesInner() {
+        // TODO: test ValuesInner
     }
 
 }

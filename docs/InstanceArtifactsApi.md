@@ -1,6 +1,6 @@
 # InstanceArtifactsApi
 
-All URIs are relative to */api*
+All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -28,7 +28,7 @@ import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -97,7 +97,7 @@ import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -164,7 +164,7 @@ import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
@@ -231,11 +231,11 @@ import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 
-    String _file = "_file_example"; // String | 
+    File _file = new File("/path/to/file"); // File | 
     UUID spaceId = UUID.randomUUID(); // UUID | 
     String authorization = "authorization_example"; // String | 
     String kwargs = "kwargs_example"; // String | 
@@ -258,7 +258,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **instanceId** | **UUID**|  | |
-| **_file** | **String**|  | |
+| **_file** | **File**|  | |
 | **spaceId** | **UUID**|  | [optional] |
 | **authorization** | **String**|  | [optional] |
 | **kwargs** | **String**|  | [optional] |

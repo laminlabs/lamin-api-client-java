@@ -1,6 +1,6 @@
 # InstanceSearchApi
 
-All URIs are relative to */api*
+All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -25,7 +25,7 @@ import ai.lamin.lamin_api_client.api.InstanceSearchApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     InstanceSearchApi apiInstance = new InstanceSearchApi(defaultClient);
     UUID instanceId = UUID.randomUUID(); // UUID | 

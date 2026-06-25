@@ -14,7 +14,7 @@
 package ai.lamin.lamin_api_client.model;
 
 import java.util.Objects;
-import ai.lamin.lamin_api_client.model.ValidationErrorLocInner;
+import ai.lamin.lamin_api_client.model.LocationInner;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -52,12 +52,12 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * ValidationError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class ValidationError {
   public static final String SERIALIZED_NAME_LOC = "loc";
   @SerializedName(SERIALIZED_NAME_LOC)
   @javax.annotation.Nonnull
-  private List<ValidationErrorLocInner> loc = new ArrayList<>();
+  private List<LocationInner> loc = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MSG = "msg";
   @SerializedName(SERIALIZED_NAME_MSG)
@@ -82,12 +82,12 @@ public class ValidationError {
   public ValidationError() {
   }
 
-  public ValidationError loc(@javax.annotation.Nonnull List<ValidationErrorLocInner> loc) {
+  public ValidationError loc(@javax.annotation.Nonnull List<LocationInner> loc) {
     this.loc = loc;
     return this;
   }
 
-  public ValidationError addLocItem(ValidationErrorLocInner locItem) {
+  public ValidationError addLocItem(LocationInner locItem) {
     if (this.loc == null) {
       this.loc = new ArrayList<>();
     }
@@ -100,11 +100,11 @@ public class ValidationError {
    * @return loc
    */
   @javax.annotation.Nonnull
-  public List<ValidationErrorLocInner> getLoc() {
+  public List<LocationInner> getLoc() {
     return loc;
   }
 
-  public void setLoc(@javax.annotation.Nonnull List<ValidationErrorLocInner> loc) {
+  public void setLoc(@javax.annotation.Nonnull List<LocationInner> loc) {
     this.loc = loc;
   }
 
@@ -236,10 +236,7 @@ public class ValidationError {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -248,18 +245,10 @@ public class ValidationError {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("loc");
-    openapiFields.add("msg");
-    openapiFields.add("type");
-    openapiFields.add("input");
-    openapiFields.add("ctx");
+    openapiFields = new HashSet<String>(Arrays.asList("loc", "msg", "type", "input", "ctx"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("loc");
-    openapiRequiredFields.add("msg");
-    openapiRequiredFields.add("type");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("loc", "msg", "type"));
   }
 
   /**
@@ -271,7 +260,7 @@ public class ValidationError {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!ValidationError.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in ValidationError is not found in the empty JSON string", ValidationError.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in ValidationError is not found in the empty JSON string", ValidationError.openapiRequiredFields.toString()));
         }
       }
 
@@ -279,32 +268,32 @@ public class ValidationError {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!ValidationError.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ValidationError` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `ValidationError` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : ValidationError.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("loc").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `loc` to be an array in the JSON string but got `%s`", jsonObj.get("loc").toString()));
+      if (jsonObj.get("loc") != null) {
+        if (!jsonObj.get("loc").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `loc` to be an array in the JSON string but got `%s`", jsonObj.get("loc").toString()));
+        }
+        JsonArray jsonArrayloc = jsonObj.getAsJsonArray("loc");
+        // validate the required field `loc` (array)
+        for (int i = 0; i < jsonArrayloc.size(); i++) {
+          LocationInner.validateJsonElement(jsonArrayloc.get(i));
+        }
       }
-
-      JsonArray jsonArrayloc = jsonObj.getAsJsonArray("loc");
-      // validate the required field `loc` (array)
-      for (int i = 0; i < jsonArrayloc.size(); i++) {
-        ValidationErrorLocInner.validateJsonElement(jsonArrayloc.get(i));
-      };
       if (!jsonObj.get("msg").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `msg` to be a primitive type in the JSON string but got `%s`", jsonObj.get("msg").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `msg` to be a primitive type in the JSON string but got `%s`", jsonObj.get("msg").toString()));
       }
       if (!jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 
