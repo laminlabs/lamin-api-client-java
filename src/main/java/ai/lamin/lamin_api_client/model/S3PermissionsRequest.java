@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * S3PermissionsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class S3PermissionsRequest {
   public static final String SERIALIZED_NAME_AWS_ACCESS_KEY_ID = "aws_access_key_id";
   @SerializedName(SERIALIZED_NAME_AWS_ACCESS_KEY_ID)
@@ -235,10 +235,7 @@ public class S3PermissionsRequest {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -247,18 +244,10 @@ public class S3PermissionsRequest {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("aws_access_key_id");
-    openapiFields.add("aws_secret_access_key");
-    openapiFields.add("region");
-    openapiFields.add("aws_session_token");
-    openapiFields.add("extra_parameters");
+    openapiFields = new HashSet<String>(Arrays.asList("aws_access_key_id", "aws_secret_access_key", "region", "aws_session_token", "extra_parameters"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("aws_access_key_id");
-    openapiRequiredFields.add("aws_secret_access_key");
-    openapiRequiredFields.add("region");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("aws_access_key_id", "aws_secret_access_key", "region"));
   }
 
   /**
@@ -270,7 +259,7 @@ public class S3PermissionsRequest {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!S3PermissionsRequest.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in S3PermissionsRequest is not found in the empty JSON string", S3PermissionsRequest.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in S3PermissionsRequest is not found in the empty JSON string", S3PermissionsRequest.openapiRequiredFields.toString()));
         }
       }
 
@@ -278,28 +267,28 @@ public class S3PermissionsRequest {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!S3PermissionsRequest.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `S3PermissionsRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `S3PermissionsRequest` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : S3PermissionsRequest.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("aws_access_key_id").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aws_access_key_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_access_key_id").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `aws_access_key_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_access_key_id").toString()));
       }
       if (!jsonObj.get("aws_secret_access_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aws_secret_access_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_secret_access_key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `aws_secret_access_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_secret_access_key").toString()));
       }
       if (!jsonObj.get("region").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `region` to be a primitive type in the JSON string but got `%s`", jsonObj.get("region").toString()));
       }
       if ((jsonObj.get("aws_session_token") != null && !jsonObj.get("aws_session_token").isJsonNull()) && !jsonObj.get("aws_session_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `aws_session_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_session_token").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `aws_session_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("aws_session_token").toString()));
       }
   }
 

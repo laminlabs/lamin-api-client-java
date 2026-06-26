@@ -11,7 +11,7 @@
 |**orderBy** | [**List&lt;OrderByColumn&gt;**](OrderByColumn.md) |  |  [optional] |
 |**search** | **String** |  |  [optional] |
 |**searchIn** | **List&lt;String&gt;** |  |  [optional] |
-|**scope** | **QueryScope** |  |  [optional] |
+|**scope** | [**QueryScope**](QueryScope.md) |  |  [optional] |
 
 
 

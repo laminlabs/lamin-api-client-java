@@ -51,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * The request body for the batch synchronization endpoint.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class BatchSyncLinksBody {
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
@@ -146,10 +146,7 @@ public class BatchSyncLinksBody {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -158,14 +155,10 @@ public class BatchSyncLinksBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("instructions");
-    openapiFields.add("list_key");
+    openapiFields = new HashSet<String>(Arrays.asList("instructions", "list_key"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("instructions");
-    openapiRequiredFields.add("list_key");
+    openapiRequiredFields = new HashSet<String>(Arrays.asList("instructions", "list_key"));
   }
 
   /**
@@ -177,7 +170,7 @@ public class BatchSyncLinksBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!BatchSyncLinksBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in BatchSyncLinksBody is not found in the empty JSON string", BatchSyncLinksBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in BatchSyncLinksBody is not found in the empty JSON string", BatchSyncLinksBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -185,29 +178,29 @@ public class BatchSyncLinksBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!BatchSyncLinksBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BatchSyncLinksBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `BatchSyncLinksBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
       for (String requiredField : BatchSyncLinksBody.openapiRequiredFields) {
         if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      // ensure the json data is an array
-      if (!jsonObj.get("instructions").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+      if (jsonObj.get("instructions") != null) {
+        if (!jsonObj.get("instructions").isJsonArray()) {
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `instructions` to be an array in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
+        }
+        JsonArray jsonArrayinstructions = jsonObj.getAsJsonArray("instructions");
+        // validate the required field `instructions` (array)
+        for (int i = 0; i < jsonArrayinstructions.size(); i++) {
+          SyncInstruction.validateJsonElement(jsonArrayinstructions.get(i));
+        }
       }
-
-      JsonArray jsonArrayinstructions = jsonObj.getAsJsonArray("instructions");
-      // validate the required field `instructions` (array)
-      for (int i = 0; i < jsonArrayinstructions.size(); i++) {
-        SyncInstruction.validateJsonElement(jsonArrayinstructions.get(i));
-      };
       if (!jsonObj.get("list_key").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `list_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("list_key").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `list_key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("list_key").toString()));
       }
   }
 

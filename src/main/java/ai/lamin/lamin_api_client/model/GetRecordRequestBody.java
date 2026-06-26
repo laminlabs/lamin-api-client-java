@@ -52,12 +52,12 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetRecordRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class GetRecordRequestBody {
   public static final String SERIALIZED_NAME_SELECT = "select";
   @SerializedName(SERIALIZED_NAME_SELECT)
   @javax.annotation.Nullable
-  private List<String> select = new ArrayList<>();
+  private List<String> select;
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -158,10 +158,7 @@ public class GetRecordRequestBody {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -170,12 +167,10 @@ public class GetRecordRequestBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("select");
-    openapiFields.add("scope");
+    openapiFields = new HashSet<String>(Arrays.asList("select", "scope"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -187,7 +182,7 @@ public class GetRecordRequestBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GetRecordRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GetRecordRequestBody is not found in the empty JSON string", GetRecordRequestBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GetRecordRequestBody is not found in the empty JSON string", GetRecordRequestBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -195,13 +190,17 @@ public class GetRecordRequestBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GetRecordRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetRecordRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GetRecordRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       // ensure the optional json data is an array if present
       if (jsonObj.get("select") != null && !jsonObj.get("select").isJsonNull() && !jsonObj.get("select").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `select` to be an array in the JSON string but got `%s`", jsonObj.get("select").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `select` to be an array in the JSON string but got `%s`", jsonObj.get("select").toString()));
+      }
+      // validate the optional field `scope`
+      if (jsonObj.get("scope") != null && !jsonObj.get("scope").isJsonNull()) {
+        QueryScope.validateJsonElement(jsonObj.get("scope"));
       }
   }
 

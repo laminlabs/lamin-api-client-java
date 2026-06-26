@@ -15,6 +15,7 @@ package ai.lamin.lamin_api_client.api;
 
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.model.CreateArtifactRequestBody;
+import java.io.File;
 import ai.lamin.lamin_api_client.model.HTTPValidationError;
 import java.util.UUID;
 import org.junit.jupiter.api.Disabled;
@@ -88,7 +89,7 @@ public class InstanceArtifactsApiTest {
     @Test
     public void uploadArtifactInstancesInstanceIdArtifactsUploadPostTest() throws ApiException {
         UUID instanceId = null;
-        String _file = null;
+        File _file = null;
         UUID spaceId = null;
         String authorization = null;
         String kwargs = null;

@@ -1,6 +1,6 @@
 # StoragesApi
 
-All URIs are relative to */api*
+All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -27,7 +27,7 @@ import ai.lamin.lamin_api_client.api.StoragesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     StoragesApi apiInstance = new StoragesApi(defaultClient);
     CloudAccessRequest cloudAccessRequest = new CloudAccessRequest(); // CloudAccessRequest | 
@@ -90,7 +90,7 @@ import ai.lamin.lamin_api_client.api.StoragesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     StoragesApi apiInstance = new StoragesApi(defaultClient);
     String fullPath = "fullPath_example"; // String | 
@@ -153,7 +153,7 @@ import ai.lamin.lamin_api_client.api.StoragesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     StoragesApi apiInstance = new StoragesApi(defaultClient);
     String bucketName = "bucketName_example"; // String | 

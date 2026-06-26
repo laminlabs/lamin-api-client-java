@@ -55,7 +55,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetValuesRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class GetValuesRequestBody {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -65,7 +65,7 @@ public class GetValuesRequestBody {
   public static final String SERIALIZED_NAME_ORDER_BY = "order_by";
   @SerializedName(SERIALIZED_NAME_ORDER_BY)
   @javax.annotation.Nullable
-  private List<OrderByColumn> orderBy = new ArrayList<>();
+  private List<OrderByColumn> orderBy;
 
   public static final String SERIALIZED_NAME_SEARCH = "search";
   @SerializedName(SERIALIZED_NAME_SEARCH)
@@ -75,7 +75,7 @@ public class GetValuesRequestBody {
   public static final String SERIALIZED_NAME_SEARCH_IN = "search_in";
   @SerializedName(SERIALIZED_NAME_SEARCH_IN)
   @javax.annotation.Nullable
-  private List<String> searchIn = new ArrayList<>();
+  private List<String> searchIn;
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -255,10 +255,7 @@ public class GetValuesRequestBody {
    * (except the first line).
    */
   private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
+    return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
 
@@ -267,15 +264,10 @@ public class GetValuesRequestBody {
 
   static {
     // a set of all properties/fields (JSON key names)
-    openapiFields = new HashSet<String>();
-    openapiFields.add("filter");
-    openapiFields.add("order_by");
-    openapiFields.add("search");
-    openapiFields.add("search_in");
-    openapiFields.add("scope");
+    openapiFields = new HashSet<String>(Arrays.asList("filter", "order_by", "search", "search_in", "scope"));
 
     // a set of required properties/fields (JSON key names)
-    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields = new HashSet<String>(0);
   }
 
   /**
@@ -287,7 +279,7 @@ public class GetValuesRequestBody {
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
         if (!GetValuesRequestBody.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in GetValuesRequestBody is not found in the empty JSON string", GetValuesRequestBody.openapiRequiredFields.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The required field(s) %s in GetValuesRequestBody is not found in the empty JSON string", GetValuesRequestBody.openapiRequiredFields.toString()));
         }
       }
 
@@ -295,7 +287,7 @@ public class GetValuesRequestBody {
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
         if (!GetValuesRequestBody.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetValuesRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
+          throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "The field `%s` in the JSON string is not defined in the `GetValuesRequestBody` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
@@ -304,7 +296,7 @@ public class GetValuesRequestBody {
         if (jsonArrayorderBy != null) {
           // ensure the json data is an array
           if (!jsonObj.get("order_by").isJsonArray()) {
-            throw new IllegalArgumentException(String.format("Expected the field `order_by` to be an array in the JSON string but got `%s`", jsonObj.get("order_by").toString()));
+            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `order_by` to be an array in the JSON string but got `%s`", jsonObj.get("order_by").toString()));
           }
 
           // validate the optional field `order_by` (array)
@@ -314,11 +306,15 @@ public class GetValuesRequestBody {
         }
       }
       if ((jsonObj.get("search") != null && !jsonObj.get("search").isJsonNull()) && !jsonObj.get("search").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `search` to be a primitive type in the JSON string but got `%s`", jsonObj.get("search").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `search` to be a primitive type in the JSON string but got `%s`", jsonObj.get("search").toString()));
       }
       // ensure the optional json data is an array if present
       if (jsonObj.get("search_in") != null && !jsonObj.get("search_in").isJsonNull() && !jsonObj.get("search_in").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `search_in` to be an array in the JSON string but got `%s`", jsonObj.get("search_in").toString()));
+        throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected the field `search_in` to be an array in the JSON string but got `%s`", jsonObj.get("search_in").toString()));
+      }
+      // validate the optional field `scope`
+      if (jsonObj.get("scope") != null && !jsonObj.get("scope").isJsonNull()) {
+        QueryScope.validateJsonElement(jsonObj.get("scope"));
       }
   }
 

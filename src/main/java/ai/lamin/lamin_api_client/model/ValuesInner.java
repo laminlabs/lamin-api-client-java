@@ -50,25 +50,25 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T14:10:30.776589388+02:00[Europe/Brussels]", comments = "Generator version: 7.12.0")
-public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
-    private static final Logger log = Logger.getLogger(TraversalParamsValuesInner.class.getName());
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-25T16:47:58.676276359+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+public class ValuesInner extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(ValuesInner.class.getName());
 
     public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
         @SuppressWarnings("unchecked")
         @Override
         public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-            if (!TraversalParamsValuesInner.class.isAssignableFrom(type.getRawType())) {
-                return null; // this class only serializes 'TraversalParamsValuesInner' and its subtypes
+            if (!ValuesInner.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'ValuesInner' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
             final TypeAdapter<Integer> adapterInteger = gson.getDelegateAdapter(this, TypeToken.get(Integer.class));
             final TypeAdapter<String> adapterString = gson.getDelegateAdapter(this, TypeToken.get(String.class));
             final TypeAdapter<Boolean> adapterBoolean = gson.getDelegateAdapter(this, TypeToken.get(Boolean.class));
 
-            return (TypeAdapter<T>) new TypeAdapter<TraversalParamsValuesInner>() {
+            return (TypeAdapter<T>) new TypeAdapter<ValuesInner>() {
                 @Override
-                public void write(JsonWriter out, TraversalParamsValuesInner value) throws IOException {
+                public void write(JsonWriter out, ValuesInner value) throws IOException {
                     if (value == null || value.getActualInstance() == null) {
                         elementAdapter.write(out, null);
                         return;
@@ -96,7 +96,7 @@ public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
                 }
 
                 @Override
-                public TraversalParamsValuesInner read(JsonReader in) throws IOException {
+                public ValuesInner read(JsonReader in) throws IOException {
                     Object deserialized = null;
                     JsonElement jsonElement = elementAdapter.read(in);
 
@@ -107,49 +107,49 @@ public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
                         }
                         actualAdapter = adapterInteger;
-                        TraversalParamsValuesInner ret = new TraversalParamsValuesInner();
+                        ValuesInner ret = new ValuesInner();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Integer failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Integer failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Integer'", e);
                     }
                     // deserialize String
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.getAsJsonPrimitive().isString()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type String in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type String in the JSON string but got `%s`", jsonElement.toString()));
                         }
                         actualAdapter = adapterString;
-                        TraversalParamsValuesInner ret = new TraversalParamsValuesInner();
+                        ValuesInner ret = new ValuesInner();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for String failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'String'", e);
                     }
                     // deserialize Boolean
                     try {
                         // validate the JSON object to see if any exception is thrown
                         if (!jsonElement.getAsJsonPrimitive().isBoolean()) {
-                            throw new IllegalArgumentException(String.format("Expected json element to be of type Boolean in the JSON string but got `%s`", jsonElement.toString()));
+                            throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Boolean in the JSON string but got `%s`", jsonElement.toString()));
                         }
                         actualAdapter = adapterBoolean;
-                        TraversalParamsValuesInner ret = new TraversalParamsValuesInner();
+                        ValuesInner ret = new ValuesInner();
                         ret.setActualInstance(actualAdapter.fromJsonTree(jsonElement));
                         return ret;
                     } catch (Exception e) {
                         // deserialization failed, continue
-                        errorMessages.add(String.format("Deserialization for Boolean failed with `%s`.", e.getMessage()));
+                        errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Boolean failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'Boolean'", e);
                     }
 
-                    throw new IOException(String.format("Failed deserialization for TraversalParamsValuesInner: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+                    throw new IOException(String.format(java.util.Locale.ROOT, "Failed deserialization for ValuesInner: no class matches result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
                 }
             }.nullSafe();
         }
@@ -158,11 +158,11 @@ public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
     // store a list of schema names defined in anyOf
     public static final Map<String, Class<?>> schemas = new HashMap<String, Class<?>>();
 
-    public TraversalParamsValuesInner() {
+    public ValuesInner() {
         super("anyOf", Boolean.FALSE);
     }
 
-    public TraversalParamsValuesInner(Object o) {
+    public ValuesInner(Object o) {
         super("anyOf", Boolean.FALSE);
         setActualInstance(o);
     }
@@ -175,7 +175,7 @@ public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
 
     @Override
     public Map<String, Class<?>> getSchemas() {
-        return TraversalParamsValuesInner.schemas;
+        return ValuesInner.schemas;
     }
 
     /**
@@ -254,7 +254,7 @@ public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
      * Validates the JSON Element and throws an exception if issues found
      *
      * @param jsonElement JSON Element
-     * @throws IOException if the JSON Element is invalid with respect to TraversalParamsValuesInner
+     * @throws IOException if the JSON Element is invalid with respect to ValuesInner
      */
     public static void validateJsonElement(JsonElement jsonElement) throws IOException {
         // validate anyOf schemas one by one
@@ -262,49 +262,49 @@ public class TraversalParamsValuesInner extends AbstractOpenApiSchema {
         // validate the json string with Integer
         try {
             if (!jsonElement.getAsJsonPrimitive().isNumber()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Number in the JSON string but got `%s`", jsonElement.toString()));
             }
             return;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Integer failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Integer failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with String
         try {
             if (!jsonElement.getAsJsonPrimitive().isString()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type String in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type String in the JSON string but got `%s`", jsonElement.toString()));
             }
             return;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for String failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for String failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
         // validate the json string with Boolean
         try {
             if (!jsonElement.getAsJsonPrimitive().isBoolean()) {
-                throw new IllegalArgumentException(String.format("Expected json element to be of type Boolean in the JSON string but got `%s`", jsonElement.toString()));
+                throw new IllegalArgumentException(String.format(java.util.Locale.ROOT, "Expected json element to be of type Boolean in the JSON string but got `%s`", jsonElement.toString()));
             }
             return;
         } catch (Exception e) {
-            errorMessages.add(String.format("Deserialization for Boolean failed with `%s`.", e.getMessage()));
+            errorMessages.add(String.format(java.util.Locale.ROOT, "Deserialization for Boolean failed with `%s`.", e.getMessage()));
             // continue to the next one
         }
-        throw new IOException(String.format("The JSON string is invalid for TraversalParamsValuesInner with anyOf schemas: Boolean, Integer, String. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
+        throw new IOException(String.format(java.util.Locale.ROOT, "The JSON string is invalid for ValuesInner with anyOf schemas: Boolean, Integer, String. no class match the result, expected at least 1. Detailed failure message for anyOf schemas: %s. JSON: %s", errorMessages, jsonElement.toString()));
     }
 
     /**
-     * Create an instance of TraversalParamsValuesInner given an JSON string
+     * Create an instance of ValuesInner given an JSON string
      *
      * @param jsonString JSON string
-     * @return An instance of TraversalParamsValuesInner
-     * @throws IOException if the JSON string is invalid with respect to TraversalParamsValuesInner
+     * @return An instance of ValuesInner
+     * @throws IOException if the JSON string is invalid with respect to ValuesInner
      */
-    public static TraversalParamsValuesInner fromJson(String jsonString) throws IOException {
-        return JSON.getGson().fromJson(jsonString, TraversalParamsValuesInner.class);
+    public static ValuesInner fromJson(String jsonString) throws IOException {
+        return JSON.getGson().fromJson(jsonString, ValuesInner.class);
     }
 
     /**
-     * Convert an instance of TraversalParamsValuesInner to an JSON string
+     * Convert an instance of ValuesInner to an JSON string
      *
      * @return JSON string
      */

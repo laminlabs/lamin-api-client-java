@@ -1,6 +1,6 @@
 # ServiceAccountsApi
 
-All URIs are relative to */api*
+All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -34,7 +34,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -103,7 +103,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     CreateServiceAccountRequestBody createServiceAccountRequestBody = new CreateServiceAccountRequestBody(); // CreateServiceAccountRequestBody | 
@@ -168,7 +168,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -237,7 +237,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -304,7 +304,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -371,7 +371,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -438,7 +438,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 
@@ -503,7 +503,7 @@ import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("/api");
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     UUID organizationId = UUID.randomUUID(); // UUID | 

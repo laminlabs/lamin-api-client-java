@@ -94,7 +94,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutCall(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddTeamMemberRequestBody addTeamMemberRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -147,7 +147,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddTeamMemberRequestBody addTeamMemberRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling addTeamMemberTeamsTeamIdMembersAccountIdPut(Async)");
@@ -184,7 +184,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object addTeamMemberTeamsTeamIdMembersAccountIdPut(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization) throws ApiException {
+    public Object addTeamMemberTeamsTeamIdMembersAccountIdPut(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddTeamMemberRequestBody addTeamMemberRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = addTeamMemberTeamsTeamIdMembersAccountIdPutWithHttpInfo(teamId, accountId, addTeamMemberRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -206,7 +206,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> addTeamMemberTeamsTeamIdMembersAccountIdPutWithHttpInfo(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> addTeamMemberTeamsTeamIdMembersAccountIdPutWithHttpInfo(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddTeamMemberRequestBody addTeamMemberRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(teamId, accountId, addTeamMemberRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -230,7 +230,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutAsync(UUID teamId, UUID accountId, AddTeamMemberRequestBody addTeamMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call addTeamMemberTeamsTeamIdMembersAccountIdPutAsync(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull AddTeamMemberRequestBody addTeamMemberRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = addTeamMemberTeamsTeamIdMembersAccountIdPutValidateBeforeCall(teamId, accountId, addTeamMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -252,7 +252,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTeamTeamsPutCall(CreateTeamRequestBody createTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createTeamTeamsPutCall(@javax.annotation.Nonnull CreateTeamRequestBody createTeamRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -303,7 +303,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTeamTeamsPutValidateBeforeCall(CreateTeamRequestBody createTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createTeamTeamsPutValidateBeforeCall(@javax.annotation.Nonnull CreateTeamRequestBody createTeamRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'createTeamRequestBody' is set
         if (createTeamRequestBody == null) {
             throw new ApiException("Missing the required parameter 'createTeamRequestBody' when calling createTeamTeamsPut(Async)");
@@ -328,7 +328,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object createTeamTeamsPut(CreateTeamRequestBody createTeamRequestBody, String authorization) throws ApiException {
+    public Object createTeamTeamsPut(@javax.annotation.Nonnull CreateTeamRequestBody createTeamRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = createTeamTeamsPutWithHttpInfo(createTeamRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -348,7 +348,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> createTeamTeamsPutWithHttpInfo(CreateTeamRequestBody createTeamRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> createTeamTeamsPutWithHttpInfo(@javax.annotation.Nonnull CreateTeamRequestBody createTeamRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = createTeamTeamsPutValidateBeforeCall(createTeamRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -370,7 +370,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTeamTeamsPutAsync(CreateTeamRequestBody createTeamRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call createTeamTeamsPutAsync(@javax.annotation.Nonnull CreateTeamRequestBody createTeamRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = createTeamTeamsPutValidateBeforeCall(createTeamRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -392,7 +392,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamTeamsTeamIdDeleteCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteTeamTeamsTeamIdDeleteCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -443,7 +443,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteTeamTeamsTeamIdDeleteValidateBeforeCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteTeamTeamsTeamIdDeleteValidateBeforeCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling deleteTeamTeamsTeamIdDelete(Async)");
@@ -468,7 +468,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object deleteTeamTeamsTeamIdDelete(UUID teamId, String authorization) throws ApiException {
+    public Object deleteTeamTeamsTeamIdDelete(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = deleteTeamTeamsTeamIdDeleteWithHttpInfo(teamId, authorization);
         return localVarResp.getData();
     }
@@ -488,7 +488,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> deleteTeamTeamsTeamIdDeleteWithHttpInfo(UUID teamId, String authorization) throws ApiException {
+    public ApiResponse<Object> deleteTeamTeamsTeamIdDeleteWithHttpInfo(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = deleteTeamTeamsTeamIdDeleteValidateBeforeCall(teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -510,7 +510,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteTeamTeamsTeamIdDeleteAsync(UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call deleteTeamTeamsTeamIdDeleteAsync(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = deleteTeamTeamsTeamIdDeleteValidateBeforeCall(teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -532,7 +532,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamTeamsTeamIdGetCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTeamTeamsTeamIdGetCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -583,7 +583,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTeamTeamsTeamIdGetValidateBeforeCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTeamTeamsTeamIdGetValidateBeforeCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling getTeamTeamsTeamIdGet(Async)");
@@ -608,7 +608,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getTeamTeamsTeamIdGet(UUID teamId, String authorization) throws ApiException {
+    public Object getTeamTeamsTeamIdGet(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getTeamTeamsTeamIdGetWithHttpInfo(teamId, authorization);
         return localVarResp.getData();
     }
@@ -628,7 +628,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getTeamTeamsTeamIdGetWithHttpInfo(UUID teamId, String authorization) throws ApiException {
+    public ApiResponse<Object> getTeamTeamsTeamIdGetWithHttpInfo(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getTeamTeamsTeamIdGetValidateBeforeCall(teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -650,7 +650,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTeamTeamsTeamIdGetAsync(UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getTeamTeamsTeamIdGetAsync(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTeamTeamsTeamIdGetValidateBeforeCall(teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -672,7 +672,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -723,7 +723,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(UUID organizationId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'organizationId' is set
         if (organizationId == null) {
             throw new ApiException("Missing the required parameter 'organizationId' when calling listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(Async)");
@@ -748,7 +748,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(UUID organizationId, String authorization) throws ApiException {
+    public Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetWithHttpInfo(organizationId, authorization);
         return localVarResp.getData();
     }
@@ -768,7 +768,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listOrganizationTeamsTeamsOrganizationsOrganizationIdGetWithHttpInfo(UUID organizationId, String authorization) throws ApiException {
+    public ApiResponse<Object> listOrganizationTeamsTeamsOrganizationsOrganizationIdGetWithHttpInfo(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -790,7 +790,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetAsync(UUID organizationId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listOrganizationTeamsTeamsOrganizationsOrganizationIdGetAsync(@javax.annotation.Nonnull UUID organizationId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listOrganizationTeamsTeamsOrganizationsOrganizationIdGetValidateBeforeCall(organizationId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -812,7 +812,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -863,7 +863,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(UUID teamId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling listTeamMembersTeamsTeamIdMembersGet(Async)");
@@ -888,7 +888,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listTeamMembersTeamsTeamIdMembersGet(UUID teamId, String authorization) throws ApiException {
+    public Object listTeamMembersTeamsTeamIdMembersGet(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = listTeamMembersTeamsTeamIdMembersGetWithHttpInfo(teamId, authorization);
         return localVarResp.getData();
     }
@@ -908,7 +908,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listTeamMembersTeamsTeamIdMembersGetWithHttpInfo(UUID teamId, String authorization) throws ApiException {
+    public ApiResponse<Object> listTeamMembersTeamsTeamIdMembersGetWithHttpInfo(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(teamId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -930,7 +930,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetAsync(UUID teamId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listTeamMembersTeamsTeamIdMembersGetAsync(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTeamMembersTeamsTeamIdMembersGetValidateBeforeCall(teamId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -953,7 +953,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteCall(UUID teamId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1005,7 +1005,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(UUID teamId, UUID accountId, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling removeTeamMemberTeamsTeamIdMembersAccountIdDelete(Async)");
@@ -1036,7 +1036,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(UUID teamId, UUID accountId, String authorization) throws ApiException {
+    public Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteWithHttpInfo(teamId, accountId, authorization);
         return localVarResp.getData();
     }
@@ -1057,7 +1057,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> removeTeamMemberTeamsTeamIdMembersAccountIdDeleteWithHttpInfo(UUID teamId, UUID accountId, String authorization) throws ApiException {
+    public ApiResponse<Object> removeTeamMemberTeamsTeamIdMembersAccountIdDeleteWithHttpInfo(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(teamId, accountId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1080,7 +1080,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteAsync(UUID teamId, UUID accountId, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call removeTeamMemberTeamsTeamIdMembersAccountIdDeleteAsync(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = removeTeamMemberTeamsTeamIdMembersAccountIdDeleteValidateBeforeCall(teamId, accountId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1104,7 +1104,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchCall(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateTeamMemberRequestBody updateTeamMemberRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1157,7 +1157,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateTeamMemberRequestBody updateTeamMemberRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling updateTeamMemberTeamsTeamIdMembersAccountIdPatch(Async)");
@@ -1194,7 +1194,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization) throws ApiException {
+    public Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateTeamMemberRequestBody updateTeamMemberRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = updateTeamMemberTeamsTeamIdMembersAccountIdPatchWithHttpInfo(teamId, accountId, updateTeamMemberRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -1216,7 +1216,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateTeamMemberTeamsTeamIdMembersAccountIdPatchWithHttpInfo(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> updateTeamMemberTeamsTeamIdMembersAccountIdPatchWithHttpInfo(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateTeamMemberRequestBody updateTeamMemberRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(teamId, accountId, updateTeamMemberRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1240,7 +1240,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchAsync(UUID teamId, UUID accountId, UpdateTeamMemberRequestBody updateTeamMemberRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateTeamMemberTeamsTeamIdMembersAccountIdPatchAsync(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UUID accountId, @javax.annotation.Nonnull UpdateTeamMemberRequestBody updateTeamMemberRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateTeamMemberTeamsTeamIdMembersAccountIdPatchValidateBeforeCall(teamId, accountId, updateTeamMemberRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1263,7 +1263,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamTeamsTeamIdPatchCall(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateTeamTeamsTeamIdPatchCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UpdateTeamRequestBody updateTeamRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1315,7 +1315,7 @@ public class TeamsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateTeamTeamsTeamIdPatchValidateBeforeCall(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateTeamTeamsTeamIdPatchValidateBeforeCall(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UpdateTeamRequestBody updateTeamRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'teamId' is set
         if (teamId == null) {
             throw new ApiException("Missing the required parameter 'teamId' when calling updateTeamTeamsTeamIdPatch(Async)");
@@ -1346,7 +1346,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object updateTeamTeamsTeamIdPatch(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization) throws ApiException {
+    public Object updateTeamTeamsTeamIdPatch(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UpdateTeamRequestBody updateTeamRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = updateTeamTeamsTeamIdPatchWithHttpInfo(teamId, updateTeamRequestBody, authorization);
         return localVarResp.getData();
     }
@@ -1367,7 +1367,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> updateTeamTeamsTeamIdPatchWithHttpInfo(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization) throws ApiException {
+    public ApiResponse<Object> updateTeamTeamsTeamIdPatchWithHttpInfo(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UpdateTeamRequestBody updateTeamRequestBody, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = updateTeamTeamsTeamIdPatchValidateBeforeCall(teamId, updateTeamRequestBody, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1390,7 +1390,7 @@ public class TeamsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateTeamTeamsTeamIdPatchAsync(UUID teamId, UpdateTeamRequestBody updateTeamRequestBody, String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call updateTeamTeamsTeamIdPatchAsync(@javax.annotation.Nonnull UUID teamId, @javax.annotation.Nonnull UpdateTeamRequestBody updateTeamRequestBody, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = updateTeamTeamsTeamIdPatchValidateBeforeCall(teamId, updateTeamRequestBody, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

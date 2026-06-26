@@ -8,10 +8,10 @@ Parameters that define the hierarchical traversal.
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**values** | [**List&lt;TraversalParamsValuesInner&gt;**](TraversalParamsValuesInner.md) | A list of values for the specified &#39;field&#39; to begin the traversal from. |  |
+|**values** | [**List&lt;ValuesInner&gt;**](ValuesInner.md) | A list of values for the specified &#39;field&#39; to begin the traversal from. |  |
 |**kind** | [**KindEnum**](#KindEnum) | The direction of traversal |  |
 |**field** | **String** | The field on the model to use for identifying starting records (e.g., &#39;id&#39;, &#39;uid&#39;). |  [optional] |
-|**depth** | **Integer** |  |  [optional] |
+|**depth** | **Integer** | Optional traversal depth. Cannot exceed 8. |  [optional] |
 
 
 
