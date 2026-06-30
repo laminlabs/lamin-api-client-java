@@ -234,6 +234,164 @@ public class InstanceArtifactsApi {
         return localVarCall;
     }
     /**
+     * Build call for createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createArtifactRequestBody;
+
+        // create path and map variables
+        String localVarPath = "/instances/{instance_id}/artifacts/create-sql-async"
+            .replace("{" + "instance_id" + "}", localVarApiClient.escapeString(instanceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (spaceId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("space_id", spaceId));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        if (authorization != null) {
+            localVarHeaderParams.put("Authorization", localVarApiClient.parameterToString(authorization));
+        }
+
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'instanceId' is set
+        if (instanceId == null) {
+            throw new ApiException("Missing the required parameter 'instanceId' when calling createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost(Async)");
+        }
+
+        // verify the required parameter 'createArtifactRequestBody' is set
+        if (createArtifactRequestBody == null) {
+            throw new ApiException("Missing the required parameter 'createArtifactRequestBody' when calling createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost(Async)");
+        }
+
+        return createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostCall(instanceId, createArtifactRequestBody, spaceId, authorization, _callback);
+
+    }
+
+    /**
+     * Create Artifact Sql Async
+     * Async counterpart of &#x60;&#x60;/create-sql&#x60;&#x60;.  Registers an Artifact for an existing storage path via direct SQL, using the async DB engine and async Supabase/AWS/S3 tooling end-to-end.
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @return Object
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public Object createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+        ApiResponse<Object> localVarResp = createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostWithHttpInfo(instanceId, createArtifactRequestBody, spaceId, authorization);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Artifact Sql Async
+     * Async counterpart of &#x60;&#x60;/create-sql&#x60;&#x60;.  Registers an Artifact for an existing storage path via direct SQL, using the async DB engine and async Supabase/AWS/S3 tooling end-to-end.
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @return ApiResponse&lt;Object&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Object> createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+        okhttp3.Call localVarCall = createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostValidateBeforeCall(instanceId, createArtifactRequestBody, spaceId, authorization, null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Artifact Sql Async (asynchronously)
+     * Async counterpart of &#x60;&#x60;/create-sql&#x60;&#x60;.  Registers an Artifact for an existing storage path via direct SQL, using the async DB engine and async Supabase/AWS/S3 tooling end-to-end.
+     * @param instanceId  (required)
+     * @param createArtifactRequestBody  (required)
+     * @param spaceId  (optional)
+     * @param authorization  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull CreateArtifactRequestBody createArtifactRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostValidateBeforeCall(instanceId, createArtifactRequestBody, spaceId, authorization, _callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost
      * @param instanceId  (required)
      * @param createArtifactRequestBody  (required)

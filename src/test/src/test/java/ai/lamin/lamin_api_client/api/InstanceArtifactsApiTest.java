@@ -50,6 +50,23 @@ public class InstanceArtifactsApiTest {
     }
 
     /**
+     * Create Artifact Sql Async
+     *
+     * Async counterpart of &#x60;&#x60;/create-sql&#x60;&#x60;.  Registers an Artifact for an existing storage path via direct SQL, using the async DB engine and async Supabase/AWS/S3 tooling end-to-end.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPostTest() throws ApiException {
+        UUID instanceId = null;
+        CreateArtifactRequestBody createArtifactRequestBody = null;
+        UUID spaceId = null;
+        String authorization = null;
+        Object response = api.createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost(instanceId, createArtifactRequestBody, spaceId, authorization);
+        // TODO: test validations
+    }
+
+    /**
      * Create Artifact Sql
      *
      * Register an Artifact for an existing storage path via direct SQL.  Unlike &#x60;&#x60;/create&#x60;&#x60; (which invokes a lambda running lamindb), this resolves the path&#39;s S3 metadata and inserts the artifact row straight into the instance DB.

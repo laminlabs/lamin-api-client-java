@@ -3698,6 +3698,65 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
+  /instances/{instance_id}/artifacts/create-sql-async:
+    post:
+      description: |-
+        Async counterpart of ``/create-sql``.
+
+        Registers an Artifact for an existing storage path via direct SQL, using the
+        async DB engine and async Supabase/AWS/S3 tooling end-to-end.
+      operationId: create_artifact_sql_async_instances__instance_id__artifacts_create_sql_async_post
+      parameters:
+      - explode: false
+        in: path
+        name: instance_id
+        required: true
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: space_id
+        required: false
+        schema:
+          format: uuid
+          nullable: true
+          type: string
+        style: form
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          nullable: true
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateArtifactRequestBody"
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema: {}
+          description: Successful Response
+        "422":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HTTPValidationError"
+          description: Validation Error
+      summary: Create Artifact Sql Async
+      tags:
+      - Instance Artifacts
+      x-content-type: application/json
+      x-accepts:
+      - application/json
   /instances/{instance_id}/artifacts/by-path:
     get:
       operationId: get_artifact_by_path_instances__instance_id__artifacts_by_path_get
