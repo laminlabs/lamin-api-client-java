@@ -50,7 +50,7 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:40:00.923466696+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class LocationInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(LocationInner.class.getName());
 
@@ -62,8 +62,12 @@ public class LocationInner extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'LocationInner' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<String> adapterString = gson.getDelegateAdapter(this, TypeToken.get(String.class));
-            final TypeAdapter<Integer> adapterInteger = gson.getDelegateAdapter(this, TypeToken.get(Integer.class));
+            // LAMIN PATCH: sanitized variable name + Type-based adapter lookup, so this also compiles for generic data types like Map<String, Object>
+            final Type typeInstanceString = new TypeToken<String>(){}.getType();
+            final TypeAdapter<String> adapterString = (TypeAdapter<String>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceString));
+            // LAMIN PATCH: sanitized variable name + Type-based adapter lookup, so this also compiles for generic data types like Map<String, Object>
+            final Type typeInstanceInteger = new TypeToken<Integer>(){}.getType();
+            final TypeAdapter<Integer> adapterInteger = (TypeAdapter<Integer>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceInteger));
 
             return (TypeAdapter<T>) new TypeAdapter<LocationInner>() {
                 @Override
@@ -81,6 +85,8 @@ public class LocationInner extends AbstractOpenApiSchema {
                     out.setSerializeNulls(true);
                     try {
                     // check if the actual instance is of the type `String`
+                    // LAMIN PATCH: use a wildcard instanceof for map types; instanceof
+                    // with a parameterized type does not compile
                     if (value.getActualInstance() instanceof String) {
                         // LAMIN PATCH: write the tree as-is; free-form types (e.g. a
                         // Map schema) are flagged primitive but produce a JsonObject,
@@ -90,6 +96,8 @@ public class LocationInner extends AbstractOpenApiSchema {
                         return;
                     }
                     // check if the actual instance is of the type `Integer`
+                    // LAMIN PATCH: use a wildcard instanceof for map types; instanceof
+                    // with a parameterized type does not compile
                     if (value.getActualInstance() instanceof Integer) {
                         // LAMIN PATCH: write the tree as-is; free-form types (e.g. a
                         // Map schema) are flagged primitive but produce a JsonObject,

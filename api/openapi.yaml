@@ -6558,6 +6558,7 @@ components:
       - manager
       - guest
       title: Role
+      type: string
     Values_inner:
       anyOf:
       - type: integer

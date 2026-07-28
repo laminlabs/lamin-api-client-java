@@ -52,7 +52,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * Defines a single synchronization instruction, containing the scope and the desired state for that scope.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:40:00.923466696+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class SyncInstruction {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)

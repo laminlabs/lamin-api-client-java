@@ -50,7 +50,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * Defines the response for the instance statistics endpoint.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:40:00.923466696+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class StatisticsResponse {
   public static final String SERIALIZED_NAME_INSTANCE_SIZE = "instance_size";
   @SerializedName(SERIALIZED_NAME_INSTANCE_SIZE)
@@ -60,7 +60,7 @@ public class StatisticsResponse {
   public static final String SERIALIZED_NAME_COUNTS = "counts";
   @SerializedName(SERIALIZED_NAME_COUNTS)
   @javax.annotation.Nullable
-  private Map<String, Map<String, Integer>> counts;
+  private Map<String, Map<String, Object>> counts;
 
   public StatisticsResponse() {
   }
@@ -84,7 +84,7 @@ public class StatisticsResponse {
   }
 
 
-  public StatisticsResponse counts(@javax.annotation.Nullable Map<String, Map<String, Integer>> counts) {
+  public StatisticsResponse counts(@javax.annotation.Nullable Map<String, Map<String, Object>> counts) {
     this.counts = counts;
     return this;
   }
@@ -94,11 +94,11 @@ public class StatisticsResponse {
    * @return counts
    */
   @javax.annotation.Nullable
-  public Map<String, Map<String, Integer>> getCounts() {
+  public Map<String, Map<String, Object>> getCounts() {
     return counts;
   }
 
-  public void setCounts(@javax.annotation.Nullable Map<String, Map<String, Integer>> counts) {
+  public void setCounts(@javax.annotation.Nullable Map<String, Map<String, Object>> counts) {
     this.counts = counts;
   }
 

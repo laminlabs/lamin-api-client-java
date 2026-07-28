@@ -49,7 +49,9 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
             {{#anyOf}}
             {{^isArray}}
             {{^vendorExtensions.x-duplicated-data-type}}
-            final TypeAdapter<{{{dataType}}}> adapter{{{dataType}}} = gson.getDelegateAdapter(this, TypeToken.get({{{dataType}}}.class));
+            // LAMIN PATCH: sanitized variable name + Type-based adapter lookup, so this also compiles for generic data types like Map<String, Object>
+            final Type typeInstance{{#sanitizeDataType}}{{{dataType}}}{{/sanitizeDataType}} = new TypeToken<{{{dataType}}}>(){}.getType();
+            final TypeAdapter<{{{dataType}}}> adapter{{#sanitizeDataType}}{{{dataType}}}{{/sanitizeDataType}} = (TypeAdapter<{{{dataType}}}>) gson.getDelegateAdapter(this, TypeToken.get(typeInstance{{#sanitizeDataType}}{{{dataType}}}{{/sanitizeDataType}}));
             {{/vendorExtensions.x-duplicated-data-type}}
             {{/isArray}}
             {{#isArray}}
@@ -79,7 +81,9 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
                     {{#anyOf}}
                     {{^vendorExtensions.x-duplicated-data-type}}
                     // check if the actual instance is of the type `{{{dataType}}}`
-                    if (value.getActualInstance() instanceof {{#isArray}}List<?>{{/isArray}}{{^isArray}}{{{dataType}}}{{/isArray}}) {
+                    // LAMIN PATCH: use a wildcard instanceof for map types; instanceof
+                    // with a parameterized type does not compile
+                    if (value.getActualInstance() instanceof {{#isArray}}List<?>{{/isArray}}{{^isArray}}{{#isMap}}Map<?, ?>{{/isMap}}{{^isMap}}{{{dataType}}}{{/isMap}}{{/isArray}}) {
                     {{#isPrimitiveType}}
                         // LAMIN PATCH: write the tree as-is; free-form types (e.g. a
                         // Map schema) are flagged primitive but produce a JsonObject,
@@ -91,7 +95,7 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
                     {{^isPrimitiveType}}
                     {{#isArray}}
                         List<?> list = (List<?>) value.getActualInstance();
-                        if (!list.isEmpty() && list.get(0) instanceof {{{items.dataType}}}) {
+                        if (!list.isEmpty() && list.get(0) instanceof {{#items.isMap}}Map<?, ?>{{/items.isMap}}{{^items.isMap}}{{{items.dataType}}}{{/items.isMap}}) {
                             JsonArray array = adapter{{#sanitizeDataType}}{{{dataType}}}{{/sanitizeDataType}}.toJsonTree(({{{dataType}}})value.getActualInstance()).getAsJsonArray();
                             elementAdapter.write(out, array);
                             return;
@@ -267,10 +271,10 @@ public class {{classname}} extends AbstractOpenApiSchema{{#vendorExtensions.x-im
         {{#composedSchemas}}
         {{#anyOf}}
         {{^vendorExtensions.x-duplicated-data-type}}
-        if (instance instanceof {{#isArray}}List<?>{{/isArray}}{{^isArray}}{{{dataType}}}{{/isArray}}) {
+        if (instance instanceof {{#isArray}}List<?>{{/isArray}}{{^isArray}}{{#isMap}}Map<?, ?>{{/isMap}}{{^isMap}}{{{dataType}}}{{/isMap}}{{/isArray}}) {
         {{#isArray}}
             List<?> list = (List<?>) instance;
-            if (!list.isEmpty() && list.get(0) instanceof {{{items.dataType}}}) {
+            if (!list.isEmpty() && list.get(0) instanceof {{#items.isMap}}Map<?, ?>{{/items.isMap}}{{^items.isMap}}{{{items.dataType}}}{{/items.isMap}}) {
                 super.setActualInstance(instance);
                 return;
             }
