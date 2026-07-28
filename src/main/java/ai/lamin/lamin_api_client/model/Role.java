@@ -51,7 +51,7 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T09:34:29.117144562+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T09:47:19.127189922+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class Role extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Role.class.getName());
 
@@ -63,8 +63,12 @@ public class Role extends AbstractOpenApiSchema {
                 return null; // this class only serializes 'Role' and its subtypes
             }
             final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-            final TypeAdapter<String> adapterString = gson.getDelegateAdapter(this, TypeToken.get(String.class));
-            final TypeAdapter<ORGANIZATION> adapterORGANIZATION = gson.getDelegateAdapter(this, TypeToken.get(ORGANIZATION.class));
+            // LAMIN PATCH: sanitized variable name + Type-based adapter lookup, so this also compiles for generic data types like Map<String, Object>
+            final Type typeInstanceString = new TypeToken<String>(){}.getType();
+            final TypeAdapter<String> adapterString = (TypeAdapter<String>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceString));
+            // LAMIN PATCH: sanitized variable name + Type-based adapter lookup, so this also compiles for generic data types like Map<String, Object>
+            final Type typeInstanceORGANIZATION = new TypeToken<ORGANIZATION>(){}.getType();
+            final TypeAdapter<ORGANIZATION> adapterORGANIZATION = (TypeAdapter<ORGANIZATION>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceORGANIZATION));
 
             return (TypeAdapter<T>) new TypeAdapter<Role>() {
                 @Override
@@ -74,19 +78,36 @@ public class Role extends AbstractOpenApiSchema {
                         return;
                     }
 
+                    // LAMIN PATCH (templates/libraries/okhttp-gson/anyof_model.mustache):
+                    // keep explicit nulls provided by the caller. The delegate adapters
+                    // already preserve them in the JSON tree; the stream writer must not
+                    // drop them (gson's serializeNulls is off by default).
+                    boolean serializeNulls = out.getSerializeNulls();
+                    out.setSerializeNulls(true);
+                    try {
                     // check if the actual instance is of the type `String`
+                    // LAMIN PATCH: use a wildcard instanceof for map types; instanceof
+                    // with a parameterized type does not compile
                     if (value.getActualInstance() instanceof String) {
-                        JsonPrimitive primitive = adapterString.toJsonTree((String)value.getActualInstance()).getAsJsonPrimitive();
+                        // LAMIN PATCH: write the tree as-is; free-form types (e.g. a
+                        // Map schema) are flagged primitive but produce a JsonObject,
+                        // so getAsJsonPrimitive() would throw
+                        JsonElement primitive = adapterString.toJsonTree((String)value.getActualInstance());
                         elementAdapter.write(out, primitive);
                         return;
                     }
                     // check if the actual instance is of the type `ORGANIZATION`
+                    // LAMIN PATCH: use a wildcard instanceof for map types; instanceof
+                    // with a parameterized type does not compile
                     if (value.getActualInstance() instanceof ORGANIZATION) {
                         JsonElement element = adapterORGANIZATION.toJsonTree((ORGANIZATION)value.getActualInstance());
                         elementAdapter.write(out, element);
                         return;
                     }
                     throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: ORGANIZATION, String");
+                    } finally {
+                        out.setSerializeNulls(serializeNulls);
+                    }
                 }
 
                 @Override

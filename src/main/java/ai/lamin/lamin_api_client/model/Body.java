@@ -52,7 +52,7 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T09:34:29.117144562+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T09:47:19.127189922+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class Body extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(Body.class.getName());
 
@@ -67,6 +67,7 @@ public class Body extends AbstractOpenApiSchema {
 
             final Type typeInstanceListMapStringObject = new TypeToken<List<Map<String, Object>>>(){}.getType();
             final TypeAdapter<List<Map<String, Object>>> adapterListMapStringObject = (TypeAdapter<List<Map<String, Object>>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceListMapStringObject));
+            // LAMIN PATCH: sanitized variable name + Type-based adapter lookup, so this also compiles for generic data types like Map<String, Object>
             final Type typeInstanceMapStringObject = new TypeToken<Map<String, Object>>(){}.getType();
             final TypeAdapter<Map<String, Object>> adapterMapStringObject = (TypeAdapter<Map<String, Object>>) gson.getDelegateAdapter(this, TypeToken.get(typeInstanceMapStringObject));
 
@@ -78,7 +79,16 @@ public class Body extends AbstractOpenApiSchema {
                         return;
                     }
 
+                    // LAMIN PATCH (templates/libraries/okhttp-gson/anyof_model.mustache):
+                    // keep explicit nulls provided by the caller. The delegate adapters
+                    // already preserve them in the JSON tree; the stream writer must not
+                    // drop them (gson's serializeNulls is off by default).
+                    boolean serializeNulls = out.getSerializeNulls();
+                    out.setSerializeNulls(true);
+                    try {
                     // check if the actual instance is of the type `List<Map<String, Object>>`
+                    // LAMIN PATCH: use a wildcard instanceof for map types; instanceof
+                    // with a parameterized type does not compile
                     if (value.getActualInstance() instanceof List<?>) {
                         List<?> list = (List<?>) value.getActualInstance();
                         if (!list.isEmpty() && list.get(0) instanceof Map<?, ?>) {
@@ -88,12 +98,20 @@ public class Body extends AbstractOpenApiSchema {
                         }
                     }
                     // check if the actual instance is of the type `Map<String, Object>`
+                    // LAMIN PATCH: use a wildcard instanceof for map types; instanceof
+                    // with a parameterized type does not compile
                     if (value.getActualInstance() instanceof Map<?, ?>) {
-                        JsonPrimitive primitive = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance()).getAsJsonPrimitive();
+                        // LAMIN PATCH: write the tree as-is; free-form types (e.g. a
+                        // Map schema) are flagged primitive but produce a JsonObject,
+                        // so getAsJsonPrimitive() would throw
+                        JsonElement primitive = adapterMapStringObject.toJsonTree((Map<String, Object>)value.getActualInstance());
                         elementAdapter.write(out, primitive);
                         return;
                     }
                     throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: List<Map<String, Object>>, Map<String, Object>");
+                    } finally {
+                        out.setSerializeNulls(serializeNulls);
+                    }
                 }
 
                 @Override

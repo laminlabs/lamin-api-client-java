@@ -48,7 +48,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * MergeBranchRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T09:34:29.117144562+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T09:47:19.127189922+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class MergeBranchRequestBody {
   public static final String SERIALIZED_NAME_TARGET_BRANCH_NAME = "target_branch_name";
   @SerializedName(SERIALIZED_NAME_TARGET_BRANCH_NAME)
