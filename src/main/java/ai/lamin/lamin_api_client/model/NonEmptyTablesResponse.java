@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -51,26 +50,18 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * NonEmptyTablesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class NonEmptyTablesResponse {
   public static final String SERIALIZED_NAME_NON_EMPTY_TABLES = "non_empty_tables";
   @SerializedName(SERIALIZED_NAME_NON_EMPTY_TABLES)
-  @javax.annotation.Nonnull
-  private Map<String, List<String>> nonEmptyTables = new HashMap<>();
+  @javax.annotation.Nullable
+  private Map<String, Object> nonEmptyTables;
 
   public NonEmptyTablesResponse() {
   }
 
-  public NonEmptyTablesResponse nonEmptyTables(@javax.annotation.Nonnull Map<String, List<String>> nonEmptyTables) {
+  public NonEmptyTablesResponse nonEmptyTables(@javax.annotation.Nullable Map<String, Object> nonEmptyTables) {
     this.nonEmptyTables = nonEmptyTables;
-    return this;
-  }
-
-  public NonEmptyTablesResponse putNonEmptyTablesItem(String key, List<String> nonEmptyTablesItem) {
-    if (this.nonEmptyTables == null) {
-      this.nonEmptyTables = new HashMap<>();
-    }
-    this.nonEmptyTables.put(key, nonEmptyTablesItem);
     return this;
   }
 
@@ -78,12 +69,12 @@ public class NonEmptyTablesResponse {
    * A dictionary where keys are module names and values are lists of class names representing non-empty tables.
    * @return nonEmptyTables
    */
-  @javax.annotation.Nonnull
-  public Map<String, List<String>> getNonEmptyTables() {
+  @javax.annotation.Nullable
+  public Map<String, Object> getNonEmptyTables() {
     return nonEmptyTables;
   }
 
-  public void setNonEmptyTables(@javax.annotation.Nonnull Map<String, List<String>> nonEmptyTables) {
+  public void setNonEmptyTables(@javax.annotation.Nullable Map<String, Object> nonEmptyTables) {
     this.nonEmptyTables = nonEmptyTables;
   }
 

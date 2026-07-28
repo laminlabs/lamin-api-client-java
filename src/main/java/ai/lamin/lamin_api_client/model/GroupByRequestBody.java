@@ -28,7 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,7 +55,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GroupByRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class GroupByRequestBody {
   public static final String SERIALIZED_NAME_DIMENSIONS = "dimensions";
   @SerializedName(SERIALIZED_NAME_DIMENSIONS)
@@ -71,7 +70,7 @@ public class GroupByRequestBody {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
   @javax.annotation.Nullable
-  private Map<String, Object> filter;
+  private Map<String, Object> filter = new HashMap<>();
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -197,20 +196,9 @@ public class GroupByRequestBody {
         Objects.equals(this.scope, groupByRequestBody.scope);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(dimensions, measures, filter, scope);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

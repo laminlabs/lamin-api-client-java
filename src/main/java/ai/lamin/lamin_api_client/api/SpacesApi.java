@@ -244,7 +244,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutCall(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutCall(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -296,7 +296,7 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPut(Async)");
@@ -327,7 +327,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPut(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public Object attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPut(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutWithHttpInfo(spaceId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -348,7 +348,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutWithHttpInfo(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public ApiResponse<Object> attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutWithHttpInfo(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(spaceId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -371,7 +371,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutAsync(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutAsync(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = attachSpaceToInstanceSpacesSpaceIdInstancesInstanceIdPutValidateBeforeCall(spaceId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -674,7 +674,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteCall(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteCall(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -726,7 +726,7 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDelete(Async)");
@@ -757,7 +757,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDelete(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public Object detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDelete(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteWithHttpInfo(spaceId, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -778,7 +778,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteWithHttpInfo(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public ApiResponse<Object> detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteWithHttpInfo(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(spaceId, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -801,7 +801,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteAsync(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteAsync(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = detachSpaceFromInstanceSpacesSpaceIdInstancesInstanceIdDeleteValidateBeforeCall(spaceId, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -964,7 +964,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetCall(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1019,7 +1019,7 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling listInstanceSpacesSpacesInstancesInstanceIdGet(Async)");
@@ -1045,7 +1045,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listInstanceSpacesSpacesInstancesInstanceIdGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public Object listInstanceSpacesSpacesInstancesInstanceIdGet(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = listInstanceSpacesSpacesInstancesInstanceIdGetWithHttpInfo(instanceId, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -1066,7 +1066,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listInstanceSpacesSpacesInstancesInstanceIdGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public ApiResponse<Object> listInstanceSpacesSpacesInstancesInstanceIdGetWithHttpInfo(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(instanceId, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1089,7 +1089,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listInstanceSpacesSpacesInstancesInstanceIdGetAsync(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listInstanceSpacesSpacesInstancesInstanceIdGetValidateBeforeCall(instanceId, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -1534,7 +1534,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutCall(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutCall(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1594,7 +1594,7 @@ public class SpacesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'spaceId' is set
         if (spaceId == null) {
             throw new ApiException("Missing the required parameter 'spaceId' when calling moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(Async)");
@@ -1632,7 +1632,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public Object moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPut(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutWithHttpInfo(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization);
         return localVarResp.getData();
     }
@@ -1655,7 +1655,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutWithHttpInfo(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public ApiResponse<Object> moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutWithHttpInfo(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1680,7 +1680,7 @@ public class SpacesApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutAsync(@javax.annotation.Nullable UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutAsync(@javax.annotation.Nonnull UUID spaceId, @javax.annotation.Nonnull Integer instanceDbSpaceId, @javax.annotation.Nonnull AttachSpaceToRecordRequestBody attachSpaceToRecordRequestBody, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = moveRecordToSpaceSpacesSpaceIdRecordAttachmentsPutValidateBeforeCall(spaceId, instanceDbSpaceId, attachSpaceToRecordRequestBody, instanceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

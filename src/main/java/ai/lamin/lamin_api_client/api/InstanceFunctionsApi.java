@@ -91,7 +91,7 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostCall(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -147,7 +147,7 @@ public class InstanceFunctionsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling executeFunctionInstancesInstanceIdFunctionExecutePost(Async)");
@@ -179,7 +179,7 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object executeFunctionInstancesInstanceIdFunctionExecutePost(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public Object executeFunctionInstancesInstanceIdFunctionExecutePost(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = executeFunctionInstancesInstanceIdFunctionExecutePostWithHttpInfo(instanceId, executeFunctionRequestBody, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -201,7 +201,7 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> executeFunctionInstancesInstanceIdFunctionExecutePostWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public ApiResponse<Object> executeFunctionInstancesInstanceIdFunctionExecutePostWithHttpInfo(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(instanceId, executeFunctionRequestBody, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -225,7 +225,7 @@ public class InstanceFunctionsApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call executeFunctionInstancesInstanceIdFunctionExecutePostAsync(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull ExecuteFunctionRequestBody executeFunctionRequestBody, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = executeFunctionInstancesInstanceIdFunctionExecutePostValidateBeforeCall(instanceId, executeFunctionRequestBody, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

@@ -24,7 +24,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +51,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * Parameters that define the hierarchical traversal.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class TraversalParams {
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
@@ -230,20 +229,9 @@ public class TraversalParams {
         Objects.equals(this.depth, traversalParams.depth);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(values, kind, field, depth);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

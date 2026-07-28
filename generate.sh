@@ -2,17 +2,25 @@
 
 # See https://openapi-generator.tech/docs/installation to install openapi-generator-cli
 
-INPUT_SPEC="https://aws.us-east-1.lamin.ai/api/openapi.json"
+# Override with e.g. INPUT_SPEC=api/openapi.yaml to regenerate from the stored spec
+INPUT_SPEC="${INPUT_SPEC:-https://aws.us-east-1.lamin.ai/api/openapi.json}"
 # INPUT_SPEC="https://staging.laminhub.com/api/openapi.json"
 
 rm -r ./src
 
+# ./templates overrides the generator's built-in mustache templates (only the
+# files present there; everything else falls back to the built-ins)
 npx @openapitools/openapi-generator-cli generate \
     --generator-name java \
     --config config.yaml \
     --input-spec "$INPUT_SPEC" \
+    --template-dir ./templates \
     --skip-validate-spec \
     --output .
+
+# restore custom tests (generation wipes ./src)
+mkdir -p src/test/java/ai/lamin/lamin_api_client/model
+cp custom/*.java src/test/java/ai/lamin/lamin_api_client/model/
 
 # postfix readme
 SED_CMD1='s#FastAPI#[![Maven Central Version](https://img.shields.io/maven-central/v/ai.lamin/lamin-api-client.svg)](https://central.sonatype.com/artifact/ai.lamin/lamin-api-client/overview)\n[![javadoc](https://javadoc.io/badge2/ai.lamin/lamin-api-client/javadoc.svg)](https://javadoc.io/doc/ai.lamin/lamin-api-client)\n\nLamin API#'

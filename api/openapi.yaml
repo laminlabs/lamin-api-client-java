@@ -14,8 +14,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -68,8 +68,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -114,8 +114,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -171,8 +171,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -229,8 +229,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -293,8 +293,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -329,8 +329,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -396,8 +396,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -449,8 +449,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -505,8 +505,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -560,8 +560,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -617,8 +617,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -679,8 +679,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -738,8 +738,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -810,8 +810,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -850,8 +850,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -904,8 +904,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -950,8 +950,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -998,8 +998,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -1051,8 +1051,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -1068,16 +1068,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -1124,8 +1124,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: false
         in: path
@@ -1133,16 +1133,16 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1181,8 +1181,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: false
         in: path
@@ -1190,16 +1190,16 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1244,8 +1244,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1282,8 +1282,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -1291,16 +1291,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1349,8 +1349,8 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: true
         in: query
@@ -1358,16 +1358,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1411,8 +1411,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1462,8 +1462,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -1522,8 +1522,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -1575,8 +1575,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1605,8 +1605,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -1614,16 +1614,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -1669,8 +1669,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -1722,8 +1722,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1768,8 +1768,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1816,8 +1816,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -1869,8 +1869,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1926,8 +1926,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -1984,8 +1984,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -2048,8 +2048,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -2101,8 +2101,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2147,24 +2147,24 @@ paths:
         name: schema_str
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: true
         in: query
         name: db_server_name
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: true
         in: query
         name: storage_uid
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: true
         in: query
@@ -2172,8 +2172,8 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: true
         in: query
@@ -2189,8 +2189,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -2226,8 +2226,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2243,16 +2243,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2289,8 +2289,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2298,16 +2298,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2336,8 +2336,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2345,16 +2345,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2398,8 +2398,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2440,8 +2440,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2449,16 +2449,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2487,8 +2487,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2496,16 +2496,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2550,8 +2550,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2559,16 +2559,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2610,8 +2610,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2619,8 +2619,8 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: true
         in: query
@@ -2628,8 +2628,8 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: true
         in: query
@@ -2637,16 +2637,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2684,8 +2684,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2693,16 +2693,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2745,8 +2745,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2754,16 +2754,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -2817,8 +2817,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2826,16 +2826,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -2871,8 +2871,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2888,16 +2888,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2937,8 +2937,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -2955,16 +2955,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -2993,8 +2993,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3013,16 +3013,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -3067,8 +3067,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3076,16 +3076,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3133,8 +3133,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - description: "A list of models in \"${module}.${model}\" format (case-sensitive).\
           \ If omitted, statistics for all primary tables are returned."
@@ -3143,14 +3143,14 @@ paths:
         name: q
         required: false
         schema:
+          default: null
           description: "A list of models in \"${module}.${model}\" format (case-sensitive).\
             \ If omitted, statistics for all primary tables are returned."
           items:
-            nullable: true
             type: string
-          nullable: true
+            nullable: true
           type: array
-          default: null
+          nullable: true
         style: form
       - explode: true
         in: query
@@ -3158,16 +3158,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -3230,8 +3230,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3239,16 +3239,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -3321,8 +3321,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3330,16 +3330,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -3379,8 +3379,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3388,16 +3388,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3433,8 +3433,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3442,16 +3442,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3487,8 +3487,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3496,16 +3496,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3541,8 +3541,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3550,16 +3550,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3595,8 +3595,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3604,16 +3604,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3654,8 +3654,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3663,16 +3663,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3713,8 +3713,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3722,16 +3722,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -3767,8 +3767,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3784,16 +3784,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -3866,8 +3866,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3875,16 +3875,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -3956,8 +3956,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -3965,16 +3965,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -4021,8 +4021,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4048,16 +4048,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4122,8 +4122,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - description: The maximum number of relative records to return.
         explode: true
@@ -4155,16 +4155,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4216,8 +4216,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4261,16 +4261,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4323,8 +4323,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4332,16 +4332,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4401,8 +4401,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4428,16 +4428,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4493,8 +4493,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - description: A list of column names that define the unique key for conflict
           resolution. This must correspond to a unique constraint or index in the
@@ -4504,15 +4504,15 @@ paths:
         name: conflict_columns
         required: true
         schema:
+          default: null
           description: A list of column names that define the unique key for conflict
             resolution. This must correspond to a unique constraint or index in the
             database.
           items:
-            nullable: true
             type: string
+            nullable: true
           title: Conflict Columns
           type: array
-          default: null
         style: form
       - explode: true
         in: query
@@ -4520,16 +4520,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4590,8 +4590,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4599,16 +4599,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4628,13 +4628,12 @@ paths:
                 description: New Description B
                 updated_at: 2023-10-27T12:00:00Z
               schema:
+                default: null
                 items:
-                  additionalProperties: true
-                  type: object
+                  additionalProperties: {}
                 title: Response Batch Update Records Instances  Instance Id  Modules  Module
                   Name   Model Name  Batch Update Patch
                 type: array
-                default: null
           description: "Successful update. Returns a list of the full, updated records."
         "422":
           description: A record in the payload is missing a required index key.
@@ -4670,8 +4669,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4679,16 +4678,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4741,8 +4740,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4750,16 +4749,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4804,8 +4803,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4813,16 +4812,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4883,8 +4882,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4910,16 +4909,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -4980,8 +4979,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -4989,16 +4988,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -5050,8 +5049,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -5059,16 +5058,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -5129,8 +5128,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -5165,8 +5164,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -5209,8 +5208,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -5238,8 +5237,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       requestBody:
         content:
@@ -5282,8 +5281,8 @@ paths:
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -5326,8 +5325,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -5335,16 +5334,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -5372,8 +5371,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -5381,16 +5380,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -5419,8 +5418,8 @@ paths:
         required: true
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: simple
       - explode: true
         in: query
@@ -5428,16 +5427,16 @@ paths:
         required: false
         schema:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         style: form
       - explode: false
         in: header
         name: Authorization
         required: false
         schema:
-          nullable: true
           type: string
+          nullable: true
         style: simple
       responses:
         "200":
@@ -5467,12 +5466,12 @@ components:
       properties:
         account_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         team_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         role:
           default: read
           enum:
@@ -5504,12 +5503,12 @@ components:
       properties:
         account_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         team_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         role:
           default: read
           enum:
@@ -5702,8 +5701,8 @@ components:
           title: File
           type: string
         kwargs:
-          nullable: true
           type: string
+          nullable: true
       required:
       - file
       title: Body_upload_artifact_instances__instance_id__artifacts_upload_post
@@ -5722,8 +5721,8 @@ components:
         duration_seconds:
           maximum: 43200.0
           minimum: 900.0
-          nullable: true
           type: integer
+          nullable: true
       required:
       - path
       - role_arn
@@ -5762,11 +5761,11 @@ components:
       properties:
         expires_at:
           format: date-time
-          nullable: true
           type: string
+          nullable: true
         description:
-          nullable: true
           type: string
+          nullable: true
       title: CreateServiceAccountApiKeyRequestBody
     CreateServiceAccountRequestBody:
       example:
@@ -5782,8 +5781,8 @@ components:
           title: Organization Id
           type: string
         name:
-          nullable: true
           type: string
+          nullable: true
       required:
       - handle
       - organization_id
@@ -5802,8 +5801,8 @@ components:
           title: Organization Id
           type: string
         description:
-          nullable: true
           type: string
+          nullable: true
       required:
       - name
       - organization_id
@@ -5822,8 +5821,8 @@ components:
           title: Organization Id
           type: string
         description:
-          nullable: true
           type: string
+          nullable: true
       required:
       - name
       - organization_id
@@ -5847,8 +5846,8 @@ components:
           type: string
         kwargs:
           additionalProperties: true
-          nullable: true
           type: object
+          nullable: true
       required:
       - key
       - kind
@@ -5869,8 +5868,8 @@ components:
           - min
           - max
           - mean
-          nullable: true
           type: string
+          nullable: true
       required:
       - field_name
       title: Dimension
@@ -5927,8 +5926,8 @@ components:
         select:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
           default: null
         scope:
           allOf:
@@ -5956,18 +5955,18 @@ components:
         select:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
           default: null
         filter:
           additionalProperties: true
-          nullable: true
           type: object
+          nullable: true
         order_by:
           items:
             $ref: "#/components/schemas/OrderByColumn"
-          nullable: true
           type: array
+          nullable: true
           default: null
         search:
           default: ""
@@ -5976,8 +5975,8 @@ components:
         search_in:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
           default: null
         scope:
           allOf:
@@ -6001,13 +6000,13 @@ components:
       properties:
         filter:
           additionalProperties: true
-          nullable: true
           type: object
+          nullable: true
         order_by:
           items:
             $ref: "#/components/schemas/OrderByColumn"
-          nullable: true
           type: array
+          nullable: true
           default: null
         search:
           default: ""
@@ -6016,8 +6015,8 @@ components:
         search_in:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
           default: null
         scope:
           allOf:
@@ -6056,8 +6055,8 @@ components:
           default: null
         filter:
           additionalProperties: true
-          nullable: true
           type: object
+          nullable: true
         scope:
           allOf:
           - $ref: "#/components/schemas/QueryScope"
@@ -6110,8 +6109,8 @@ components:
           title: Agg Func
           type: string
         alias:
-          nullable: true
           type: string
+          nullable: true
       required:
       - agg_func
       - field_name
@@ -6140,8 +6139,7 @@ components:
       properties:
         non_empty_tables:
           additionalProperties:
-            items:
-              type: string
+            items: {}
           description: A dictionary where keys are module names and values are lists
             of class names representing non-empty tables.
           title: Non Empty Tables
@@ -6176,14 +6174,14 @@ components:
         branch_ids:
           items:
             type: integer
-          nullable: true
           type: array
+          nullable: true
           default: null
         space_ids:
           items:
             type: integer
-          nullable: true
           type: array
+          nullable: true
           default: null
       title: QueryScope
     RegisterDbServerBody:
@@ -6256,18 +6254,18 @@ components:
         select:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
           default: null
         filter:
           additionalProperties: true
-          nullable: true
           type: object
+          nullable: true
         order_by:
           items:
             $ref: "#/components/schemas/OrderByColumn"
-          nullable: true
           type: array
+          nullable: true
           default: null
         search:
           default: ""
@@ -6276,8 +6274,8 @@ components:
         search_in:
           items:
             type: string
-          nullable: true
           type: array
+          nullable: true
           default: null
         scope:
           allOf:
@@ -6309,12 +6307,12 @@ components:
           title: Region
           type: string
         aws_session_token:
-          nullable: true
           type: string
+          nullable: true
         extra_parameters:
           additionalProperties: true
-          nullable: true
           type: object
+          nullable: true
       required:
       - aws_access_key_id
       - aws_secret_access_key
@@ -6335,8 +6333,7 @@ components:
           type: integer
         counts:
           additionalProperties:
-            additionalProperties:
-              type: integer
+            additionalProperties: {}
           description: "A nested dictionary containing approximate row counts for\
             \ tables. Keys are module names, and values are dictionaries mapping class\
             \ names to their estimated row count."
@@ -6398,10 +6395,9 @@ components:
           type: string
         depth:
           description: Optional traversal depth. Cannot exceed 8.
-          exclusiveMinimum: true
           minimum: 0.0
-          nullable: true
           type: integer
+          nullable: true
       required:
       - kind
       - values
@@ -6414,12 +6410,12 @@ components:
       properties:
         account_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         team_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         role:
           enum:
           - admin
@@ -6444,8 +6440,8 @@ components:
         name: name
       properties:
         name:
-          nullable: true
           type: string
+          nullable: true
       title: UpdateServiceAccountRequestBody
     UpdateSpaceCollaboratorRequestBody:
       example:
@@ -6455,19 +6451,19 @@ components:
       properties:
         account_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         team_id:
           format: uuid
-          nullable: true
           type: string
+          nullable: true
         role:
           enum:
           - admin
           - read
           - write
-          nullable: true
           type: string
+          nullable: true
       title: UpdateSpaceCollaboratorRequestBody
     UpdateSpaceRequestBody:
       example:
@@ -6475,11 +6471,11 @@ components:
         description: description
       properties:
         name:
-          nullable: true
           type: string
+          nullable: true
         description:
-          nullable: true
           type: string
+          nullable: true
       title: UpdateSpaceRequestBody
     UpdateTeamMemberRequestBody:
       example:
@@ -6492,6 +6488,7 @@ components:
           - manager
           - guest
           title: Role
+          type: string
       required:
       - role
       title: UpdateTeamMemberRequestBody
@@ -6501,11 +6498,11 @@ components:
         description: description
       properties:
         name:
-          nullable: true
           type: string
+          nullable: true
         description:
-          nullable: true
           type: string
+          nullable: true
       title: UpdateTeamRequestBody
     ValidationError:
       example:
@@ -6554,13 +6551,12 @@ components:
         \ you provide will be modified on update."
       title: Body
     Role:
-      anyOf:
-      - enum:
-        - admin
-        - member
-        type: string
-      - $ref: "#/components/schemas/ORGANIZATION"
       default: member
+      enum:
+      - admin
+      - member
+      - manager
+      - guest
       title: Role
     Values_inner:
       anyOf:

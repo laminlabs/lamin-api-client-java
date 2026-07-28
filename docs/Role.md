@@ -2,11 +2,16 @@
 
 # Role
 
+## Enum
 
-## Properties
 
-| Name | Type | Description | Notes |
-|------------ | ------------- | ------------- | -------------|
+* `ADMIN` (value: `"admin"`)
+
+* `MEMBER` (value: `"member"`)
+
+* `MANAGER` (value: `"manager"`)
+
+* `GUEST` (value: `"guest"`)
 
 
 

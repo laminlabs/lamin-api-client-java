@@ -90,7 +90,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetCall(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -149,7 +149,7 @@ public class InstanceFileExplorerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'instanceId' is set
         if (instanceId == null) {
             throw new ApiException("Missing the required parameter 'instanceId' when calling getTreeInstancesInstanceIdFilesTreeGet(Async)");
@@ -181,7 +181,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object getTreeInstancesInstanceIdFilesTreeGet(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public Object getTreeInstancesInstanceIdFilesTreeGet(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = getTreeInstancesInstanceIdFilesTreeGetWithHttpInfo(instanceId, entityType, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -203,7 +203,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getTreeInstancesInstanceIdFilesTreeGetWithHttpInfo(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public ApiResponse<Object> getTreeInstancesInstanceIdFilesTreeGetWithHttpInfo(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(instanceId, entityType, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -227,7 +227,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetAsync(@javax.annotation.Nullable UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getTreeInstancesInstanceIdFilesTreeGetAsync(@javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = getTreeInstancesInstanceIdFilesTreeGetValidateBeforeCall(instanceId, entityType, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
@@ -252,7 +252,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetCall(@javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetCall(@javax.annotation.Nonnull String entityType, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -312,7 +312,7 @@ public class InstanceFileExplorerApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(@javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(@javax.annotation.Nonnull String entityType, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'entityType' is set
         if (entityType == null) {
             throw new ApiException("Missing the required parameter 'entityType' when calling listDirectoryInstancesInstanceIdFilesEntityTypeGet(Async)");
@@ -345,7 +345,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(@javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(@javax.annotation.Nonnull String entityType, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         ApiResponse<Object> localVarResp = listDirectoryInstancesInstanceIdFilesEntityTypeGetWithHttpInfo(entityType, instanceId, path, spaceId, authorization);
         return localVarResp.getData();
     }
@@ -368,7 +368,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> listDirectoryInstancesInstanceIdFilesEntityTypeGetWithHttpInfo(@javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
+    public ApiResponse<Object> listDirectoryInstancesInstanceIdFilesEntityTypeGetWithHttpInfo(@javax.annotation.Nonnull String entityType, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization) throws ApiException {
         okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(entityType, instanceId, path, spaceId, authorization, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -393,7 +393,7 @@ public class InstanceFileExplorerApi {
         <tr><td> 422 </td><td> Validation Error </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetAsync(@javax.annotation.Nonnull String entityType, @javax.annotation.Nullable UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call listDirectoryInstancesInstanceIdFilesEntityTypeGetAsync(@javax.annotation.Nonnull String entityType, @javax.annotation.Nonnull UUID instanceId, @javax.annotation.Nullable String path, @javax.annotation.Nullable UUID spaceId, @javax.annotation.Nullable String authorization, final ApiCallback<Object> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listDirectoryInstancesInstanceIdFilesEntityTypeGetValidateBeforeCall(entityType, instanceId, path, spaceId, authorization, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();

@@ -48,7 +48,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * OrderByColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class OrderByColumn {
   public static final String SERIALIZED_NAME_FIELD = "field";
   @SerializedName(SERIALIZED_NAME_FIELD)

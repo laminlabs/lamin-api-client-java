@@ -27,7 +27,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,17 +54,17 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * GetValuesRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class GetValuesRequestBody {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
   @javax.annotation.Nullable
-  private Map<String, Object> filter;
+  private Map<String, Object> filter = new HashMap<>();
 
   public static final String SERIALIZED_NAME_ORDER_BY = "order_by";
   @SerializedName(SERIALIZED_NAME_ORDER_BY)
   @javax.annotation.Nullable
-  private List<OrderByColumn> orderBy;
+  private List<OrderByColumn> orderBy = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEARCH = "search";
   @SerializedName(SERIALIZED_NAME_SEARCH)
@@ -75,7 +74,7 @@ public class GetValuesRequestBody {
   public static final String SERIALIZED_NAME_SEARCH_IN = "search_in";
   @SerializedName(SERIALIZED_NAME_SEARCH_IN)
   @javax.annotation.Nullable
-  private List<String> searchIn;
+  private List<String> searchIn = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
@@ -221,20 +220,9 @@ public class GetValuesRequestBody {
         Objects.equals(this.scope, getValuesRequestBody.scope);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(filter, orderBy, search, searchIn, scope);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

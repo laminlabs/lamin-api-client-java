@@ -50,7 +50,7 @@ import com.google.gson.JsonParseException;
 
 import ai.lamin.lamin_api_client.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class LocationInner extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(LocationInner.class.getName());
 
@@ -73,19 +73,35 @@ public class LocationInner extends AbstractOpenApiSchema {
                         return;
                     }
 
+                    // LAMIN PATCH (templates/libraries/okhttp-gson/anyof_model.mustache):
+                    // keep explicit nulls provided by the caller. The delegate adapters
+                    // already preserve them in the JSON tree; the stream writer must not
+                    // drop them (gson's serializeNulls is off by default).
+                    boolean serializeNulls = out.getSerializeNulls();
+                    out.setSerializeNulls(true);
+                    try {
                     // check if the actual instance is of the type `String`
                     if (value.getActualInstance() instanceof String) {
-                        JsonPrimitive primitive = adapterString.toJsonTree((String)value.getActualInstance()).getAsJsonPrimitive();
+                        // LAMIN PATCH: write the tree as-is; free-form types (e.g. a
+                        // Map schema) are flagged primitive but produce a JsonObject,
+                        // so getAsJsonPrimitive() would throw
+                        JsonElement primitive = adapterString.toJsonTree((String)value.getActualInstance());
                         elementAdapter.write(out, primitive);
                         return;
                     }
                     // check if the actual instance is of the type `Integer`
                     if (value.getActualInstance() instanceof Integer) {
-                        JsonPrimitive primitive = adapterInteger.toJsonTree((Integer)value.getActualInstance()).getAsJsonPrimitive();
+                        // LAMIN PATCH: write the tree as-is; free-form types (e.g. a
+                        // Map schema) are flagged primitive but produce a JsonObject,
+                        // so getAsJsonPrimitive() would throw
+                        JsonElement primitive = adapterInteger.toJsonTree((Integer)value.getActualInstance());
                         elementAdapter.write(out, primitive);
                         return;
                     }
                     throw new IOException("Failed to serialize as the type doesn't match anyOf schemas: Integer, String");
+                    } finally {
+                        out.setSerializeNulls(serializeNulls);
+                    }
                 }
 
                 @Override

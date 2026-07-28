@@ -13,7 +13,7 @@
 
 package ai.lamin.lamin_api_client.model;
 
-import ai.lamin.lamin_api_client.model.ORGANIZATION;
+import com.google.gson.annotations.SerializedName;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -21,8 +21,6 @@ import org.junit.jupiter.api.Test;
  * Model tests for Role
  */
 public class RoleTest {
-    private final Role model = new Role();
-
     /**
      * Model tests for Role
      */

@@ -134,7 +134,6 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.RegisterDbServerBody.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.RegisterFormRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.Request.CustomTypeAdapterFactory());
-        gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.Role.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.S3PermissionsRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.StatisticsResponse.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new ai.lamin.lamin_api_client.model.SyncInstruction.CustomTypeAdapterFactory());

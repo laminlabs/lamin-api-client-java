@@ -22,7 +22,6 @@ import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +49,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * CreateServiceAccountApiKeyRequestBody
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class CreateServiceAccountApiKeyRequestBody {
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
@@ -117,20 +116,9 @@ public class CreateServiceAccountApiKeyRequestBody {
         Objects.equals(this.description, createServiceAccountApiKeyRequestBody.description);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
     return Objects.hash(expiresAt, description);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

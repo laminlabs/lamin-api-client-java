@@ -50,7 +50,7 @@ import ai.lamin.lamin_api_client.JSON;
 /**
  * Defines the response for the instance statistics endpoint.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-30T10:51:22.171851813+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-07-28T08:39:36.641259014+02:00[Europe/Brussels]", comments = "Generator version: 7.23.0")
 public class StatisticsResponse {
   public static final String SERIALIZED_NAME_INSTANCE_SIZE = "instance_size";
   @SerializedName(SERIALIZED_NAME_INSTANCE_SIZE)
@@ -59,8 +59,8 @@ public class StatisticsResponse {
 
   public static final String SERIALIZED_NAME_COUNTS = "counts";
   @SerializedName(SERIALIZED_NAME_COUNTS)
-  @javax.annotation.Nonnull
-  private Map<String, Map<String, Integer>> counts = new HashMap<>();
+  @javax.annotation.Nullable
+  private Map<String, Map<String, Integer>> counts;
 
   public StatisticsResponse() {
   }
@@ -84,16 +84,8 @@ public class StatisticsResponse {
   }
 
 
-  public StatisticsResponse counts(@javax.annotation.Nonnull Map<String, Map<String, Integer>> counts) {
+  public StatisticsResponse counts(@javax.annotation.Nullable Map<String, Map<String, Integer>> counts) {
     this.counts = counts;
-    return this;
-  }
-
-  public StatisticsResponse putCountsItem(String key, Map<String, Integer> countsItem) {
-    if (this.counts == null) {
-      this.counts = new HashMap<>();
-    }
-    this.counts.put(key, countsItem);
     return this;
   }
 
@@ -101,12 +93,12 @@ public class StatisticsResponse {
    * A nested dictionary containing approximate row counts for tables. Keys are module names, and values are dictionaries mapping class names to their estimated row count.
    * @return counts
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Map<String, Map<String, Integer>> getCounts() {
     return counts;
   }
 
-  public void setCounts(@javax.annotation.Nonnull Map<String, Map<String, Integer>> counts) {
+  public void setCounts(@javax.annotation.Nullable Map<String, Map<String, Integer>> counts) {
     this.counts = counts;
   }
 
