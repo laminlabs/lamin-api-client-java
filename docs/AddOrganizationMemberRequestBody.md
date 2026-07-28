@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**role** | **ORGANIZATION** |  |  [optional] |
+|**role** | **ORGANIZATION** | Organization role for the member. |  [optional] |
 
 
 

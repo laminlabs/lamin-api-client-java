@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**handle** | **String** |  |  |
-|**organizationId** | **UUID** |  |  |
-|**name** | **String** |  |  [optional] |
+|**handle** | **String** | Unique service-account handle. |  |
+|**organizationId** | **UUID** | Organization UUID that owns the service account. |  |
+|**name** | **String** | Display name. |  [optional] |
 
 
 

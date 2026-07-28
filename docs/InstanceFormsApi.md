@@ -9,11 +9,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="registerFormInstancesInstanceIdFormsPost"></a>
 # **registerFormInstancesInstanceIdFormsPost**
-> Object registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, spaceId, authorization)
+> Object registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, spaceId)
 
 Register Form
 
-Register a form for a specific instance.  Parameters: - **body**: Request body containing form details   - **key**: Key of the form   - **data**: Form data   - **schema_uid**: UID of the schema  Returns: - **200**: Form registered successfully
+Register a form on the instance.  **Permissions:** Requires write access to the instance.
 
 ### Example
 ```java
@@ -21,6 +21,7 @@ Register a form for a specific instance.  Parameters: - **body**: Request body c
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceFormsApi;
 
@@ -28,14 +29,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceFormsApi apiInstance = new InstanceFormsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     RegisterFormRequest registerFormRequest = new RegisterFormRequest(); // RegisterFormRequest | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, spaceId, authorization);
+      Object result = apiInstance.registerFormInstancesInstanceIdFormsPost(instanceId, registerFormRequest, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFormsApi#registerFormInstancesInstanceIdFormsPost");
@@ -52,10 +56,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **registerFormRequest** | [**RegisterFormRequest**](RegisterFormRequest.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -63,7 +66,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

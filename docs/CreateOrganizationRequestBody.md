@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**handle** | **String** |  |  |
+|**handle** | **String** | Unique organization handle. |  |
 
 
 

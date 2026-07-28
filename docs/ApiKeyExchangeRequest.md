@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**apiKey** | **String** |  |  |
+|**apiKey** | **String** | Lamin API key to exchange for an access token. |  |
 
 
 

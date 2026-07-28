@@ -7,9 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**roleArn** | **String** |  |  |
-|**path** | **String** |  |  |
-|**durationSeconds** | **Integer** |  |  [optional] |
+|**path** | **String** | Storage path to access. |  |
+|**durationSeconds** | **Integer** | Credential lifetime in seconds, from 900 to 43200. |  [optional] |
 
 
 

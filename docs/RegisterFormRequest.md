@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**key** | **String** |  |  |
-|**data** | **Map&lt;String, Object&gt;** |  |  |
-|**schemaUid** | **String** |  |  |
+|**key** | **String** | Form key. |  |
+|**data** | **Map&lt;String, Object&gt;** | Form data. |  |
+|**schemaUid** | **String** | Schema UID. |  |
 
 
 

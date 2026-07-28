@@ -9,9 +9,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="executeFunctionInstancesInstanceIdFunctionExecutePost"></a>
 # **executeFunctionInstancesInstanceIdFunctionExecutePost**
-> Object executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, spaceId, authorization)
+> Object executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, spaceId)
 
 Execute Function
+
+Execute a registered function for a transform.  **Permissions:** Requires write access to the target instance or space.
 
 ### Example
 ```java
@@ -19,6 +21,7 @@ Execute Function
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceFunctionsApi;
 
@@ -26,14 +29,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceFunctionsApi apiInstance = new InstanceFunctionsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     ExecuteFunctionRequestBody executeFunctionRequestBody = new ExecuteFunctionRequestBody(); // ExecuteFunctionRequestBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, spaceId, authorization);
+      Object result = apiInstance.executeFunctionInstancesInstanceIdFunctionExecutePost(instanceId, executeFunctionRequestBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFunctionsApi#executeFunctionInstancesInstanceIdFunctionExecutePost");
@@ -50,10 +56,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **executeFunctionRequestBody** | [**ExecuteFunctionRequestBody**](ExecuteFunctionRequestBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -61,7 +66,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

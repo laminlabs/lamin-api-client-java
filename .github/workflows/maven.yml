@@ -13,7 +13,7 @@ on:
 
 jobs:
   build:
-    name: Build FastAPI
+    name: Build LaminHub REST API
     runs-on: ubuntu-latest
     strategy:
       matrix:

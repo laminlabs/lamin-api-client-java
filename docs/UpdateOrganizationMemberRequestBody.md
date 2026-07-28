@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**role** | **ORGANIZATION** |  |  |
+|**role** | **ORGANIZATION** | New organization role. |  |
 
 
 

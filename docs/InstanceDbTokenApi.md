@@ -9,11 +9,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="getDbTokenInstancesInstanceIdDbTokenGet"></a>
 # **getDbTokenInstancesInstanceIdDbTokenGet**
-> Object getDbTokenInstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization)
+> DbTokenResponse getDbTokenInstancesInstanceIdDbTokenGet(instanceId, spaceId)
 
 Get Db Token
 
-Get a database token for the specified instance.  This token can be used to authenticate with the instance&#39;s database.  Parameters: - **instance_id**: UUID of the instance to get the token for (from URL path)  Returns: - **200**: Database token retrieved successfully   - **token**: The database token - **401**: Unauthorized
+Return an access token for direct instance data access.  **Permissions:** Requires read access to the instance.  **Notes:** The token grants direct access to instance data.
 
 ### Example
 ```java
@@ -21,6 +21,7 @@ Get a database token for the specified instance.  This token can be used to auth
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceDbTokenApi;
 
@@ -28,13 +29,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceDbTokenApi apiInstance = new InstanceDbTokenApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.getDbTokenInstancesInstanceIdDbTokenGet(instanceId, spaceId, authorization);
+      DbTokenResponse result = apiInstance.getDbTokenInstancesInstanceIdDbTokenGet(instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceDbTokenApi#getDbTokenInstancesInstanceIdDbTokenGet");
@@ -51,17 +55,16 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
-**Object**
+[**DbTokenResponse**](DbTokenResponse.md)
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -71,6 +74,6 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | Instance access token. |  -  |
 | **422** | Validation Error |  -  |
 

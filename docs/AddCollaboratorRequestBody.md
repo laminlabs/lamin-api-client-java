@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accountId** | **UUID** |  |  [optional] |
-|**teamId** | **UUID** |  |  [optional] |
-|**role** | [**RoleEnum**](#RoleEnum) |  |  [optional] |
-|**addGuestIfMissing** | **Boolean** |  |  [optional] |
+|**accountId** | **UUID** | Account UUID. Mutually exclusive with team_id. |  [optional] |
+|**teamId** | **UUID** | Team UUID. Mutually exclusive with account_id. |  [optional] |
+|**role** | [**RoleEnum**](#RoleEnum) | Instance role for the collaborator. |  [optional] |
+|**addGuestIfMissing** | **Boolean** | For account collaborators, add the account as an organization guest first when it is not already an organization member. |  [optional] |
 
 
 

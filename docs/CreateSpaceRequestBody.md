@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  |
-|**organizationId** | **UUID** |  |  |
-|**description** | **String** |  |  [optional] |
+|**name** | **String** | Space name. |  |
+|**organizationId** | **UUID** | Organization UUID that owns the space. |  |
+|**description** | **String** | Space description. |  [optional] |
 
 
 

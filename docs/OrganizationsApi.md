@@ -14,11 +14,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut"></a>
 # **addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut**
-> Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, authorization)
+> Object addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody)
 
 Add Organization Member
 
-Add a member to an organization.  Parameters: - **organization_id**: UUID of the organization to add the member to - **account_id**: UUID of the account to add as a member - **body**: Request body containing member details   - **role**: Role of the member in the organization  Returns: - **201**: Organization member added successfully
+Add an account to an organization.  **Permissions:** Requires organization manager or admin access. Only organization admins can add admin members.  **Quota:** Non-guest members count against the organization&#39;s member quota.
 
 ### Example
 ```java
@@ -26,6 +26,7 @@ Add a member to an organization.  Parameters: - **organization_id**: UUID of the
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.OrganizationsApi;
 
@@ -33,14 +34,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    UUID accountId = UUID.randomUUID(); // UUID | Account UUID.
     AddOrganizationMemberRequestBody addOrganizationMemberRequestBody = new AddOrganizationMemberRequestBody(); // AddOrganizationMemberRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody, authorization);
+      Object result = apiInstance.addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut(organizationId, accountId, addOrganizationMemberRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#addOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPut");
@@ -57,10 +61,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **accountId** | **UUID**|  | |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **accountId** | **UUID**| Account UUID. | |
 | **addOrganizationMemberRequestBody** | [**AddOrganizationMemberRequestBody**](AddOrganizationMemberRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -68,7 +71,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -78,14 +81,17 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **201** | Member added. |  -  |
+| **403** | Member quota reached. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="createOrganizationOrganizationsPut"></a>
 # **createOrganizationOrganizationsPut**
-> Object createOrganizationOrganizationsPut(createOrganizationRequestBody, authorization)
+> Object createOrganizationOrganizationsPut(createOrganizationRequestBody)
 
 Create Organization
+
+Create an organization account and make the caller an admin.  **Permissions:** Requires authentication.
 
 ### Example
 ```java
@@ -93,6 +99,7 @@ Create Organization
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.OrganizationsApi;
 
@@ -100,12 +107,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
     CreateOrganizationRequestBody createOrganizationRequestBody = new CreateOrganizationRequestBody(); // CreateOrganizationRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createOrganizationOrganizationsPut(createOrganizationRequestBody, authorization);
+      Object result = apiInstance.createOrganizationOrganizationsPut(createOrganizationRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#createOrganizationOrganizationsPut");
@@ -123,7 +133,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **createOrganizationRequestBody** | [**CreateOrganizationRequestBody**](CreateOrganizationRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -131,7 +140,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -141,16 +150,17 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **201** | Organization created. |  -  |
+| **409** | The handle is already in use. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="getOrganizationOrganizationsOrganizationIdGet"></a>
 # **getOrganizationOrganizationsOrganizationIdGet**
-> Object getOrganizationOrganizationsOrganizationIdGet(organizationId, authorization)
+> Object getOrganizationOrganizationsOrganizationIdGet(organizationId)
 
 Get Organization
 
-Get details of a specific organization.  Parameters: - **organization_id**: UUID of the organization to retrieve  Returns: - **200**: Organization details retrieved successfully - **404**: Organization not found
+Return organization details.  **Permissions:** Public organization profiles are visible.
 
 ### Example
 ```java
@@ -158,6 +168,7 @@ Get details of a specific organization.  Parameters: - **organization_id**: UUID
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.OrganizationsApi;
 
@@ -165,12 +176,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
     try {
-      Object result = apiInstance.getOrganizationOrganizationsOrganizationIdGet(organizationId, authorization);
+      Object result = apiInstance.getOrganizationOrganizationsOrganizationIdGet(organizationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#getOrganizationOrganizationsOrganizationIdGet");
@@ -187,8 +201,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
 
 ### Return type
 
@@ -196,7 +209,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -211,11 +224,11 @@ No authorization required
 
 <a id="listOrganizationMembersOrganizationsOrganizationIdMembersGet"></a>
 # **listOrganizationMembersOrganizationsOrganizationIdMembersGet**
-> Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, authorization)
+> Object listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId)
 
 List Organization Members
 
-List all members of an organization.  Parameters: - **organization_id**: UUID of the organization to list members for  Returns: - **200**: List of organization members retrieved successfully
+List organization members.  **Permissions:** Non-guest organization members can list organization members. Guests can only see their own membership.
 
 ### Example
 ```java
@@ -223,6 +236,7 @@ List all members of an organization.  Parameters: - **organization_id**: UUID of
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.OrganizationsApi;
 
@@ -230,12 +244,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
     try {
-      Object result = apiInstance.listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId, authorization);
+      Object result = apiInstance.listOrganizationMembersOrganizationsOrganizationIdMembersGet(organizationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#listOrganizationMembersOrganizationsOrganizationIdMembersGet");
@@ -252,8 +269,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
 
 ### Return type
 
@@ -261,7 +277,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -276,11 +292,11 @@ No authorization required
 
 <a id="removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete"></a>
 # **removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete**
-> Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, authorization)
+> Object removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId)
 
 Remove Organization Member
 
-Remove a member from an organization.  Parameters: - **organization_id**: UUID of the organization to remove the member from - **account_id**: UUID of the account to remove from the organization  Returns: - **200**: Organization member removed successfully - **404**: Member not found in organization
+Remove an organization member.  **Permissions:** Requires organization manager or admin access. Only organization admins can remove admin members.
 
 ### Example
 ```java
@@ -288,6 +304,7 @@ Remove a member from an organization.  Parameters: - **organization_id**: UUID o
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.OrganizationsApi;
 
@@ -295,13 +312,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    UUID accountId = UUID.randomUUID(); // UUID | Account UUID.
     try {
-      Object result = apiInstance.removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId, authorization);
+      Object result = apiInstance.removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete(organizationId, accountId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#removeOrganizationMemberOrganizationsOrganizationIdMembersAccountIdDelete");
@@ -318,9 +338,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **accountId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **accountId** | **UUID**| Account UUID. | |
 
 ### Return type
 
@@ -328,7 +347,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -343,11 +362,11 @@ No authorization required
 
 <a id="updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch"></a>
 # **updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch**
-> Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, authorization)
+> Object updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody)
 
 Update Organization Member
 
-Update an organization member&#39;s details.  Parameters: - **organization_id**: UUID of the organization the member belongs to - **account_id**: UUID of the account to update - **body**: Request body containing updated member details   - **role**: Role of the member in the organization  Returns: - **200**: Organization member updated successfully - **404**: Member not found in organization
+Update an organization member&#39;s role.  **Permissions:** Requires organization manager or admin access. Only organization admins can set or update admin members.  **Quota:** Non-guest roles count against the organization&#39;s member quota.
 
 ### Example
 ```java
@@ -355,6 +374,7 @@ Update an organization member&#39;s details.  Parameters: - **organization_id**:
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.OrganizationsApi;
 
@@ -362,14 +382,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     OrganizationsApi apiInstance = new OrganizationsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    UUID accountId = UUID.randomUUID(); // UUID | Account UUID.
     UpdateOrganizationMemberRequestBody updateOrganizationMemberRequestBody = new UpdateOrganizationMemberRequestBody(); // UpdateOrganizationMemberRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody, authorization);
+      Object result = apiInstance.updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch(organizationId, accountId, updateOrganizationMemberRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OrganizationsApi#updateOrganizationMemberOrganizationsOrganizationIdMembersAccountIdPatch");
@@ -386,10 +409,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **accountId** | **UUID**|  | |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **accountId** | **UUID**| Account UUID. | |
 | **updateOrganizationMemberRequestBody** | [**UpdateOrganizationMemberRequestBody**](UpdateOrganizationMemberRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -397,7 +419,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -408,5 +430,6 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
+| **403** | Member quota reached. |  -  |
 | **422** | Validation Error |  -  |
 

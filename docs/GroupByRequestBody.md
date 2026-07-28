@@ -7,10 +7,10 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**dimensions** | [**List&lt;Dimension&gt;**](Dimension.md) |  |  |
-|**measures** | [**List&lt;Measure&gt;**](Measure.md) |  |  |
-|**filter** | **Map&lt;String, Object&gt;** |  |  [optional] |
-|**scope** | [**QueryScope**](QueryScope.md) |  |  [optional] |
+|**dimensions** | [**List&lt;Dimension&gt;**](Dimension.md) | Dimensions to group by. |  |
+|**measures** | [**List&lt;Measure&gt;**](Measure.md) | Measures to compute. |  |
+|**filter** | **Map&lt;String, Object&gt;** | Additional transform creation arguments. |  [optional] |
+|**scope** | [**QueryScope**](QueryScope.md) | Query scope. |  [optional] |
 
 
 

@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**records** | **List&lt;Map&lt;String, Object&gt;&gt;** | A list of dictionaries, where each dictionary contains the key(s) identifying a record to delete. |  |
+|**records** | **List&lt;Map&lt;String, Object&gt;&gt;** | Records to delete. All records in the request must use the same key set. |  |
 
 
 

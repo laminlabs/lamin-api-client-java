@@ -2,6 +2,7 @@
 
 # Role
 
+Team role for the member.
 
 ## Properties
 

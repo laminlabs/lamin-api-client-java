@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  [optional] |
-|**description** | **String** |  |  [optional] |
+|**name** | **String** | New space name. |  [optional] |
+|**description** | **String** | New space description. |  [optional] |
 
 
 

@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**transformUid** | **String** |  |  |
-|**functionName** | **String** |  |  |
-|**functionKwargs** | **Map&lt;String, Object&gt;** |  |  |
+|**transformUid** | **String** | Transform UID. |  |
+|**functionName** | **String** | Function name to execute. |  |
+|**functionKwargs** | **Map&lt;String, Object&gt;** | Keyword arguments for the function. |  |
 
 
 

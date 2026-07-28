@@ -10,9 +10,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet"></a>
 # **getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet**
-> Object getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, spaceId, authorization)
+> Object getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, spaceId)
 
 Get Relations
+
+Return related models for a schema model.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -20,6 +22,7 @@ Get Relations
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceSchemaApi;
 
@@ -27,15 +30,18 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceSchemaApi apiInstance = new InstanceSchemaApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, spaceId, authorization);
+      Object result = apiInstance.getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet(moduleName, modelName, instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceSchemaApi#getRelationsInstancesInstanceIdSchemaModuleNameModelNameGet");
@@ -52,11 +58,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -64,7 +69,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -79,9 +84,11 @@ No authorization required
 
 <a id="getSchemaInstancesInstanceIdSchemaGet"></a>
 # **getSchemaInstancesInstanceIdSchemaGet**
-> Object getSchemaInstancesInstanceIdSchemaGet(instanceId, spaceId, authorization)
+> Object getSchemaInstancesInstanceIdSchemaGet(instanceId, spaceId)
 
 Get Schema
+
+Return the instance schema JSON.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -89,6 +96,7 @@ Get Schema
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceSchemaApi;
 
@@ -96,13 +104,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceSchemaApi apiInstance = new InstanceSchemaApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.getSchemaInstancesInstanceIdSchemaGet(instanceId, spaceId, authorization);
+      Object result = apiInstance.getSchemaInstancesInstanceIdSchemaGet(instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceSchemaApi#getSchemaInstancesInstanceIdSchemaGet");
@@ -119,9 +130,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -129,7 +139,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
