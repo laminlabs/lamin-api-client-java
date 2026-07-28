@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**accountId** | **UUID** |  |  [optional] |
-|**teamId** | **UUID** |  |  [optional] |
-|**role** | [**RoleEnum**](#RoleEnum) |  |  [optional] |
+|**accountId** | **UUID** | Account UUID. Mutually exclusive with team_id. |  [optional] |
+|**teamId** | **UUID** | Team UUID. Mutually exclusive with account_id. |  [optional] |
+|**role** | [**RoleEnum**](#RoleEnum) | New space role. |  [optional] |
 
 
 

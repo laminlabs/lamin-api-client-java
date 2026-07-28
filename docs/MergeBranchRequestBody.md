@@ -7,8 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**targetBranchName** | **String** |  |  |
-|**sourceBranchName** | **String** |  |  |
+|**targetBranchName** | **String** | Branch that receives the merge. |  |
+|**sourceBranchName** | **String** | Branch to merge into the target. |  |
 
 
 

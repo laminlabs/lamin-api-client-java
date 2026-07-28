@@ -17,11 +17,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="addTeamMemberTeamsTeamIdMembersAccountIdPut"></a>
 # **addTeamMemberTeamsTeamIdMembersAccountIdPut**
-> Object addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, authorization)
+> Object addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody)
 
 Add Team Member
 
-Add a member to a team.  Parameters: - **team_id**: UUID of the team to add the member to - **account_id**: UUID of the account to add as a member - **body**: Request body containing member details   - **role**: Role of the member in the team  Returns: - **201**: Team member added successfully
+Add an account to a team.  **Permissions:** Requires organization manager or admin access, or team admin access. The account must already belong to the organization.
 
 ### Example
 ```java
@@ -29,6 +29,7 @@ Add a member to a team.  Parameters: - **team_id**: UUID of the team to add the 
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -36,14 +37,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID.
+    UUID accountId = UUID.randomUUID(); // UUID | Account UUID.
     AddTeamMemberRequestBody addTeamMemberRequestBody = new AddTeamMemberRequestBody(); // AddTeamMemberRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody, authorization);
+      Object result = apiInstance.addTeamMemberTeamsTeamIdMembersAccountIdPut(teamId, accountId, addTeamMemberRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#addTeamMemberTeamsTeamIdMembersAccountIdPut");
@@ -60,10 +64,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **teamId** | **UUID**|  | |
-| **accountId** | **UUID**|  | |
+| **teamId** | **UUID**| Team UUID. | |
+| **accountId** | **UUID**| Account UUID. | |
 | **addTeamMemberRequestBody** | [**AddTeamMemberRequestBody**](AddTeamMemberRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -71,7 +74,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -81,16 +84,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **201** | Team member added. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="createTeamTeamsPut"></a>
 # **createTeamTeamsPut**
-> Object createTeamTeamsPut(createTeamRequestBody, authorization)
+> Object createTeamTeamsPut(createTeamRequestBody)
 
 Create Team
 
-Create a new team.  Parameters: - **body**: Request body containing team details   - **name**: Name of the team   - **organization_id**: UUID of the organization   - **description**: Optional description of the team  Returns: - **201**: Team created successfully
+Create a team in an organization.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -98,6 +101,7 @@ Create a new team.  Parameters: - **body**: Request body containing team details
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -105,12 +109,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
     CreateTeamRequestBody createTeamRequestBody = new CreateTeamRequestBody(); // CreateTeamRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createTeamTeamsPut(createTeamRequestBody, authorization);
+      Object result = apiInstance.createTeamTeamsPut(createTeamRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#createTeamTeamsPut");
@@ -128,7 +135,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **createTeamRequestBody** | [**CreateTeamRequestBody**](CreateTeamRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -136,7 +142,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -146,16 +152,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **201** | Team created. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="deleteTeamTeamsTeamIdDelete"></a>
 # **deleteTeamTeamsTeamIdDelete**
-> Object deleteTeamTeamsTeamIdDelete(teamId, authorization)
+> Object deleteTeamTeamsTeamIdDelete(teamId)
 
 Delete Team
 
-Delete a team.  Parameters: - **team_id**: UUID of the team to delete  Returns: - **200**: Team deleted successfully
+Delete a team.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -163,6 +169,7 @@ Delete a team.  Parameters: - **team_id**: UUID of the team to delete  Returns: 
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -170,12 +177,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID teamId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID.
     try {
-      Object result = apiInstance.deleteTeamTeamsTeamIdDelete(teamId, authorization);
+      Object result = apiInstance.deleteTeamTeamsTeamIdDelete(teamId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#deleteTeamTeamsTeamIdDelete");
@@ -192,8 +202,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **teamId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **teamId** | **UUID**| Team UUID. | |
 
 ### Return type
 
@@ -201,7 +210,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -216,11 +225,11 @@ No authorization required
 
 <a id="getTeamTeamsTeamIdGet"></a>
 # **getTeamTeamsTeamIdGet**
-> Object getTeamTeamsTeamIdGet(teamId, authorization)
+> Object getTeamTeamsTeamIdGet(teamId)
 
 Get Team
 
-Get details of a specific team.  Parameters: - **team_id**: UUID of the team to retrieve  Returns: - **200**: Team details retrieved successfully - **404**: Team not found
+Return team details.  **Permissions:** Requires non-guest membership in the organization or team membership.
 
 ### Example
 ```java
@@ -228,6 +237,7 @@ Get details of a specific team.  Parameters: - **team_id**: UUID of the team to 
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -235,12 +245,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID teamId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID.
     try {
-      Object result = apiInstance.getTeamTeamsTeamIdGet(teamId, authorization);
+      Object result = apiInstance.getTeamTeamsTeamIdGet(teamId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#getTeamTeamsTeamIdGet");
@@ -257,8 +270,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **teamId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **teamId** | **UUID**| Team UUID. | |
 
 ### Return type
 
@@ -266,7 +278,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -281,11 +293,11 @@ No authorization required
 
 <a id="listOrganizationTeamsTeamsOrganizationsOrganizationIdGet"></a>
 # **listOrganizationTeamsTeamsOrganizationsOrganizationIdGet**
-> Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, authorization)
+> Object listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId)
 
 List Organization Teams
 
-List all teams in an organization.  Parameters: - **organization_id**: UUID of the organization to list teams for  Returns: - **200**: List of teams retrieved successfully
+List teams in an organization.  **Permissions:** Requires non-guest organization membership.
 
 ### Example
 ```java
@@ -293,6 +305,7 @@ List all teams in an organization.  Parameters: - **organization_id**: UUID of t
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -300,12 +313,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
     try {
-      Object result = apiInstance.listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId, authorization);
+      Object result = apiInstance.listOrganizationTeamsTeamsOrganizationsOrganizationIdGet(organizationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#listOrganizationTeamsTeamsOrganizationsOrganizationIdGet");
@@ -322,8 +338,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
 
 ### Return type
 
@@ -331,7 +346,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -346,11 +361,11 @@ No authorization required
 
 <a id="listTeamMembersTeamsTeamIdMembersGet"></a>
 # **listTeamMembersTeamsTeamIdMembersGet**
-> Object listTeamMembersTeamsTeamIdMembersGet(teamId, authorization)
+> Object listTeamMembersTeamsTeamIdMembersGet(teamId)
 
 List Team Members
 
-List all members of a team.  Parameters: - **team_id**: UUID of the team to list members for  Returns: - **200**: List of team members retrieved successfully
+List team members.  **Permissions:** Requires team membership.
 
 ### Example
 ```java
@@ -358,6 +373,7 @@ List all members of a team.  Parameters: - **team_id**: UUID of the team to list
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -365,12 +381,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID teamId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID.
     try {
-      Object result = apiInstance.listTeamMembersTeamsTeamIdMembersGet(teamId, authorization);
+      Object result = apiInstance.listTeamMembersTeamsTeamIdMembersGet(teamId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#listTeamMembersTeamsTeamIdMembersGet");
@@ -387,8 +406,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **teamId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **teamId** | **UUID**| Team UUID. | |
 
 ### Return type
 
@@ -396,7 +414,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -411,11 +429,11 @@ No authorization required
 
 <a id="removeTeamMemberTeamsTeamIdMembersAccountIdDelete"></a>
 # **removeTeamMemberTeamsTeamIdMembersAccountIdDelete**
-> Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, authorization)
+> Object removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId)
 
 Remove Team Member
 
-Remove a member from a team.  Parameters: - **team_id**: UUID of the team to remove the member from - **account_id**: UUID of the account to remove from the team  Returns: - **200**: Team member removed successfully - **404**: Member not found in team
+Remove an account from a team.  **Permissions:** Requires organization manager or admin access, or team admin access.
 
 ### Example
 ```java
@@ -423,6 +441,7 @@ Remove a member from a team.  Parameters: - **team_id**: UUID of the team to rem
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -430,13 +449,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID.
+    UUID accountId = UUID.randomUUID(); // UUID | Account UUID.
     try {
-      Object result = apiInstance.removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId, authorization);
+      Object result = apiInstance.removeTeamMemberTeamsTeamIdMembersAccountIdDelete(teamId, accountId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#removeTeamMemberTeamsTeamIdMembersAccountIdDelete");
@@ -453,9 +475,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **teamId** | **UUID**|  | |
-| **accountId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **teamId** | **UUID**| Team UUID. | |
+| **accountId** | **UUID**| Account UUID. | |
 
 ### Return type
 
@@ -463,7 +484,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -478,11 +499,11 @@ No authorization required
 
 <a id="updateTeamMemberTeamsTeamIdMembersAccountIdPatch"></a>
 # **updateTeamMemberTeamsTeamIdMembersAccountIdPatch**
-> Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, authorization)
+> Object updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody)
 
 Update Team Member
 
-Update a team member&#39;s details.  Parameters: - **team_id**: UUID of the team the member belongs to - **account_id**: UUID of the account to update - **body**: Request body containing updated member details   - **role**: Role of the member in the team  Returns: - **200**: Team member updated successfully - **404**: Member not found in team
+Update a team member&#39;s role.  **Permissions:** Requires organization manager or admin access, or team admin access. The account must already belong to the organization.
 
 ### Example
 ```java
@@ -490,6 +511,7 @@ Update a team member&#39;s details.  Parameters: - **team_id**: UUID of the team
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -497,14 +519,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID.
+    UUID accountId = UUID.randomUUID(); // UUID | Account UUID.
     UpdateTeamMemberRequestBody updateTeamMemberRequestBody = new UpdateTeamMemberRequestBody(); // UpdateTeamMemberRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody, authorization);
+      Object result = apiInstance.updateTeamMemberTeamsTeamIdMembersAccountIdPatch(teamId, accountId, updateTeamMemberRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#updateTeamMemberTeamsTeamIdMembersAccountIdPatch");
@@ -521,10 +546,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **teamId** | **UUID**|  | |
-| **accountId** | **UUID**|  | |
+| **teamId** | **UUID**| Team UUID. | |
+| **accountId** | **UUID**| Account UUID. | |
 | **updateTeamMemberRequestBody** | [**UpdateTeamMemberRequestBody**](UpdateTeamMemberRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -532,7 +556,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -547,11 +571,11 @@ No authorization required
 
 <a id="updateTeamTeamsTeamIdPatch"></a>
 # **updateTeamTeamsTeamIdPatch**
-> Object updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, authorization)
+> Object updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody)
 
 Update Team
 
-Update a team&#39;s details.  Parameters: - **team_id**: UUID of the team to update - **body**: Request body containing updated team details   - **name**: Optional new name for the team   - **description**: Optional new description for the team  Returns: - **200**: Team updated successfully
+Update a team&#39;s name or description.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -559,6 +583,7 @@ Update a team&#39;s details.  Parameters: - **team_id**: UUID of the team to upd
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.TeamsApi;
 
@@ -566,13 +591,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     TeamsApi apiInstance = new TeamsApi(defaultClient);
-    UUID teamId = UUID.randomUUID(); // UUID | 
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID.
     UpdateTeamRequestBody updateTeamRequestBody = new UpdateTeamRequestBody(); // UpdateTeamRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody, authorization);
+      Object result = apiInstance.updateTeamTeamsTeamIdPatch(teamId, updateTeamRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TeamsApi#updateTeamTeamsTeamIdPatch");
@@ -589,9 +617,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **teamId** | **UUID**|  | |
+| **teamId** | **UUID**| Team UUID. | |
 | **updateTeamRequestBody** | [**UpdateTeamRequestBody**](UpdateTeamRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -599,7 +626,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

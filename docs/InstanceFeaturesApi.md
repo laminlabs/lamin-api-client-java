@@ -9,11 +9,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost"></a>
 # **queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost**
-> Object queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, spaceId, authorization, getRecordsRequestBody)
+> Object queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, spaceId, getRecordsRequestBody)
 
 Query Linked Features
 
-Queries and returns a flat list of all unique Feature records associated with a set of filtered primary model records.
+Return features linked to matching primary records.  **Permissions:** Requires read access to the instance.  **Quota:** Returns at most 200 features per request.  **Notes:** Returns unique Feature records.
 
 ### Example
 ```java
@@ -21,6 +21,7 @@ Queries and returns a flat list of all unique Feature records associated with a 
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceFeaturesApi;
 
@@ -28,18 +29,21 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceFeaturesApi apiInstance = new InstanceFeaturesApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    Integer limit = 50; // Integer | 
-    Integer offset = 0; // Integer | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    Integer limit = 50; // Integer | Maximum number of features to return.
+    Integer offset = 0; // Integer | Number of features to skip.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     GetRecordsRequestBody getRecordsRequestBody = new GetRecordsRequestBody(); // GetRecordsRequestBody | 
     try {
-      Object result = apiInstance.queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, spaceId, authorization, getRecordsRequestBody);
+      Object result = apiInstance.queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost(moduleName, modelName, instanceId, limit, offset, spaceId, getRecordsRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFeaturesApi#queryLinkedFeaturesInstancesInstanceIdModulesModuleNameModelNameQueryFeaturesPost");
@@ -56,13 +60,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **limit** | **Integer**|  | [optional] [default to 50] |
-| **offset** | **Integer**|  | [optional] [default to 0] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **limit** | **Integer**| Maximum number of features to return. | [optional] [default to 50] |
+| **offset** | **Integer**| Number of features to skip. | [optional] [default to 0] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 | **getRecordsRequestBody** | [**GetRecordsRequestBody**](GetRecordsRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -71,7 +74,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

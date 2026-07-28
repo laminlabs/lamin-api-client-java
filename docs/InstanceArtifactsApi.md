@@ -5,17 +5,17 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createArtifactInstancesInstanceIdArtifactsCreatePost**](InstanceArtifactsApi.md#createArtifactInstancesInstanceIdArtifactsCreatePost) | **POST** /instances/{instance_id}/artifacts/create | Create Artifact |
-| [**createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost**](InstanceArtifactsApi.md#createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost) | **POST** /instances/{instance_id}/artifacts/create-sql-async | Create Artifact Sql Async |
-| [**createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost**](InstanceArtifactsApi.md#createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost) | **POST** /instances/{instance_id}/artifacts/create-sql | Create Artifact Sql |
 | [**getArtifactByPathInstancesInstanceIdArtifactsByPathGet**](InstanceArtifactsApi.md#getArtifactByPathInstancesInstanceIdArtifactsByPathGet) | **GET** /instances/{instance_id}/artifacts/by-path | Get Artifact By Path |
 | [**uploadArtifactInstancesInstanceIdArtifactsUploadPost**](InstanceArtifactsApi.md#uploadArtifactInstancesInstanceIdArtifactsUploadPost) | **POST** /instances/{instance_id}/artifacts/upload | Upload Artifact |
 
 
 <a id="createArtifactInstancesInstanceIdArtifactsCreatePost"></a>
 # **createArtifactInstancesInstanceIdArtifactsCreatePost**
-> Object createArtifactInstancesInstanceIdArtifactsCreatePost(instanceId, createArtifactRequestBody, spaceId, authorization)
+> Object createArtifactInstancesInstanceIdArtifactsCreatePost(instanceId, createArtifactRequestBody, spaceId)
 
 Create Artifact
+
+Create an artifact from an existing storage path.  **Permissions:** Requires write access to the target instance or space.
 
 ### Example
 ```java
@@ -23,6 +23,7 @@ Create Artifact
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
 
@@ -30,14 +31,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     CreateArtifactRequestBody createArtifactRequestBody = new CreateArtifactRequestBody(); // CreateArtifactRequestBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.createArtifactInstancesInstanceIdArtifactsCreatePost(instanceId, createArtifactRequestBody, spaceId, authorization);
+      Object result = apiInstance.createArtifactInstancesInstanceIdArtifactsCreatePost(instanceId, createArtifactRequestBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceArtifactsApi#createArtifactInstancesInstanceIdArtifactsCreatePost");
@@ -54,10 +58,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **createArtifactRequestBody** | [**CreateArtifactRequestBody**](CreateArtifactRequestBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -65,145 +68,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
-
-<a id="createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost"></a>
-# **createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost**
-> Object createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost(instanceId, createArtifactRequestBody, spaceId, authorization)
-
-Create Artifact Sql Async
-
-Async counterpart of &#x60;&#x60;/create-sql&#x60;&#x60;.  Registers an Artifact for an existing storage path via direct SQL, using the async DB engine and async Supabase/AWS/S3 tooling end-to-end.
-
-### Example
-```java
-// Import classes:
-import ai.lamin.lamin_api_client.ApiClient;
-import ai.lamin.lamin_api_client.ApiException;
-import ai.lamin.lamin_api_client.Configuration;
-import ai.lamin.lamin_api_client.models.*;
-import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
-
-    InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    CreateArtifactRequestBody createArtifactRequestBody = new CreateArtifactRequestBody(); // CreateArtifactRequestBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
-    try {
-      Object result = apiInstance.createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost(instanceId, createArtifactRequestBody, spaceId, authorization);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling InstanceArtifactsApi#createArtifactSqlAsyncInstancesInstanceIdArtifactsCreateSqlAsyncPost");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **createArtifactRequestBody** | [**CreateArtifactRequestBody**](CreateArtifactRequestBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
-
-<a id="createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost"></a>
-# **createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost**
-> Object createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost(instanceId, createArtifactRequestBody, spaceId, authorization)
-
-Create Artifact Sql
-
-Register an Artifact for an existing storage path via direct SQL.  Unlike &#x60;&#x60;/create&#x60;&#x60; (which invokes a lambda running lamindb), this resolves the path&#39;s S3 metadata and inserts the artifact row straight into the instance DB.
-
-### Example
-```java
-// Import classes:
-import ai.lamin.lamin_api_client.ApiClient;
-import ai.lamin.lamin_api_client.ApiException;
-import ai.lamin.lamin_api_client.Configuration;
-import ai.lamin.lamin_api_client.models.*;
-import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
-
-    InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    CreateArtifactRequestBody createArtifactRequestBody = new CreateArtifactRequestBody(); // CreateArtifactRequestBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
-    try {
-      Object result = apiInstance.createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost(instanceId, createArtifactRequestBody, spaceId, authorization);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling InstanceArtifactsApi#createArtifactSqlInstancesInstanceIdArtifactsCreateSqlPost");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **createArtifactRequestBody** | [**CreateArtifactRequestBody**](CreateArtifactRequestBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -218,9 +83,11 @@ No authorization required
 
 <a id="getArtifactByPathInstancesInstanceIdArtifactsByPathGet"></a>
 # **getArtifactByPathInstancesInstanceIdArtifactsByPathGet**
-> Object getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, spaceId, authorization)
+> Object getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, spaceId)
 
 Get Artifact By Path
+
+Return artifact metadata for a storage path.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -228,6 +95,7 @@ Get Artifact By Path
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
 
@@ -235,14 +103,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    String path = "path_example"; // String | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    String path = "path_example"; // String | Artifact storage path.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, spaceId, authorization);
+      Object result = apiInstance.getArtifactByPathInstancesInstanceIdArtifactsByPathGet(instanceId, path, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceArtifactsApi#getArtifactByPathInstancesInstanceIdArtifactsByPathGet");
@@ -259,10 +130,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **path** | **String**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **path** | **String**| Artifact storage path. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -270,7 +140,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -285,9 +155,11 @@ No authorization required
 
 <a id="uploadArtifactInstancesInstanceIdArtifactsUploadPost"></a>
 # **uploadArtifactInstancesInstanceIdArtifactsUploadPost**
-> Object uploadArtifactInstancesInstanceIdArtifactsUploadPost(instanceId, _file, spaceId, authorization, kwargs)
+> Object uploadArtifactInstancesInstanceIdArtifactsUploadPost(instanceId, _file, spaceId, kwargs)
 
 Upload Artifact
+
+Upload a file and register it as an artifact.  **Permissions:** Requires write access to the target instance or space.
 
 ### Example
 ```java
@@ -295,6 +167,7 @@ Upload Artifact
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceArtifactsApi;
 
@@ -302,15 +175,18 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceArtifactsApi apiInstance = new InstanceArtifactsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    File _file = new File("/path/to/file"); // File | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
-    String kwargs = "kwargs_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    File _file = new File("/path/to/file"); // File | Artifact file to upload.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
+    String kwargs = "kwargs_example"; // String | JSON object string with additional upload arguments.
     try {
-      Object result = apiInstance.uploadArtifactInstancesInstanceIdArtifactsUploadPost(instanceId, _file, spaceId, authorization, kwargs);
+      Object result = apiInstance.uploadArtifactInstancesInstanceIdArtifactsUploadPost(instanceId, _file, spaceId, kwargs);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceArtifactsApi#uploadArtifactInstancesInstanceIdArtifactsUploadPost");
@@ -327,11 +203,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **_file** | **File**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
-| **kwargs** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **_file** | **File**| Artifact file to upload. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
+| **kwargs** | **String**| JSON object string with additional upload arguments. | [optional] |
 
 ### Return type
 
@@ -339,7 +214,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

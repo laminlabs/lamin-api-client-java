@@ -16,11 +16,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="createServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysPost"></a>
 # **createServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysPost**
-> Object createServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysPost(organizationId, handle, createServiceAccountApiKeyRequestBody, authorization)
+> Object createServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysPost(organizationId, handle, createServiceAccountApiKeyRequestBody)
 
 Create Service Account Api Key
 
-Create an API key for a service account.  The plaintext key is returned once only — store it immediately.  Parameters: - **organization_id**: UUID of the owning organization - **handle**: Handle of the service account - **body**: Request body   - **expires_at**: Expiry datetime for the API key   - **description**: Optional description  Returns: - **201**: API key created successfully
+Create an API key for a service account.  **Permissions:** Requires organization manager or admin access.  **Notes:** The plaintext key is returned once.
 
 ### Example
 ```java
@@ -28,6 +28,7 @@ Create an API key for a service account.  The plaintext key is returned once onl
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -35,14 +36,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String handle = "handle_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    String handle = "handle_example"; // String | Account or service-account handle.
     CreateServiceAccountApiKeyRequestBody createServiceAccountApiKeyRequestBody = new CreateServiceAccountApiKeyRequestBody(); // CreateServiceAccountApiKeyRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysPost(organizationId, handle, createServiceAccountApiKeyRequestBody, authorization);
+      Object result = apiInstance.createServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysPost(organizationId, handle, createServiceAccountApiKeyRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#createServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysPost");
@@ -59,10 +63,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **handle** | **String**|  | |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **handle** | **String**| Account or service-account handle. | |
 | **createServiceAccountApiKeyRequestBody** | [**CreateServiceAccountApiKeyRequestBody**](CreateServiceAccountApiKeyRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -70,7 +73,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -80,16 +83,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **201** | API key created. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="createServiceAccountServiceAccountsPut"></a>
 # **createServiceAccountServiceAccountsPut**
-> Object createServiceAccountServiceAccountsPut(createServiceAccountRequestBody, authorization)
+> Object createServiceAccountServiceAccountsPut(createServiceAccountRequestBody)
 
 Create Service Account
 
-Create a service account under an organization.  Parameters: - **body**: Request body containing service account details   - **handle**: Unique handle for the service account   - **organization_id**: UUID of the owning organization (caller must be admin/manager)   - **name**: Optional display name  Returns: - **201**: Service account created successfully
+Create a service account in an organization.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -97,6 +100,7 @@ Create a service account under an organization.  Parameters: - **body**: Request
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -104,12 +108,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
     CreateServiceAccountRequestBody createServiceAccountRequestBody = new CreateServiceAccountRequestBody(); // CreateServiceAccountRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.createServiceAccountServiceAccountsPut(createServiceAccountRequestBody, authorization);
+      Object result = apiInstance.createServiceAccountServiceAccountsPut(createServiceAccountRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#createServiceAccountServiceAccountsPut");
@@ -127,7 +134,6 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **createServiceAccountRequestBody** | [**CreateServiceAccountRequestBody**](CreateServiceAccountRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -135,7 +141,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -145,16 +151,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **201** | Service account created. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="deleteServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysApiKeyIdDelete"></a>
 # **deleteServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysApiKeyIdDelete**
-> Object deleteServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysApiKeyIdDelete(organizationId, handle, apiKeyId, authorization)
+> Object deleteServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysApiKeyIdDelete(organizationId, handle, apiKeyId)
 
 Delete Service Account Api Key
 
-Revoke an API key for a service account.  Parameters: - **organization_id**: UUID of the owning organization - **handle**: Handle of the service account - **api_key_id**: ID of the API key to revoke  Returns: - **200**: API key revoked successfully - **404**: API key not found
+Delete an API key for a service account.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -162,6 +168,7 @@ Revoke an API key for a service account.  Parameters: - **organization_id**: UUI
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -169,14 +176,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String handle = "handle_example"; // String | 
-    Integer apiKeyId = 56; // Integer | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    String handle = "handle_example"; // String | Account or service-account handle.
+    Integer apiKeyId = 56; // Integer | API key ID.
     try {
-      Object result = apiInstance.deleteServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysApiKeyIdDelete(organizationId, handle, apiKeyId, authorization);
+      Object result = apiInstance.deleteServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysApiKeyIdDelete(organizationId, handle, apiKeyId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#deleteServiceAccountApiKeyServiceAccountsOrganizationIdHandleApiKeysApiKeyIdDelete");
@@ -193,10 +203,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **handle** | **String**|  | |
-| **apiKeyId** | **Integer**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **handle** | **String**| Account or service-account handle. | |
+| **apiKeyId** | **Integer**| API key ID. | |
 
 ### Return type
 
@@ -204,7 +213,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -219,11 +228,11 @@ No authorization required
 
 <a id="deleteServiceAccountServiceAccountsOrganizationIdHandleDelete"></a>
 # **deleteServiceAccountServiceAccountsOrganizationIdHandleDelete**
-> Object deleteServiceAccountServiceAccountsOrganizationIdHandleDelete(organizationId, handle, authorization)
+> Object deleteServiceAccountServiceAccountsOrganizationIdHandleDelete(organizationId, handle)
 
 Delete Service Account
 
-Delete a service account.  Parameters: - **organization_id**: UUID of the owning organization - **handle**: Handle of the service account  Returns: - **200**: Service account deleted successfully - **404**: Service account not found
+Delete a service account.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -231,6 +240,7 @@ Delete a service account.  Parameters: - **organization_id**: UUID of the owning
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -238,13 +248,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String handle = "handle_example"; // String | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    String handle = "handle_example"; // String | Account or service-account handle.
     try {
-      Object result = apiInstance.deleteServiceAccountServiceAccountsOrganizationIdHandleDelete(organizationId, handle, authorization);
+      Object result = apiInstance.deleteServiceAccountServiceAccountsOrganizationIdHandleDelete(organizationId, handle);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#deleteServiceAccountServiceAccountsOrganizationIdHandleDelete");
@@ -261,9 +274,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **handle** | **String**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **handle** | **String**| Account or service-account handle. | |
 
 ### Return type
 
@@ -271,7 +283,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -286,11 +298,11 @@ No authorization required
 
 <a id="getServiceAccountServiceAccountsOrganizationIdHandleGet"></a>
 # **getServiceAccountServiceAccountsOrganizationIdHandleGet**
-> Object getServiceAccountServiceAccountsOrganizationIdHandleGet(organizationId, handle, authorization)
+> Object getServiceAccountServiceAccountsOrganizationIdHandleGet(organizationId, handle)
 
 Get Service Account
 
-Get details of a specific service account by organization and handle.  Parameters: - **organization_id**: UUID of the owning organization - **handle**: Handle of the service account  Returns: - **200**: Service account details retrieved successfully - **404**: Service account not found
+Return a service account by handle.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -298,6 +310,7 @@ Get details of a specific service account by organization and handle.  Parameter
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -305,13 +318,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String handle = "handle_example"; // String | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    String handle = "handle_example"; // String | Account or service-account handle.
     try {
-      Object result = apiInstance.getServiceAccountServiceAccountsOrganizationIdHandleGet(organizationId, handle, authorization);
+      Object result = apiInstance.getServiceAccountServiceAccountsOrganizationIdHandleGet(organizationId, handle);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#getServiceAccountServiceAccountsOrganizationIdHandleGet");
@@ -328,9 +344,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **handle** | **String**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **handle** | **String**| Account or service-account handle. | |
 
 ### Return type
 
@@ -338,7 +353,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -353,11 +368,11 @@ No authorization required
 
 <a id="listServiceAccountApiKeysServiceAccountsOrganizationIdHandleApiKeysGet"></a>
 # **listServiceAccountApiKeysServiceAccountsOrganizationIdHandleApiKeysGet**
-> Object listServiceAccountApiKeysServiceAccountsOrganizationIdHandleApiKeysGet(organizationId, handle, authorization)
+> Object listServiceAccountApiKeysServiceAccountsOrganizationIdHandleApiKeysGet(organizationId, handle)
 
 List Service Account Api Keys
 
-List API key metadata for a service account.  Parameters: - **organization_id**: UUID of the owning organization - **handle**: Handle of the service account  Returns: - **200**: API key list retrieved successfully
+List API keys for a service account.  **Permissions:** Requires organization manager or admin access.  **Notes:** Plaintext keys are not returned.
 
 ### Example
 ```java
@@ -365,6 +380,7 @@ List API key metadata for a service account.  Parameters: - **organization_id**:
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -372,13 +388,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String handle = "handle_example"; // String | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    String handle = "handle_example"; // String | Account or service-account handle.
     try {
-      Object result = apiInstance.listServiceAccountApiKeysServiceAccountsOrganizationIdHandleApiKeysGet(organizationId, handle, authorization);
+      Object result = apiInstance.listServiceAccountApiKeysServiceAccountsOrganizationIdHandleApiKeysGet(organizationId, handle);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#listServiceAccountApiKeysServiceAccountsOrganizationIdHandleApiKeysGet");
@@ -395,9 +414,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **handle** | **String**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **handle** | **String**| Account or service-account handle. | |
 
 ### Return type
 
@@ -405,7 +423,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -420,11 +438,11 @@ No authorization required
 
 <a id="listServiceAccountsByOrganizationServiceAccountsOrganizationsOrganizationIdGet"></a>
 # **listServiceAccountsByOrganizationServiceAccountsOrganizationsOrganizationIdGet**
-> Object listServiceAccountsByOrganizationServiceAccountsOrganizationsOrganizationIdGet(organizationId, authorization)
+> Object listServiceAccountsByOrganizationServiceAccountsOrganizationsOrganizationIdGet(organizationId)
 
 List Service Accounts By Organization
 
-List all service accounts for an organization.  Parameters: - **organization_id**: UUID of the organization  Returns: - **200**: List of service accounts retrieved successfully
+List service accounts in an organization.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -432,6 +450,7 @@ List all service accounts for an organization.  Parameters: - **organization_id*
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -439,12 +458,15 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
     try {
-      Object result = apiInstance.listServiceAccountsByOrganizationServiceAccountsOrganizationsOrganizationIdGet(organizationId, authorization);
+      Object result = apiInstance.listServiceAccountsByOrganizationServiceAccountsOrganizationsOrganizationIdGet(organizationId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#listServiceAccountsByOrganizationServiceAccountsOrganizationsOrganizationIdGet");
@@ -461,8 +483,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **authorization** | **String**|  | [optional] |
+| **organizationId** | **UUID**| Organization UUID. | |
 
 ### Return type
 
@@ -470,7 +491,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -485,11 +506,11 @@ No authorization required
 
 <a id="updateServiceAccountServiceAccountsOrganizationIdHandlePatch"></a>
 # **updateServiceAccountServiceAccountsOrganizationIdHandlePatch**
-> Object updateServiceAccountServiceAccountsOrganizationIdHandlePatch(organizationId, handle, updateServiceAccountRequestBody, authorization)
+> Object updateServiceAccountServiceAccountsOrganizationIdHandlePatch(organizationId, handle, updateServiceAccountRequestBody)
 
 Update Service Account
 
-Update a service account&#39;s details.  Parameters: - **organization_id**: UUID of the owning organization - **handle**: Handle of the service account - **body**: Request body containing updated details   - **name**: Optional new display name  Returns: - **200**: Service account updated successfully - **404**: Service account not found
+Update a service account.  **Permissions:** Requires organization manager or admin access.
 
 ### Example
 ```java
@@ -497,6 +518,7 @@ Update a service account&#39;s details.  Parameters: - **organization_id**: UUID
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.ServiceAccountsApi;
 
@@ -504,14 +526,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     ServiceAccountsApi apiInstance = new ServiceAccountsApi(defaultClient);
-    UUID organizationId = UUID.randomUUID(); // UUID | 
-    String handle = "handle_example"; // String | 
+    UUID organizationId = UUID.randomUUID(); // UUID | Organization UUID.
+    String handle = "handle_example"; // String | Account or service-account handle.
     UpdateServiceAccountRequestBody updateServiceAccountRequestBody = new UpdateServiceAccountRequestBody(); // UpdateServiceAccountRequestBody | 
-    String authorization = "authorization_example"; // String | 
     try {
-      Object result = apiInstance.updateServiceAccountServiceAccountsOrganizationIdHandlePatch(organizationId, handle, updateServiceAccountRequestBody, authorization);
+      Object result = apiInstance.updateServiceAccountServiceAccountsOrganizationIdHandlePatch(organizationId, handle, updateServiceAccountRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ServiceAccountsApi#updateServiceAccountServiceAccountsOrganizationIdHandlePatch");
@@ -528,10 +553,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **organizationId** | **UUID**|  | |
-| **handle** | **String**|  | |
+| **organizationId** | **UUID**| Organization UUID. | |
+| **handle** | **String**| Account or service-account handle. | |
 | **updateServiceAccountRequestBody** | [**UpdateServiceAccountRequestBody**](UpdateServiceAccountRequestBody.md)|  | |
-| **authorization** | **String**|  | [optional] |
 
 ### Return type
 
@@ -539,7 +563,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

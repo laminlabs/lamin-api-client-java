@@ -20,9 +20,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost"></a>
 # **batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost**
-> BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization)
+> BatchDeleteResponse batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, spaceId)
 
 Batch Delete Records
+
+Delete multiple records in one request.  **Permissions:** Requires write access to the target instance or space.  **Notes:** Every delete selector must use the same key set.
 
 ### Example
 ```java
@@ -30,6 +32,7 @@ Batch Delete Records
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -37,16 +40,19 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     BatchDeleteBody batchDeleteBody = new BatchDeleteBody(); // BatchDeleteBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      BatchDeleteResponse result = apiInstance.batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, spaceId, authorization);
+      BatchDeleteResponse result = apiInstance.batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost(moduleName, modelName, instanceId, batchDeleteBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#batchDeleteRecordsInstancesInstanceIdModulesModuleNameModelNameBatchDeletePost");
@@ -63,12 +69,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **batchDeleteBody** | [**BatchDeleteBody**](BatchDeleteBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -76,7 +81,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -86,14 +91,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | Number of records deleted. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut"></a>
 # **batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut**
-> BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization)
+> BatchSyncResponse batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId)
 
 Synchronize sets of links for multiple scopes in a single call
+
+Synchronize link sets for multiple scopes.  **Permissions:** Requires write access to the target instance or space.  **Notes:** Each scope is changed to exactly the desired set of linked IDs.
 
 ### Example
 ```java
@@ -101,6 +108,7 @@ Synchronize sets of links for multiple scopes in a single call
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -108,16 +116,19 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     BatchSyncLinksBody batchSyncLinksBody = new BatchSyncLinksBody(); // BatchSyncLinksBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      BatchSyncResponse result = apiInstance.batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId, authorization);
+      BatchSyncResponse result = apiInstance.batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut(moduleName, modelName, instanceId, batchSyncLinksBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#batchSyncLinksInstancesInstanceIdModulesModuleNameModelNameBatchSyncLinksPut");
@@ -134,12 +145,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **batchSyncLinksBody** | [**BatchSyncLinksBody**](BatchSyncLinksBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -147,7 +157,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -162,11 +172,11 @@ No authorization required
 
 <a id="batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch"></a>
 # **batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch**
-> List&lt;Map&lt;String, Object&gt;&gt; batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization)
+> List&lt;Map&lt;String, Object&gt;&gt; batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, spaceId)
 
 Update one or more records in a batch
 
-Partially updates multiple records in a single request.  This endpoint processes a list of records, updating each one in the database. It is designed to handle heterogeneous partial updates, meaning each record in the batch can update a different set of fields.
+Update multiple records in one request.  **Permissions:** Requires write access to the target instance or space.  **Notes:** Heterogeneous partial updates are grouped by record shape.
 
 ### Example
 ```java
@@ -174,6 +184,7 @@ Partially updates multiple records in a single request.  This endpoint processes
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -181,16 +192,19 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     BatchUpdateBody batchUpdateBody = new BatchUpdateBody(); // BatchUpdateBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      List<Map<String, Object>> result = apiInstance.batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, spaceId, authorization);
+      List<Map<String, Object>> result = apiInstance.batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch(moduleName, modelName, instanceId, batchUpdateBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#batchUpdateRecordsInstancesInstanceIdModulesModuleNameModelNameBatchUpdatePatch");
@@ -207,12 +221,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **batchUpdateBody** | [**BatchUpdateBody**](BatchUpdateBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -220,7 +233,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -235,9 +248,11 @@ No authorization required
 
 <a id="createRecordsInstancesInstanceIdModulesModuleNameModelNamePut"></a>
 # **createRecordsInstancesInstanceIdModulesModuleNameModelNamePut**
-> Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, spaceId, authorization)
+> Object createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, responseMode, spaceId)
 
 Create Records
+
+Insert one or more records.  **Permissions:** Requires write access to the target instance or space.  **Quota:** Inserts at most 20,000 records per request.
 
 ### Example
 ```java
@@ -245,6 +260,7 @@ Create Records
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -252,16 +268,20 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     Object body = null; // Object | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String responseMode = "records"; // String | Use 'records' to return every inserted row. Use 'summary' to cap full records while still returning ordered identifiers for every inserted row.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, spaceId, authorization);
+      Object result = apiInstance.createRecordsInstancesInstanceIdModulesModuleNameModelNamePut(moduleName, modelName, instanceId, body, responseMode, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#createRecordsInstancesInstanceIdModulesModuleNameModelNamePut");
@@ -278,12 +298,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **body** | **Object**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **responseMode** | **String**| Use &#39;records&#39; to return every inserted row. Use &#39;summary&#39; to cap full records while still returning ordered identifiers for every inserted row. | [optional] [default to records] [enum: records, summary] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -291,7 +311,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -301,14 +321,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | Inserted records, or a capped record summary when response_mode&#x3D;summary. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete"></a>
 # **deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete**
-> Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, spaceId, authorization)
+> Object deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, spaceId)
 
 Delete Record
+
+Delete one record by UID.  **Permissions:** Requires write access to the target instance or space.
 
 ### Example
 ```java
@@ -316,6 +338,7 @@ Delete Record
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -323,16 +346,19 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    String uid = "uid_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    String uid = "uid_example"; // String | Record UID.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, spaceId, authorization);
+      Object result = apiInstance.deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete(moduleName, modelName, uid, instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#deleteRecordInstancesInstanceIdModulesModuleNameModelNameUidDelete");
@@ -349,12 +375,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **uid** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **uid** | **String**| Record UID. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -362,7 +387,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -373,13 +398,16 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful Response |  -  |
+| **409** | Record is still referenced by other records. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="exportRecordsInstancesInstanceIdRecordsUidExportPost"></a>
 # **exportRecordsInstancesInstanceIdRecordsUidExportPost**
-> Object exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, spaceId, authorization, exportRecordsRequestBody)
+> Object exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, spaceId, exportRecordsRequestBody)
 
 Export Records
+
+Export a record and its related records.  **Permissions:** Requires write access to the target instance or space.
 
 ### Example
 ```java
@@ -387,6 +415,7 @@ Export Records
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -394,15 +423,18 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String uid = "uid_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String uid = "uid_example"; // String | Record UID.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     ExportRecordsRequestBody exportRecordsRequestBody = new ExportRecordsRequestBody(); // ExportRecordsRequestBody | 
     try {
-      Object result = apiInstance.exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, spaceId, authorization, exportRecordsRequestBody);
+      Object result = apiInstance.exportRecordsInstancesInstanceIdRecordsUidExportPost(uid, instanceId, spaceId, exportRecordsRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#exportRecordsInstancesInstanceIdRecordsUidExportPost");
@@ -419,10 +451,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **uid** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **uid** | **String**| Record UID. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 | **exportRecordsRequestBody** | [**ExportRecordsRequestBody**](ExportRecordsRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -431,7 +462,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -441,14 +472,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | Exported record payload. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost"></a>
 # **getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost**
-> Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody)
+> Object getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, getRecordRequestBody)
 
 Get Record
+
+Return one record by numeric ID or UID.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -456,6 +489,7 @@ Get Record
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -463,19 +497,22 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    String idOrUid = "idOrUid_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    Integer limitToMany = 10; // Integer | 
-    Boolean includeForeignKeys = false; // Boolean | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    String idOrUid = "idOrUid_example"; // String | Record ID or UID.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    Integer limitToMany = 10; // Integer | Maximum number of related records to include.
+    Boolean includeForeignKeys = false; // Boolean | Include foreign-key columns in the result.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     GetRecordRequestBody getRecordRequestBody = new GetRecordRequestBody(); // GetRecordRequestBody | 
     try {
-      Object result = apiInstance.getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, authorization, getRecordRequestBody);
+      Object result = apiInstance.getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost(moduleName, modelName, idOrUid, instanceId, limitToMany, includeForeignKeys, spaceId, getRecordRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getRecordInstancesInstanceIdModulesModuleNameModelNameIdOrUidPost");
@@ -492,14 +529,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **idOrUid** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **limitToMany** | **Integer**|  | [optional] [default to 10] |
-| **includeForeignKeys** | **Boolean**|  | [optional] [default to false] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **idOrUid** | **String**| Record ID or UID. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **limitToMany** | **Integer**| Maximum number of related records to include. | [optional] [default to 10] |
+| **includeForeignKeys** | **Boolean**| Include foreign-key columns in the result. | [optional] [default to false] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 | **getRecordRequestBody** | [**GetRecordRequestBody**](GetRecordRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -508,7 +544,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -523,9 +559,11 @@ No authorization required
 
 <a id="getRecordsInstancesInstanceIdModulesModuleNameModelNamePost"></a>
 # **getRecordsInstancesInstanceIdModulesModuleNameModelNamePost**
-> Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody)
+> Object getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, getRecordsRequestBody)
 
 Get Records
+
+Query records from a model.  **Permissions:** Requires read access to the instance.  **Quota:** Returns at most 200 records per request range.
 
 ### Example
 ```java
@@ -533,6 +571,7 @@ Get Records
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -540,20 +579,23 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    Integer limit = 50; // Integer | 
-    Integer offset = 0; // Integer | 
-    Integer limitToMany = 10; // Integer | 
-    Boolean includeForeignKeys = false; // Boolean | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    Integer limit = 50; // Integer | Maximum number of records to return.
+    Integer offset = 0; // Integer | Number of records to skip.
+    Integer limitToMany = 10; // Integer | Maximum number of related records to include.
+    Boolean includeForeignKeys = false; // Boolean | Include foreign-key columns in the result.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     GetRecordsRequestBody getRecordsRequestBody = new GetRecordsRequestBody(); // GetRecordsRequestBody | 
     try {
-      Object result = apiInstance.getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, authorization, getRecordsRequestBody);
+      Object result = apiInstance.getRecordsInstancesInstanceIdModulesModuleNameModelNamePost(moduleName, modelName, instanceId, limit, offset, limitToMany, includeForeignKeys, spaceId, getRecordsRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getRecordsInstancesInstanceIdModulesModuleNameModelNamePost");
@@ -570,15 +612,14 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **limit** | **Integer**|  | [optional] [default to 50] |
-| **offset** | **Integer**|  | [optional] [default to 0] |
-| **limitToMany** | **Integer**|  | [optional] [default to 10] |
-| **includeForeignKeys** | **Boolean**|  | [optional] [default to false] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **limit** | **Integer**| Maximum number of records to return. | [optional] [default to 50] |
+| **offset** | **Integer**| Number of records to skip. | [optional] [default to 0] |
+| **limitToMany** | **Integer**| Maximum number of related records to include. | [optional] [default to 10] |
+| **includeForeignKeys** | **Boolean**| Include foreign-key columns in the result. | [optional] [default to false] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 | **getRecordsRequestBody** | [**GetRecordsRequestBody**](GetRecordsRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -587,7 +628,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -602,11 +643,11 @@ No authorization required
 
 <a id="getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost"></a>
 # **getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost**
-> Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization)
+> Object getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, spaceId)
 
 Get and query hierarchical relatives of records
 
-Finds and queries all relatives (ancestors or descendants) for a given set of records.  This endpoint first performs a recursive traversal to identify a complete set of related records. It then applies standard query parameters (filter, sort, search, select, etc.) to that set.  **Traversal Strategies:** The endpoint intelligently discovers the relationship structure from the schema:  1.  **ManyToMany Graph:** It first looks for an explicit &#x60;parents&#x60; or &#x60;children&#x60; relationship field, which is assumed to be a Directed Acyclic Graph (DAG). 2.  **ForeignKey Tree:** If a ManyToMany field is not found, it falls back to traversing a self-referential &#x60;type&#x60; field, which is assumed to represent a parent-pointer tree.
+Return hierarchical relatives for matching records.  **Permissions:** Requires read access to the instance.  **Notes:** Traverses explicit parent links first, then a self-referential type tree.
 
 ### Example
 ```java
@@ -614,6 +655,7 @@ Finds and queries all relatives (ancestors or descendants) for a given set of re
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -621,18 +663,21 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     Request request = new Request(); // Request | 
     Integer limit = 100; // Integer | The maximum number of relative records to return.
     Integer offset = 0; // Integer | The offset for paginating through the results.
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, spaceId, authorization);
+      Object result = apiInstance.getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost(moduleName, modelName, instanceId, request, limit, offset, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getRelativesInstancesInstanceIdModulesModuleNameModelNameRelativesPost");
@@ -649,14 +694,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **request** | [**Request**](Request.md)|  | |
 | **limit** | **Integer**| The maximum number of relative records to return. | [optional] [default to 100] |
 | **offset** | **Integer**| The offset for paginating through the results. | [optional] [default to 0] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -664,7 +708,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -679,9 +723,11 @@ No authorization required
 
 <a id="getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost"></a>
 # **getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost**
-> Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody)
+> Object getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, getValuesRequestBody)
 
 Get Values
+
+Return values for a model field path.  **Permissions:** Requires read access to the instance.  **Quota:** Returns at most 200 values per request range.
 
 ### Example
 ```java
@@ -689,6 +735,7 @@ Get Values
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -696,19 +743,22 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    String fieldPath = "fieldPath_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    Integer limit = 50; // Integer | 
-    Integer offset = 0; // Integer | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    String fieldPath = "fieldPath_example"; // String | Field path to read values from.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    Integer limit = 50; // Integer | Maximum number of values to return.
+    Integer offset = 0; // Integer | Number of values to skip.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     GetValuesRequestBody getValuesRequestBody = new GetValuesRequestBody(); // GetValuesRequestBody | 
     try {
-      Object result = apiInstance.getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, authorization, getValuesRequestBody);
+      Object result = apiInstance.getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost(moduleName, modelName, fieldPath, instanceId, limit, offset, spaceId, getValuesRequestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#getValuesInstancesInstanceIdModulesModuleNameModelNameFieldsFieldPathPost");
@@ -725,14 +775,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **fieldPath** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **limit** | **Integer**|  | [optional] [default to 50] |
-| **offset** | **Integer**|  | [optional] [default to 0] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **fieldPath** | **String**| Field path to read values from. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **limit** | **Integer**| Maximum number of values to return. | [optional] [default to 50] |
+| **offset** | **Integer**| Number of values to skip. | [optional] [default to 0] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 | **getValuesRequestBody** | [**GetValuesRequestBody**](GetValuesRequestBody.md)|  | [optional] |
 
 ### Return type
@@ -741,7 +790,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -756,9 +805,11 @@ No authorization required
 
 <a id="updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch"></a>
 # **updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch**
-> Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, spaceId, authorization)
+> Object updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, spaceId)
 
 Update Record
+
+Update fields on one record by UID.  **Permissions:** Requires write access to the target instance or space.  **Notes:** Updates &#x60;updated_at&#x60; when the model has that field.
 
 ### Example
 ```java
@@ -766,6 +817,7 @@ Update Record
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -773,17 +825,20 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    String uid = "uid_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    String uid = "uid_example"; // String | Record UID.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     Object body = null; // Object | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, spaceId, authorization);
+      Object result = apiInstance.updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch(moduleName, modelName, uid, instanceId, body, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#updateRecordInstancesInstanceIdModulesModuleNameModelNameUidPatch");
@@ -800,13 +855,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **uid** | **String**|  | |
-| **instanceId** | **UUID**|  | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **uid** | **String**| Record UID. | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **body** | **Object**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -814,7 +868,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -829,11 +883,11 @@ No authorization required
 
 <a id="upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut"></a>
 # **upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut**
-> Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization)
+> Object upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, spaceId)
 
 Upsert one or more records
 
-Insert new records or update existing ones based on a conflict key.
+Insert new records or update existing ones based on a conflict key.  **Permissions:** Requires write access to the target instance or space.  **Notes:** Omitted fields are unchanged on existing records.
 
 ### Example
 ```java
@@ -841,6 +895,7 @@ Insert new records or update existing ones based on a conflict key.
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceRecordsApi;
 
@@ -848,17 +903,20 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceRecordsApi apiInstance = new InstanceRecordsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    List<String> conflictColumns = Arrays.asList(); // List<String> | A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database.
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    List<String> conflictColumns = Arrays.asList(); // List<String> | Column names that define the unique key for conflict resolution. Must match a unique constraint or index.
     Body body = new Body(); // Body | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, spaceId, authorization);
+      Object result = apiInstance.upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut(moduleName, modelName, instanceId, conflictColumns, body, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceRecordsApi#upsertRecordsInstancesInstanceIdModulesModuleNameModelNameUpsertPut");
@@ -875,13 +933,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **conflictColumns** | [**List&lt;String&gt;**](String.md)| A list of column names that define the unique key for conflict resolution. This must correspond to a unique constraint or index in the database. | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **conflictColumns** | [**List&lt;String&gt;**](String.md)| Column names that define the unique key for conflict resolution. Must match a unique constraint or index. | |
 | **body** | [**Body**](Body.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -889,7 +946,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -899,8 +956,8 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response. Returns a list of the full, upserted records as they exist in the database. |  -  |
-| **400** | The &#39;conflict_columns&#39; query parameter was not provided. |  -  |
+| **200** | Full upserted records as they exist in the database. |  -  |
+| **400** | The conflict_columns query parameter was not provided. |  -  |
 | **404** | The specified module or model name was not found. |  -  |
-| **422** | The request payload is invalid (e.g., a record is missing a required conflict key, or the conflict key is not a valid unique constraint in the database). |  -  |
+| **422** | Invalid payload or conflict key. |  -  |
 

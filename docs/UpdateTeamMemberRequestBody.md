@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**role** | [**RoleEnum**](#RoleEnum) |  |  |
+|**role** | [**RoleEnum**](#RoleEnum) | New team role. |  |
 
 
 

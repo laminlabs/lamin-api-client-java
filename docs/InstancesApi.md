@@ -9,19 +9,19 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 | [**deleteInstanceInstancesInstanceIdDelete**](InstancesApi.md#deleteInstanceInstancesInstanceIdDelete) | **DELETE** /instances/{instance_id} | Delete Instance |
 | [**getInstanceSettingsInstancesOwnerNameSettingsGet**](InstancesApi.md#getInstanceSettingsInstancesOwnerNameSettingsGet) | **GET** /instances/{owner}/{name}/settings | Get Instance Settings |
 | [**listCollaboratorsInstancesInstanceIdCollaboratorsGet**](InstancesApi.md#listCollaboratorsInstancesInstanceIdCollaboratorsGet) | **GET** /instances/{instance_id}/collaborators | List Collaborators |
-| [**migrateInstanceInstancesInstanceIdMigratePost**](InstancesApi.md#migrateInstanceInstancesInstanceIdMigratePost) | **POST** /instances/{instance_id}/migrate | Migrate Instance |
 | [**removeCollaboratorInstancesInstanceIdCollaboratorsDelete**](InstancesApi.md#removeCollaboratorInstancesInstanceIdCollaboratorsDelete) | **DELETE** /instances/{instance_id}/collaborators | Remove Collaborator |
-| [**transferOwnershipInstancesInstanceIdOwnerHandlePatch**](InstancesApi.md#transferOwnershipInstancesInstanceIdOwnerHandlePatch) | **PATCH** /instances/{instance_id}/owner/{handle} | Transfer Ownership |
+| [**setInstancePrivateInstancesInstanceIdSetPrivatePost**](InstancesApi.md#setInstancePrivateInstancesInstanceIdSetPrivatePost) | **POST** /instances/{instance_id}/set-private | Set Instance Private |
+| [**setInstancePublicInstancesInstanceIdSetPublicPost**](InstancesApi.md#setInstancePublicInstancesInstanceIdSetPublicPost) | **POST** /instances/{instance_id}/set-public | Set Instance Public |
 | [**updateCollaboratorInstancesInstanceIdCollaboratorsPatch**](InstancesApi.md#updateCollaboratorInstancesInstanceIdCollaboratorsPatch) | **PATCH** /instances/{instance_id}/collaborators | Update Collaborator |
 
 
 <a id="addCollaboratorInstancesInstanceIdCollaboratorsPut"></a>
 # **addCollaboratorInstancesInstanceIdCollaboratorsPut**
-> Object addCollaboratorInstancesInstanceIdCollaboratorsPut(instanceId, addCollaboratorRequestBody, spaceId, authorization)
+> Object addCollaboratorInstancesInstanceIdCollaboratorsPut(instanceId, addCollaboratorRequestBody, spaceId)
 
 Add Collaborator
 
-Add a collaborator (account or team) to an instance.  Parameters: - **instance_id**: UUID of the instance to add the collaborator to (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to add (mutually exclusive with team_id)   - **team_id**: UUID of the team to add (mutually exclusive with account_id)   - **role**: Role of the collaborator   - **add_guest_if_missing**: If true for an account collaborator,     add the account to the instance organization as a guest first when it is     not already an organization member  Returns: - **201**: Collaborator added successfully - **400**: Invalid input (e.g., both account_id and team_id provided) - **409**: Collaborator was already added  Requires admin access to the instance
+Add an account or team collaborator to an instance.  **Permissions:** Requires instance admin access or organization manager or admin access.
 
 ### Example
 ```java
@@ -29,6 +29,7 @@ Add a collaborator (account or team) to an instance.  Parameters: - **instance_i
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -36,14 +37,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     AddCollaboratorRequestBody addCollaboratorRequestBody = new AddCollaboratorRequestBody(); // AddCollaboratorRequestBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.addCollaboratorInstancesInstanceIdCollaboratorsPut(instanceId, addCollaboratorRequestBody, spaceId, authorization);
+      Object result = apiInstance.addCollaboratorInstancesInstanceIdCollaboratorsPut(instanceId, addCollaboratorRequestBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#addCollaboratorInstancesInstanceIdCollaboratorsPut");
@@ -60,10 +64,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **addCollaboratorRequestBody** | [**AddCollaboratorRequestBody**](AddCollaboratorRequestBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -71,7 +74,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -81,14 +84,16 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **201** | Instance collaborator added. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="createInstanceInstancesPut"></a>
 # **createInstanceInstancesPut**
-> Object createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, authorization, requestBody)
+> Object createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, requestBody)
 
 Create Instance
+
+Create an instance.  **Permissions:** Requires authentication. Organization-owned instances require organization manager or admin access.  **Quota:** Consumes instance quota for the owner account.
 
 ### Example
 ```java
@@ -96,6 +101,7 @@ Create Instance
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -103,19 +109,22 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    String name = "name_example"; // String | 
-    String storage = "create-s3"; // String | 
-    String schemaStr = "schemaStr_example"; // String | 
-    String dbServerName = "dbServerName_example"; // String | 
-    String storageUid = "storageUid_example"; // String | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
-    Boolean _public = false; // Boolean | 
-    String authorization = "authorization_example"; // String | 
+    String name = "name_example"; // String | Instance name.
+    String storage = "create-s3"; // String | Storage root, or 'create-s3' to create managed S3 storage.
+    String schemaStr = "schemaStr_example"; // String | Serialized schema metadata for the instance.
+    String dbServerName = "dbServerName_example"; // String | Database server name to create the instance on.
+    String storageUid = "storageUid_example"; // String | Existing storage UID to attach to the instance.
+    UUID accountId = UUID.randomUUID(); // UUID | Owner account UUID. Defaults to the caller account.
+    Boolean _public = false; // Boolean | Create the instance as public.
     Map<String, Object> requestBody = null; // Map<String, Object> | 
     try {
-      Object result = apiInstance.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, authorization, requestBody);
+      Object result = apiInstance.createInstanceInstancesPut(name, storage, schemaStr, dbServerName, storageUid, accountId, _public, requestBody);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#createInstanceInstancesPut");
@@ -132,14 +141,13 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **name** | **String**|  | |
-| **storage** | **String**|  | [optional] [default to create-s3] |
-| **schemaStr** | **String**|  | [optional] |
-| **dbServerName** | **String**|  | [optional] |
-| **storageUid** | **String**|  | [optional] |
-| **accountId** | **UUID**|  | [optional] |
-| **_public** | **Boolean**|  | [optional] [default to false] |
-| **authorization** | **String**|  | [optional] |
+| **name** | **String**| Instance name. | |
+| **storage** | **String**| Storage root, or &#39;create-s3&#39; to create managed S3 storage. | [optional] [default to create-s3] |
+| **schemaStr** | **String**| Serialized schema metadata for the instance. | [optional] |
+| **dbServerName** | **String**| Database server name to create the instance on. | [optional] |
+| **storageUid** | **String**| Existing storage UID to attach to the instance. | [optional] |
+| **accountId** | **UUID**| Owner account UUID. Defaults to the caller account. | [optional] |
+| **_public** | **Boolean**| Create the instance as public. | [optional] [default to false] |
 | **requestBody** | [**Map&lt;String, Object&gt;**](Object.md)|  | [optional] |
 
 ### Return type
@@ -148,7 +156,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -158,14 +166,17 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
+| **200** | Instance created. |  -  |
+| **403** | Instance quota reached. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="deleteInstanceInstancesInstanceIdDelete"></a>
 # **deleteInstanceInstancesInstanceIdDelete**
-> Object deleteInstanceInstancesInstanceIdDelete(instanceId, instanceName, spaceId, authorization)
+> Object deleteInstanceInstancesInstanceIdDelete(instanceId, instanceName, spaceId)
 
 Delete Instance
+
+Delete an instance after confirming its name.  **Permissions:** Requires instance admin access.  **Notes:** The instance name confirmation must exactly match the instance name.
 
 ### Example
 ```java
@@ -173,6 +184,7 @@ Delete Instance
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -180,14 +192,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    String instanceName = "instanceName_example"; // String | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    String instanceName = "instanceName_example"; // String | Instance name confirmation.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.deleteInstanceInstancesInstanceIdDelete(instanceId, instanceName, spaceId, authorization);
+      Object result = apiInstance.deleteInstanceInstancesInstanceIdDelete(instanceId, instanceName, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#deleteInstanceInstancesInstanceIdDelete");
@@ -204,10 +219,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **instanceName** | **String**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **instanceName** | **String**| Instance name confirmation. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -215,7 +229,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -230,9 +244,11 @@ No authorization required
 
 <a id="getInstanceSettingsInstancesOwnerNameSettingsGet"></a>
 # **getInstanceSettingsInstancesOwnerNameSettingsGet**
-> Object getInstanceSettingsInstancesOwnerNameSettingsGet(owner, name, authorization)
+> Object getInstanceSettingsInstancesOwnerNameSettingsGet(owner, name)
 
 Get Instance Settings
+
+Return settings for an instance by owner and name.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -240,6 +256,7 @@ Get Instance Settings
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -247,13 +264,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    String owner = "owner_example"; // String | 
-    String name = "name_example"; // String | 
-    String authorization = "authorization_example"; // String | 
+    String owner = "owner_example"; // String | Owner account handle.
+    String name = "name_example"; // String | Instance name.
     try {
-      Object result = apiInstance.getInstanceSettingsInstancesOwnerNameSettingsGet(owner, name, authorization);
+      Object result = apiInstance.getInstanceSettingsInstancesOwnerNameSettingsGet(owner, name);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#getInstanceSettingsInstancesOwnerNameSettingsGet");
@@ -270,9 +290,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **owner** | **String**|  | |
-| **name** | **String**|  | |
-| **authorization** | **String**|  | [optional] |
+| **owner** | **String**| Owner account handle. | |
+| **name** | **String**| Instance name. | |
 
 ### Return type
 
@@ -280,7 +299,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -295,11 +314,11 @@ No authorization required
 
 <a id="listCollaboratorsInstancesInstanceIdCollaboratorsGet"></a>
 # **listCollaboratorsInstancesInstanceIdCollaboratorsGet**
-> Object listCollaboratorsInstancesInstanceIdCollaboratorsGet(instanceId, spaceId, authorization)
+> Object listCollaboratorsInstancesInstanceIdCollaboratorsGet(instanceId, spaceId)
 
 List Collaborators
 
-List all collaborators of an instance.  Parameters: - **instance_id**: UUID of the instance to list collaborators for (from URL path)  Returns: - **200**: List of instance collaborators retrieved successfully  Requires read access to the instance
+List instance collaborators.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -307,6 +326,7 @@ List all collaborators of an instance.  Parameters: - **instance_id**: UUID of t
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -314,13 +334,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.listCollaboratorsInstancesInstanceIdCollaboratorsGet(instanceId, spaceId, authorization);
+      Object result = apiInstance.listCollaboratorsInstancesInstanceIdCollaboratorsGet(instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#listCollaboratorsInstancesInstanceIdCollaboratorsGet");
@@ -337,9 +360,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -347,72 +369,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** | Successful Response |  -  |
-| **422** | Validation Error |  -  |
-
-<a id="migrateInstanceInstancesInstanceIdMigratePost"></a>
-# **migrateInstanceInstancesInstanceIdMigratePost**
-> Object migrateInstanceInstancesInstanceIdMigratePost(instanceId, spaceId, authorization)
-
-Migrate Instance
-
-### Example
-```java
-// Import classes:
-import ai.lamin.lamin_api_client.ApiClient;
-import ai.lamin.lamin_api_client.ApiException;
-import ai.lamin.lamin_api_client.Configuration;
-import ai.lamin.lamin_api_client.models.*;
-import ai.lamin.lamin_api_client.api.InstancesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
-
-    InstancesApi apiInstance = new InstancesApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
-    try {
-      Object result = apiInstance.migrateInstanceInstancesInstanceIdMigratePost(instanceId, spaceId, authorization);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling InstancesApi#migrateInstanceInstancesInstanceIdMigratePost");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
-
-### Return type
-
-**Object**
-
-### Authorization
-
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -427,11 +384,11 @@ No authorization required
 
 <a id="removeCollaboratorInstancesInstanceIdCollaboratorsDelete"></a>
 # **removeCollaboratorInstancesInstanceIdCollaboratorsDelete**
-> Object removeCollaboratorInstancesInstanceIdCollaboratorsDelete(instanceId, accountId, teamId, spaceId, authorization)
+> Object removeCollaboratorInstancesInstanceIdCollaboratorsDelete(instanceId, accountId, teamId, spaceId)
 
 Remove Collaborator
 
-Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **account_id**: UUID of the account to remove (mutually exclusive with team_id) - **team_id**: UUID of the team to remove (mutually exclusive with account_id)  Returns: - **200**: Collaborator removed successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
+Remove an account or team collaborator from an instance.  **Permissions:** Requires instance admin access or organization manager or admin access.
 
 ### Example
 ```java
@@ -439,6 +396,7 @@ Remove a collaborator from an instance.  Parameters: - **instance_id**: UUID of 
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -446,15 +404,18 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID accountId = UUID.randomUUID(); // UUID | 
-    UUID teamId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID accountId = UUID.randomUUID(); // UUID | Account UUID. Mutually exclusive with team_id.
+    UUID teamId = UUID.randomUUID(); // UUID | Team UUID. Mutually exclusive with account_id.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.removeCollaboratorInstancesInstanceIdCollaboratorsDelete(instanceId, accountId, teamId, spaceId, authorization);
+      Object result = apiInstance.removeCollaboratorInstancesInstanceIdCollaboratorsDelete(instanceId, accountId, teamId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#removeCollaboratorInstancesInstanceIdCollaboratorsDelete");
@@ -471,11 +432,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **accountId** | **UUID**|  | [optional] |
-| **teamId** | **UUID**|  | [optional] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **accountId** | **UUID**| Account UUID. Mutually exclusive with team_id. | [optional] |
+| **teamId** | **UUID**| Team UUID. Mutually exclusive with account_id. | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -483,7 +443,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -496,11 +456,13 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **422** | Validation Error |  -  |
 
-<a id="transferOwnershipInstancesInstanceIdOwnerHandlePatch"></a>
-# **transferOwnershipInstancesInstanceIdOwnerHandlePatch**
-> Object transferOwnershipInstancesInstanceIdOwnerHandlePatch(handle, instanceId, spaceId, authorization)
+<a id="setInstancePrivateInstancesInstanceIdSetPrivatePost"></a>
+# **setInstancePrivateInstancesInstanceIdSetPrivatePost**
+> Object setInstancePrivateInstancesInstanceIdSetPrivatePost(instanceId, spaceId)
 
-Transfer Ownership
+Set Instance Private
+
+Make an instance private.  **Permissions:** Requires instance admin access.  **Notes:** Removes public read access and refreshes access state.
 
 ### Example
 ```java
@@ -508,6 +470,7 @@ Transfer Ownership
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -515,17 +478,19 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    String handle = "handle_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.transferOwnershipInstancesInstanceIdOwnerHandlePatch(handle, instanceId, spaceId, authorization);
+      Object result = apiInstance.setInstancePrivateInstancesInstanceIdSetPrivatePost(instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling InstancesApi#transferOwnershipInstancesInstanceIdOwnerHandlePatch");
+      System.err.println("Exception when calling InstancesApi#setInstancePrivateInstancesInstanceIdSetPrivatePost");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -539,10 +504,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **handle** | **String**|  | |
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -550,7 +513,77 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Successful Response |  -  |
+| **422** | Validation Error |  -  |
+
+<a id="setInstancePublicInstancesInstanceIdSetPublicPost"></a>
+# **setInstancePublicInstancesInstanceIdSetPublicPost**
+> Object setInstancePublicInstancesInstanceIdSetPublicPost(instanceId, spaceId)
+
+Set Instance Public
+
+Make an instance public.  **Permissions:** Requires instance admin access.  **Notes:** Makes the instance publicly readable and refreshes access state.
+
+### Example
+```java
+// Import classes:
+import ai.lamin.lamin_api_client.ApiClient;
+import ai.lamin.lamin_api_client.ApiException;
+import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
+import ai.lamin.lamin_api_client.models.*;
+import ai.lamin.lamin_api_client.api.InstancesApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
+
+    InstancesApi apiInstance = new InstancesApi(defaultClient);
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
+    try {
+      Object result = apiInstance.setInstancePublicInstancesInstanceIdSetPublicPost(instanceId, spaceId);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling InstancesApi#setInstancePublicInstancesInstanceIdSetPublicPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
+
+### Return type
+
+**Object**
+
+### Authorization
+
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -565,11 +598,11 @@ No authorization required
 
 <a id="updateCollaboratorInstancesInstanceIdCollaboratorsPatch"></a>
 # **updateCollaboratorInstancesInstanceIdCollaboratorsPatch**
-> Object updateCollaboratorInstancesInstanceIdCollaboratorsPatch(instanceId, updateCollaboratorRequestBody, spaceId, authorization)
+> Object updateCollaboratorInstancesInstanceIdCollaboratorsPatch(instanceId, updateCollaboratorRequestBody, spaceId)
 
 Update Collaborator
 
-Update a collaborator&#39;s permissions on an instance.  Parameters: - **instance_id**: UUID of the instance (from URL path) - **body**: Request body containing collaborator details   - **account_id**: UUID of the account to update (mutually exclusive with team_id)   - **team_id**: UUID of the team to update (mutually exclusive with account_id)   - **role**: Role of the collaborator  Returns: - **200**: Collaborator updated successfully - **400**: Invalid input (e.g., both account_id and team_id provided)  Requires admin access to the instance
+Update an instance collaborator&#39;s role.  **Permissions:** Requires instance admin access or organization manager or admin access.
 
 ### Example
 ```java
@@ -577,6 +610,7 @@ Update a collaborator&#39;s permissions on an instance.  Parameters: - **instanc
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstancesApi;
 
@@ -584,14 +618,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstancesApi apiInstance = new InstancesApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     UpdateCollaboratorRequestBody updateCollaboratorRequestBody = new UpdateCollaboratorRequestBody(); // UpdateCollaboratorRequestBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.updateCollaboratorInstancesInstanceIdCollaboratorsPatch(instanceId, updateCollaboratorRequestBody, spaceId, authorization);
+      Object result = apiInstance.updateCollaboratorInstancesInstanceIdCollaboratorsPatch(instanceId, updateCollaboratorRequestBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstancesApi#updateCollaboratorInstancesInstanceIdCollaboratorsPatch");
@@ -608,10 +645,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **updateCollaboratorRequestBody** | [**UpdateCollaboratorRequestBody**](UpdateCollaboratorRequestBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -619,7 +655,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

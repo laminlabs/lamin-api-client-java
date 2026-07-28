@@ -10,9 +10,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="getTreeInstancesInstanceIdFilesTreeGet"></a>
 # **getTreeInstancesInstanceIdFilesTreeGet**
-> Object getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, spaceId, authorization)
+> Object getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, spaceId)
 
 Get Tree
+
+Return the artifact or transform file tree.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -20,6 +22,7 @@ Get Tree
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceFileExplorerApi;
 
@@ -27,14 +30,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceFileExplorerApi apiInstance = new InstanceFileExplorerApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    String entityType = "artifacts"; // String | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    String entityType = "artifacts"; // String | File entity type to browse.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, spaceId, authorization);
+      Object result = apiInstance.getTreeInstancesInstanceIdFilesTreeGet(instanceId, entityType, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFileExplorerApi#getTreeInstancesInstanceIdFilesTreeGet");
@@ -51,10 +57,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **entityType** | **String**|  | [enum: artifacts, transforms] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **entityType** | **String**| File entity type to browse. | [enum: artifacts, transforms] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -62,7 +67,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -77,9 +82,11 @@ No authorization required
 
 <a id="listDirectoryInstancesInstanceIdFilesEntityTypeGet"></a>
 # **listDirectoryInstancesInstanceIdFilesEntityTypeGet**
-> Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, spaceId, authorization)
+> Object listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, spaceId)
 
 List Directory
+
+List files in an artifact or transform directory.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -87,6 +94,7 @@ List Directory
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceFileExplorerApi;
 
@@ -94,15 +102,18 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceFileExplorerApi apiInstance = new InstanceFileExplorerApi(defaultClient);
-    String entityType = "artifacts"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    String path = ""; // String | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String entityType = "artifacts"; // String | File entity type to browse.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    String path = ""; // String | Directory path to list.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, spaceId, authorization);
+      Object result = apiInstance.listDirectoryInstancesInstanceIdFilesEntityTypeGet(entityType, instanceId, path, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceFileExplorerApi#listDirectoryInstancesInstanceIdFilesEntityTypeGet");
@@ -119,11 +130,10 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **entityType** | **String**|  | [enum: artifacts, transforms] |
-| **instanceId** | **UUID**|  | |
-| **path** | **String**|  | [optional] [default to ] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **entityType** | **String**| File entity type to browse. | [enum: artifacts, transforms] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **path** | **String**| Directory path to list. | [optional] [default to ] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -131,7 +141,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

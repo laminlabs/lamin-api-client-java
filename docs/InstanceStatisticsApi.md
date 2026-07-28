@@ -12,11 +12,11 @@ All URIs are relative to *https://aws.us-east-1.lamin.ai/api*
 
 <a id="getInstanceStatisticsInstancesInstanceIdStatisticsGet"></a>
 # **getInstanceStatisticsInstancesInstanceIdStatisticsGet**
-> StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, spaceId, authorization)
+> StatisticsResponse getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, spaceId)
 
 Get Approximate Table Row Counts and Artifact Size
 
-Retrieves instance statistics, including artifact size and table row counts.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **Row Counts (&#x60;counts&#x60;)**: Uses a hybrid counting strategy:   - For small tables (≤ 2000 estimated rows): **Exact counts** using     &#x60;COUNT(*)&#x60; to ensure accuracy for small datasets.   - For larger tables: **Fast approximations** based on PostgreSQL statistics catalog     (&#x60;pg_class.reltuples&#x60;) for near-instant retrieval. These stats are updated     periodically by database operations like &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;. - **Artifact Size (&#x60;instance_size&#x60;)**: This is an **exact** real-time calculation,   derived by performing a &#x60;SUM(size)&#x60; on the artifact table.
+Return table row counts and artifact size for an instance.  **Permissions:** Requires read access to the instance.  **Notes:** Row counts are exact for small tables and approximate for larger tables.
 
 ### Example
 ```java
@@ -24,6 +24,7 @@ Retrieves instance statistics, including artifact size and table row counts.  Th
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 
@@ -31,14 +32,17 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    List<String> q = Arrays.asList(); // List<String> | A list of models in \"${module}.${model}\" format (case-sensitive). If omitted, statistics for all primary tables are returned.
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    List<String> q = Arrays.asList(); // List<String> | A list of models in 'module.Model' format (case-sensitive). If omitted, statistics for all primary tables are returned.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      StatisticsResponse result = apiInstance.getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, spaceId, authorization);
+      StatisticsResponse result = apiInstance.getInstanceStatisticsInstancesInstanceIdStatisticsGet(instanceId, q, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#getInstanceStatisticsInstancesInstanceIdStatisticsGet");
@@ -55,10 +59,9 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **q** | [**List&lt;String&gt;**](String.md)| A list of models in \&quot;${module}.${model}\&quot; format (case-sensitive). If omitted, statistics for all primary tables are returned. | [optional] |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **q** | [**List&lt;String&gt;**](String.md)| A list of models in &#39;module.Model&#39; format (case-sensitive). If omitted, statistics for all primary tables are returned. | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -66,7 +69,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -84,11 +87,11 @@ No authorization required
 
 <a id="getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet"></a>
 # **getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet**
-> NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, spaceId, authorization)
+> NonEmptyTablesResponse getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, spaceId)
 
 List Non-Empty Data Tables by Module
 
-Analyzes the instance&#39;s database schema to identify all tables that contain data.  This endpoint uses a hybrid approach optimized for both accuracy and performance: - **For small tables (≤ 2000 estimated rows)**: **Exact non-empty check** using   &#x60;COUNT(*) &gt; 0&#x60; to ensure accuracy for small datasets. - **For larger tables (&gt; 2000 estimated rows)**: **Fast approximation** based on   PostgreSQL statistics catalog (&#x60;pg_class.reltuples &gt; 0&#x60;) for near-instant   retrieval. These stats are updated periodically by database operations like   &#x60;ANALYZE&#x60; and &#x60;AUTOVACUUM&#x60;.  **Accuracy Note**: - Small tables: Guaranteed accurate non-empty detection - Large tables: May have acceptable false positives if all rows are deleted   but space hasn&#39;t been reclaimed until &#x60;VACUUM FULL&#x60; or &#x60;TRUNCATE&#x60; is run.
+List non-empty data tables grouped by module.  **Permissions:** Requires read access to the instance.  **Notes:** Large-table checks can have false positives.
 
 ### Example
 ```java
@@ -96,6 +99,7 @@ Analyzes the instance&#39;s database schema to identify all tables that contain 
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 
@@ -103,13 +107,16 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      NonEmptyTablesResponse result = apiInstance.getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, spaceId, authorization);
+      NonEmptyTablesResponse result = apiInstance.getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet(instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#getNonEmptyTablesInstancesInstanceIdNonEmptyTablesGet");
@@ -126,9 +133,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -136,7 +142,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -149,14 +155,16 @@ No authorization required
 | **200** | Successful Response |  -  |
 | **403** | Read access denied to the instance. |  -  |
 | **404** | Instance not accessible. |  -  |
-| **500** | Internal server error, such as a missing schema or database connection failure. |  -  |
+| **500** | Unexpected error while checking data tables. |  -  |
 | **422** | Validation Error |  -  |
 
 <a id="getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet"></a>
 # **getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet**
-> Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, spaceId, authorization)
+> Object getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, spaceId)
 
 Get Relation Counts
+
+Return relation counts for a record.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -164,6 +172,7 @@ Get Relation Counts
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 
@@ -171,16 +180,19 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    Integer id = 56; // Integer | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    Integer id = 56; // Integer | Record ID.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, spaceId, authorization);
+      Object result = apiInstance.getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet(moduleName, modelName, id, instanceId, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#getRelationCountsInstancesInstanceIdModulesModuleNameModelNameIdCountsGet");
@@ -197,12 +209,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **id** | **Integer**|  | |
-| **instanceId** | **UUID**|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **id** | **Integer**| Record ID. | |
+| **instanceId** | **UUID**| Instance UUID. | |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -210,7 +221,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 
@@ -225,9 +236,11 @@ No authorization required
 
 <a id="groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost"></a>
 # **groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost**
-> Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization)
+> Object groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, spaceId)
 
 Group By
+
+Aggregate model records by dimensions and measures.  **Permissions:** Requires read access to the instance.
 
 ### Example
 ```java
@@ -235,6 +248,7 @@ Group By
 import ai.lamin.lamin_api_client.ApiClient;
 import ai.lamin.lamin_api_client.ApiException;
 import ai.lamin.lamin_api_client.Configuration;
+import ai.lamin.lamin_api_client.auth.*;
 import ai.lamin.lamin_api_client.models.*;
 import ai.lamin.lamin_api_client.api.InstanceStatisticsApi;
 
@@ -242,16 +256,19 @@ public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("https://aws.us-east-1.lamin.ai/api");
+    
+    // Configure HTTP bearer authorization: LaminAccessToken
+    HttpBearerAuth LaminAccessToken = (HttpBearerAuth) defaultClient.getAuthentication("LaminAccessToken");
+    LaminAccessToken.setBearerToken("BEARER TOKEN");
 
     InstanceStatisticsApi apiInstance = new InstanceStatisticsApi(defaultClient);
-    String moduleName = "moduleName_example"; // String | 
-    String modelName = "modelName_example"; // String | 
-    UUID instanceId = UUID.randomUUID(); // UUID | 
+    String moduleName = "moduleName_example"; // String | Schema module name.
+    String modelName = "modelName_example"; // String | Model name within the schema module.
+    UUID instanceId = UUID.randomUUID(); // UUID | Instance UUID.
     GroupByRequestBody groupByRequestBody = new GroupByRequestBody(); // GroupByRequestBody | 
-    UUID spaceId = UUID.randomUUID(); // UUID | 
-    String authorization = "authorization_example"; // String | 
+    UUID spaceId = UUID.randomUUID(); // UUID | Space UUID for space-scoped access checks.
     try {
-      Object result = apiInstance.groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, spaceId, authorization);
+      Object result = apiInstance.groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost(moduleName, modelName, instanceId, groupByRequestBody, spaceId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling InstanceStatisticsApi#groupByInstancesInstanceIdModulesModuleNameModelNameGroupByPost");
@@ -268,12 +285,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **moduleName** | **String**|  | |
-| **modelName** | **String**|  | |
-| **instanceId** | **UUID**|  | |
+| **moduleName** | **String**| Schema module name. | |
+| **modelName** | **String**| Model name within the schema module. | |
+| **instanceId** | **UUID**| Instance UUID. | |
 | **groupByRequestBody** | [**GroupByRequestBody**](GroupByRequestBody.md)|  | |
-| **spaceId** | **UUID**|  | [optional] |
-| **authorization** | **String**|  | [optional] |
+| **spaceId** | **UUID**| Space UUID for space-scoped access checks. | [optional] |
 
 ### Return type
 
@@ -281,7 +297,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[LaminAccessToken](../README.md#LaminAccessToken)
 
 ### HTTP request headers
 

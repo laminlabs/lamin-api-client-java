@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**name** | **String** |  |  |
-|**organizationId** | **UUID** |  |  |
-|**description** | **String** |  |  [optional] |
+|**name** | **String** | Team name. |  |
+|**organizationId** | **UUID** | Organization UUID that owns the team. |  |
+|**description** | **String** | Team description. |  [optional] |
 
 
 
