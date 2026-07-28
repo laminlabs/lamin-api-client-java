@@ -1,8 +1,11 @@
 # lamin-api-client
 
+[![Maven Central Version](https://img.shields.io/maven-central/v/ai.lamin/lamin-api-client.svg)](https://central.sonatype.com/artifact/ai.lamin/lamin-api-client/overview)
+[![javadoc](https://javadoc.io/badge2/ai.lamin/lamin-api-client/javadoc.svg)](https://javadoc.io/doc/ai.lamin/lamin-api-client)
+
 LaminHub REST API
 - API version: 1.50.1
-  - Build date: 2026-07-28T09:34:29.117144562+02:00[Europe/Brussels]
+  - Build date: 2026-07-28T09:47:19.127189922+02:00[Europe/Brussels]
   - Generator version: 7.23.0
 
 REST API for LaminHub.
